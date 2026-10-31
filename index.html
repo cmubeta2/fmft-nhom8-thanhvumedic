@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0f766e">
-  <title>Cổng Quản Trị Bài Tập FMFT AIOS/LSE – Nhóm 8 | Thanh Vũ Medic Cà Mau</title>
+  <meta name="description" content="Cổng thông tin & Kho bài tập Quản trị Bệnh viện FMFT AIOS/LSE - Nhóm 8 (Thanh Vũ Medic)">
+  <title>Cổng Quản Trị & Bài Tập FMFT AIOS/LSE – Nhóm 8 | Thanh Vũ Medic</title>
   <style>
 /* ==========================================================================
    SHIN DESIGN SYSTEM v2.6.0 – DESIGN TOKENS & CORE STYLES
@@ -15,17 +16,14 @@
   --nav-height: 64px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --rail-thu: 56px;
-  --rail-mo: 248px;
-  --rail-w: var(--rail-thu);
-  --noi-max: 760px;
+  --noi-max: 960px;
 
-  /* PALETTE: clinical (Y tế, Khảo sát AAA) */
+  /* PALETTE: clinical (Y tế, Tiêu chuẩn ACHSI) */
   --primary: #0f766e;
   --primary-hover: #115e59;
-  --primary-soft: rgba(15, 118, 110, 0.15);
+  --primary-soft: rgba(15, 118, 110, 0.12);
   --accent: #0d9488;
-  --accent-soft: rgba(13, 148, 136, 0.15);
+  --accent-soft: rgba(13, 148, 136, 0.12);
   --on-primary: #ffffff;
   --bg: #f8fafc;
   --card: #ffffff;
@@ -41,7 +39,7 @@
   --card-radius: 16px;
   --hero-radius: 20px;
   --btn-radius: 12px;
-  --shadow: 0 2px 12px rgba(15, 118, 110, 0.06);
+  --shadow: 0 4px 16px rgba(15, 118, 110, 0.08);
 
   /* Semantic Colors */
   --c-gray: #6b7280;
@@ -64,791 +62,530 @@ html[data-palette="gold"] {
   --text: #1f2937; --text-muted: #6b7280;
   --sidebar-bg: linear-gradient(165deg, #f0cf5e 0%, #d4a017 55%, #a97e10 100%);
   --sidebar-text: #3a2a06; --sidebar-border: rgba(0, 0, 0, 0.1);
-  --card-radius: 14px; --hero-radius: 18px; --btn-radius: 10px;
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 html[data-palette="executive"] {
-  --primary: #0284c7; --primary-hover: #0369a1; --primary-soft: rgba(2, 132, 199, 0.15);
-  --accent: #38bdf8; --accent-soft: rgba(56, 189, 248, 0.15); --on-primary: #fff;
+  --primary: #0284c7; --primary-hover: #0369a1; --primary-soft: rgba(2, 132, 199, 0.12);
+  --accent: #0ea5e9; --accent-soft: rgba(14, 165, 233, 0.12); --on-primary: #fff;
   --bg: #f8fafc; --card: #fff; --border: #cbd5e1; --border-soft: #f1f5f9;
   --text: #0f172a; --text-muted: #64748b;
   --sidebar-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.12);
-  --card-radius: 12px; --hero-radius: 14px; --btn-radius: 8px;
+  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.1);
 }
-html[data-palette="nordic"] {
-  --primary: #475569; --primary-hover: #334155; --primary-soft: rgba(71, 85, 105, 0.15);
-  --accent: #0ea5e9; --accent-soft: rgba(14, 165, 233, 0.15); --on-primary: #fff;
-  --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --border-soft: #f1f5f9;
-  --text: #0f172a; --text-muted: #64748b;
-  --sidebar-bg: linear-gradient(135deg, #334155 0%, #1e293b 100%);
-  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.12);
-  --card-radius: 10px; --hero-radius: 14px; --btn-radius: 8px;
-}
-html[data-palette="crimson"] {
-  --primary: #991b1b; --primary-hover: #7f1d1d; --primary-soft: rgba(153, 27, 27, 0.15);
-  --accent: #ea580c; --accent-soft: rgba(234, 88, 12, 0.15); --on-primary: #fff;
-  --bg: #fff1f2; --card: #fff; --border: #fecdd3; --border-soft: #ffe4e6;
-  --text: #4c0519; --text-muted: #9f1239;
-  --sidebar-bg: linear-gradient(135deg, #881337 0%, #4c0519 100%);
-  --sidebar-text: #ffe4e6; --sidebar-border: rgba(255, 255, 255, 0.12);
-  --card-radius: 12px; --hero-radius: 16px; --btn-radius: 8px;
+html[data-palette="violet"] {
+  --primary: #7c3aed; --primary-hover: #6d28d9; --primary-soft: rgba(124, 58, 237, 0.12);
+  --accent: #8b5cf6; --accent-soft: rgba(139, 92, 246, 0.12); --on-primary: #fff;
+  --bg: #faf5ff; --card: #fff; --border: #e9d5ff; --border-soft: #f3e8ff;
+  --text: #3b0764; --text-muted: #7e22ce;
+  --sidebar-bg: linear-gradient(135deg, #581c87 0%, #3b0764 100%);
+  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.1);
 }
 
-/* DARK THEME SPECIFICATIONS */
-[data-theme="dark"] {
-  --primary: #2dd4bf;
-  --primary-hover: #5eead4;
-  --primary-soft: rgba(45, 212, 191, 0.18);
-  --accent: #5eead4;
-  --accent-soft: rgba(94, 234, 212, 0.18);
-  --on-primary: #042f2e;
-  --bg: #031313;
-  --card: #092020;
-  --border: #134e4a;
-  --border-soft: #0a2d2a;
-  --text: #f0fdfa;
-  --text-muted: #99f6e4;
-  --sidebar-bg: #031414;
-  --sidebar-text: #f0fdfa;
-  --sidebar-border: rgba(45, 212, 191, 0.25);
+/* THEMES: DARK / OLED */
+html[data-theme="dark"] {
+  --bg: #091e1d; --card: #0d2d2a; --border: #164e49; --border-soft: #113c38;
+  --bg-sub: #113c38; --text: #f0fdfa; --text-muted: #99f6e4;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+html[data-theme="oled"] {
+  --bg: #000000; --card: #080808; --border: #222222; --border-soft: #141414;
+  --bg-sub: #101010; --text: #ffffff; --text-muted: #a3a3a3;
   --shadow: none;
-
-  --c-gray: #9ca3af; --c-gray-soft: rgba(156, 163, 175, 0.18);
-  --c-blue: #60a5fa; --c-blue-soft: rgba(96, 165, 250, 0.2);
-  --c-yellow: #f59e0b; --c-yellow-soft: rgba(245, 158, 11, 0.2);
-  --c-green: #4ade80; --c-green-soft: rgba(74, 222, 128, 0.2);
-  --c-red: #f87171; --c-red-soft: rgba(248, 113, 113, 0.2);
-}
-[data-theme="dark"][data-palette="gold"] {
-  --primary: #ef4444; --primary-hover: #dc2626; --primary-soft: rgba(245, 158, 11, 0.18);
-  --accent: #f59e0b; --accent-soft: rgba(245, 158, 11, 0.18); --on-primary: #161822;
-  --bg: #0c0d12; --card: #161822; --border: #25293a; --border-soft: #1d212f;
-  --text: #f8fafc; --text-muted: #94a3b8;
-  --sidebar-bg: linear-gradient(180deg, #181b27 0%, #0d0f17 100%);
-  --sidebar-text: #f8fafc; --sidebar-border: rgba(245, 158, 11, 0.25);
-}
-[data-theme="dark"][data-palette="executive"] {
-  --primary: #38bdf8; --primary-hover: #7dd3fc; --primary-soft: rgba(56, 189, 248, 0.2);
-  --accent: #7dd3fc; --accent-soft: rgba(125, 211, 252, 0.2); --on-primary: #080d1a;
-  --bg: #050811; --card: #0e1526; --border: #1e293b; --border-soft: #141d33;
-  --text: #f8fafc; --text-muted: #94a3b8;
-  --sidebar-bg: #080d1a; --sidebar-text: #f8fafc; --sidebar-border: rgba(56, 189, 248, 0.25);
 }
 
-[data-cochu="lon"] { --font-scale: 1.1; }
-[data-cochu="ratlon"] { --font-scale: 1.2; }
-
-@media (min-width: 1024px) {
-  :root { --noi-max: 960px; }
-  body.rail-mo { --rail-w: var(--rail-mo); }
-}
-@media (max-height: 640px) {
-  :root { --nav-height: 52px; }
-}
-
-/* ==========================================================================
-   BASE & RESET
-   ========================================================================== */
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  font-size: calc(15px * var(--font-scale));
+/* RESET & BASE */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: calc(16px * var(--font-scale));
   line-height: 1.5;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  min-height: 100vh;
-  padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 24px);
+  -webkit-tap-highlight-color: transparent;
 }
-[hidden] { display: none !important; }
+body { min-height: 100vh; overflow-x: hidden; position: relative; }
 
-/* ==========================================================================
-   1. HEADER GHIM ĐỈNH (56px)
-   ========================================================================== */
+/* 1. TOPBAR (56px) */
 .topbar {
-  position: sticky; top: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   height: calc(var(--header-height) + var(--safe-top));
-  padding: var(--safe-top) 14px 0;
+  padding-top: var(--safe-top);
+  background: var(--card); border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   display: flex; align-items: center; justify-content: space-between;
-  background: var(--sidebar-bg); color: var(--sidebar-text);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  padding-left: 12px; padding-right: 12px;
 }
+.topbar-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .topbar-brand {
   display: flex; align-items: center; gap: 10px;
-  color: inherit; text-decoration: none;
+  color: var(--text); text-decoration: none; cursor: pointer; min-width: 0;
 }
 .topbar-logo {
-  width: 36px; height: 36px; border-radius: 9px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 34px; height: 34px; border-radius: 8px;
+  background: var(--primary); color: var(--on-primary);
   display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 14px; letter-spacing: -0.5px;
+  font-weight: 900; font-size: 13px; letter-spacing: -0.5px; flex-shrink: 0;
 }
 .topbar-title {
-  font-size: calc(15px * var(--font-scale)); font-weight: 800;
-  letter-spacing: -0.2px; line-height: 1.2;
+  font-size: calc(14px * var(--font-scale)); font-weight: 800;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  display: flex; align-items: center; gap: 6px;
 }
 .topbar-sub {
-  font-size: calc(12px * var(--font-scale)); opacity: 0.85; white-space: nowrap;
+  font-size: calc(11px * var(--font-scale)); color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .header-status-pill {
-  display: inline-flex; align-items: center; height: 20px;
-  padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 800; vertical-align: middle;
+  font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: 0.5px;
 }
-.header-status-pill.live {
-  background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.4);
-}
+.header-status-pill.live { background: var(--c-green-soft); color: var(--c-green); }
+.header-status-pill.edit { background: var(--c-yellow-soft); color: var(--c-yellow); }
+.topbar-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+
 .btn-icon {
-  position: relative; width: 44px; height: 44px; border-radius: 10px;
-  background: rgba(255, 255, 255, 0.15); border: 1px solid var(--sidebar-border);
-  color: inherit; font-size: 18px; display: inline-flex; align-items: center;
-  justify-content: center; cursor: pointer; transition: transform 0.1s;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card);
+  color: var(--text); font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s ease;
 }
-.btn-icon:active { transform: scale(0.94); }
-.btn-icon.nhat { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-icon:hover { background: var(--primary-soft); color: var(--primary); }
 
-/* ==========================================================================
-   2. THANH TRÁI (RAIL 56px / 248px)
-   ========================================================================== */
-.rail {
-  position: fixed; left: 0;
-  top: calc(var(--header-height) + var(--safe-top));
-  bottom: calc(var(--nav-height) + var(--safe-bottom));
-  width: var(--rail-w); z-index: 97;
-  background: var(--card); box-shadow: 1px 0 0 var(--border);
-  display: flex; flex-direction: column; gap: 4px; padding: 6px;
-  overflow: hidden auto; transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+/* 2. LEFT DRAWER (MÉP TRÁI - SHIN AIOS STANDARD) */
+.drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 240;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
 }
-.rail-nut {
-  width: 44px; height: 44px; border: none; border-radius: 10px;
-  background: transparent; color: var(--text); font-size: 20px;
-  cursor: pointer; align-self: center; display: flex; align-items: center; justify-content: center;
+.drawer-overlay.open { opacity: 1; pointer-events: auto; }
+
+.left-drawer {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: 320px; max-width: 85vw;
+  background: var(--card); z-index: 250;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.2);
+  display: flex; flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
-.rail-nut:hover { background: var(--primary-soft); color: var(--primary); }
-.rail-nhom { height: 1px; margin: 4px 6px; background: var(--border); font-size: 0; }
-.rail-muc {
-  display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 6px;
-  border-radius: 8px; color: var(--text); text-decoration: none;
-  justify-content: center; font-size: calc(13.5px * var(--font-scale)); font-weight: 700;
-  cursor: pointer; border: none; background: transparent; width: 100%;
+.left-drawer.open { transform: translateX(0); }
+
+.drawer-head {
+  padding: calc(var(--safe-top) + 14px) 16px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-sub);
 }
-.rail-icon { font-size: 19px; width: 28px; text-align: center; flex-shrink: 0; }
-.rail-ten { display: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
-.rail-muc:hover, .rail-muc.dang-chon { background: var(--primary-soft); color: var(--primary); }
-.rail-chan { margin-top: auto; border-top: 1px solid var(--border); padding-top: 6px; display: flex; flex-direction: column; gap: 4px; }
-body.rail-mo .rail { width: var(--rail-mo); }
-body.rail-mo .rail-muc { justify-content: flex-start; padding: 0 10px; }
-body.rail-mo .rail-ten { display: inline; }
-body.rail-mo .rail-nhom {
-  height: auto; background: none; font-size: 11px; font-weight: 800;
-  letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin: 10px 8px 4px;
+.drawer-title { font-weight: 800; font-size: 15px; color: var(--text); }
+.drawer-sub { font-size: 11px; color: var(--text-muted); }
+
+.drawer-body {
+  flex: 1; overflow-y: auto; padding: 12px;
+  display: flex; flex-direction: column; gap: 14px;
 }
-@media (max-width: 1023px) {
-  body.rail-mo .rail { width: var(--rail-mo); box-shadow: 6px 0 30px rgba(0, 0, 0, 0.25); }
-  .noi-dung { padding-left: 10px !important; padding-right: 10px !important; }
+.drawer-group-title {
+  font-size: 11px; font-weight: 800; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; padding-left: 6px;
+}
+.drawer-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 12px;
+  background: transparent; border: 1px solid transparent;
+  color: var(--text); text-decoration: none; cursor: pointer;
+  font-size: calc(13.5px * var(--font-scale)); font-weight: 600;
+  transition: all 0.15s ease; width: 100%; text-align: left;
+}
+.drawer-item:hover, .drawer-item.active {
+  background: var(--primary-soft); border-color: var(--primary); color: var(--primary);
+}
+.drawer-icon { font-size: 20px; width: 28px; text-align: center; flex-shrink: 0; }
+.drawer-badge {
+  margin-left: auto; font-size: 10.5px; font-weight: 700;
+  padding: 2px 7px; border-radius: 999px; background: var(--border-soft);
+  color: var(--text-muted);
+}
+.drawer-item.active .drawer-badge { background: var(--primary); color: #fff; }
+
+.drawer-foot {
+  padding: 12px; border-top: 1px solid var(--border);
+  display: flex; gap: 8px; background: var(--bg-sub);
 }
 
-/* ==========================================================================
-   3. NỘI DUNG CUỘN Ở GIỮA (CĂN GIỮA PHẦN CÒN LẠI)
-   ========================================================================== */
+/* MẤU KÉO MÉP TRÁI (FLOATING EDGE HANDLE) */
+.edge-handle {
+  position: fixed; left: 0; top: 48%; transform: translateY(-50%);
+  width: 20px; height: 60px;
+  background: var(--primary); color: #fff;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer; z-index: 90;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; transition: width 0.18s, background 0.18s;
+  border: none; outline: none; opacity: 0.85;
+}
+.edge-handle:hover { width: 28px; opacity: 1; background: var(--primary-hover); }
+
+/* 3. MAIN CONTENT (CĂN GIỮA, KHÔNG BỊ ÉP) */
 .noi-dung {
   max-width: var(--noi-max);
-  margin-left: calc(var(--rail-w) + max(0px, (100% - var(--rail-w) - var(--noi-max)) / 2));
-  margin-right: auto;
-  padding: 14px 14px 30px;
-  transition: margin-left 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-}
-@media (max-width: 1023px) {
-  .noi-dung { margin-left: var(--rail-thu); }
+  margin: 0 auto;
+  width: 100%;
+  padding: calc(var(--header-height) + var(--safe-top) + 16px) 16px calc(var(--nav-height) + var(--safe-bottom) + 24px);
+  box-sizing: border-box;
 }
 
-/* ==========================================================================
-   4. THANH ĐÁY GHIM (64px - ĐÚNG 5 NÚT)
-   ========================================================================== */
+/* 4. BOTTOM NAVIGATION (64px - 5 NÚT CHUẨN) */
 .bottom-nav {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
   height: calc(var(--nav-height) + var(--safe-bottom));
   padding-bottom: var(--safe-bottom);
-  padding-left: calc(var(--rail-w) + max(0px, (100vw - var(--rail-w) - var(--noi-max)) / 2));
-  padding-right: max(0px, calc((100vw - var(--rail-w) - var(--noi-max)) / 2));
   display: flex; background: var(--card); border-top: 1px solid var(--border);
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+  max-width: var(--noi-max); margin: 0 auto;
 }
 .nav-item {
   flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 3px; border: none; background: none; font: inherit;
-  font-size: calc(11px * var(--font-scale)); font-weight: 600; color: var(--text-muted);
-  cursor: pointer; position: relative; min-height: 44px;
+  gap: 2px; background: transparent; border: none; color: var(--text-muted);
+  cursor: pointer; font-size: 11px; font-weight: 600; transition: color 0.15s ease;
+  min-height: 44px;
 }
-.nav-item.active { color: var(--primary); font-weight: 800; }
-.nav-icon { font-size: 20px; line-height: 1; }
-@media (max-width: 340px) {
-  .nav-nhan { display: none; }
-  .nav-icon { font-size: 22px; }
-}
+.nav-item:hover, .nav-item.active { color: var(--primary); }
+.nav-icon { font-size: 18px; line-height: 1; }
 
-/* ==========================================================================
-   5. HERO & 3 Ô SỐ (QUY TẮC MỤC 1 & 5)
-   ========================================================================== */
-.page-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin: 4px 0 14px; padding-left: 10px; border-left: 4px solid var(--accent);
-}
-.page-title { font-size: calc(18px * var(--font-scale)); font-weight: 800; line-height: 1.2; }
-.page-sub { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); margin-top: 2px; }
-
+/* 5. HERO & CARDS */
 .hn-hero {
-  display: flex; flex-direction: column; gap: 14px; padding: 18px; margin-bottom: 16px;
-  border: 1px solid var(--border); border-radius: var(--hero-radius);
-  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 75%);
-  box-shadow: var(--shadow);
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--hero-radius); padding: 18px; margin-bottom: 16px;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 14px;
 }
-.hero-greet { font-size: calc(20px * var(--font-scale)); font-weight: 800; line-height: 1.2; }
-.hero-date { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); }
-
-.tq-3so { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.hero-greet { font-size: calc(18px * var(--font-scale)); font-weight: 900; color: var(--text); }
+.hero-date { font-size: calc(12.5px * var(--font-scale)); color: var(--text-muted); }
+.tq-3so { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .tq-o {
-  min-height: 64px; padding: 10px 12px; display: flex; flex-direction: column;
-  justify-content: center; background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--card-radius); cursor: pointer; transition: transform 0.1s, border-color 0.15s;
+  background: var(--bg-sub); border: 1px solid var(--border);
+  border-radius: var(--card-radius); padding: 12px 8px; text-align: center;
 }
-.tq-o:hover { border-color: var(--primary); }
-.tq-o:active { transform: scale(0.97); }
-.tq-so { font-size: calc(22px * var(--font-scale)); font-weight: 800; line-height: 1.1; }
-.tq-nhan { font-size: calc(12px * var(--font-scale)); color: var(--text-muted); margin-top: 4px; overflow-wrap: anywhere; }
-@media (max-width: 360px) {
-  .tq-3so { gap: 6px; }
-  .tq-o { padding: 8px; }
-  .tq-so { font-size: calc(19px * var(--font-scale)); }
-}
+.tq-so { font-size: calc(20px * var(--font-scale)); font-weight: 900; line-height: 1.1; margin-bottom: 4px; }
+.tq-nhan { font-size: calc(11px * var(--font-scale)); color: var(--text-muted); font-weight: 600; }
 
-/* ==========================================================================
-   6. CÁC NÚT (VÙNG BẤM >= 44px)
-   ========================================================================== */
 .btn-primary {
-  width: 100%; min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; border: none; border-radius: var(--btn-radius);
-  background: var(--primary); color: var(--on-primary); font: inherit;
-  font-size: calc(15px * var(--font-scale)); font-weight: 800; cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); transition: transform 0.1s;
+  width: 100%; min-height: 44px; border-radius: var(--btn-radius);
+  background: var(--primary); color: var(--on-primary); border: none;
+  font-weight: 700; font-size: calc(14px * var(--font-scale));
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 2px 8px var(--primary-soft); transition: background 0.15s;
 }
 .btn-primary:hover { background: var(--primary-hover); }
-.btn-primary:active { transform: scale(0.98); }
+
 .btn-secondary {
-  min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center;
-  gap: 6px; border: 1px solid var(--border); border-radius: var(--btn-radius);
-  background: var(--card); color: var(--text); font: inherit;
-  font-size: calc(14px * var(--font-scale)); font-weight: 700; cursor: pointer;
+  min-height: 42px; border-radius: var(--btn-radius);
+  background: var(--card); color: var(--text); border: 1px solid var(--border);
+  font-weight: 700; font-size: calc(13px * var(--font-scale)); padding: 0 14px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;
 }
-.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-.nut-chu {
-  min-height: 44px; padding: 0 4px; border: none; background: none;
-  color: var(--primary); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer;
-}
-.nut-rong {
-  width: 100%; min-height: 44px; margin-top: 10px; border: 1px dashed var(--primary);
-  border-radius: 8px; background: none; color: var(--primary); font: inherit; font-weight: 700; cursor: pointer;
-}
-.nut-do { color: var(--c-red) !important; border-color: var(--c-red) !important; }
-.hang-nut { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-.hang-nut > * { flex: 1 1 140px; }
+.btn-secondary:hover { background: var(--bg-sub); }
 
-/* ==========================================================================
-   7. THẺ, DANH SÁCH & KHỐI GẬP
-   ========================================================================== */
 .the {
-  padding: 14px; margin-bottom: 12px; background: var(--card);
-  border: 1px solid var(--border); border-radius: var(--card-radius); box-shadow: var(--shadow);
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--card-radius); padding: 16px; margin-bottom: 16px;
+  box-shadow: var(--shadow);
 }
-.the.form-the { border-color: var(--primary); }
-.hn-tieu {
-  display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
-  margin: 18px 4px 8px; font-size: calc(14px * var(--font-scale)); font-weight: 700;
-  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;
+.the-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; gap: 8px; flex-wrap: wrap;
 }
-.hn-list { display: flex; flex-direction: column; gap: 8px; }
-.hn-dong {
-  min-height: 60px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--card-radius);
-  box-shadow: var(--shadow); cursor: pointer; color: inherit; text-decoration: none;
-  transition: transform 0.1s, border-color 0.15s;
-}
-.hn-dong:hover { border-color: var(--primary); }
-.hn-dong:active { transform: scale(0.99); }
-.dong-icon {
-  width: 40px; height: 40px; min-width: 40px; border-radius: 11px;
-  background: var(--primary-soft); color: var(--primary); display: flex;
-  align-items: center; justify-content: center; font-size: 19px;
-}
-.dong-content { flex: 1; min-width: 0; }
-.dong-title {
-  font-size: calc(15px * var(--font-scale)); font-weight: 700;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.dong-sub {
-  font-size: calc(13px * var(--font-scale)); color: var(--text-muted);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.dong-meta { display: flex; align-items: center; gap: 8px; }
-.dong-arrow { color: var(--text-muted); font-size: 18px; font-weight: 700; }
-.chi-tiet-dong {
-  margin: -2px 0 8px; padding: 12px 14px; background: var(--card);
-  border: 1px dashed var(--border); border-radius: 12px; font-size: calc(14px * var(--font-scale));
-}
-.hang-tru {
-  display: flex; justify-content: space-between; align-items: center; gap: 10px;
-  padding: 8px 0; border-bottom: 1px solid var(--border-soft); font-size: calc(14px * var(--font-scale));
-}
-.hang-tru:last-child { border-bottom: none; }
-.chu-phu { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); }
-.trong { text-align: center; color: var(--text-muted); padding: 24px 8px; }
-
-details.tq-gon {
-  margin-bottom: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-}
-details.tq-gon > summary {
-  min-height: 48px; padding: 8px 14px; display: flex; align-items: center;
-  justify-content: space-between; gap: 8px; list-style: none; cursor: pointer; font-weight: 700;
-}
-details.tq-gon > summary::-webkit-details-marker { display: none; }
-details.tq-gon > summary::after { content: '▸'; color: var(--text-muted); transition: transform 0.15s; }
-details.tq-gon[open] > summary { border-bottom: 1px solid var(--border-soft); }
-details.tq-gon[open] > summary::after { transform: rotate(90deg); }
-details.tq-gon .tom-tat { margin-left: auto; color: var(--text-muted); font-weight: 600; font-size: 13px; }
-details.tq-gon[open] .tom-tat { display: none; }
-details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
-
-/* ==========================================================================
-   8. BADGE, TAB, Ô LỌC, TIẾN ĐỘ, Ô NHẬP (PHONE 16px)
-   ========================================================================== */
+.the-title { font-size: calc(15px * var(--font-scale)); font-weight: 800; color: var(--text); }
 .badge {
-  display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px;
-  font-size: calc(13px * var(--font-scale)); font-weight: 700; white-space: nowrap;
+  font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px;
 }
-.badge.do { background: var(--c-red-soft); color: var(--c-red); }
-.badge.vang { background: var(--c-yellow-soft); color: var(--c-yellow); }
-.badge.xanh { background: var(--c-green-soft); color: var(--c-green); }
-.badge.xam { background: var(--c-gray-soft); color: var(--c-gray); }
-.badge.xanhduong { background: var(--c-blue-soft); color: var(--c-blue); }
+.badge-success { background: var(--c-green-soft); color: var(--c-green); }
+.badge-warning { background: var(--c-yellow-soft); color: var(--c-yellow); }
+.badge-info { background: var(--c-blue-soft); color: var(--c-blue); }
 
-.hang-tab { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 10px 0 12px; }
-.hang-tab::-webkit-scrollbar { display: none; }
-.tab-nut {
-  flex: 0 0 auto; min-height: 44px; padding: 0 14px; border-radius: 22px;
-  border: 1px solid var(--border); background: var(--card); color: var(--text);
-  font: inherit; font-weight: 700; cursor: pointer;
-}
-.tab-nut.dang-chon { background: var(--primary); border-color: var(--primary); color: #fff; }
-
-.nhan-o { display: block; margin: 10px 0 4px; font-size: calc(14px * var(--font-scale)); font-weight: 600; }
-.form-input {
-  width: 100%; min-height: 44px; padding: 10px 14px; border: 1px solid var(--border);
-  border-radius: var(--btn-radius); background: var(--bg); color: var(--text);
-  font: inherit; font-size: calc(14px * var(--font-scale));
-}
-.form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-@media (max-width: 767px) {
-  .form-input { font-size: 16px; } /* iPhone cấm zoom tự động */
-}
-
-/* ==========================================================================
-   9. BẢNG DỮ LIỆU ĐÁP ỨNG (CẤM CUỘN NGANG BODY)
-   ========================================================================== */
-.table-wrap {
+/* BẢNG BIỂU CUỘN CHỐNG TRÀN */
+.bang-cuon {
   width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
   margin: 10px 0; border: 1px solid var(--border); border-radius: 12px;
 }
-.bang-chuan { width: 100%; border-collapse: collapse; font-size: calc(13.5px * var(--font-scale)); }
-.bang-chuan th {
-  background: var(--border-soft); color: var(--text); font-weight: 800;
-  text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap;
-}
-.bang-chuan td {
-  padding: 10px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top;
-}
-.bang-chuan tr:last-child td { border-bottom: none; }
+table { width: 100%; border-collapse: collapse; font-size: calc(13px * var(--font-scale)); text-align: left; }
+th { background: var(--bg-sub); padding: 10px 12px; font-weight: 800; border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg-sub); }
 
-/* ==========================================================================
-   10. TOAST & MODAL SHEET (CÀI ĐẶT / EDIT MODE)
-   ========================================================================== */
-.toast-container {
-  position: fixed; top: 14px; left: var(--rail-w); right: 14px; max-width: 500px;
-  margin: 0 auto; z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+/* BỘ LỌC BÀI TẬP (EXERCISE SEGMENTED CHIPS) */
+.ex-filter-bar {
+  display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px;
+  -webkit-overflow-scrolling: touch; margin-bottom: 12px;
+}
+.ex-chip {
+  padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); font-weight: 700;
+  font-size: calc(12.5px * var(--font-scale)); white-space: nowrap; cursor: pointer;
+  transition: all 0.15s;
+}
+.ex-chip:hover, .ex-chip.active {
+  background: var(--primary); color: #fff; border-color: var(--primary);
+  box-shadow: 0 2px 8px var(--primary-soft);
+}
+
+/* TOAST THÔNG BÁO HOÀN TÁC 6S */
+.toast-box {
+  position: fixed; bottom: calc(var(--nav-height) + var(--safe-bottom) + 12px);
+  left: 50%; transform: translateX(-50%); z-index: 300;
+  display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+  width: calc(100% - 32px); max-width: 420px;
 }
 .toast {
-  pointer-events: auto; position: relative; overflow: hidden; display: flex;
-  align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px;
-  background: var(--card); color: var(--text); border: 1px solid var(--border);
-  border-left: 5px solid var(--primary); border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); font-size: calc(14px * var(--font-scale));
-  animation: tTruot 0.2s ease-out;
+  background: #0f172a; color: #fff; border-radius: 12px; padding: 12px 16px;
+  font-size: 13.5px; font-weight: 600; display: flex; align-items: center;
+  justify-content: space-between; gap: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  pointer-events: auto; animation: slideUp 0.25s ease; position: relative; overflow: hidden;
 }
-.toast-success { border-left-color: var(--c-green); }
-.toast-info { border-left-color: var(--c-blue); }
-.toast-warn { border-left-color: var(--c-yellow); }
-.toast-error { border-left-color: var(--c-red); }
 .toast-btn {
-  min-height: 44px; border: none; background: none; color: var(--primary);
-  font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer;
+  background: #38bdf8; color: #0f172a; border: none; border-radius: 6px;
+  padding: 4px 10px; font-weight: 800; font-size: 12px; cursor: pointer; flex-shrink: 0;
 }
 .toast-bar {
-  position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
-  background: var(--primary); animation: tDem 6s linear forwards;
+  position: absolute; left: 0; bottom: 0; height: 3px; background: #38bdf8;
+  width: 100%; animation: shrink 6s linear forwards;
 }
-@keyframes tTruot { from { transform: translateY(-20px); opacity: 0; } to { transform: none; opacity: 1; } }
-@keyframes tDem { from { width: 100%; } to { width: 0; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes shrink { from { width: 100%; } to { width: 0%; } }
 
-#thanhCho { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--primary); z-index: 400; }
-#thanhCho.chay { width: 100%; animation: tCho 1.2s ease-in-out infinite; }
-@keyframes tCho { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
-
+/* MODAL CÀI ĐẶT */
 .modal-overlay {
-  position: fixed; inset: 0; z-index: 200; display: flex; align-items: flex-end; justify-content: center;
-  background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none;
-  transition: opacity 0.2s;
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px); z-index: 280; display: none;
+  align-items: center; justify-content: center; padding: 16px;
 }
-.modal-overlay.open { opacity: 1; pointer-events: auto; }
-.modal-sheet {
-  width: 100%; max-width: 600px; max-height: 85vh; overflow-y: auto; padding: 20px;
-  background: var(--card); border-radius: 20px 20px 0 0; transform: translateY(100%);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--card); border-radius: var(--card-radius);
+  width: 100%; max-width: 440px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex; flex-direction: column; gap: 16px; max-height: 85vh; overflow-y: auto;
 }
-.modal-overlay.open .modal-sheet { transform: none; }
+.modal-head { display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-size: 16px; font-weight: 800; }
 
+/* VIEW PANE DISPLAY CONTROL */
+.view-pane { display: block; animation: fadeIn 0.2s ease; }
+.view-pane[hidden] { display: none; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* EDITABLE HIGHLIGHT */
 [contenteditable="true"] {
-  outline: 2px dashed var(--primary); outline-offset: 4px;
-  background: var(--primary-soft); border-radius: 4px; padding: 2px 6px;
+  outline: 2px dashed var(--accent); outline-offset: 3px;
+  background: var(--primary-soft); border-radius: 4px; padding: 2px 4px;
 }
   </style>
 </head>
 <body>
-  <div id="thanhCho"></div>
 
-  <!-- 1. TOP HEADER (56px) -->
+  <!-- 1. HEADER (56px) -->
   <header class="topbar">
-    <a class="topbar-brand" href="#overview" onclick="switchView('overview'); return false;">
-      <div class="topbar-logo">TVM</div>
-      <div>
-        <div class="topbar-title">FMFT AIOS PORTAL <span class="header-status-pill live">Live v2.6</span></div>
-        <div class="topbar-sub">Nhóm 8 · PKĐK Thanh Vũ Medic Cà Mau</div>
-      </div>
-    </a>
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <button class="btn-icon" onclick="toggleEditQuick()" id="btn-lock-icon" aria-label="Khóa / Mở chỉnh sửa" title="Chế độ Quản trị">🔒</button>
-      <button class="btn-icon" onclick="openSettings()" aria-label="Cài đặt giao diện" title="Cài đặt">⚙️</button>
+    <div class="topbar-left">
+      <button class="btn-icon" onclick="openDrawer()" aria-label="Mở Menu Mép Trái" title="Danh mục tác vụ">☰</button>
+      <a class="topbar-brand" href="#overview" onclick="switchView('overview'); return false;">
+        <div class="topbar-logo">TVM</div>
+        <div>
+          <div class="topbar-title">FMFT AIOS PORTAL <span class="header-status-pill live">Live v2.7</span></div>
+          <div class="topbar-sub">Nhóm 8 · PKĐK Thanh Vũ Medic Cà Mau</div>
+        </div>
+      </a>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-icon" onclick="toggleEditQuick()" id="btn-lock-icon" aria-label="Chế độ chỉnh sửa" title="Chế độ chỉnh sửa">🔒</button>
+      <button class="btn-icon" onclick="openSettings()" aria-label="Cài đặt" title="Cài đặt giao diện">⚙️</button>
     </div>
   </header>
 
-  <!-- 2. THANH TRÁI (RAIL 56px / BUNG 248px) -->
-  <nav class="rail" id="rail" aria-label="Danh mục tác vụ">
-    <button class="rail-nut" onclick="toggleRail()" aria-label="Mở rộng danh mục">»</button>
-    
-    <div class="rail-nhom">BÀI TẬP FMFT</div>
-    <button class="rail-muc dang-chon" id="rm-overview" onclick="switchView('overview')">
-      <span class="rail-icon">🏠</span><span class="rail-ten">Tổng quan & Nhóm 8</span>
-    </button>
-    <button class="rail-muc" id="rm-session1" onclick="switchView('session1')">
-      <span class="rail-icon">📄</span><span class="rail-ten">Buổi 1: Phiếu M01</span>
-    </button>
-    <button class="rail-muc" id="rm-session2" onclick="switchView('session2')">
-      <span class="rail-icon">🗺️</span><span class="rail-ten">Buổi 2: VSM & RACI</span>
-    </button>
-    <button class="rail-muc" id="rm-session3" onclick="switchView('session3')">
-      <span class="rail-icon">🎯</span><span class="rail-ten">Buổi 3: KPI & RCA</span>
-    </button>
+  <!-- 2. MẤU KÉO MÉP TRÁI (EDGE HANDLE) -->
+  <button class="edge-handle" onclick="openDrawer()" title="Bấm mở Menu Mép Trái">›</button>
 
-    <div class="rail-nhom">TRI THỨC & GÓP Ý</div>
-    <button class="rail-muc" id="rm-feedback" onclick="switchView('feedback')">
-      <span class="rail-icon">💬</span><span class="rail-ten">Góp ý & Media bài giảng</span>
-    </button>
-
-    <div class="rail-chan">
-      <button class="rail-muc" onclick="openSettings()">
-        <span class="rail-icon">⚙️</span><span class="rail-ten">Cài đặt giao diện</span>
-      </button>
+  <!-- 3. LEFT DRAWER (MÉP TRÁI CHUẨN SHIN AIOS) -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+  <aside class="left-drawer" id="leftDrawer" aria-label="Menu Mép Trái Decagon">
+    <div class="drawer-head">
+      <div>
+        <div class="drawer-title">FMFT AIOS / NHÓM 8</div>
+        <div class="drawer-sub">Hệ Thống Y Tế Thanh Vũ Medic</div>
+      </div>
+      <button class="btn-icon" onclick="closeDrawer()" style="border:none; background:transparent;">✕</button>
     </div>
-  </nav>
 
-  <!-- 3. NỘI DUNG CUỘN Ở GIỮA -->
+    <div class="drawer-body">
+      <div>
+        <div class="drawer-group-title">ĐIỀU HƯỚNG CHÍNH</div>
+        <button class="drawer-item active" id="dm-overview" onclick="switchView('overview'); closeDrawer();">
+          <span class="drawer-icon">🏠</span>
+          <span>Hôm Nay / Tổng Quan</span>
+          <span class="drawer-badge">Lớp học</span>
+        </button>
+        <button class="drawer-item" id="dm-exercises" onclick="switchView('exercises'); closeDrawer();">
+          <span class="drawer-icon">📝</span>
+          <span>Kho Bài Tập Thực Hành</span>
+          <span class="drawer-badge" style="background:var(--primary); color:#fff;">Tách riêng</span>
+        </button>
+        <button class="drawer-item" id="dm-library" onclick="switchView('library'); closeDrawer();">
+          <span class="drawer-icon">📚</span>
+          <span>Tài Liệu & Hướng Dẫn M3&M4</span>
+          <span class="drawer-badge">Mới</span>
+        </button>
+        <button class="drawer-item" id="dm-media" onclick="switchView('media'); closeDrawer();">
+          <span class="drawer-icon">🎧</span>
+          <span>Kho Media Bài Giảng</span>
+          <span class="drawer-badge">4 Tệp</span>
+        </button>
+        <button class="drawer-item" id="dm-feedback" onclick="switchView('feedback'); closeDrawer();">
+          <span class="drawer-icon">💬</span>
+          <span>Góp Ý & Phản Biện</span>
+        </button>
+      </div>
+
+      <div>
+        <div class="drawer-group-title">NHẢY NHANH BÀI TẬP</div>
+        <button class="drawer-item" onclick="switchView('exercises'); filterExercise('b1'); closeDrawer();">
+          <span class="drawer-icon">📄</span>
+          <span>Buổi 1: Phiếu M01</span>
+        </button>
+        <button class="drawer-item" onclick="switchView('exercises'); filterExercise('b2'); closeDrawer();">
+          <span class="drawer-icon">🗺️</span>
+          <span>Buổi 2: VSM & RACI (M02-M03)</span>
+        </button>
+        <button class="drawer-item" onclick="switchView('exercises'); filterExercise('b3'); closeDrawer();">
+          <span class="drawer-icon">🎯</span>
+          <span>Buổi 3: KPI & RCA (M04-M06)</span>
+        </button>
+        <button class="drawer-item" onclick="switchView('exercises'); filterExercise('b4'); closeDrawer();">
+          <span class="drawer-icon">🚀</span>
+          <span>Buổi 4: KSEQ & LSE (M07-M08)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="drawer-foot">
+      <button class="btn-secondary" style="flex:1;" onclick="openSettings(); closeDrawer();">⚙️ Cài Đặt</button>
+      <button class="btn-secondary" style="flex:1;" onclick="window.print()">🖨️ In PDF</button>
+    </div>
+  </aside>
+
+  <!-- 4. KHUNG CHỨA NỘI DUNG CUỘN CHÍNH (CĂN GIỮA) -->
   <main class="noi-dung">
 
     <!-- ============================================================== -->
-    <!-- MÀN 1: TỔNG QUAN & PHÂN NHÓM 8                                  -->
+    <!-- MÀN 1: TỔNG QUAN & LỊCH HỌC 5 BUỔI                              -->
     <!-- ============================================================== -->
     <div id="view-overview" class="view-pane">
-      <div class="page-header">
-        <div>
-          <div class="page-title">🏠 Quản Trị Khóa Học FMFT AIOS/LSE</div>
-          <div class="page-sub">Hệ thống Y tế Thanh Vũ Medic – Đại diện Cơ sở 3 Cà Mau (Nhóm 8)</div>
-        </div>
-        <button class="btn-icon nhat" onclick="location.reload()" aria-label="Làm mới">↻</button>
-      </div>
-
-      <!-- HERO 1 -->
       <section class="hn-hero">
         <div>
-          <div class="hero-greet">Chào anh Tâm & Nhóm 8 👋</div>
-          <div class="hero-date">📅 T7, 31/10/2026 · Giảng viên: TS. Đoàn Hùng Dũng (FMFT Institute)</div>
-        </div>
-        <div class="tq-3so">
-          <div class="tq-o" onclick="switchView('session1')">
-            <div class="tq-so" style="color:var(--c-blue)">15</div>
-            <div class="tq-nhan">Thành viên (12 CS3 + 3 CS2)</div>
-          </div>
-          <div class="tq-o" onclick="switchView('session2')">
-            <div class="tq-so" style="color:var(--c-yellow)">550</div>
-            <div class="tq-nhan">Lượt khám TB/ngày (CS3)</div>
-          </div>
-          <div class="tq-o" onclick="switchView('session3')">
-            <div class="tq-so" style="color:var(--c-green)">≤ 15p</div>
-            <div class="tq-nhan">W Mục tiêu (Hiện trạng 45p)</div>
-          </div>
-        </div>
-        <button class="btn-primary" onclick="switchView('session2')">
-          ⚡ Xem Bản Đồ Chuỗi Giá Trị Ngoại Trú (M02) & RACI (M03)
-        </button>
-      </section>
-
-      <!-- DANH SÁCH 15 NHÂN SỰ NHÓM 8 -->
-      <div class="hn-tieu">
-        <span>DANH SÁCH 15 THÀNH VIÊN NHÓM 8 (BGĐ DUYỆT)</span>
-        <span class="badge xanh">12 Cơ sở 3 + 3 Cơ sở 2</span>
-      </div>
-
-      <div class="hn-list" id="list-thanhvien">
-        <!-- Sẽ được nạp động từ JS -->
-      </div>
-
-      <!-- KHỐI GẬP QUI ƯỚC -->
-      <details class="tq-gon" style="margin-top:16px;">
-        <summary>
-          <span>ⓘ Nguyên Tắc Bất Biến & Ranh Giới Chuyên Môn Y Khoa</span>
-          <span class="tom-tat">Đọc quy chế</span>
-        </summary>
-        <div class="chu-phu" style="line-height:1.6;">
-          <p><strong>1. Tối thượng:</strong> Tuyệt đối không can thiệp chỉ định chuyên môn; chỉ tối ưu hóa quy trình bàn giao, luồng người bệnh và KPI.</p>
-          <p style="margin-top:6px;"><strong>2. Dữ liệu thực chứng (Data-driven):</strong> Mọi phân tích dựa trên nhật ký thời gian thực (log LIS/PACS/HIS), không cảm tính.</p>
-          <p style="margin-top:6px;"><strong>3. Lean Healthcare:</strong> Coi thời gian chờ đợi vô ích là lãng phí lớn nhất cần triệt tiêu.</p>
-        </div>
-      </details>
-    </div>
-
-    <!-- ============================================================== -->
-    <!-- MÀN 2: BUỔI 1 – M01 XÁC ĐỊNH VẤN ĐỀ                             -->
-    <!-- ============================================================== -->
-    <div id="view-session1" class="view-pane" hidden>
-      <div class="page-header">
-        <div>
-          <div class="page-title">📄 Buổi 1: Phiếu M01 Xác Định Vấn Đề</div>
-          <div class="page-sub">Chuyên đề 1 & 2 · Tư duy hệ thống & Nhận diện lãng phí</div>
-        </div>
-        <button class="btn-icon nhat" onclick="copyM01()" aria-label="Copy M01">📋</button>
-      </div>
-
-      <!-- HERO 2 -->
-      <section class="hn-hero">
-        <div>
-          <div class="hero-greet">Dồn Ứ Sảnh Khám Lại Ngoại Trú Sau CLS</div>
-          <div class="hero-date">Khung giờ cao điểm: 07:30 – 09:45 sáng · Sảnh tầng trệt PKĐK Cà Mau</div>
+          <div class="hero-greet" id="heroGreeting">Chào Sếp & Anh Chị Em Nhóm 8!</div>
+          <div class="hero-date">Khóa Đào Tạo Quản Trị Bệnh Viện FMFT AIOS/LSE · TS. Đoàn Hùng Dũng</div>
         </div>
         <div class="tq-3so">
           <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-red)">45p</div>
-            <div class="tq-nhan">Thời gian chờ W hiện trạng</div>
+            <div class="tq-so" style="color:var(--c-green)">3 / 5</div>
+            <div class="tq-nhan">Buổi đã học</div>
           </div>
           <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-yellow)">68 %</div>
-            <div class="tq-nhan">NB tập trung trước 09:00</div>
+            <div class="tq-so" style="color:var(--primary)">100%</div>
+            <div class="tq-nhan">Bài tập hoàn tất</div>
           </div>
           <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-green)">≤ 15p</div>
-            <div class="tq-nhan">Mục tiêu Lean Flow</div>
+            <div class="tq-so" style="color:var(--c-yellow)">02/11</div>
+            <div class="tq-nhan">Buổi 4 (19h00)</div>
           </div>
         </div>
-        <button class="btn-primary" onclick="copyM01()">
-          📋 Sao Chép Nội Dung Biểu Mẫu M01 (Markdown)
+        <button class="btn-primary" onclick="switchView('exercises')">
+          📝 Mở Kho Bài Tập Thực Hành (Đã Tách Riêng)
         </button>
       </section>
 
-      <!-- 3 TẦNG DỮ LIỆU CHUẨN FMFT -->
+      <!-- TIẾN ĐỘ 5 BUỔI -->
       <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">1. Phân Định 3 Tầng Dữ Liệu Theo Chuẩn FMFT</h3>
-        
-        <div class="hang-tru">
-          <div><strong style="color:var(--c-green);">[Số Liệu Thật]</strong> Lượt khám 450–550 ca/ngày; chỉ tiêu năm 2026 C1 là 172.150 lượt (F1 = 68,8 tỷ đ); 68% NB làm CLS trước 09h sáng; 18,5% phản ánh chờ lâu (chỉ số C4 tháng 10).</div>
+        <div class="the-head">
+          <div class="the-title">📅 Lịch Trình Đào Tạo 5 Buổi Qua Webex (19h00 - 21h00)</div>
+          <span class="badge badge-info">Giảng viên: TS. Đoàn Hùng Dũng</span>
         </div>
-        <div class="hang-tru">
-          <div><strong style="color:var(--c-blue);">[Số Giả Định]</strong> Thời gian chờ từ lúc xong CLS đến lúc khám lại dao động 35–55 phút (chiếm 30–35% tổng lưu viện TAT 135–160 phút). Độ lệch bàn giao đo ngẫu nhiên: 15–65 phút.</div>
-        </div>
-        <div class="hang-tru">
-          <div><strong style="color:var(--c-yellow);">[Chưa Có Dữ Liệu - Vùng Mù]</strong> HIS chưa có mốc ghi nhận thời điểm "Người bệnh cầm kết quả giấy quay lại nộp cho Điều dưỡng buồng khám"; chưa phân tách tự động thời gian chờ do Labo vs do NB chưa biết vào.</div>
-        </div>
-      </div>
-
-      <!-- BẢNG 3 GIẢ THUYẾT NGUYÊN NHÂN -->
-      <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">2. Bảng 3 Giả Thuyết Nguyên Nhân Gốc Rễ</h3>
-        <div class="table-wrap">
-          <table class="bang-chuan">
+        <div class="bang-cuon">
+          <table>
             <thead>
               <tr>
-                <th>Giả thuyết nguyên nhân</th>
-                <th>Dữ liệu / Phương thức kiểm chứng</th>
-                <th>Người & Hạn xác minh</th>
+                <th>Buổi</th>
+                <th>Lịch học</th>
+                <th>Chuyên đề trọng tâm</th>
+                <th>Sản phẩm / Biểu mẫu</th>
+                <th>Trạng thái</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>1. Trả kết quả gom lô (Batch Processing)</strong><br/><span class="chu-phu">Labo/CĐHA gom mẻ in trả hàng loạt thay vì trả liên tục làm NB đổ dồn cùng lúc.</span></td>
-                <td>Trích xuất log duyệt LIS/PACS từng block 15p (07h–10h); vẽ biểu đồ phân bố giờ trả kết quả thực tế.</td>
-                <td><strong>Lê Minh Mẫn</strong> (Trưởng XN) & Mai Duy Linh<br/><span class="badge vang">05/11/2026</span></td>
+                <td><strong>Buổi 1</strong></td>
+                <td>26/10/2026</td>
+                <td>CĐ 1: Tư duy hệ thống & Căn bản · CĐ 2: Cạnh tranh & Đổi mới</td>
+                <td>Phiếu M01: Vấn đề dồn ứ khám lại ngoại trú</td>
+                <td><span class="badge badge-success">Đã nộp bài</span></td>
               </tr>
               <tr>
-                <td><strong>2. Đứt gãy bàn giao (Handoff Blind Spot)</strong><br/><span class="chu-phu">Kết quả đã có trên mạng nhưng buồng khám không biết; NB cầm giấy chờ ngoài sảnh hoặc đi ăn sáng.</span></td>
-                <td>Khảo sát màn hình hàng đợi HIS; đối chiếu log có kết quả với log mở bệnh án; quan sát thực địa 30 ca.</td>
-                <td><strong>Huỳnh Tấn Kiệt</strong> (KHTH), <strong>Thanh Tâm</strong> (PTKH) & Hoàng Duy (CNTT)<br/><span class="badge vang">05/11/2026</span></td>
+                <td><strong>Buổi 2</strong></td>
+                <td>28/10/2026</td>
+                <td>CĐ 3: Chuỗi giá trị luồng PX · CĐ 4: Thiết kế hệ thống & Phân định</td>
+                <td>M02 (VSM Handoff) & M03 (RACI + DOA)</td>
+                <td><span class="badge badge-success">Hoàn thành 100%</span></td>
               </tr>
               <tr>
-                <td><strong>3. Chưa phân làn ưu tiên (Fast-track)</strong><br/><span class="chu-phu">Bệnh mạn tính ổn định chỉ cần lấy máu/cấp đơn phải xếp chung hàng với ca kỹ thuật chuyên sâu.</span></td>
-                <td>Thống kê cơ cấu mặt bệnh ngoại trú; đo thời gian khám nhóm mạn tính so với ca mới; tách buồng khám.</td>
-                <td><strong>Đào Văn Khuynh</strong> (BS Nội soi), Minh Phước & Mỹ Diện<br/><span class="badge vang">05/11/2026</span></td>
+                <td><strong>Buổi 3</strong></td>
+                <td>29/10/2026</td>
+                <td>CĐ 5: KPI & Dashboard · CĐ 6: Quản trị an toàn & Rủi ro</td>
+                <td>M04 (Rule of 7 KPI), M05 (EWS), M06 (RCA/CAPA)</td>
+                <td><span class="badge badge-success">Hoàn chỉnh 100%</span></td>
+              </tr>
+              <tr>
+                <td><strong>Buổi 4</strong></td>
+                <td><strong>02/11/2026</strong></td>
+                <td>CĐ 7: FMFT & Khung KSEQ · CĐ 8: Kiến trúc điều hành AIOS/LSE</td>
+                <td>M07 (KSEQ), M08 (LSE 8 bước), M17 (Audit SOP)</td>
+                <td><span class="badge badge-warning">Đã chuẩn bị trước</span></td>
+              </tr>
+              <tr>
+                <td><strong>Buổi 5</strong></td>
+                <td>04/11/2026</td>
+                <td>CĐ 9: Điều hành Dashboard · CĐ 10: Quản trị thay đổi & PDCA</td>
+                <td>Biểu mẫu M09, M10, M11, M19</td>
+                <td><span class="badge badge-info">Chờ học (04/11)</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- CAM KẾT CHUYÊN MÔN -->
-      <div class="the" style="border-left: 4px solid var(--c-red);">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; color:var(--c-red);">⛔ Ranh Giới An Toàn Bất Khả Xâm Phạm</h3>
-        <p class="chu-phu">Tuyệt đối không can thiệp chỉ định Bác sĩ; duy trì thời gian thăm khám lâm sàng, giải thích bệnh và tư vấn đơn thuốc tối thiểu <strong>7 – 10 phút/ca</strong>; kiểm soát 100% cảnh báo nguy kịch (Critical Value Alert).</p>
-      </div>
-    </div>
-
-    <!-- ============================================================== -->
-    <!-- MÀN 3: BUỔI 2 – CHUỖI GIÁ TRỊ VSM & RACI / DOA                  -->
-    <!-- ============================================================== -->
-    <div id="view-session2" class="view-pane" hidden>
-      <div class="page-header">
-        <div>
-          <div class="page-title">🗺️ Buổi 2: VSM & Thể Chế Quản Trị</div>
-          <div class="page-sub">Chuyên đề 3 & 4 · Dòng chảy liên tục, Ma trận RACI (1A) & Phân quyền DOA</div>
-        </div>
-        <button class="btn-icon nhat" onclick="copyM02()" aria-label="Copy M02">📋</button>
-      </div>
-
-      <!-- HERO 3 -->
-      <section class="hn-hero">
-        <div>
-          <div class="hero-greet">Chuẩn Hóa 5 Mốc Bàn Giao T0 → T4</div>
-          <div class="hero-date">Khép kín bàn giao giữa Labo Xét Nghiệm, Sảnh Chờ & Buồng Khám Bác Sĩ</div>
-        </div>
-        <div class="tq-3so">
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-green)">≤ 5p</div>
-            <div class="tq-nhan">Cam kết T2 - T1 (ĐD nhận việc)</div>
-          </div>
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-blue)">≥ 7p</div>
-            <div class="tq-nhan">Khám lâm sàng T4 (Bác sĩ)</div>
-          </div>
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-yellow)">6</div>
-            <div class="tq-nhan">Quy chuẩn xử lý ngoại lệ</div>
-          </div>
-        </div>
-        <button class="btn-primary" onclick="copyM02()">
-          📋 Sao Chép Bản Đồ VSM (M02) & Ma Trận RACI (M03)
-        </button>
-      </section>
-
-      <!-- 5 MỐC THỜI GIAN -->
+      <!-- DANH SÁCH THÀNH VIÊN NHÓM 8 (KHIÊM TỐN, ĐỒNG ĐỘI) -->
       <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Chuẩn Hóa 5 Mốc Thời Gian Luồng Khám Lại (`TV3-KB-01`)</h3>
-        <div class="hang-tru">
-          <span><strong>Mốc T0 (Sẵn sàng):</strong> Đủ 100% KQ hợp lệ trên LIS + Quét mã check-in có mặt tại sảnh.</span>
-          <span class="badge xanh">Bắt đầu</span>
+        <div class="the-head">
+          <div class="the-title">👥 Danh Sách 14 Cán Bộ Nhóm 8 (Duyệt Bởi Ban Giám Đốc)</div>
+          <span class="badge badge-success">Đại diện CS3 & CS2</span>
         </div>
-        <div class="hang-tru">
-          <span><strong>Mốc T1 (Gửi yêu cầu):</strong> Hệ thống HIS tự động phát lệnh sang buồng khám (≤ 10 giây).</span>
-          <span class="badge xanhduong">Tức thời</span>
-        </div>
-        <div class="hang-tru">
-          <span><strong>Mốc T2 (CAM KẾT):</strong> Điều dưỡng buồng khám click "Tiếp nhận" – Cam kết T2 - T1 ≤ 5 phút.</span>
-          <span class="badge vang">≤ 5 phút</span>
-        </div>
-        <div class="hang-tru">
-          <span><strong>Mốc T3 (Mời vào):</strong> Bảng điện tử sảnh gọi số tự động, hướng dẫn NB bước vào phòng.</span>
-          <span class="badge xanh">Nhịp Takt</span>
-        </div>
-        <div class="hang-tru">
-          <span><strong>Mốc T4 (Khám kết luận):</strong> Bác sĩ đối chiếu 3 định danh, thăm khám & tư vấn thuốc.</span>
-          <span class="badge xanh">≥ 7 phút</span>
-        </div>
-      </div>
-
-      <!-- SO SÁNH VSM HIỆN TRẠNG VS ĐỀ XUẤT -->
-      <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">So Sánh VSM Hiện Trạng vs Đề Xuất Lean Flow</h3>
-        <div class="hang-tru">
-          <div><span class="badge do">Hiện trạng</span> Chờ gom in giấy (15p) ➜ NB cầm giấy tìm phòng (10p) ➜ Nộp khay nằm chờ vô thức (20p) ➜ Gọi tên thủ công (10p).<br/><strong>Tổng W = 45 phút | P90 = 63 phút.</strong></div>
-        </div>
-        <div class="hang-tru">
-          <div><span class="badge xanh">Đề xuất Lean Flow</span> LIS duyệt điện tử + Quét mã sảnh T0 (1p) ➜ HIS báo buồng khám T1 (10s) ➜ ĐD click nhận việc T2 (≤5p) ➜ Bảng gọi số T3 (≤5p) ➜ Bác sĩ khám T4 (≥7p).<br/><strong>Tổng W ≤ 15 phút | P90 ≤ 25 phút (Giảm 66% thời gian chờ!).</strong></div>
-        </div>
-      </div>
-
-      <!-- RACI VÀ DOA -->
-      <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Ma Trận RACI (M03) & Thẩm Quyền DOA (M14)</h3>
-        <p class="chu-phu" style="margin-bottom:8px;">Áp dụng 4 nguyên tắc vàng FMFT: Mỗi việc chỉ đúng <strong>1 chữ A</strong>; tách nhỏ đầu việc; kiểm tra điều kiện (Thẩm quyền - Dữ liệu - Nguồn lực); phân biệt RACI với DOA.</p>
-        <div class="table-wrap">
-          <table class="bang-chuan">
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:10px;">
+          Tập thể cán bộ y tế, chuyên môn và hỗ trợ kỹ thuật phối hợp triển khai mô hình cải tiến luồng ngoại trú tại PKĐK Thanh Vũ Medic Cà Mau.
+        </p>
+        <div class="bang-cuon">
+          <table>
             <thead>
               <tr>
                 <th>STT</th>
-                <th>Đầu việc liên khoa</th>
-                <th>Người Accountable (Chữ A)</th>
-                <th>Quy chế DOA / Ranh giới</th>
+                <th>Họ và tên</th>
+                <th>Chức danh công tác</th>
+                <th>Đơn vị</th>
+                <th>Phân công trong nhóm</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Thiết lập cam kết bàn giao T1 → T2 ≤ 5p</td>
-                <td><strong>Ban Giám Đốc (A)</strong></td>
-                <td>Phê duyệt quy chế toàn viện</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Trả kết quả CLS dòng liên tục (Small batch)</td>
-                <td><strong>Lê Minh Mẫn (Trưởng XN - A)</strong></td>
-                <td>Cam kết mẻ trả ≤ 15p</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Xác lập mốc T0 (Đủ KQ + Check-in tại sảnh)</td>
-                <td><strong>Huỳnh Trường Thanh Tâm (PTKH - A)</strong></td>
-                <td>Điều phối Care Navigator</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Tiếp nhận bàn giao trên HIS trong ≤ 5p (T2)</td>
-                <td><strong>ĐD. Huỳnh Thị Nga (Khoa Khám - A)</strong></td>
-                <td>Cam kết SLA buồng khám</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Thăm khám lâm sàng, đọc KQ, tư vấn (T4 ≥ 7p)</td>
-                <td><strong>Bác sĩ Điều trị trực tiếp (A)</strong></td>
-                <td>Chuyên môn lâm sàng độc lập</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Điều phối luồng Fast-track & chuyển buồng linh hoạt</td>
-                <td><strong>Thanh Tâm & BS. Huỳnh Tấn Kiệt (A)</strong></td>
-                <td>DOA chuyển buồng tức thì khi hàng chờ ≥ 8 ca</td>
-              </tr>
+            <tbody id="dsThanhVien">
+              <!-- Render tự động qua JS -->
             </tbody>
           </table>
         </div>
@@ -856,671 +593,793 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
     </div>
 
     <!-- ============================================================== -->
-    <!-- MÀN 4: BUỔI 3 – KPI M04, EWS M05 & RCA / CAPA M06               -->
+    <!-- MÀN 2: KHO BÀI TẬP THỰC HÀNH (ĐÃ TÁCH RIÊNG ĐỘC LẬP)          -->
     <!-- ============================================================== -->
-    <div id="view-session3" class="view-pane" hidden>
-      <div class="page-header">
-        <div>
-          <div class="page-title">🎯 Buổi 3: KPI, EWS & Quản Trị Rủi Ro</div>
-          <div class="page-sub">Chuyên đề 5 & 6 · Rule of 7, Trung tâm điều hành AIOS EWS & Kế hoạch CAPA</div>
-        </div>
-        <button class="btn-icon nhat" onclick="copyM04()" aria-label="Copy M04">📋</button>
-      </div>
-
-      <!-- HERO 4 -->
+    <div id="view-exercises" class="view-pane" hidden>
+      
+      <!-- HERO BÀI TẬP -->
       <section class="hn-hero">
         <div>
-          <div class="hero-greet">Bộ 7 KPI Cân Bằng & AIOS Early Warning</div>
-          <div class="hero-date">Nguyên tắc Rule of 7: Leading (30%) · Lagging (40%) · Constraint (30%)</div>
+          <div class="hero-greet">📝 Trung Tâm Bài Tập Thực Hành Nhóm 8</div>
+          <div class="hero-date">Toàn bộ hồ sơ biểu mẫu quản trị M01 – M17 được phân tách độc lập để dễ theo dõi</div>
         </div>
-        <div class="tq-3so">
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-blue)">30%</div>
-            <div class="tq-nhan">Leading: 3 chỉ số quá trình</div>
-          </div>
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-green)">40%</div>
-            <div class="tq-nhan">Lagging: W ≤ 15p & P90 ≤ 25p</div>
-          </div>
-          <div class="tq-o">
-            <div class="tq-so" style="color:var(--c-red)">30%</div>
-            <div class="tq-nhan">Constraint: Khám ≥ 7p & 100% định danh</div>
-          </div>
+        <div class="ex-filter-bar">
+          <button class="ex-chip active" id="chip-all" onclick="filterExercise('all')">📋 Xem Toàn Bộ</button>
+          <button class="ex-chip" id="chip-b1" onclick="filterExercise('b1')">Buổi 1: M01</button>
+          <button class="ex-chip" id="chip-b2" onclick="filterExercise('b2')">Buổi 2: M02 & M03</button>
+          <button class="ex-chip" id="chip-b3" onclick="filterExercise('b3')">Buổi 3: M04, M05, M06</button>
+          <button class="ex-chip" id="chip-b4" onclick="filterExercise('b4')">Buổi 4: M07, M08 (Chuẩn bị)</button>
         </div>
-        <button class="btn-primary" onclick="copyM04()">
-          📋 Sao Chép Từ Điển 7 KPI (M04) & Kế Hoạch CAPA (M06)
-        </button>
       </section>
 
-      <!-- TỪ ĐIỂN 7 KPI -->
+      <!-- KHỐI BÀI TẬP BUỔI 1 -->
+      <div class="ex-section" id="sec-b1">
+        <div class="the">
+          <div class="the-head">
+            <div>
+              <div class="the-title">📄 BUỔI 1: BIỂU MẪU M01 – PHIẾU XÁC ĐỊNH VẤN ĐỀ</div>
+              <div style="font-size:12px; color:var(--text-muted);">Chuyên đề 1 & 2 · Vấn đề dồn ứ sảnh khám lại ngoại trú sau CLS</div>
+            </div>
+            <span class="badge badge-success">Đã nộp bài chính thức</span>
+          </div>
+
+          <div style="background:var(--bg-sub); padding:12px; border-radius:10px; margin-bottom:12px; font-size:13px;">
+            <strong>Mô tả hiện trạng:</strong> Tại PKĐK Cà Mau, khung giờ 07:30 – 09:45 tập trung 68% người bệnh làm CLS. Thời gian chờ khám lại trung bình lên tới 45 phút do nghẽn luồng trả kết quả giấy và thiếu cơ chế bàn giao 2 chiều.
+          </div>
+
+          <div class="bang-cuon">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tầng dữ liệu</th>
+                  <th>Nội dung minh chứng</th>
+                  <th>Phương pháp kiểm chứng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Số liệu thật</strong></td>
+                  <td>450–550 ca/ngày; F1 kế hoạch 68,8 tỷ đ; 18.5% phản ánh chờ lâu; thời gian chờ P90 = 48 phút.</td>
+                  <td>Trích xuất trực tiếp từ HIS & LIS</td>
+                </tr>
+                <tr>
+                  <td><strong>Dữ liệu phân tích</strong></td>
+                  <td>Nút thắt xuất hiện từ khâu in kết quả giấy thủ công ra bàn sảnh; Bác sĩ buồng khám không biết bệnh nhân đã có đủ kết quả.</td>
+                  <td>Bấm giờ chụp ảnh luồng VSM</td>
+                </tr>
+                <tr>
+                  <td><strong>Tri thức áp dụng</strong></td>
+                  <td>Động cơ Lean LSE: Bàn giao dòng liên tục (Continuous Flow), cam kết xác nhận T2 - T1 ≤ 5 phút.</td>
+                  <td>Khung FMFT AIOS của Thầy Dũng</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHỐI BÀI TẬP BUỔI 2 -->
+      <div class="ex-section" id="sec-b2">
+        <div class="the">
+          <div class="the-head">
+            <div>
+              <div class="the-title">🗺️ BUỔI 2: M02 BẢN ĐỒ VSM & M03 MA TRẬN RACI + DOA</div>
+              <div style="font-size:12px; color:var(--text-muted);">Chuyên đề 3 & 4 · Chuỗi giá trị, quy tắc bàn giao T0->T4 và phân định trách nhiệm</div>
+            </div>
+            <span class="badge badge-success">Hoàn thành 100%</span>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; margin-bottom:6px;">1. Chuỗi Thời Gian Bàn Giao Ngoại Trú (T0 -> T4):</div>
+          <div class="bang-cuon">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mốc</th>
+                  <th>Thời điểm ghi nhận</th>
+                  <th>Người thực hiện</th>
+                  <th>Cam kết thời gian</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>T0</strong></td>
+                  <td>Người bệnh quay lại sảnh sau khi lấy máu/siêu âm</td>
+                  <td>Phòng PTKH hướng dẫn tại sảnh</td>
+                  <td>Thời gian thực qua mã vạch</td>
+                </tr>
+                <tr>
+                  <td><strong>T1</strong></td>
+                  <td>Labo hoàn tất và duyệt kết quả trên hệ thống</td>
+                  <td>KTV Trưởng Xét nghiệm</td>
+                  <td>Theo đợt ≤ 15 phút</td>
+                </tr>
+                <tr>
+                  <td><strong>T2</strong></td>
+                  <td>Điều dưỡng buồng khám bấm xác nhận tiếp nhận</td>
+                  <td>ĐD. Huỳnh Thị Nga</td>
+                  <td><strong>T2 - T1 ≤ 5 phút</strong> (Cam kết cốt lõi)</td>
+                </tr>
+                <tr>
+                  <td><strong>T3</strong></td>
+                  <td>Hệ thống gọi số mời người bệnh vào buồng khám</td>
+                  <td>Màn hình loa gọi tự động</td>
+                  <td>Chờ ≤ 5 phút sau T2</td>
+                </tr>
+                <tr>
+                  <td><strong>T4</strong></td>
+                  <td>Bác sĩ bắt đầu thăm khám lâm sàng & tư vấn</td>
+                  <td>BS. Buồng khám</td>
+                  <td><strong>Khám ≥ 7 phút/ca</strong> (Ràng buộc an toàn)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; margin:14px 0 6px;">2. Phân Quyền Thẩm Quyền DOA Khẩn Cấp:</div>
+          <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:8px;">
+            Khi hàng chờ buồng khám > 10 ca hoặc thời gian chờ > 25 phút (Đèn Đỏ), Trưởng phòng KHTH (BS. Huỳnh Tấn Kiệt) có thẩm quyền ký lệnh mở ngay Buồng khám dự phòng số 4 mà không cần chờ Ban Giám Đốc phê duyệt bằng văn bản.
+          </p>
+        </div>
+      </div>
+
+      <!-- KHỐI BÀI TẬP BUỔI 3 (HOÀN CHỈNH) -->
+      <div class="ex-section" id="sec-b3">
+        <div class="the">
+          <div class="the-head">
+            <div>
+              <div class="the-title">🎯 BUỔI 3: M04 TỪ ĐIỂN KPI, M05 EWS DASHBOARD & M06 RCA/CAPA</div>
+              <div style="font-size:12px; color:var(--text-muted);">Chuyên đề 5 & 6 · Đã hoàn thiện theo tài liệu Module 3&4 của Thầy Dũng (31/10/2026)</div>
+            </div>
+            <span class="badge badge-success">Bản Hoàn Chỉnh Mới Nhất</span>
+          </div>
+
+          <!-- M04 -->
+          <div style="font-size:13px; font-weight:800; color:var(--primary); margin-bottom:6px;">
+            M04: DANH MỤC 7 CHỈ SỐ KPI ĐIỀU HÀNH LUỒNG (RULE OF 7)
+          </div>
+          <div class="bang-cuon">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã</th>
+                  <th>Tên chỉ số</th>
+                  <th>Phân loại</th>
+                  <th>Chủ sở hữu (Chữ A)</th>
+                  <th>Xanh (Đạt)</th>
+                  <th>Đỏ (Báo động)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>KPI-01</code></td>
+                  <td>Tỷ lệ xác nhận bàn giao T2 - T1 ≤ 5p</td>
+                  <td>Leading (Quá trình)</td>
+                  <td>ĐD. Huỳnh Thị Nga</td>
+                  <td>≥ 95%</td>
+                  <td>&lt; 90%</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-02</code></td>
+                  <td>Tỷ lệ trả KQ CLS dòng liên tục</td>
+                  <td>Leading (Quá trình)</td>
+                  <td>CN. Lê Minh Mẫn</td>
+                  <td>≥ 90%</td>
+                  <td>&lt; 80%</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-03</code></td>
+                  <td>Tỷ lệ định vị NB tại sảnh sau CLS (T0)</td>
+                  <td>Leading (Quá trình)</td>
+                  <td>Tạ Minh Phước (Phòng PTKH)</td>
+                  <td>≥ 98%</td>
+                  <td>&lt; 95%</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-04</code></td>
+                  <td>Thời gian chờ khám lại trung bình W</td>
+                  <td>Lagging (Kết quả)</td>
+                  <td>BS. Huỳnh Tấn Kiệt</td>
+                  <td>≤ 15 phút</td>
+                  <td>&gt; 25 phút</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-05</code></td>
+                  <td>Thời gian chờ phân vị 90 (P90)</td>
+                  <td>Lagging (Trễ đuôi)</td>
+                  <td>Tổ QLCL & KHTH</td>
+                  <td>≤ 25 phút</td>
+                  <td>&gt; 40 phút</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-06</code></td>
+                  <td>Thời gian Bác sĩ khám lâm sàng</td>
+                  <td>Constraint (Chuyên môn)</td>
+                  <td>BS. Nguyễn Văn Dũng</td>
+                  <td>≥ 7 phút</td>
+                  <td>&lt; 5 phút (Ép tốc độ)</td>
+                </tr>
+                <tr>
+                  <td><code>KPI-07</code></td>
+                  <td>Tỷ lệ tuân thủ đối chiếu 3 định danh</td>
+                  <td>Constraint (An toàn NB)</td>
+                  <td>Hồng Thị Cẩm Tú</td>
+                  <td>100%</td>
+                  <td>&lt; 98%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- M05 -->
+          <div style="font-size:13px; font-weight:800; color:var(--primary); margin:14px 0 6px;">
+            M05: ĐẶC TẢ VISUAL MANAGEMENT 3 MÀU DASHBOARD EWS
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; margin-bottom:12px;">
+            <div style="border-left:4px solid var(--c-green); background:var(--bg-sub); padding:10px; border-radius:8px;">
+              <strong style="color:var(--c-green);">🟢 XANH LÁ (Bình thường):</strong> Hàng chờ ≤ 5 ca; thời gian chờ ≤ 15 phút; nhịp vận hành chuẩn.
+            </div>
+            <div style="border-left:4px solid var(--c-yellow); background:var(--bg-sub); padding:10px; border-radius:8px;">
+              <strong style="color:var(--c-yellow);">🟡 VÀNG (Cảnh báo chú ý):</strong> Hàng chờ 6–10 ca; thời gian chờ 16–25 phút; ĐD Trưởng hỗ trợ phân luồng.
+            </div>
+            <div style="border-left:4px solid var(--c-red); background:var(--bg-sub); padding:10px; border-radius:8px;">
+              <strong style="color:var(--c-red);">🔴 ĐỎ (Báo động tắc nghẽn):</strong> Hàng chờ > 10 ca; kích hoạt DOA mở ngay buồng khám dự phòng 4.
+            </div>
+          </div>
+
+          <!-- M06 -->
+          <div style="font-size:13px; font-weight:800; color:var(--primary); margin:14px 0 6px;">
+            M06: PHÂN TÍCH RỦI RO 5 WHYS & KẾ HOẠCH CAPA 4 TUẦN
+          </div>
+          <div style="background:var(--bg-sub); padding:10px; border-radius:8px; font-size:12.5px; margin-bottom:10px;">
+            <strong>Sự cố mô phỏng:</strong> Bệnh nhân N.V.A (67 tuổi, đái tháo đường) hạ đường huyết nguy kịch (2.4 mmol/L) chờ ngoài sảnh 52 phút do thiếu quy trình bàn giao có xác nhận (Closed-loop Read-back).  
+            <br/><strong>Kế hoạch can thiệp:</strong> Kích hoạt hotline Labo gọi BS trong ≤ 2 phút; cấu hình Pop-up màn hình HIS; thành lập đội Care Navigator tuần tra sảnh.
+          </div>
+
+          <div class="hang-nut" style="margin-top:10px;">
+            <button class="btn-secondary" onclick="toast('Đã tải bộ tài liệu Buổi 3 hoàn chỉnh!', 'success')">📥 Tải Bản Hoàn Chỉnh M04-M06 (.md)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- KHỐI BÀI TẬP BUỔI 4 (CHUẨN BỊ) -->
+      <div class="ex-section" id="sec-b4">
+        <div class="the">
+          <div class="the-head">
+            <div>
+              <div class="the-title">🚀 BUỔI 4: KHUNG NĂNG LỰC KSEQ & CHU TRÌNH LSE 8 BƯỚC</div>
+              <div style="font-size:12px; color:var(--text-muted);">Chuyên đề 7 & 8 · Tài liệu chuẩn bị sẵn sàng cho tối Thứ Hai (02/11/2026)</div>
+            </div>
+            <span class="badge badge-warning">Đã chuẩn bị trước 48h</span>
+          </div>
+
+          <div style="font-size:13px; font-weight:800; color:var(--primary); margin-bottom:6px;">
+            1. M07: KHUNG NĂNG LỰC KSEQ (KNOWLEDGE - SKILLS - EXPERIENCE - QUALITY)
+          </div>
+          <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:8px;">
+            Khung chuẩn hóa năng lực cho 4 vị trí then chốt: Điều dưỡng Trưởng Khoa Khám, KTV Trưởng Labo, Bác sĩ Buồng Khám và Nhân viên Thống kê Dữ liệu. Đặt chữ <strong>Q (Phẩm chất & Đạo đức nghề nghiệp)</strong> làm chốt chặn bảo vệ sinh mệnh người bệnh.
+          </p>
+
+          <div style="font-size:13px; font-weight:800; color:var(--primary); margin:14px 0 6px;">
+            2. M08: CHU TRÌNH PHẢN ỨNG NHANH LSE 8 BƯỚC (HUMAN-IN-THE-LOOP)
+          </div>
+          <div class="bang-cuon">
+            <table>
+              <thead>
+                <tr>
+                  <th>Bước</th>
+                  <th>Tên bước</th>
+                  <th>Hành động tại PKĐK Cà Mau</th>
+                  <th>Thời gian chuẩn</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Phát hiện tín hiệu bất thường</td>
+                  <td>Máy LIS phát hiện Glycemia &lt; 3.0 mmol/L hoặc hàng chờ &gt; 10 ca</td>
+                  <td>&lt; 10 giây</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Xác thực dữ liệu</td>
+                  <td>KTV kiểm tra biểu đồ QC mẫu máu, loại trừ cảnh báo giả</td>
+                  <td>≤ 1 phút</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Phân loại cấp độ ưu tiên</td>
+                  <td>Hệ thống AIOS gắn nhãn Mã Đỏ y khoa hoặc Mã Vàng vận hành</td>
+                  <td>&lt; 5 giây</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Định tuyến người chịu trách nhiệm</td>
+                  <td>Thuật toán quét ma trận RACI, gửi đúng Bác sĩ buồng khám</td>
+                  <td>&lt; 5 giây</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Thông báo khẩn có xác nhận</td>
+                  <td>KTV gọi điện hotline + Pop-up nhấp nháy đỏ trên HIS (Read-back)</td>
+                  <td>≤ 2 phút</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Can thiệp tại hiện trường</td>
+                  <td>Tiếp cận người bệnh tại sảnh, cấp cứu hạ đường huyết, đưa vào khám ngay</td>
+                  <td>≤ 3 phút</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Xác nhận đóng cảnh báo</td>
+                  <td>Bác sĩ bấm nút xác nhận hoàn tất an toàn trên HIS</td>
+                  <td>≤ 1 phút</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Lưu vết logbook & CAPA</td>
+                  <td>Hệ thống ghi nhận timestamps, BKS KPI kiểm toán hàng tuần</td>
+                  <td>Hàng tuần</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MÀN 3: TÀI LIỆU & TRI THỨC QUẢN TRỊ (LINK TẢI TRỰC TIẾP TỪ DRIVE) -->
+    <!-- ============================================================== -->
+    <div id="view-library" class="view-pane" hidden>
+      
+      <!-- TÀI LIỆU MODULE 3 & 4 MỚI -->
       <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Từ Điển 7 Chỉ Số KPI Điều Hành (M04)</h3>
-        <div class="table-wrap">
-          <table class="bang-chuan">
+        <div class="the-head">
+          <div class="the-title">📚 Hướng Dẫn Module 3 & 4 Của TS. Đoàn Hùng Dũng (Ban Hành 31/10)</div>
+          <span class="badge badge-success">Bản Gốc 29 Trang</span>
+        </div>
+        <p style="font-size:13px; line-height:1.6; margin-bottom:12px;">
+          Tài liệu chuẩn hóa chính thức từ Thầy Dũng và FMFT Institute. Cung cấp hướng dẫn chi tiết về chuỗi giá trị bệnh viện, bản đồ luồng M02, 4 quy tắc vàng RACI (1A tối thượng), phân tách 5 khâu độc lập chống xung đột lợi ích, ma trận phân quyền DOA và 3 ca nghiên cứu điển hình.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="tai_lieu/Huong_Dan_Module_3_4_QLBV.pdf" download="Huong_Dan_Module_3_4_QLBV.pdf" class="btn-primary" style="text-decoration:none; flex:1; min-width:240px;">
+            📥 Tải Trực Tiếp Bản Gốc PDF (660 KB)
+          </a>
+        </div>
+      </div>
+
+      <!-- GIÁO TRÌNH V2 & BỘ BIỂU MẪU M01-M20 -->
+      <div class="the">
+        <div class="the-head">
+          <div class="the-title">📖 Giáo Trình Quản Trị Bệnh Viện V2.0 & Bộ Biểu Mẫu Word M01–M20</div>
+          <span class="badge badge-info">Tài Liệu Đào Tạo Cốt Lõi</span>
+        </div>
+        <p style="font-size:13px; line-height:1.6; margin-bottom:12px;">
+          Toàn bộ 60 trang giáo trình chính thức của TS. Đoàn Hùng Dũng kèm theo bộ file Word 20 biểu mẫu tác nghiệp M01 đến M20 từ Ban Quản lý lớp học để các nhóm thực hành.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px;">
+          <a href="tai_lieu/Giao_Trinh_Quan_Tri_BV_V2.pdf" download="Giao_Trinh_Quan_Tri_BV_V2.pdf" class="btn-secondary" style="text-decoration:none;">
+            📥 Tải Giáo Trình V2.0 PDF (1.16 MB)
+          </a>
+          <a href="tai_lieu/Bo_Bieu_Mau_M01_M20.docx" download="Bo_Bieu_Mau_M01_M20.docx" class="btn-secondary" style="text-decoration:none;">
+            📥 Tải Bộ 20 Biểu Mẫu M01-M20 (Word - 131 KB)
+          </a>
+        </div>
+      </div>
+
+      <!-- CÁC CHUYÊN ĐỀ & VĂN BẢN ĐÍNH KÈM -->
+      <div class="the">
+        <div class="the-head">
+          <div class="the-title">📑 Chuyên Đề Bổ Trợ & Hồ Sơ Phân Nhóm (Kho Google Drive)</div>
+          <span class="badge badge-success">Đầy Đủ 100%</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px;">
+          <a href="tai_lieu/Critical_Thinking_System_Thinking.pdf" download class="btn-secondary" style="text-decoration:none;">
+            📥 Tư Duy Phản Biện & Hệ Thống (PDF - 521 KB)
+          </a>
+          <a href="tai_lieu/5S_VSM_Lean_Healthcare.pdf" download class="btn-secondary" style="text-decoration:none;">
+            📥 5S, VSM & Lean Healthcare (PDF - 258 KB)
+          </a>
+          <a href="tai_lieu/Ke_Hoach_Dao_Tao_FMFT.pdf" download class="btn-secondary" style="text-decoration:none;">
+            📥 Kế Hoạch Đào Tạo Hệ Thống (PDF - 835 KB)
+          </a>
+          <a href="tai_lieu/Phan_Nhom_FMFT_BGD_Duyet.xlsx" download class="btn-secondary" style="text-decoration:none;">
+            📥 Bảng Phân Nhóm 15 Nhóm (Excel - 27 KB)
+          </a>
+          <a href="tai_lieu/Bai_Tap_Buoi_1_M01_Nhom_8.docx" download class="btn-secondary" style="text-decoration:none;">
+            📥 File Word M01 Đã Nộp Nhóm 8 (Word - 95 KB)
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MÀN 4: KHO MEDIA BÀI GIẢNG (AUDIO & VIDEO TỪ GOOGLE DRIVE)    -->
+    <!-- ============================================================== -->
+    <div id="view-media" class="view-pane" hidden>
+      <div class="the">
+        <div class="the-head">
+          <div class="the-title">🎧 Danh Mục 4 Tệp Media Bài Giảng (Drive & Tải Trực Tiếp)</div>
+          <span class="badge badge-info">2 Audio M4A + 2 Video Webex</span>
+        </div>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:12px;">
+          Các tệp media được đồng bộ trực tiếp từ thư mục Google Drive của Hệ thống Y tế Thanh Vũ Medic Cà Mau.
+        </p>
+        <div class="bang-cuon">
+          <table>
             <thead>
               <tr>
-                <th>Mã KPI</th>
-                <th>Tên chỉ số & Phân loại</th>
-                <th>Công thức</th>
-                <th>Chủ sở hữu (A)</th>
-                <th>Ngưỡng Đạt</th>
+                <th>Loại tệp</th>
+                <th>Tên tệp tin</th>
+                <th>Dung lượng</th>
+                <th>Thao tác truy cập</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>KPI-01</strong></td>
-                <td>Tỷ lệ bàn giao đúng hạn (Leading 10%)</td>
-                <td>(T2 - T1 ≤ 5p / Tổng T1) × 100%</td>
-                <td>ĐD. Huỳnh Thị Nga</td>
-                <td><span class="badge xanh">≥ 95%</span></td>
+                <td>🎵 Audio M4A</td>
+                <td><strong>Buổi 1: Module 1 & 2</strong><br/><small style="color:var(--text-muted);">FMFT-QUAN TRI BENH VIEN (m1-m2).m4a</small></td>
+                <td>25.7 MB</td>
+                <td>
+                  <a href="file:///D:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/Thanh%20V%C5%A9%20C%C3%A0%20Mau/KPI%20TVM%20C%C3%A0%20Mau/FMFT/FMFT-QUAN%20TRI%20BENH%20VIEN%20(m1-m2).m4a" class="btn-secondary" style="text-decoration:none; display:inline-flex; padding:4px 10px; font-size:12px;">
+                    🎧 Mở Nghe Audio
+                  </a>
+                </td>
               </tr>
               <tr>
-                <td><strong>KPI-02</strong></td>
-                <td>Tỷ lệ trả KQ CLS liên tục (Leading 10%)</td>
-                <td>(Mẻ trả ≤ 15p / Tổng mẻ) × 100%</td>
-                <td>Lê Minh Mẫn</td>
-                <td><span class="badge xanh">≥ 90%</span></td>
+                <td>🎵 Audio M4A</td>
+                <td><strong>Buổi 2: Module 3 & 4</strong><br/><small style="color:var(--text-muted);">FMFT-QUAN TRI BENH VIEN (m3-m4).m4a</small></td>
+                <td>44.8 MB</td>
+                <td>
+                  <a href="file:///D:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/Thanh%20V%C5%A9%20C%C3%A0%20Mau/KPI%20TVM%20C%C3%A0%20Mau/FMFT/FMFT-QUAN%20TRI%20BENH%20VIEN%20(m3-m4).m4a" class="btn-secondary" style="text-decoration:none; display:inline-flex; padding:4px 10px; font-size:12px;">
+                    🎧 Mở Nghe Audio
+                  </a>
+                </td>
               </tr>
               <tr>
-                <td><strong>KPI-03</strong></td>
-                <td>Tỷ lệ định vị NB tại sảnh (Leading 10%)</td>
-                <td>(Quét check-in T0 / Hoàn tất CLS) × 100%</td>
-                <td>Tạ Minh Phước</td>
-                <td><span class="badge xanh">≥ 98%</span></td>
+                <td>🎬 Video MP4</td>
+                <td><strong>Video Webex Buổi 1</strong><br/><small style="color:var(--text-muted);">Quản trị Bệnh viện.mp4</small></td>
+                <td>957.4 MB</td>
+                <td>
+                  <a href="file:///D:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/Thanh%20V%C5%A9%20C%C3%A0%20Mau/KPI%20TVM%20C%C3%A0%20Mau/FMFT/Qu%E1%BA%A3n%20tr%E1%BB%8B%20B%E1%BB%87nh%20vi%E1%BB%87n.mp4" class="btn-secondary" style="text-decoration:none; display:inline-flex; padding:4px 10px; font-size:12px;">
+                    🎬 Mở Xem Video
+                  </a>
+                </td>
               </tr>
               <tr>
-                <td><strong>KPI-04</strong></td>
-                <td>Thời gian chờ trung bình W (Lagging 20%)</td>
-                <td>TB W = T4 - T0 (Phút)</td>
-                <td>BS. Huỳnh Tấn Kiệt</td>
-                <td><span class="badge xanh">≤ 15 phút</span></td>
-              </tr>
-              <tr>
-                <td><strong>KPI-05</strong></td>
-                <td>Thời gian chờ phân vị 90 P90 (Lagging 20%)</td>
-                <td>Percentile 90th của W (Phút)</td>
-                <td>Huỳnh Trường Thanh Tâm</td>
-                <td><span class="badge xanh">≤ 25 phút</span></td>
-              </tr>
-              <tr>
-                <td><strong>KPI-06</strong></td>
-                <td>Thời gian BS khám lâm sàng (Constraint 15%)</td>
-                <td>Bấm giờ & log hoàn tất bệnh án</td>
-                <td>BS. CKII. Nguyễn Văn Dũng</td>
-                <td><span class="badge xanh">≥ 7 phút</span></td>
-              </tr>
-              <tr>
-                <td><strong>KPI-07</strong></td>
-                <td>Tỷ lệ đối chiếu 3 định danh (Constraint 15%)</td>
-                <td>(Đủ Tên, Tuổi, PID / Tổng ca) × 100%</td>
-                <td>Tổ Quản lý Chất lượng</td>
-                <td><span class="badge xanh">100%</span></td>
+                <td>🎬 Video MP4</td>
+                <td><strong>Video Webex Buổi 2</strong><br/><small style="color:var(--text-muted);">Quản trị Bệnh viện-20261028 1415-1.mp4</small></td>
+                <td>159.1 MB</td>
+                <td>
+                  <a href="file:///D:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/Thanh%20V%C5%A9%20C%C3%A0%20Mau/KPI%20TVM%20C%C3%A0%20Mau/FMFT/Qu%E1%BA%A3n%20tr%E1%BB%8B%20B%E1%BB%87nh%20vi%E1%BB%87n-20261028%201415-1.mp4" class="btn-secondary" style="text-decoration:none; display:inline-flex; padding:4px 10px; font-size:12px;">
+                    🎬 Mở Xem Video
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-
-      <!-- MOCKUP DASHBOARD EWS 4 BUỒNG -->
-      <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Dashboard AIOS EWS Thời Gian Thực (Visual Management)</h3>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; margin-bottom:12px;">
-          <div class="the" style="margin:0; border:2px solid var(--c-green); padding:10px;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong>Buồng Nội 1</strong>
-              <span class="badge xanh">🟢 XANH</span>
-            </div>
-            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-green);">3 ca (8p)</div>
-            <div class="chu-phu">ĐD tiếp nhận: 100%</div>
-          </div>
-
-          <div class="the" style="margin:0; border:2px solid var(--c-yellow); padding:10px;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong>Buồng Nội 2</strong>
-              <span class="badge vang">🟡 VÀNG</span>
-            </div>
-            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-yellow);">7 ca (18p)</div>
-            <div class="chu-phu">ĐD tiếp nhận: 91%</div>
-          </div>
-
-          <div class="the" style="margin:0; border:2px solid var(--c-red); padding:10px;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong>Buồng Nội 3</strong>
-              <span class="badge do">🔴 ĐỎ (TẮC)</span>
-            </div>
-            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-red);">12 ca (32p)</div>
-            <div class="chu-phu">⚠️ Kích hoạt DOA</div>
-          </div>
-
-          <div class="the" style="margin:0; border:2px solid var(--primary); padding:10px;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <strong>Fast-track</strong>
-              <span class="badge xanhduong">⚡ ƯU TIÊN</span>
-            </div>
-            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--primary);">4 ca (6p)</div>
-            <div class="chu-phu">Mạn tính ổn định</div>
-          </div>
-        </div>
-
-        <div class="canh-bao-nguon loi" style="margin:0;">
-          🚨 <strong>CẢNH BÁO NGUY KỊCH:</strong> Ca ĐTĐ hạ đường huyết 2.4 mmol/L – Đã bàn giao thẳng cấp cứu trong 1.5 phút!
-        </div>
-      </div>
-
-      <!-- RCA 5 WHYS & CAPA -->
-      <div class="the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:8px;">Phân Tích 5 Whys & Kế Hoạch CAPA (M06)</h3>
-        <p class="chu-phu" style="margin-bottom:8px;"><strong>Nguyên nhân gốc rễ:</strong> Thiếu quy trình bàn giao khép kín có xác nhận (Closed-loop handoff) và thiếu tính năng pop-up cảnh báo tự động trên HIS!</p>
-        <div class="hang-tru"><span>1. Cấp cứu & Chuyển luồng tức thì (Bánh ngọt + Xe lăn)</span><span class="badge xanh">01/11/2026</span></div>
-        <div class="hang-tru"><span>2. Cấu hình Pop-up cảnh báo đỏ tự động trên HIS buồng khám</span><span class="badge vang">08/11/2026</span></div>
-        <div class="hang-tru"><span>3. Đảo nhịp nhân sự PTKH & Care Navigator tại sảnh cao điểm</span><span class="badge xanh">03/11/2026</span></div>
-        <div class="hang-tru"><span>4. Kiểm toán tuân thủ định kỳ của Ban Kiểm Soát độc lập</span><span class="badge xanhduong">Hàng tuần</span></div>
-      </div>
     </div>
 
     <!-- ============================================================== -->
-    <!-- MÀN 5: TRI THỨC MỚI, MEDIA & GÓP Ý CÔNG KHAI                    -->
+    <!-- MÀN 5: GÓP Ý & PHẢN BIỆN CÔNG KHAI                             -->
     <!-- ============================================================== -->
     <div id="view-feedback" class="view-pane" hidden>
-      <div class="page-header">
-        <div>
-          <div class="page-title">💬 Tri Thức Mới, Media & Góp Ý</div>
-          <div class="page-sub">Hệ thống bài giảng, văn bản Module 3&4 mới và hòm thư phản biện công khai</div>
+      <div class="the">
+        <div class="the-head">
+          <div class="the-title">💬 Góp Ý & Phản Biện Mở Cho Nhóm 8</div>
+          <span class="badge badge-success">Không cần tài khoản</span>
         </div>
-        <button class="btn-icon nhat" onclick="exportFeedbackJSON()" aria-label="Tải góp ý">📥</button>
-      </div>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:12px;">
+          Mọi thành viên trong hệ thống Thanh Vũ Medic đều có thể gửi góp ý, bổ sung ý kiến thực tế để bài tập hoàn thiện hơn trước giờ lên lớp.
+        </p>
 
-      <!-- HERO 5 -->
-      <section class="hn-hero">
-        <div>
-          <div class="hero-greet">Kho Tri Thức & Góp Ý Phản Biện Mở</div>
-          <div class="hero-date">Đồng bộ tự động từ thư mục lớp học · Cập nhật ngày 31/10/2026</div>
-        </div>
-        <div class="tq-3so">
-          <div class="tq-o" onclick="openDocsDetail()">
-            <div class="tq-so" style="color:var(--c-blue)">29tr</div>
-            <div class="tq-nhan">Hướng dẫn Module 3&4 mới</div>
-          </div>
-          <div class="tq-o" onclick="openMediaDetail()">
-            <div class="tq-so" style="color:var(--c-yellow)">4</div>
-            <div class="tq-nhan">Tệp Media (2 Audio + 2 Video)</div>
-          </div>
-          <div class="tq-o" onclick="document.getElementById('fb-content').focus()">
-            <div class="tq-so" style="color:var(--c-green)" id="hero-fb-count">3</div>
-            <div class="tq-nhan">Ý kiến góp ý công khai</div>
-          </div>
-        </div>
-        <button class="btn-primary" onclick="document.getElementById('fb-content').focus()">
-          ✍️ Viết Nhận Xét / Góp Ý Cho Nhóm 8
-        </button>
-      </section>
-
-      <!-- KHỐI TÀI LIỆU MỚI MODULE 3&4 -->
-      <details class="tq-gon" id="details-docs" open>
-        <summary>
-          <span>📚 Văn Bản Mới: Hướng Dẫn Áp Dụng Module 3 & 4 (TS. Đoàn Hùng Dũng)</span>
-          <span class="tom-tat">29 trang</span>
-        </summary>
-        <div style="font-size:14px; line-height:1.6;">
-          <p><strong>Module 3:</strong> Chuỗi giá trị bệnh viện, bản đồ luồng M02, nút thắt Bottleneck, bàn giao 2 chiều có hiệu lực, và stack diagram mặt bằng.</p>
-          <p style="margin-top:6px;"><strong>Module 4:</strong> Thể chế AOP, ma trận RACI 1A, phân quyền DOA M14, phân tách 5 khâu độc lập (Segregation of Duties), nhịp điều hành và nguyên tắc đóng việc bằng bằng chứng Action Log.</p>
-          <p style="margin-top:6px;"><strong>3 Tình huống thực chiến:</strong> BV Đa khoa An Bình, Luồng Cấp cứu, và Quy trình Mua sắm vật tư y tế.</p>
-        </div>
-      </details>
-
-      <!-- KHỐI MEDIA AUDIO / VIDEO -->
-      <details class="tq-gon" id="details-media" open>
-        <summary>
-          <span>🎧 Kho Media Ghi Âm & Video Bài Giảng Webex</span>
-          <span class="tom-tat">4 tệp</span>
-        </summary>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <div class="hang-tru">
-            <div><strong>FMFT-QUAN TRI BENH VIEN (m1-m2).m4a</strong><br/><span class="chu-phu">Audio Buổi 1 (Chuyên đề 1 & 2) · 25,7 MB</span></div>
-            <span class="badge xanh">Audio</span>
-          </div>
-          <div class="hang-tru">
-            <div><strong>FMFT-QUAN TRI BENH VIEN (m3-m4).m4a</strong><br/><span class="chu-phu">Audio Buổi 2 (Chuyên đề 3 & 4) · 44,8 MB</span></div>
-            <span class="badge xanh">Audio</span>
-          </div>
-          <div class="hang-tru">
-            <div><strong>Quản trị Bệnh viện.mp4</strong><br/><span class="chu-phu">Video Webex Buổi 1 khai mạc toàn viện · 957,4 MB</span></div>
-            <span class="badge xanhduong">Video HD</span>
-          </div>
-          <div class="hang-tru">
-            <div><strong>Quản trị Bệnh viện-20261028 1415-1.mp4</strong><br/><span class="chu-phu">Video Webex Buổi 2 giải bài tập luồng bệnh · 159,1 MB</span></div>
-            <span class="badge xanhduong">Video HD</span>
-          </div>
-        </div>
-      </details>
-
-      <!-- HÒM THƯ GÓP Ý CÔNG KHAI -->
-      <div class="the form-the">
-        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Hòm Thư Đóng Góp Ý Kiến Mở Cho Nhóm 8</h3>
-        
-        <form id="form-feedback" onsubmit="guiGopY(event)">
-          <label class="nhan-o" for="fb-name">Họ và tên của bạn *</label>
-          <input type="text" id="fb-name" required placeholder="Ví dụ: BS. Huỳnh Tấn Kiệt / TS. Đoàn Hùng Dũng" class="form-input">
-
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-            <div>
-              <label class="nhan-o" for="fb-role">Khoa / Phòng</label>
-              <input type="text" id="fb-role" placeholder="Ví dụ: KHTH / Khách mời" class="form-input">
-            </div>
-            <div>
-              <label class="nhan-o" for="fb-target">Phần góp ý</label>
-              <select id="fb-target" class="form-input">
-                <option value="Toàn bộ bài nộp">Toàn bộ bài nộp</option>
-                <option value="M01 - Buổi 1">M01 - Buổi 1</option>
-                <option value="M02/M03 - Buổi 2">M02/M03 - Buổi 2</option>
-                <option value="M04/M05/M06 - Buổi 3">M04/M05/M06 - Buổi 3</option>
-              </select>
-            </div>
-          </div>
-
-          <label class="nhan-o" for="fb-rating">Đánh giá chung</label>
-          <select id="fb-rating" class="form-input">
-            <option value="5">⭐⭐⭐⭐⭐ Rất xuất sắc (5/5)</option>
-            <option value="4">⭐⭐⭐⭐ Tốt, khả thi cao (4/5)</option>
-            <option value="3">⭐⭐⭐ Khá, cần bổ sung (3/5)</option>
-            <option value="2">⭐⭐ Cần xem lại giả định (2/5)</option>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+          <input type="text" id="fb-ten" placeholder="Họ tên hoặc Bộ phận của bạn..." style="width:100%; min-height:42px; padding:0 12px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:14px;">
+          <select id="fb-muc" style="width:100%; min-height:42px; padding:0 12px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:14px;">
+            <option value="Chung">Góp ý chung toàn diện</option>
+            <option value="Buổi 1 (M01)">Buổi 1: Phiếu M01</option>
+            <option value="Buổi 2 (M02-M03)">Buổi 2: VSM & RACI/DOA</option>
+            <option value="Buổi 3 (M04-M06)">Buổi 3: KPI, EWS & RCA</option>
+            <option value="Buổi 4 (M07-M08)">Buổi 4: KSEQ & LSE</option>
           </select>
+          <textarea id="fb-noidung" rows="3" placeholder="Nội dung nhận xét, đề xuất cải tiến..." style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:14px; resize:vertical;"></textarea>
+          <button class="btn-primary" onclick="guiGopY()">Gửi Nhận Xét Góp Ý</button>
+        </div>
 
-          <label class="nhan-o" for="fb-content">Nội dung nhận xét / Phản biện *</label>
-          <textarea id="fb-content" required rows="3" placeholder="Nhập ý kiến đóng góp xây dựng bài tập cho Nhóm 8..." class="form-input" style="min-height:80px;"></textarea>
-
-          <button type="submit" class="btn-primary" style="margin-top:12px;">
-            Gửi Góp Ý Công Khai
-          </button>
-        </form>
-      </div>
-
-      <!-- DANH SÁCH GÓP Ý ĐÃ NHẬN -->
-      <div class="hn-tieu">
-        <span>Ý KIẾN PHẢN HỒI ĐÃ NHẬN</span>
-        <button class="nut-chu" onclick="exportFeedbackJSON()">Xuất JSON</button>
-      </div>
-
-      <div class="hn-list" id="feedback-list-container">
-        <!-- Render feedbacks here -->
+        <div class="the-head" style="margin-top:20px;">
+          <div class="the-title">Danh Sách Ý Kiến Đã Gửi</div>
+          <button class="btn-secondary" onclick="xuatGopY()">Xuất JSON</button>
+        </div>
+        <div id="dsGopY" style="display:flex; flex-direction:column; gap:8px;">
+          <!-- Render qua JS -->
+        </div>
       </div>
     </div>
 
   </main>
 
-  <!-- 4. THANH ĐÁY GHIM (64px - 5 NÚT CHUẨN SHIN) -->
-  <nav class="bottom-nav">
+  <!-- 5. BOTTOM NAVIGATION GHIM ĐÁY (64px - 5 NÚT CHUẨN) -->
+  <nav class="bottom-nav" aria-label="Thanh điều hướng đáy">
     <button class="nav-item active" id="bn-overview" onclick="switchView('overview')">
       <span class="nav-icon">🏠</span>
-      <span class="nav-nhan">Hôm nay</span>
+      <span>Hôm nay</span>
     </button>
-    <button class="nav-item" id="bn-session1" onclick="switchView('session1')">
-      <span class="nav-icon">📄</span>
-      <span class="nav-nhan">Buổi 1</span>
+    <button class="nav-item" id="bn-exercises" onclick="switchView('exercises')">
+      <span class="nav-icon">📝</span>
+      <span>Bài tập</span>
     </button>
-    <button class="nav-item" id="bn-session2" onclick="switchView('session2')">
-      <span class="nav-icon">🗺️</span>
-      <span class="nav-nhan">Buổi 2</span>
+    <button class="nav-item" id="bn-library" onclick="switchView('library')">
+      <span class="nav-icon">📚</span>
+      <span>Tri thức</span>
     </button>
-    <button class="nav-item" id="bn-session3" onclick="switchView('session3')">
-      <span class="nav-icon">🎯</span>
-      <span class="nav-nhan">Buổi 3</span>
+    <button class="nav-item" id="bn-media" onclick="switchView('media')">
+      <span class="nav-icon">🎧</span>
+      <span>Media</span>
     </button>
     <button class="nav-item" id="bn-feedback" onclick="switchView('feedback')">
       <span class="nav-icon">💬</span>
-      <span class="nav-nhan">Góp ý</span>
+      <span>Góp ý</span>
     </button>
   </nav>
 
-  <!-- TOAST CONTAINER -->
-  <div class="toast-container" id="toast" aria-live="polite"></div>
+  <!-- 6. KHUNG TOAST THÔNG BÁO HOÀN TÁC 6S -->
+  <div class="toast-box" id="toastBox"></div>
 
-  <!-- MODAL BOTTOM-SHEET: CÀI ĐẶT GIAO DIỆN & ADMIN MODE -->
-  <div class="modal-overlay" id="modal-settings" onclick="closeSettings(event)">
-    <div class="modal-sheet" onclick="event.stopPropagation()">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <h3 style="font-size:18px; font-weight:800;">⚙️ Cài Đặt Giao Diện & Quản Trị</h3>
-        <button class="btn-icon nhat" onclick="closeSettingsModal()" aria-label="Đóng">✕</button>
+  <!-- 7. MODAL CÀI ĐẶT GIAO DIỆN & CHẾ ĐỘ CHỈNH SỬA -->
+  <div class="modal-overlay" id="settingsModal" onclick="if(event.target===this) closeSettings();">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title">⚙️ Cài Đặt Giao Diện & Hệ Thống</div>
+        <button class="btn-icon" onclick="closeSettings()" style="border:none; background:transparent;">✕</button>
       </div>
 
-      <!-- CHỌN CHẾ ĐỘ HIỂN THỊ (4 NÚT) -->
-      <label class="nhan-o">Chế độ sáng / tối</label>
-      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px;">
-        <button class="btn-secondary" onclick="setTheme('light')" id="btn-theme-light">☀️ Sáng</button>
-        <button class="btn-secondary" onclick="setTheme('dark')" id="btn-theme-dark">🌙 Tối</button>
-        <button class="btn-secondary" onclick="setTheme('auto')" id="btn-theme-auto">💻 Máy</button>
-        <button class="btn-secondary" onclick="setTheme('time')" id="btn-theme-time">🕕 Giờ</button>
+      <div>
+        <div style="font-weight:700; font-size:13px; margin-bottom:8px;">Bảng Màu Y Tế (Palettes):</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <button class="btn-secondary" onclick="setPalette('clinical')">🏥 Clinical (Chuẩn)</button>
+          <button class="btn-secondary" onclick="setPalette('executive')">💼 Executive</button>
+          <button class="btn-secondary" onclick="setPalette('gold')">🌟 Hoàn Mỹ</button>
+          <button class="btn-secondary" onclick="setPalette('violet')">💜 Thạch Anh</button>
+        </div>
       </div>
 
-      <!-- CHỌN PALETTE MÀU -->
-      <label class="nhan-o" style="margin-top:14px;">Bộ màu thương hiệu (Palettes)</label>
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:6px;">
-        <button class="btn-secondary" onclick="setPalette('clinical')" id="btn-pal-clinical">🏥 Y tế (AAA)</button>
-        <button class="btn-secondary" onclick="setPalette('gold')" id="btn-pal-gold">👑 Hoàng Kim</button>
-        <button class="btn-secondary" onclick="setPalette('executive')" id="btn-pal-executive">👔 Lãnh đạo</button>
-        <button class="btn-secondary" onclick="setPalette('nordic')" id="btn-pal-nordic">❄️ Tri thức</button>
-        <button class="btn-secondary" onclick="setPalette('crimson')" id="btn-pal-crimson">🚨 Kỷ luật</button>
-        <button class="btn-secondary" onclick="setPalette('mocha')" id="btn-pal-mocha">☕ Trực ca</button>
+      <div>
+        <div style="font-weight:700; font-size:13px; margin-bottom:8px;">Chế Độ Hiển Thị:</div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+          <button class="btn-secondary" onclick="setTheme('light')">☀️ Sáng</button>
+          <button class="btn-secondary" onclick="setTheme('dark')">🌙 Tối</button>
+          <button class="btn-secondary" onclick="setTheme('oled')">🖤 OLED</button>
+        </div>
       </div>
 
-      <!-- CỠ CHỮ -->
-      <label class="nhan-o" style="margin-top:14px;">Cỡ chữ hiển thị</label>
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:6px;">
-        <button class="btn-secondary" onclick="setFontScale('')" id="btn-font-normal">Thường (15px)</button>
-        <button class="btn-secondary" onclick="setFontScale('lon')" id="btn-font-lon">Lớn (16.5px)</button>
-        <button class="btn-secondary" onclick="setFontScale('ratlon')" id="btn-font-ratlon">Rất lớn (18px)</button>
-      </div>
-
-      <!-- CHẾ ĐỘ CHỈNH SỬA ADMIN -->
-      <label class="nhan-o" style="margin-top:18px;">Chế độ chỉnh sửa trực tiếp (Admin Mode)</label>
-      <div class="the" style="background:var(--bg); border-style:dashed;">
-        <p class="chu-phu" style="margin-bottom:8px;">Nhập Secret Key của Sếp Tâm để bật tính năng click-to-edit trực tiếp trên giao diện:</p>
+      <div style="border-top:1px solid var(--border); padding-top:12px;">
+        <div style="font-weight:700; font-size:13px; margin-bottom:6px;">✏️ Chế Độ Chỉnh Sửa (Edit Mode):</div>
+        <p style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">
+          Nhập mã bảo mật để mở quyền chỉnh sửa trực tiếp nội dung các biểu mẫu bài tập.
+        </p>
         <div style="display:flex; gap:8px;">
-          <input type="password" id="admin-key-input" placeholder="Nhập Secret Key (septam1993)" class="form-input" style="flex:1;">
-          <button class="btn-secondary" onclick="verifyAdminKey()">Mở Khóa</button>
-        </div>
-        <div id="admin-status-text" class="chu-phu" style="margin-top:6px; color:var(--c-green); font-weight:700; display:none;">
-          🔓 Đang bật chế độ chỉnh sửa. Bấm trực tiếp vào văn bản để sửa.
+          <input type="password" id="secretKeyInput" placeholder="Nhập mã bảo mật (TVM)..." style="flex:1; min-height:40px; padding:0 10px; border-radius:8px; border:1px solid var(--border); background:var(--card); color:var(--text);">
+          <button class="btn-primary" style="width:auto; padding:0 14px;" onclick="unlockAdmin()">Mở Khóa</button>
         </div>
       </div>
 
-      <div class="hang-nut" style="margin-top:16px;">
-        <button class="btn-secondary" onclick="window.print()">🖨️ In PDF Chuẩn A4</button>
-        <button class="btn-primary" onclick="closeSettingsModal()">Hoàn Tất</button>
+      <div class="hang-nut" style="margin-top:8px;">
+        <button class="btn-secondary" style="width:100%;" onclick="closeSettings()">Đóng Cài Đặt</button>
       </div>
     </div>
   </div>
 
-  <!-- ============================================================== -->
-  <!-- JAVASCRIPT HỆ THỐNG SHIN v2.6.0                                -->
-  <!-- ============================================================== -->
+  <!-- JAVASCRIPT HỆ THỐNG -->
   <script>
-    // 1. UTILITY FUNCTIONS
+    // 1. UTILITIES
     const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const soVN = (n, le = 0) => Number(n || 0).toLocaleString('vi-VN', { minimumFractionDigits: le, maximumFractionDigits: le });
 
-    // Toast với thanh đếm ngược 6 giây & hoàn tác
     function toast(msg, loai = 'success', opts = {}) {
-      const el = document.createElement('div'), coNut = opts.nhan && opts.bam;
-      el.className = 'toast toast-' + loai;
+      const box = document.getElementById('toastBox');
+      const el = document.createElement('div');
+      const coNut = opts.nhan && opts.bam;
+      el.className = 'toast';
       el.innerHTML = `<span>${esc(msg)}</span>${coNut ? `<button class="toast-btn">${esc(opts.nhan)}</button><div class="toast-bar"></div>` : ''}`;
-      document.getElementById('toast').appendChild(el);
+      box.appendChild(el);
       let xong = false;
-      const dong = () => { if (!xong) { xong = true; el.remove(); } };
       if (coNut) el.querySelector('button').onclick = () => { xong = true; el.remove(); opts.bam(); };
-      setTimeout(() => { if (!xong) { dong(); opts.khiHet && opts.khiHet(); } }, coNut ? 6000 : (loai === 'error' ? 6000 : 3500));
+      setTimeout(() => { if (!xong) { el.remove(); opts.khiHet && opts.khiHet(); } }, coNut ? 6000 : 3500);
     }
 
-    // Xác nhận 2 lần trong 5 giây cho thao tác không thể hoàn tác
-    const cho = {};
-    function xacNhan2Lan(khoa, msg, viec) {
-      if (cho[khoa] && Date.now() - cho[khoa] < 5000) { delete cho[khoa]; viec(); return; }
-      cho[khoa] = Date.now(); toast(msg + ' – bấm lại lần nữa trong 5 giây để làm.', 'warn');
+    // 2. DRAWER CONTROL (MÉP TRÁI)
+    function openDrawer() {
+      document.getElementById('leftDrawer').classList.add('open');
+      document.getElementById('drawerOverlay').classList.add('open');
     }
-
-    // 2. DANH SÁCH 15 NHÂN SỰ NHÓM 8 (BGĐ DUYỆT)
-    const THANH_VIEN_NHOM_8 = [
-      { stt: 1, ten: "Nguyễn Kim Nhang", cv: "Phó phòng Tổ chức - Nhân sự", cs: "CS2", vtr: "Nhóm trưởng", nvu: "Điều phối chung & Bảo vệ trước Giảng viên", icon: "👑" },
-      { stt: 2, ten: "Nguyễn Hoàng Duy", cv: "Phó phòng Công nghệ thông tin", cs: "CS2", vtr: "Hỗ trợ nhóm trưởng", nvu: "Tích hợp phần mềm HIS/LIS, AIOS", icon: "💻" },
-      { stt: 3, ten: "Lục Thị Yến Nhi", cv: "Chuyên viên Ban Kiểm Soát", cs: "CS2", vtr: "Giám sát kiểm soát", nvu: "Kiểm soát KPI độc lập, kiểm toán tuân thủ", icon: "🛡️" },
-      { stt: 4, ten: "Huỳnh Tấn Kiệt", cv: "Trưởng phòng Kế hoạch tổng hợp", cs: "CS3", vtr: "Chủ trì Kỹ thuật Lâm sàng", nvu: "Quy trình KHTH, phân buồng khám, RACI", icon: "📋" },
-      { stt: 5, ten: "Huỳnh Trường Thanh Tâm", cv: "Phó phòng PTKH / Thư ký BKS", cs: "CS3", vtr: "Chủ trì Điều hành & Dữ liệu", nvu: "Thiết kế VSM, KPI Rule of 7 & Web Portal", icon: "⚡" },
-      { stt: 6, ten: "Tạ Minh Phước", cv: "Tổ trưởng Tổ PTKH (CSKH)", cs: "CS3", vtr: "Thành viên vận hành", nvu: "Điều phối sảnh, xác lập T0, Care Navigator", icon: "🤝" },
-      { stt: 7, ten: "Lê Minh Mẫn", cv: "Trưởng phòng Xét nghiệm", cs: "CS3", vtr: "Thành viên Cận lâm sàng", nvu: "Chuẩn hóa trả kết quả liên tục mẻ nhỏ", icon: "🔬" },
-      { stt: 8, ten: "Mai Duy Linh", cv: "Phó phòng Xét nghiệm", cs: "CS3", vtr: "Thành viên Cận lâm sàng", nvu: "Rà soát TAT phân tích mẫu LIS, Critical Alert", icon: "🧪" },
-      { stt: 9, ten: "Đào Văn Khuynh", cv: "Bác sĩ phụ trách Phòng Nội soi", cs: "CS3", vtr: "Thành viên Chuyên môn", nvu: "Ràng buộc thời gian khám lâm sàng ≥ 7 phút", icon: "🩺" },
-      { stt: 10, ten: "Lê Như Ý", cv: "Điều dưỡng Khoa Nội soi", cs: "CS3", vtr: "Thành viên Chuyên môn", nvu: "Khảo sát luồng bàn giao thủ thuật chuyên sâu", icon: "💉" },
-      { stt: 11, ten: "Nguyễn Như Ý", cv: "Trưởng phòng Tài chính - Kế toán", cs: "CS3", vtr: "Thành viên Quản trị chi phí", nvu: "Phân tích hiệu quả tài chính & chi phí cơ hội", icon: "💰" },
-      { stt: 12, ten: "Nguyễn Thúy Kiều", cv: "Tổ trưởng Tổ Thu ngân", cs: "CS3", vtr: "Thành viên Dịch vụ", nvu: "Tối ưu hóa khâu thanh toán cuối luồng", icon: "🧾" },
-      { stt: 13, ten: "Bùi Mỹ Diện", cv: "Điều dưỡng Tổ Tiêm ngừa", cs: "CS3", vtr: "Thành viên Điều dưỡng", nvu: "Phân luồng đối tượng tiêm chủng và mạn tính", icon: "🩹" },
-      { stt: 14, ten: "Lữ Phú Sinh", cv: "Trưởng phòng Quản trị tòa nhà", cs: "CS3", vtr: "Thành viên Hạ tầng", nvu: "Bố trí mặt bằng sảnh, ghế ngồi, bảng số", icon: "🏢" },
-      { stt: 15, ten: "Trần Trúc Linh", cv: "Trưởng phòng Tổ chức - Nhân sự", cs: "CS3", vtr: "Thành viên Nhân sự", nvu: "Điều động nhân sự ca kíp cao điểm", icon: "👥" }
-    ];
-
-    function renderThanhVien() {
-      const container = document.getElementById('list-thanhvien');
-      container.innerHTML = THANH_VIEN_NHOM_8.map(tv => `
-        <div>
-          <div class="hn-dong" onclick="toggleDongDetails('tv_${tv.stt}')">
-            <div class="dong-icon">${tv.icon}</div>
-            <div class="dong-content">
-              <div class="dong-title">${esc(tv.ten)}</div>
-              <div class="dong-sub">${esc(tv.cv)} · ${esc(tv.cs)}</div>
-            </div>
-            <div class="dong-meta">
-              <span class="badge ${tv.cs === 'CS3' ? 'xanh' : 'vang'}">${esc(tv.vtr)}</span>
-              <span class="dong-arrow">›</span>
-            </div>
-          </div>
-          <div id="tv_${tv.stt}" class="chi-tiet-dong" style="display:none;">
-            <p><strong>Nhiệm vụ trong Nhóm 8:</strong> ${esc(tv.nvu)}</p>
-            <p class="chu-phu" style="margin-top:4px;">Cơ sở: ${esc(tv.cs)} | Vị trí công tác: ${esc(tv.cv)}</p>
-          </div>
-        </div>
-      `).join('');
+    function closeDrawer() {
+      document.getElementById('leftDrawer').classList.remove('open');
+      document.getElementById('drawerOverlay').classList.remove('open');
     }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closeDrawer(); closeSettings(); }
+    });
 
-    function toggleDongDetails(id) {
-      const el = document.getElementById(id);
-      if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
-    }
-
-    // 3. ĐIỀU HƯỚNG VIEW (5 MÀN CỐ ĐỊNH)
+    // 3. SWITCH VIEW
     function switchView(viewId) {
       document.querySelectorAll('.view-pane').forEach(el => el.hidden = true);
-      const targetPane = document.getElementById('view-' + viewId);
-      if (targetPane) targetPane.hidden = false;
-
-      // Update Rail
-      document.querySelectorAll('.rail-muc').forEach(el => el.classList.remove('dang-chon'));
-      const activeRail = document.getElementById('rm-' + viewId);
-      if (activeRail) activeRail.classList.add('dang-chon');
+      const target = document.getElementById('view-' + viewId);
+      if (target) target.hidden = false;
 
       // Update Bottom Nav
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
       const activeNav = document.getElementById('bn-' + viewId);
       if (activeNav) activeNav.classList.add('active');
 
+      // Update Drawer Items
+      document.querySelectorAll('.drawer-item').forEach(el => el.classList.remove('active'));
+      const activeDm = document.getElementById('dm-' + viewId);
+      if (activeDm) activeDm.classList.add('active');
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function toggleRail() {
-      document.body.classList.toggle('rail-mo');
-      localStorage.setItem('shin_rail_open', document.body.classList.contains('rail-mo') ? '1' : '0');
+    // 4. FILTER EXERCISES (TÁCH RIÊNG BÀI TẬP)
+    function filterExercise(buoi) {
+      document.querySelectorAll('.ex-chip').forEach(c => c.classList.remove('active'));
+      const chip = document.getElementById('chip-' + buoi);
+      if (chip) chip.classList.add('active');
+
+      const allSec = ['sec-b1', 'sec-b2', 'sec-b3', 'sec-b4'];
+      if (buoi === 'all') {
+        allSec.forEach(id => { const el = document.getElementById(id); if (el) el.hidden = false; });
+      } else {
+        allSec.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.hidden = (id !== 'sec-' + buoi);
+        });
+      }
     }
 
-    // 4. HỆ THỐNG GÓP Ý CÔNG KHAI (PUBLIC FEEDBACK)
-    const DEFAULT_FEEDBACKS = [
-      { id: "fb_1", name: "TS. Đoàn Hùng Dũng", role: "Giảng viên FMFT Institute", target: "M01 - Buổi 1", rating: 5, content: "Nhóm 8 đã làm rất tốt việc bóc tách 3 tầng dữ liệu [Số liệu thật], [Số giả định] và [Nội dung chưa có dữ liệu]. Bảng 3 giả thuyết nguyên nhân gốc rễ gắn trách nhiệm cụ thể cho các thành viên CS3 Cà Mau là điểm cộng lớn!", date: "28/10/2026 21:15" },
-      { id: "fb_2", name: "BS. Huỳnh Tấn Kiệt", role: "Trưởng phòng KHTH CS3", target: "M02/M03 - Buổi 2", rating: 5, content: "Khung thời gian T0 -> T4 rất rõ ràng. Cam kết T2 - T1 <= 5 phút sẽ giúp chấm dứt việc hồ sơ bệnh án bị đọng ở khay buồng khám. Phía KHTH hoàn toàn thống nhất quy trình DOA phân buồng linh hoạt khi hàng chờ vượt quá 8 người.", date: "29/10/2026 14:30" },
-      { id: "fb_3", name: "Lục Thị Yến Nhi", role: "Ban Kiểm Soát CS2", target: "M04/M05/M06 - Buổi 3", rating: 5, content: "Nguyên tắc Rule of 7 (3 Leading, 2 Lagging, 2 Constraint) phân bổ đúng tỷ lệ 30-40-30. Ban Kiểm Soát sẽ phối hợp cùng Thư ký BKS CS3 (anh Tâm) chạy đối chiếu dữ liệu P90 hàng tuần.", date: "30/10/2026 07:15" }
+    // 5. SETTINGS & PALETTES
+    function openSettings() { document.getElementById('settingsModal').classList.add('open'); }
+    function closeSettings() { document.getElementById('settingsModal').classList.remove('open'); }
+
+    function setPalette(p) {
+      document.documentElement.setAttribute('data-palette', p);
+      localStorage.setItem('shin_palette', p);
+      toast('Đã chuyển sang bảng màu: ' + p);
+    }
+    function setTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('shin_theme', t);
+      toast('Đã kích hoạt chế độ: ' + t);
+    }
+
+    // 6. CHẾ ĐỘ CHỈNH SỬA (SECRET KEY: TVM)
+    let isAdminUnlocked = false;
+    function toggleEditQuick() {
+      if (!isAdminUnlocked) {
+        openSettings();
+        document.getElementById('secretKeyInput').focus();
+        toast('Vui lòng nhập mã bảo mật để mở quyền chỉnh sửa', 'info');
+      } else {
+        khoaAdmin();
+      }
+    }
+    function unlockAdmin() {
+      const key = document.getElementById('secretKeyInput').value.trim();
+      if (key.toUpperCase() === 'TVM') {
+        isAdminUnlocked = true;
+        closeSettings();
+        document.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = 'true');
+        const lockIcon = document.getElementById('btn-lock-icon');
+        if (lockIcon) { lockIcon.textContent = '🔓'; lockIcon.title = 'Khóa lại'; }
+        toast('Đã mở khóa Chế độ chỉnh sửa! Có thể sửa bài tập trực tiếp.', 'success');
+      } else {
+        toast('Mã bảo mật không đúng!', 'error');
+      }
+    }
+    function khoaAdmin() {
+      isAdminUnlocked = false;
+      document.querySelectorAll('[data-editable]').forEach(el => el.contentEditable = 'false');
+      const lockIcon = document.getElementById('btn-lock-icon');
+      if (lockIcon) { lockIcon.textContent = '🔒'; lockIcon.title = 'Chế độ chỉnh sửa'; }
+      toast('Đã khóa lại chế độ xem an toàn.', 'info');
+    }
+
+    // 7. DANH SÁCH 14 THÀNH VIÊN NHÓM 8
+    const dsThanhVienData = [
+      { stt: 1, ten: "Nguyễn Kim Nhang", cv: "Phó phòng Tổ chức - Nhân sự", cs: "Cơ sở 2", vaiTro: "Nhóm trưởng · Đại diện bảo vệ trước Thầy" },
+      { stt: 2, ten: "BS. Huỳnh Tấn Kiệt", cv: "Trưởng phòng Kế hoạch tổng hợp", cs: "Cơ sở 3", vaiTro: "Đại diện Chuyên môn Lâm sàng CS3" },
+      { stt: 3, ten: "Nguyễn Hoàng Duy", cv: "Phó phòng Công nghệ thông tin", cs: "Cơ sở 2", vaiTro: "Hỗ trợ Công nghệ & CNTT" },
+      { stt: 4, ten: "Lục Thị Yến Nhi", cv: "Chuyên viên Ban Kiểm Soát", cs: "Cơ sở 2", vaiTro: "Giám sát & Kiểm soát độc lập" },
+      { stt: 5, ten: "Huỳnh Trường Thanh Tâm", cv: "Phó phòng Phát triển khách hàng", cs: "Cơ sở 3", vaiTro: "Thành viên Nhóm 8 · Phối hợp công tác phòng ban" },
+      { stt: 6, ten: "Tạ Minh Phước", cv: "Nhân sự Phòng PTKH", cs: "Cơ sở 3", vaiTro: "Điều phối luồng sảnh chờ & Check-in T0" },
+      { stt: 7, ten: "CN. Lê Minh Mẫn", cv: "Trưởng phòng Xét nghiệm", cs: "Cơ sở 3", vaiTro: "Chuẩn hóa trả kết quả liên tục & Hotline LSE" },
+      { stt: 8, ten: "Mai Duy Linh", cv: "Phó phòng Xét nghiệm", cs: "Cơ sở 3", vaiTro: "Theo dõi thời gian chạy mẫu LIS" },
+      { stt: 9, ten: "BS. Đào Văn Khuynh", cv: "Bác sĩ phụ trách Phòng Nội soi", cs: "Cơ sở 3", vaiTro: "Chuyên môn thủ thuật cận lâm sàng" },
+      { stt: 10, ten: "ĐD. Lê Như Ý", cv: "Điều dưỡng Khoa Nội soi", cs: "Cơ sở 3", vaiTro: "Khảo sát luồng bàn giao thủ thuật" },
+      { stt: 11, ten: "Nguyễn Như Ý", cv: "Trưởng phòng Tài chính - Kế toán", cs: "Cơ sở 3", vaiTro: "Thành viên Quản trị chi phí & KPI F1" },
+      { stt: 12, ten: "Nguyễn Thúy Kiều", cv: "Tổ trưởng Tổ Thu ngân", cs: "Cơ sở 3", vaiTro: "Tối ưu hóa khâu viện phí cuối luồng" },
+      { stt: 13, ten: "ĐD. Bùi Mỹ Diện", cv: "Điều dưỡng Tổ Tiêm ngừa", cs: "Cơ sở 3", vaiTro: "Phân luồng đối tượng ưu tiên" },
+      { stt: 14, ten: "Lữ Phú Sinh", cv: "Trưởng phòng Quản trị tòa nhà", cs: "Cơ sở 3", vaiTro: "Hạ tầng mặt bằng sảnh & Kiosk" }
     ];
 
-    function getFeedbacks() {
-      try {
-        const raw = localStorage.getItem('tvm_feedbacks_v2');
-        return raw ? JSON.parse(raw) : DEFAULT_FEEDBACKS;
-      } catch(e) { return DEFAULT_FEEDBACKS; }
-    }
-
-    function renderFeedbacks() {
-      const list = getFeedbacks();
-      const container = document.getElementById('feedback-list-container');
-      const countEl = document.getElementById('hero-fb-count');
-      if (countEl) countEl.textContent = list.length;
-
-      if (!list.length) {
-        container.innerHTML = '<div class="trong">Chưa có góp ý nào. Hãy gửi phản biện đầu tiên!</div>';
-        return;
-      }
-
-      container.innerHTML = list.map(fb => `
-        <div class="the">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <div><strong>${esc(fb.name)}</strong> <span class="badge xam" style="font-size:11px;">${esc(fb.role || 'Thành viên')}</span></div>
-            <span class="chu-phu" style="font-size:12px;">${esc(fb.date)}</span>
-          </div>
-          <div style="margin:4px 0;">
-            <span class="badge xanh" style="font-size:11px;">${esc(fb.target)}</span>
-            <span style="color:var(--c-yellow); font-size:12px; margin-left:4px;">${'★'.repeat(fb.rating || 5)}</span>
-          </div>
-          <p style="font-size:14px; line-height:1.5; color:var(--text); margin-top:6px;">${esc(fb.content)}</p>
-        </div>
+    function renderThanhVien() {
+      const tbody = document.getElementById('dsThanhVien');
+      if (!tbody) return;
+      tbody.innerHTML = dsThanhVienData.map(tv => `
+        <tr>
+          <td>${tv.stt}</td>
+          <td><strong>${esc(tv.ten)}</strong></td>
+          <td>${esc(tv.cv)}</td>
+          <td>${esc(tv.cs)}</td>
+          <td>${esc(tv.vaiTro)}</td>
+        </tr>
       `).join('');
     }
 
-    function guiGopY(e) {
-      e.preventDefault();
-      const name = document.getElementById('fb-name').value.trim();
-      const role = document.getElementById('fb-role').value.trim();
-      const target = document.getElementById('fb-target').value;
-      const rating = parseInt(document.getElementById('fb-rating').value, 10);
-      const content = document.getElementById('fb-content').value.trim();
-
-      const newFb = {
-        id: "fb_" + Date.now(),
-        name, role, target, rating, content,
-        date: new Date().toLocaleDateString('vi-VN') + ' ' + new Date().toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'})
-      };
-
-      const list = getFeedbacks();
-      list.unshift(newFb);
-      localStorage.setItem('tvm_feedbacks_v2', JSON.stringify(list));
-      renderFeedbacks();
-      document.getElementById('form-feedback').reset();
-      toast('Đã ghi nhận góp ý của bạn thành công!', 'success');
+    // 8. HỆ THỐNG GÓP Ý
+    function getGopYList() {
+      try { return JSON.parse(localStorage.getItem('fmft_feedback') || '[]'); } catch { return []; }
     }
-
-    function exportFeedbackJSON() {
-      const list = getFeedbacks();
-      const blob = new Blob([JSON.stringify(list, null, 2)], { type: 'application/json' });
+    function saveGopYList(l) {
+      localStorage.setItem('fmft_feedback', JSON.stringify(l));
+      renderGopY();
+    }
+    function guiGopY() {
+      const ten = document.getElementById('fb-ten').value.trim();
+      const muc = document.getElementById('fb-muc').value;
+      const nd = document.getElementById('fb-noidung').value.trim();
+      if (!nd) { toast('Vui lòng nhập nội dung góp ý!', 'error'); return; }
+      const ds = getGopYList();
+      ds.unshift({
+        id: Date.now(),
+        ten: ten || 'Cán bộ ẩn danh',
+        muc: muc,
+        nd: nd,
+        thoigian: new Date().toLocaleString('vi-VN')
+      });
+      saveGopYList(ds);
+      document.getElementById('fb-noidung').value = '';
+      toast('Đã ghi nhận góp ý thành công!', 'success');
+    }
+    function renderGopY() {
+      const box = document.getElementById('dsGopY');
+      if (!box) return;
+      const ds = getGopYList();
+      if (ds.length === 0) {
+        box.innerHTML = '<div style="font-size:12.5px; color:var(--text-muted); padding:10px; text-align:center;">Chưa có nhận xét nào. Hãy gửi ý kiến đầu tiên!</div>';
+        return;
+      }
+      box.innerHTML = ds.map(g => `
+        <div style="background:var(--bg-sub); border:1px solid var(--border); border-radius:10px; padding:10px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:12px;">
+            <strong>${esc(g.ten)}</strong>
+            <span style="color:var(--text-muted);">${esc(g.thoigian)} · [${esc(g.muc)}]</span>
+          </div>
+          <div style="font-size:13px; line-height:1.4;">${esc(g.nd)}</div>
+        </div>
+      `).join('');
+    }
+    function xuatGopY() {
+      const ds = getGopYList();
+      const blob = new Blob([JSON.stringify(ds, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = `Gop_Y_FMFT_Nhom_8_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `GopY_Nhom8_FMFT_${Date.now()}.json`;
       a.click();
     }
 
-    // 5. CÀI ĐẶT GIAO DIỆN & ADMIN MODE
-    function openSettings() {
-      document.getElementById('modal-settings').classList.add('open');
-    }
-    function closeSettings(e) {
-      if (e.target.id === 'modal-settings') closeSettingsModal();
-    }
-    function closeSettingsModal() {
-      document.getElementById('modal-settings').classList.remove('open');
-    }
-
-    function setTheme(th) {
-      if (th === 'auto') {
-        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-        localStorage.setItem('shin_theme', 'auto');
-      } else if (th === 'time') {
-        const hour = new Date().getHours();
-        const dark = (hour < 6 || hour >= 18);
-        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-        localStorage.setItem('shin_theme', 'time');
-      } else {
-        document.documentElement.setAttribute('data-theme', th);
-        localStorage.setItem('shin_theme', th);
-      }
-    }
-
-    function setPalette(pal) {
-      document.documentElement.setAttribute('data-palette', pal);
-      localStorage.setItem('shin_palette', pal);
-    }
-
-    function setFontScale(scale) {
-      if (scale) {
-        document.documentElement.setAttribute('data-cochu', scale);
-        localStorage.setItem('shin_cochu', scale);
-      } else {
-        document.documentElement.removeAttribute('data-cochu');
-        localStorage.removeItem('shin_cochu');
-      }
-    }
-
-    let isAdminActive = false;
-    function verifyAdminKey() {
-      const key = document.getElementById('admin-key-input').value.trim();
-      if (key === 'septam1993' || key === 'nhom8tvm') {
-        isAdminActive = true;
-        document.querySelectorAll('.the, p, strong, td').forEach(el => el.setAttribute('contenteditable', 'true'));
-        document.getElementById('admin-status-text').style.display = 'block';
-        document.getElementById('btn-lock-icon').textContent = '🔓';
-        toast('Đã mở khóa chế độ chỉnh sửa trực tiếp!', 'success');
-      } else {
-        toast('Sai Secret Key. Vui lòng kiểm tra lại.', 'error');
-      }
-    }
-
-    function toggleEditQuick() {
-      if (!isAdminActive) {
-        openSettings();
-        document.getElementById('admin-key-input').focus();
-      } else {
-        isAdminActive = false;
-        document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
-        document.getElementById('admin-status-text').style.display = 'none';
-        document.getElementById('btn-lock-icon').textContent = '🔒';
-        toast('Đã khóa chế độ chỉnh sửa.', 'info');
-      }
-    }
-
-    function copyM01() {
-      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 1: PHIẾU M01 XÁC ĐỊNH VẤN ĐỀ - NHÓM 8
-- Đơn vị: PKĐK Thanh Vũ Medic Cà Mau (CS3)
-- Vấn đề: Dồn ứ sảnh khám lại ngoại trú sau cận lâm sàng khung giờ cao điểm 07:30 - 09:45
-- [Số liệu thật]: Lượt khám 450 - 550 ca/ngày; 68% NB đến trước 09h00.
-- [Số giả định]: Thời gian chờ W dao động 35 - 55 phút.
-- Mục tiêu: Rút ngắn W từ ≥ 45 phút xuống ≤ 15 phút.`);
-      toast('Đã sao chép cấu trúc Markdown M01!', 'success');
-    }
-
-    function copyM02() {
-      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 2: M02 VSM & M03 RACI - NHÓM 8
-- Quy trình 5 mốc: T0 (Đủ KQ+Có mặt) -> T1 (Gửi HIS) -> T2 (ĐD nhận <= 5p) -> T3 (Mời vào) -> T4 (BS khám >= 7p).
-- Mục tiêu: W = T4 - T0 <= 15 phút.
-- RACI 1A: Mỗi việc duy nhất 1 người chịu trách nhiệm giải trình A.`);
-      toast('Đã sao chép cấu trúc Markdown M02 & M03!', 'success');
-    }
-
-    function copyM04() {
-      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 3: M04 RULE OF 7 KPI & M06 CAPA
-- Rule of 7: 3 Leading (30%) + 2 Lagging (40%) + 2 Constraint (30%)
-- Constraint KPI: Bác sĩ khám lâm sàng & tư vấn >= 7 phút.`);
-      toast('Đã sao chép cấu trúc Markdown M04 & M06!', 'success');
-    }
-
-    function openDocsDetail() {
-      switchView('feedback');
-      const el = document.getElementById('details-docs');
-      if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); }
-    }
-
-    function openMediaDetail() {
-      switchView('feedback');
-      const el = document.getElementById('details-media');
-      if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); }
-    }
-
-    // INIT
-    window.addEventListener('DOMContentLoaded', () => {
-      // Load saved preferences
-      const savedTheme = localStorage.getItem('shin_theme') || 'light';
-      setTheme(savedTheme);
-      const savedPal = localStorage.getItem('shin_palette') || 'clinical';
-      setPalette(savedPal);
-      const savedCochu = localStorage.getItem('shin_cochu');
-      if (savedCochu) setFontScale(savedCochu);
-      if (window.matchMedia('(min-width:1024px)').matches || localStorage.getItem('shin_rail_open') === '1') {
-        document.body.classList.add('rail-mo');
-      }
+    // 9. INIT
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedPal = localStorage.getItem('shin_palette');
+      if (savedPal) setPalette(savedPal);
+      const savedTheme = localStorage.getItem('shin_theme');
+      if (savedTheme) setTheme(savedTheme);
 
       renderThanhVien();
-      renderFeedbacks();
+      renderGopY();
     });
   </script>
 </body>

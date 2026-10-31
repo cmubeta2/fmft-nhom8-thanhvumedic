@@ -6,7 +6,7 @@
 ## 1. TỔNG QUAN HỆ THỐNG TÀI LIỆU
 Thư mục này chứa toàn bộ hệ thống tri thức, tài liệu gốc của Thầy (TS. Đoàn Hùng Dũng), kế hoạch đào tạo toàn hệ thống Thanh Vũ Medic và bộ giải pháp đề án thực chiến dành riêng cho **Phòng khám Đa khoa (PKĐK) Thanh Vũ Medic Cà Mau**.
 
-Hệ thống được thiết kế, tổng hợp và cấu trúc bởi **Huỳnh Trường Thanh Tâm** (Phó phòng PTKH / Thư ký Ban Kiểm Soát KPI) kết hợp cùng Digital Familiar **Shin**.
+Hệ thống được thiết kế, tổng hợp và cấu trúc bởi tập thể **Nhóm 8** (đại diện PKĐK Thanh Vũ Medic Cà Mau và BVTV2) với sự hỗ trợ dữ liệu của **Huỳnh Trường Thanh Tâm** kết hợp cùng Digital Familiar **Shin**.
 
 ```
 31_FMFT_AIOS_LSE/
@@ -14,13 +14,14 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi **Huỳnh
 ├── CHANGELOG.md                                               # Nhật ký cập nhật & lịch sử phiên bản
 ├── UPDATE.md                                                  # Kế hoạch nâng cấp và định hướng các pha tiếp theo
 ├── index.html                                                 # CỔNG PORTAL WEB TƯƠNG TÁC BÀI TẬP (Online: https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)
-├── TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md                   # BẢN TỔNG HỢP TOÀN BỘ BÀI TẬP BUỔI 1, 2 & SƠ THẢO BUỔI 3 (NHÓM 8)
+├── TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md                   # BẢN TỔNG HỢP TOÀN BỘ BÀI TẬP BUỔI 1, 2, 3 HOÀN CHỈNH & CHUẨN BỊ BUỔI 4
 ├── MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md                # Danh mục 4 tệp Media bài giảng (2 Audio M4A + 2 Video Webex MP4)
 │
 ├── [BỘ BÀI TẬP THEO BUỔI CỦA NHÓM 8 - CS3 CÀ MAU]
 │   ├── BAI_TAP_BUOI_1_M01_HOAN_CHINH.md                       # Bài tập Buổi 1 hoàn chỉnh: M01 Phiếu xác định vấn đề luồng ngoại trú CS3
 │   ├── BAI_TAP_BUOI_2_M02_M03_HOAN_CHINH.md                   # Bài tập Buổi 2 hoàn chỉnh: M02 VSM Handoff (T0->T4) & M03 RACI liên khoa + DOA
-│   ├── BAI_TAP_BUOI_3_M04_M05_M06_SO_THAO.md                  # Sơ thảo Buổi 3: M04 Từ điển 7 KPI, M05 Dashboard AIOS EWS & M06 RCA / CAPA
+│   ├── BAI_TAP_BUOI_3_M04_M05_M06_HOAN_CHINH.md               # Bài tập Buổi 3 hoàn chỉnh: M04 Từ điển 7 KPI, M05 EWS & M06 RCA/CAPA
+│   ├── CHUAN_BI_BUOI_4_KSEQ_AIOS_LSE_M07_M08_M17.md           # Chuẩn bị trước Buổi 4: M07 Khung KSEQ, M08 Chu trình LSE 8 bước & M17 Audit
 │   └── Bai_tap_Buoi_1_M01_Nhom_8_CS3_ThanhVuMedic.docx        # File Word M01 nộp bài chính thức chuẩn form mẫu Thầy Dũng
 │
 ├── [TÀI LIỆU GỐC & ĐÀO TẠO HỆ THỐNG]
