@@ -38,6 +38,7 @@ Chuyển hóa toàn diện hệ thống quản trị vận hành và hiệu su�
 - [x] Số hóa tài liệu mới nhất ngày 31/10/2026 từ TS. Đoàn Hùng Dũng: `HUONG_DAN_AP_DUNG_MODULE_3_4_QUAN_TRI_BENH_VIEN.md` (29 trang chuẩn hóa VSM, 4 quy tắc RACI, Segregation of Duties 5 khâu và DOA).
 - [x] Tiếp nhận và số hóa mục lục 4 tệp Media bài giảng: `MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md` (2 audio M4A Buổi 1 & 2 + 2 video Webex MP4).
 - [x] Triển khai thành công Cổng Web Portal lên Internet chính thức (GitHub Pages: [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/) và Vercel preview: [https://brisk-bamboo-8pj1sxv.tmp.now](https://brisk-bamboo-8pj1sxv.tmp.now)).
+- [x] Tái thiết kế toàn diện UX/UI theo chuẩn **SHIN Design System v2.6.0** (`THIET_KE_GIAO_DIEN_SHIN.md`): Cấu trúc 3 khung cố định (Topbar 56px, Bottom-nav 64px 5 nút, Rail trái 56/248px), tối ưu mobile-first không cuộn ngang, vùng bấm >= 44px, input mobile 16px, Hero 3 ô số + 1 nút chính, tương tác Undo Toast 6s & Xác nhận 2 lần (không dùng confirm alert), bộ 8 bảng màu Clinical chuẩn y tế, Dark/Light/OLED mode và bảo mật escape dữ liệu.
 - [ ] Tham gia Buổi 4 Webex tối Thứ Hai (02/11/2026) về Khung năng lực KSEQ và Kiến trúc FMFT AIOS/LSE.
 
 ### [Giai đoạn 2] Thực hành 08 Tuần theo Kế hoạch Bệnh viện (05/11 – 30/12/2026)

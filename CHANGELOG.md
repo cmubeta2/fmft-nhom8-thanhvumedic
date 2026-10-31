@@ -3,6 +3,37 @@
 
 ---
 
+### [Phiên bản v1.11.0] - 31/10/2026 (Tái Thiết Kế Toàn Diện UX/UI Theo Chuẩn SHIN Design System v2.6.0)
+- **Tái cấu trúc giao diện theo Bản Đặc Tả Thiết Kế SHIN v2.6.0 (`THIET_KE_GIAO_DIEN_SHIN.md`):**
+  - **3 Khung cố định (3 Fixed Frame Containers):**
+    1. *Thanh đầu trang (`.topbar` cao đúng 56px):* Nút hamburger bật rail/sheet, tiêu đề trang/màn hình hiện tại, nút mở Cài đặt (bánh răng).
+    2. *Thanh đáy điều hướng (`.bottom-nav` cao đúng 64px):* Cố định đúng 5 nút điều hướng chính: **Hôm nay** (Tổng quan & Nhân sự Nhóm 8), **Buổi 1** (Phiếu M01), **Buổi 2** (M02 & M03), **Buổi 3** (M04, M05 & M06), và **Góp ý** (Góp ý công khai, Văn bản M3&M4, Kho 4 media). Hiển thị toàn thời gian trên màn hình `< 1024px`, tự ẩn trên desktop $\ge 1024$px để nhường chỗ cho Rail trái.
+    3. *Rail trái (`.rail` rộng 56px co lại, 248px mở ra):* Hiển thị cố định trên màn hình $\ge 1024$px, có mấu kéo toggle mượt mà giữa dạng co (chỉ icon) và dạng mở rộng (icon + nhãn chữ).
+  - **Khung nội dung cuộn ở giữa:** Độc lập với thanh đầu và thanh đáy, chiều rộng đọc tối đa: di động 760px, desktop 960px; căn giữa với lề an toàn chống tràn mép.
+  - **Quy tắc Mobile-first & Touch Targets:**
+    - Tuyệt đối cấm cuộn ngang (`overflow-x: hidden` trên toàn bộ container gốc).
+    - Vùng bấm chạm tối thiểu đạt chuẩn $\ge 44 \times 44\text{px}$ trên tất cả các icon, tab và nút bấm.
+    - Cỡ chữ ô nhập liệu (`input`, `textarea`, `select`) trên màn hình điện thoại luôn $\ge 16\text{px}$ để ngăn chặn hiện tượng tự động zoom khó chịu của trình duyệt iOS Safari và Android Chrome.
+  - **Cấu trúc Mỗi màn hình (Hero Standard):**
+    - Mở đầu bằng một Hero (`.hn-hero`) bao gồm: Lời chào thân mật (sáng/chiều/tối theo thời gian thực), ngày tháng tiếng Việt, tối đa 3 thẻ chỉ số thống kê nổi bật (`.tq-3so`) và đúng 1 nút hành động chính (`.btn-primary` rộng 100%).
+  - **Cơ chế Tương tác & Phản hồi không dùng Alert/Confirm:**
+    - Tuyệt đối không dùng hộp thoại xác nhận cản trở (`confirm()` hay "Bạn có chắc?").
+    - Áp dụng triệt để cơ chế **Toast Đếm ngược 6 giây có nút Hoàn tác (Undo)** cho các hành động xóa dữ liệu hoặc khôi phục mặc định.
+    - Cơ chế **Xác nhận 2 lần trong 5 giây (`xacNhan2Lan`)** đối với các thao tác nhạy cảm (như xóa sạch nhận xét góp ý).
+  - **Bộ Theme 8 Bảng Màu (Color Palettes) & 4 Chế độ Giao diện:**
+    - Cài đặt mặc định: **Clinical** (Bảng màu Y tế: Xanh khám bệnh `#0e7490`, Xanh kiểm soát `#0284c7`, Trắng tinh khiết và Nền Slate nhẹ nhàng).
+    - Hỗ trợ đầy đủ 7 bảng màu khác: *Warm Corporate, Slate Tech, Amber Minimal, Emerald Growth, Violet Deep, Rose Care, High Contrast*.
+    - Hỗ trợ 4 chế độ hiển thị: Tự động theo hệ thống (Auto), Sáng (Light), Tối (Dark), và OLED (Đen sâu tiết kiệm pin).
+    - Bộ điều chỉnh cỡ chữ trực quan: Nhỏ (14px) / Vừa (16px) / Lớn (18px).
+  - **Bảo mật và Mã hóa XSS:**
+    - Mọi dữ liệu nội dung do người dùng nhập hoặc hiển thị từ cơ sở dữ liệu đều được chạy qua hàm làm sạch `esc()` (`textContent` / `replace` regex) ngăn chặn 100% tấn công tiêm mã độc XSS.
+    - Mở khóa chế độ Quản trị (Admin Edit Mode) trực tiếp trong Modal Cài đặt bằng Secret Key (`septam1993`).
+- **Đồng bộ và Triển khai đồng thời:**
+  - Cập nhật trực tiếp lên **GitHub Pages**: [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/) (Commit `83aae94`).
+  - Cập nhật lên **Vercel Preview**: [https://brisk-bamboo-8pj1sxv.tmp.now](https://brisk-bamboo-8pj1sxv.tmp.now).
+
+---
+
 ### [Phiên bản v1.10.0] - 31/10/2026 (Số Hóa Hướng Dẫn Module 3&4 Mới Ban Hành, Kho Media Bài Giảng & Đẩy Portal Lên Web)
 - **Rà soát thư mục nguồn lớp học (`KPI TVM Cà Mau\FMFT`):** Phát hiện 5 tệp mới phát sinh trong ngày 31/10/2026.
 - **Số hóa và bổ sung 2 tài liệu quản trị tri thức mới vào thư viện:**
