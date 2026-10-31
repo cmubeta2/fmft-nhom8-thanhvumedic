@@ -13,8 +13,9 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi **Huỳnh
 ├── README.md                                                  # Tài liệu tổng quan kiến trúc & định hướng quản trị
 ├── CHANGELOG.md                                               # Nhật ký cập nhật & lịch sử phiên bản
 ├── UPDATE.md                                                  # Kế hoạch nâng cấp và định hướng các pha tiếp theo
-├── index.html                                                 # CỔNG PORTAL WEB TƯƠNG TÁC BÀI TẬP (Góp ý công khai & Chỉnh sửa có Secret Key)
+├── index.html                                                 # CỔNG PORTAL WEB TƯƠNG TÁC BÀI TẬP (Online: https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)
 ├── TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md                   # BẢN TỔNG HỢP TOÀN BỘ BÀI TẬP BUỔI 1, 2 & SƠ THẢO BUỔI 3 (NHÓM 8)
+├── MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md                # Danh mục 4 tệp Media bài giảng (2 Audio M4A + 2 Video Webex MP4)
 │
 ├── [BỘ BÀI TẬP THEO BUỔI CỦA NHÓM 8 - CS3 CÀ MAU]
 │   ├── BAI_TAP_BUOI_1_M01_HOAN_CHINH.md                       # Bài tập Buổi 1 hoàn chỉnh: M01 Phiếu xác định vấn đề luồng ngoại trú CS3
@@ -23,6 +24,7 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi **Huỳnh
 │   └── Bai_tap_Buoi_1_M01_Nhom_8_CS3_ThanhVuMedic.docx        # File Word M01 nộp bài chính thức chuẩn form mẫu Thầy Dũng
 │
 ├── [TÀI LIỆU GỐC & ĐÀO TẠO HỆ THỐNG]
+│   ├── HUONG_DAN_AP_DUNG_MODULE_3_4_QUAN_TRI_BENH_VIEN.md     # Tài liệu mới (31/10/2026): Hướng dẫn Module 3 & 4 (29 trang của TS. Đoàn Hùng Dũng)
 │   ├── DANH_SACH_PHAN_NHOM_FMFT_BGD_DUYET.md                  # Danh sách 15 nhóm học tập & BKS (202 người, duyệt bởi BGĐ; Nhóm 8 & Nhóm 2 CS3)
 │   ├── DE_CUONG_DAO_TAO_FMFT_AIOS_LSE_TS_DOAN_HUNG_DUNG.md    # Đề cương đào tạo Ban Lãnh đạo (9 trang - TS. Đoàn Hùng Dũng)
 │   ├── GIAO_TRINH_QUAN_TRI_BENH_VIEN_FMFT_AIOS_LSE_V2.md      # Giáo trình Quản trị BV chi tiết V2.0 (60 trang, 20 biểu mẫu M01-M20)
@@ -89,7 +91,9 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi **Huỳnh
 | **18** | **Bài Tập Buổi 1 Hoàn Chỉnh (M01)** | Phiếu M01 bóc tách 3 tầng dữ liệu, bảng 3 giả thuyết nguyên nhân gốc rễ và kế hoạch can thiệp CS3. | [BAI_TAP_BUOI_1_M01_HOAN_CHINH.md](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/BAI_TAP_BUOI_1_M01_HOAN_CHINH.md) |
 | **19** | **Bài Tập Buổi 2 Hoàn Chỉnh (M02 & M03)** | M02 Bản đồ VSM Hiện trạng vs Đề xuất, 5 mốc thời gian T0->T4, quy tắc bàn giao T1->T2 <= 5p, 6 kịch bản ngoại lệ + M03 Ma trận RACI liên khoa và Phiếu DOA. | [BAI_TAP_BUOI_2_M02_M03_HOAN_CHINH.md](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/BAI_TAP_BUOI_2_M02_M03_HOAN_CHINH.md) |
 | **20** | **Bài Tập Buổi 3 Sơ Thảo (M04, M05 & M06)** | Sơ thảo M04 Từ điển 7 KPI theo Rule of 7, M05 Đặc tả Dashboard AIOS EWS 3 màu, M06 Phân tích sự cố hạ đường huyết RCA 5 Whys và Kế hoạch CAPA. | [BAI_TAP_BUOI_3_M04_M05_M06_SO_THAO.md](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/BAI_TAP_BUOI_3_M04_M05_M06_SO_THAO.md) |
-| **21** | **Cổng Web Portal Tương Tác Bài Tập** | Web App tương tác (index.html): Góp ý/phản biện công khai, Chế độ chỉnh sửa Edit Mode mở khóa bằng Secret Key (`septam1993`), In PDF chuẩn A4. | [index.html](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/index.html) |
+| **21** | **Cổng Web Portal Tương Tác Bài Tập** | Web App tương tác (index.html): Góp ý/phản biện công khai, Chế độ chỉnh sửa Edit Mode mở khóa bằng Secret Key (`septam1993`), In PDF chuẩn A4.<br/>• **Link Web GitHub Pages:** [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)<br/>• **Link Web Vercel:** [https://brisk-bamboo-8pj1sxv.tmp.now](https://brisk-bamboo-8pj1sxv.tmp.now) | [index.html](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/index.html) |
+| **22** | **Hướng Dẫn Module 3 & 4 (Mới 31/10)** | Toàn văn tài liệu 29 trang của TS. Đoàn Hùng Dũng: Chuỗi giá trị, VSM, 4 quy tắc RACI (1A tối thượng), Phân tách 5 khâu độc lập, DOA và Tuyến leo thang. | [HUONG_DAN_AP_DUNG_MODULE_3_4_QUAN_TRI_BENH_VIEN.md](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/HUONG_DAN_AP_DUNG_MODULE_3_4_QUAN_TRI_BENH_VIEN.md) |
+| **23** | **Mục Lục Media Ghi Âm & Video Bài Giảng** | Danh mục & liên kết mở trực tiếp 4 tệp Media bài giảng: 2 file Audio M4A (Buổi 1 m1-m2 25.7MB, Buổi 2 m3-m4 44.8MB) và 2 Video Webex MP4 (957.4MB & 159.1MB). | [MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md](file:///d:/Hyrta-One/cmubeta2/My%20Drive/Thi%E1%BB%87n%20Ph%C3%BAc%20Cloud/He%20sinh%20thai%20Shin/31_FMFT_AIOS_LSE/MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md) |
 
 ---
 
