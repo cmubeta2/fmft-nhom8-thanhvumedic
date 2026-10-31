@@ -519,30 +519,290 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
   outline: 2px dashed var(--primary); outline-offset: 4px;
   background: var(--primary-soft); border-radius: 4px; padding: 2px 6px;
 }
+
+/* ==========================================================================
+   PORTRAIT MOBILE-FIRST OPTIMIZATION (ĐIỆN THOẠI ĐỨNG)
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* NÚT MENU MOBILE */
+.btn-menu-mobile {
+  display: none;
+}
+
+/* MẤU KÉO MÉP TRÁI & OVERLAY */
+.mau-mep-trai { display: none; }
+.rail-overlay { display: none; }
+
+/* GỢI Ý VUỐT BẢNG TRÊN MOBILE */
+.table-hint {
+  display: none;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  text-align: right;
+  margin: 2px 0 6px;
+  font-style: italic;
+}
+
+/* VERTICAL STEP TIMELINE CHO T0 -> T4 TRÊN ĐIỆN THOẠI */
+.timeline-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+.timeline-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--bg-sub);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.timeline-badge {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-info {
+  flex: 1;
+  min-width: 0;
+}
+.timeline-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.timeline-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 54px;
+    --nav-height: 60px;
+  }
+
+  /* NÚT MENU TRÊN TOPBAR */
+  .btn-menu-mobile {
+    display: inline-flex !important;
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0;
+  }
+
+  /* TOPBAR GỌN GÀNG KHÔNG TRÀN */
+  .topbar {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .topbar-logo {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+  }
+  .topbar-title {
+    font-size: 13px !important;
+    max-width: 175px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .topbar-sub {
+    font-size: 10px !important;
+    max-width: 175px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .btn-icon {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+  }
+
+  /* THANH TRÁI (RAIL) DẠNG TRƯỢT OFF-CANVAS */
+  .rail {
+    position: fixed !important;
+    left: 0 !important; top: 0 !important; bottom: 0 !important;
+    width: 280px !important; max-width: 85vw !important;
+    transform: translateX(-100%) !important;
+    z-index: 250 !important;
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  body.mep-trai-mo .rail, body.rail-mo .rail {
+    transform: translateX(0) !important;
+  }
+
+  /* LỚP PHỦ MỜ KHI MỞ MENU */
+  .rail-overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 240 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.2s !important;
+  }
+  body.mep-trai-mo .rail-overlay, body.rail-mo .rail-overlay {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* MẤU KÉO MÉP TRÁI Ở 66% CHIỀU CAO (VỪA NGÓN CÁI) */
+  .mau-mep-trai {
+    display: flex !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 66% !important;
+    transform: translateY(-50%) !important;
+    width: 22px !important;
+    height: 44px !important;
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-radius: 0 10px 10px 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    z-index: 99 !important;
+    border: none !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25) !important;
+    transition: transform 0.15s !important;
+  }
+  .mau-mep-trai:active { transform: translateY(-50%) scale(0.95); }
+
+  /* NỘI DUNG CUỘN Ở GIỮA: 100% BỀ NGANG, KHÔNG BỊ ÉP 56px */
+  .noi-dung {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 10px calc(var(--nav-height) + var(--safe-bottom) + 20px) 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* THANH ĐÁY GHIM CĂN ĐỀU 100% */
+  .bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .nav-item {
+    font-size: 10.5px !important;
+    min-height: 44px !important;
+    gap: 1px !important;
+  }
+  .nav-icon {
+    font-size: 18px !important;
+  }
+
+  /* HERO & Ô SỐ */
+  .hn-hero {
+    padding: 14px !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-greet {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+  }
+  .hero-date {
+    font-size: 11.5px !important;
+  }
+  .tq-3so {
+    gap: 6px !important;
+  }
+  .tq-o {
+    min-height: 56px !important;
+    padding: 8px 6px !important;
+  }
+  .tq-so {
+    font-size: 18px !important;
+  }
+  .tq-nhan {
+    font-size: 10.5px !important;
+  }
+  .btn-primary {
+    min-height: 44px !important;
+    font-size: 13.5px !important;
+  }
+
+  /* BẢNG BIỂU: CUỘN MƯỢT, KHÔNG LÀM TRÀN BODY */
+  .table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 10px !important;
+    margin: 6px 0 !important;
+  }
+  .bang-chuan th, .bang-chuan td {
+    padding: 8px 10px !important;
+    font-size: 12.5px !important;
+  }
+  .bang-chuan th {
+    white-space: nowrap !important;
+  }
+  .table-hint {
+    display: block !important;
+  }
+
+  /* Ô NHẬP 16px CHỐNG IPHONE TỰ PHÓNG TO */
+  .form-input, select.form-input, textarea.form-input {
+    font-size: 16px !important;
+  }
+}
+
   </style>
 </head>
 <body>
   <div id="thanhCho"></div>
 
-  <!-- 1. TOP HEADER (56px) -->
+    <!-- 1. TOP HEADER (56px - PORTRAIT MOBILE OPTIMIZED) -->
   <header class="topbar">
-    <a class="topbar-brand" href="#overview" onclick="switchView('overview'); return false;">
-      <div class="topbar-logo">TVM</div>
-      <div>
-        <div class="topbar-title">FMFT AIOS PORTAL <span class="header-status-pill live">Live v2.6</span></div>
-        <div class="topbar-sub">Nhóm 8 · PKĐK Thanh Vũ Medic Cà Mau</div>
-      </div>
-    </a>
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <button class="btn-icon" onclick="toggleEditQuick()" id="btn-lock-icon" aria-label="Khóa / Mở chỉnh sửa" title="Chế độ Quản trị">🔒</button>
-      <button class="btn-icon" onclick="openSettings()" aria-label="Cài đặt giao diện" title="Cài đặt">⚙️</button>
+    <div style="display:flex; align-items:center; gap:8px; min-width:0;">
+      <button class="btn-icon btn-menu-mobile" onclick="toggleMepTrai()" aria-label="Menu mép trái" title="Danh mục">☰</button>
+      <a class="topbar-brand" href="#overview" onclick="switchView('overview'); return false;">
+        <div class="topbar-logo">TVM</div>
+        <div style="min-width:0;">
+          <div class="topbar-title">FMFT AIOS · NHÓM 8 <span class="header-status-pill live">Live v2.8</span></div>
+          <div class="topbar-sub">PKĐK Thanh Vũ Medic Cà Mau</div>
+        </div>
+      </a>
+    </div>
+    <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+      <button class="btn-icon" onclick="toggleEditQuick()" id="btn-lock-icon" aria-label="Chế độ chỉnh sửa" title="Chế độ chỉnh sửa (TVM)">🔒</button>
+      <button class="btn-icon" onclick="openSettings()" aria-label="Cài đặt" title="Cài đặt giao diện">⚙️</button>
     </div>
   </header>
 
+  <!-- MẤU KÉO MÉP TRÁI & OVERLAY CHO DI ĐỘNG (66% CHIỀU CAO) -->
+  <button class="mau-mep-trai" id="mauMepTrai" onclick="toggleMepTrai()" aria-label="Kéo mở menu">»</button>
+  <div class="rail-overlay" id="railOverlay" onclick="dongMepTrai()"></div>
 
-  <!-- MẤU KÉO MÉP TRÁI (24x44px TẠI 66% CHIỀU CAO TRÊN MOBILE) -->
-  <button class="mau-mep-trai" id="mauMepTrai" onclick="toggleRail()" aria-label="Kéo mở menu mép trái">»</button>
-  <div class="rail-overlay" id="railOverlay" onclick="dongRailMobile()"></div>
+
+
 
   <!-- 2. THANH TRÁI (RAIL 56px / BUNG 248px) -->
   <nav class="rail" id="rail" aria-label="Danh mục tác vụ">
@@ -699,6 +959,7 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
       <!-- BẢNG 3 GIẢ THUYẾT NGUYÊN NHÂN -->
       <div class="the">
         <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">2. Bảng 3 Giả Thuyết Nguyên Nhân Gốc Rễ</h3>
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
         <div class="table-wrap">
           <table class="bang-chuan">
             <thead>
@@ -813,6 +1074,7 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
       <div class="the">
         <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Ma Trận RACI (M03) & Thẩm Quyền DOA (M14)</h3>
         <p class="chu-phu" style="margin-bottom:8px;">Áp dụng 4 nguyên tắc vàng FMFT: Mỗi việc chỉ đúng <strong>1 chữ A</strong>; tách nhỏ đầu việc; kiểm tra điều kiện (Thẩm quyền - Dữ liệu - Nguồn lực); phân biệt RACI với DOA.</p>
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
         <div class="table-wrap">
           <table class="bang-chuan">
             <thead>
@@ -906,6 +1168,7 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
       <!-- TỪ ĐIỂN 7 KPI -->
       <div class="the">
         <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Từ Điển 7 Chỉ Số KPI Điều Hành (M04)</h3>
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
         <div class="table-wrap">
           <table class="bang-chuan">
             <thead>
@@ -1077,6 +1340,7 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
           Chuẩn hóa 4 trụ cột: <strong>K (Kiến thức)</strong> · <strong>S (Kỹ năng)</strong> · <strong>E (Kinh nghiệm)</strong> · <strong>Q (Phẩm chất & Đạo đức)</strong>. Đặt chữ Q làm chốt chặn bảo vệ tính mạng người bệnh.
         </p>
 
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
         <div class="table-wrap">
           <table class="bang-chuan">
             <thead>
@@ -1132,6 +1396,7 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
           Quy trình phản ứng nhanh khi xuất hiện cảnh báo Đỏ y khoa hoặc Đỏ vận hành, đảm bảo khép kín vòng lặp thông tin từ máy móc đến con người can thiệp.
         </p>
 
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
         <div class="table-wrap">
           <table class="bang-chuan">
             <thead>
@@ -1602,6 +1867,41 @@ details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
     function dongRailMobile() {
       document.body.classList.remove('rail-mo');
     }
+
+
+    // ĐIỀU KHIỂN MENU MÉP TRÁI CHO ĐIỆN THOẠI
+    function toggleMepTrai() {
+      document.body.classList.toggle('mep-trai-mo');
+      document.body.classList.toggle('rail-mo');
+    }
+    function dongMepTrai() {
+      document.body.classList.remove('mep-trai-mo');
+      document.body.classList.remove('rail-mo');
+    }
+
+    // VUỐT CHẠM CẢM ỨNG (TOUCH GESTURES) TRÊN DI ĐỘNG
+    let touchStartX = 0;
+    let touchStartY = 0;
+    document.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', e => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = Math.abs(touchEndY - touchStartY);
+
+      // Vuốt từ mép trái (<= 45px) sang phải >= 60px để mở
+      if (touchStartX <= 45 && diffX >= 60 && diffY < 50) {
+        toggleMepTrai();
+      }
+      // Vuốt từ phải sang trái >= 60px khi đang mở để đóng
+      else if (document.body.classList.contains('mep-trai-mo') && diffX <= -60 && diffY < 50) {
+        dongMepTrai();
+      }
+    }, { passive: true });
 
     function toggleRail() {
       document.body.classList.toggle('rail-mo');
