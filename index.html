@@ -1,1691 +1,1375 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!doctype html>
+<html lang="vi" data-palette="clinical" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cổng Quản Trị Bài Tập FMFT AIOS/LSE - Nhóm 8 | BV Thanh Vũ Medic CS3</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts Inter & Outfit -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Outfit', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              200: '#99f6e4',
-              500: '#14b8a6',
-              600: '#0d9488',
-              700: '#0f766e',
-              800: '#115e59',
-              900: '#134e4a',
-            },
-            medic: {
-              blue: '#0284c7',
-              navy: '#0f172a',
-              accent: '#059669',
-              warning: '#d97706',
-              danger: '#dc2626',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f766e">
+  <title>Cổng Quản Trị Bài Tập FMFT AIOS/LSE – Nhóm 8 | Thanh Vũ Medic Cà Mau</title>
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
-    .glass-nav {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .custom-scroll::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 9999px;
-    }
-    .dark .custom-scroll::-webkit-scrollbar-thumb {
-      background: #334155;
-    }
-    [contenteditable="true"] {
-      outline: 2px dashed #0d9488;
-      outline-offset: 4px;
-      background-color: rgba(204, 251, 241, 0.25);
-      border-radius: 4px;
-      padding: 2px 6px;
-    }
-    @media print {
-      .no-print { display: none !important; }
-      body { background: white !important; color: black !important; }
-      .print-break { page-break-after: always; }
-      .shadow-sm, .shadow-md, .shadow-xl { box-shadow: none !important; }
-    }
+/* ==========================================================================
+   SHIN DESIGN SYSTEM v2.6.0 – DESIGN TOKENS & CORE STYLES
+   ========================================================================== */
+:root {
+  --font-scale: 1;
+  --header-height: 56px;
+  --nav-height: 64px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --rail-thu: 56px;
+  --rail-mo: 248px;
+  --rail-w: var(--rail-thu);
+  --noi-max: 760px;
+
+  /* PALETTE: clinical (Y tế, Khảo sát AAA) */
+  --primary: #0f766e;
+  --primary-hover: #115e59;
+  --primary-soft: rgba(15, 118, 110, 0.15);
+  --accent: #0d9488;
+  --accent-soft: rgba(13, 148, 136, 0.15);
+  --on-primary: #ffffff;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #b2eae2;
+  --border-soft: #e6f7f5;
+  --bg-sub: var(--border-soft);
+  --text: #042f2e;
+  --text-muted: #335c57;
+  --sidebar-bg: linear-gradient(135deg, #115e59 0%, #042f2e 100%);
+  --sidebar-text: #f8fafc;
+  --sidebar-text-muted: #99f6e4;
+  --sidebar-border: rgba(255, 255, 255, 0.15);
+  --card-radius: 16px;
+  --hero-radius: 20px;
+  --btn-radius: 12px;
+  --shadow: 0 2px 12px rgba(15, 118, 110, 0.06);
+
+  /* Semantic Colors */
+  --c-gray: #6b7280;
+  --c-gray-soft: rgba(107, 114, 128, 0.14);
+  --c-blue: #2563eb;
+  --c-blue-soft: rgba(37, 99, 235, 0.14);
+  --c-yellow: #b45309;
+  --c-yellow-soft: rgba(180, 83, 9, 0.15);
+  --c-green: #15803d;
+  --c-green-soft: rgba(21, 128, 61, 0.15);
+  --c-red: #dc2626;
+  --c-red-soft: rgba(220, 38, 38, 0.15);
+}
+
+/* PALETTES CONFIGURATION */
+html[data-palette="gold"] {
+  --primary: #dc2626; --primary-hover: #b91c1c; --primary-soft: rgba(212, 160, 23, 0.15);
+  --accent: #d4a017; --accent-soft: rgba(212, 160, 23, 0.15); --on-primary: #fff;
+  --bg: #f4f5f7; --card: #fff; --border: #e5e7eb; --border-soft: #f1f2f4;
+  --text: #1f2937; --text-muted: #6b7280;
+  --sidebar-bg: linear-gradient(165deg, #f0cf5e 0%, #d4a017 55%, #a97e10 100%);
+  --sidebar-text: #3a2a06; --sidebar-border: rgba(0, 0, 0, 0.1);
+  --card-radius: 14px; --hero-radius: 18px; --btn-radius: 10px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+html[data-palette="executive"] {
+  --primary: #0284c7; --primary-hover: #0369a1; --primary-soft: rgba(2, 132, 199, 0.15);
+  --accent: #38bdf8; --accent-soft: rgba(56, 189, 248, 0.15); --on-primary: #fff;
+  --bg: #f8fafc; --card: #fff; --border: #cbd5e1; --border-soft: #f1f5f9;
+  --text: #0f172a; --text-muted: #64748b;
+  --sidebar-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.12);
+  --card-radius: 12px; --hero-radius: 14px; --btn-radius: 8px;
+}
+html[data-palette="nordic"] {
+  --primary: #475569; --primary-hover: #334155; --primary-soft: rgba(71, 85, 105, 0.15);
+  --accent: #0ea5e9; --accent-soft: rgba(14, 165, 233, 0.15); --on-primary: #fff;
+  --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --border-soft: #f1f5f9;
+  --text: #0f172a; --text-muted: #64748b;
+  --sidebar-bg: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  --sidebar-text: #f8fafc; --sidebar-border: rgba(255, 255, 255, 0.12);
+  --card-radius: 10px; --hero-radius: 14px; --btn-radius: 8px;
+}
+html[data-palette="crimson"] {
+  --primary: #991b1b; --primary-hover: #7f1d1d; --primary-soft: rgba(153, 27, 27, 0.15);
+  --accent: #ea580c; --accent-soft: rgba(234, 88, 12, 0.15); --on-primary: #fff;
+  --bg: #fff1f2; --card: #fff; --border: #fecdd3; --border-soft: #ffe4e6;
+  --text: #4c0519; --text-muted: #9f1239;
+  --sidebar-bg: linear-gradient(135deg, #881337 0%, #4c0519 100%);
+  --sidebar-text: #ffe4e6; --sidebar-border: rgba(255, 255, 255, 0.12);
+  --card-radius: 12px; --hero-radius: 16px; --btn-radius: 8px;
+}
+
+/* DARK THEME SPECIFICATIONS */
+[data-theme="dark"] {
+  --primary: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-soft: rgba(45, 212, 191, 0.18);
+  --accent: #5eead4;
+  --accent-soft: rgba(94, 234, 212, 0.18);
+  --on-primary: #042f2e;
+  --bg: #031313;
+  --card: #092020;
+  --border: #134e4a;
+  --border-soft: #0a2d2a;
+  --text: #f0fdfa;
+  --text-muted: #99f6e4;
+  --sidebar-bg: #031414;
+  --sidebar-text: #f0fdfa;
+  --sidebar-border: rgba(45, 212, 191, 0.25);
+  --shadow: none;
+
+  --c-gray: #9ca3af; --c-gray-soft: rgba(156, 163, 175, 0.18);
+  --c-blue: #60a5fa; --c-blue-soft: rgba(96, 165, 250, 0.2);
+  --c-yellow: #f59e0b; --c-yellow-soft: rgba(245, 158, 11, 0.2);
+  --c-green: #4ade80; --c-green-soft: rgba(74, 222, 128, 0.2);
+  --c-red: #f87171; --c-red-soft: rgba(248, 113, 113, 0.2);
+}
+[data-theme="dark"][data-palette="gold"] {
+  --primary: #ef4444; --primary-hover: #dc2626; --primary-soft: rgba(245, 158, 11, 0.18);
+  --accent: #f59e0b; --accent-soft: rgba(245, 158, 11, 0.18); --on-primary: #161822;
+  --bg: #0c0d12; --card: #161822; --border: #25293a; --border-soft: #1d212f;
+  --text: #f8fafc; --text-muted: #94a3b8;
+  --sidebar-bg: linear-gradient(180deg, #181b27 0%, #0d0f17 100%);
+  --sidebar-text: #f8fafc; --sidebar-border: rgba(245, 158, 11, 0.25);
+}
+[data-theme="dark"][data-palette="executive"] {
+  --primary: #38bdf8; --primary-hover: #7dd3fc; --primary-soft: rgba(56, 189, 248, 0.2);
+  --accent: #7dd3fc; --accent-soft: rgba(125, 211, 252, 0.2); --on-primary: #080d1a;
+  --bg: #050811; --card: #0e1526; --border: #1e293b; --border-soft: #141d33;
+  --text: #f8fafc; --text-muted: #94a3b8;
+  --sidebar-bg: #080d1a; --sidebar-text: #f8fafc; --sidebar-border: rgba(56, 189, 248, 0.25);
+}
+
+[data-cochu="lon"] { --font-scale: 1.1; }
+[data-cochu="ratlon"] { --font-scale: 1.2; }
+
+@media (min-width: 1024px) {
+  :root { --noi-max: 960px; }
+  body.rail-mo { --rail-w: var(--rail-mo); }
+}
+@media (max-height: 640px) {
+  :root { --nav-height: 52px; }
+}
+
+/* ==========================================================================
+   BASE & RESET
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: calc(15px * var(--font-scale));
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 24px);
+}
+[hidden] { display: none !important; }
+
+/* ==========================================================================
+   1. HEADER GHIM ĐỈNH (56px)
+   ========================================================================== */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  height: calc(var(--header-height) + var(--safe-top));
+  padding: var(--safe-top) 14px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--sidebar-bg); color: var(--sidebar-text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.topbar-brand {
+  display: flex; align-items: center; gap: 10px;
+  color: inherit; text-decoration: none;
+}
+.topbar-logo {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; letter-spacing: -0.5px;
+}
+.topbar-title {
+  font-size: calc(15px * var(--font-scale)); font-weight: 800;
+  letter-spacing: -0.2px; line-height: 1.2;
+}
+.topbar-sub {
+  font-size: calc(12px * var(--font-scale)); opacity: 0.85; white-space: nowrap;
+}
+.header-status-pill {
+  display: inline-flex; align-items: center; height: 20px;
+  padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 800; vertical-align: middle;
+}
+.header-status-pill.live {
+  background: rgba(45, 212, 191, 0.2); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.4);
+}
+.btn-icon {
+  position: relative; width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15); border: 1px solid var(--sidebar-border);
+  color: inherit; font-size: 18px; display: inline-flex; align-items: center;
+  justify-content: center; cursor: pointer; transition: transform 0.1s;
+}
+.btn-icon:active { transform: scale(0.94); }
+.btn-icon.nhat { background: transparent; border-color: var(--border); color: var(--text); }
+
+/* ==========================================================================
+   2. THANH TRÁI (RAIL 56px / 248px)
+   ========================================================================== */
+.rail {
+  position: fixed; left: 0;
+  top: calc(var(--header-height) + var(--safe-top));
+  bottom: calc(var(--nav-height) + var(--safe-bottom));
+  width: var(--rail-w); z-index: 97;
+  background: var(--card); box-shadow: 1px 0 0 var(--border);
+  display: flex; flex-direction: column; gap: 4px; padding: 6px;
+  overflow: hidden auto; transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rail-nut {
+  width: 44px; height: 44px; border: none; border-radius: 10px;
+  background: transparent; color: var(--text); font-size: 20px;
+  cursor: pointer; align-self: center; display: flex; align-items: center; justify-content: center;
+}
+.rail-nut:hover { background: var(--primary-soft); color: var(--primary); }
+.rail-nhom { height: 1px; margin: 4px 6px; background: var(--border); font-size: 0; }
+.rail-muc {
+  display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 6px;
+  border-radius: 8px; color: var(--text); text-decoration: none;
+  justify-content: center; font-size: calc(13.5px * var(--font-scale)); font-weight: 700;
+  cursor: pointer; border: none; background: transparent; width: 100%;
+}
+.rail-icon { font-size: 19px; width: 28px; text-align: center; flex-shrink: 0; }
+.rail-ten { display: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
+.rail-muc:hover, .rail-muc.dang-chon { background: var(--primary-soft); color: var(--primary); }
+.rail-chan { margin-top: auto; border-top: 1px solid var(--border); padding-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+body.rail-mo .rail { width: var(--rail-mo); }
+body.rail-mo .rail-muc { justify-content: flex-start; padding: 0 10px; }
+body.rail-mo .rail-ten { display: inline; }
+body.rail-mo .rail-nhom {
+  height: auto; background: none; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin: 10px 8px 4px;
+}
+@media (max-width: 1023px) {
+  body.rail-mo .rail { width: var(--rail-mo); box-shadow: 6px 0 30px rgba(0, 0, 0, 0.25); }
+  .noi-dung { padding-left: 10px !important; padding-right: 10px !important; }
+}
+
+/* ==========================================================================
+   3. NỘI DUNG CUỘN Ở GIỮA (CĂN GIỮA PHẦN CÒN LẠI)
+   ========================================================================== */
+.noi-dung {
+  max-width: var(--noi-max);
+  margin-left: calc(var(--rail-w) + max(0px, (100% - var(--rail-w) - var(--noi-max)) / 2));
+  margin-right: auto;
+  padding: 14px 14px 30px;
+  transition: margin-left 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (max-width: 1023px) {
+  .noi-dung { margin-left: var(--rail-thu); }
+}
+
+/* ==========================================================================
+   4. THANH ĐÁY GHIM (64px - ĐÚNG 5 NÚT)
+   ========================================================================== */
+.bottom-nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+  height: calc(var(--nav-height) + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  padding-left: calc(var(--rail-w) + max(0px, (100vw - var(--rail-w) - var(--noi-max)) / 2));
+  padding-right: max(0px, calc((100vw - var(--rail-w) - var(--noi-max)) / 2));
+  display: flex; background: var(--card); border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+}
+.nav-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; border: none; background: none; font: inherit;
+  font-size: calc(11px * var(--font-scale)); font-weight: 600; color: var(--text-muted);
+  cursor: pointer; position: relative; min-height: 44px;
+}
+.nav-item.active { color: var(--primary); font-weight: 800; }
+.nav-icon { font-size: 20px; line-height: 1; }
+@media (max-width: 340px) {
+  .nav-nhan { display: none; }
+  .nav-icon { font-size: 22px; }
+}
+
+/* ==========================================================================
+   5. HERO & 3 Ô SỐ (QUY TẮC MỤC 1 & 5)
+   ========================================================================== */
+.page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 4px 0 14px; padding-left: 10px; border-left: 4px solid var(--accent);
+}
+.page-title { font-size: calc(18px * var(--font-scale)); font-weight: 800; line-height: 1.2; }
+.page-sub { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); margin-top: 2px; }
+
+.hn-hero {
+  display: flex; flex-direction: column; gap: 14px; padding: 18px; margin-bottom: 16px;
+  border: 1px solid var(--border); border-radius: var(--hero-radius);
+  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 75%);
+  box-shadow: var(--shadow);
+}
+.hero-greet { font-size: calc(20px * var(--font-scale)); font-weight: 800; line-height: 1.2; }
+.hero-date { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); }
+
+.tq-3so { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tq-o {
+  min-height: 64px; padding: 10px 12px; display: flex; flex-direction: column;
+  justify-content: center; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--card-radius); cursor: pointer; transition: transform 0.1s, border-color 0.15s;
+}
+.tq-o:hover { border-color: var(--primary); }
+.tq-o:active { transform: scale(0.97); }
+.tq-so { font-size: calc(22px * var(--font-scale)); font-weight: 800; line-height: 1.1; }
+.tq-nhan { font-size: calc(12px * var(--font-scale)); color: var(--text-muted); margin-top: 4px; overflow-wrap: anywhere; }
+@media (max-width: 360px) {
+  .tq-3so { gap: 6px; }
+  .tq-o { padding: 8px; }
+  .tq-so { font-size: calc(19px * var(--font-scale)); }
+}
+
+/* ==========================================================================
+   6. CÁC NÚT (VÙNG BẤM >= 44px)
+   ========================================================================== */
+.btn-primary {
+  width: 100%; min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; border: none; border-radius: var(--btn-radius);
+  background: var(--primary); color: var(--on-primary); font: inherit;
+  font-size: calc(15px * var(--font-scale)); font-weight: 800; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); transition: transform 0.1s;
+}
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-secondary {
+  min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px; border: 1px solid var(--border); border-radius: var(--btn-radius);
+  background: var(--card); color: var(--text); font: inherit;
+  font-size: calc(14px * var(--font-scale)); font-weight: 700; cursor: pointer;
+}
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+.nut-chu {
+  min-height: 44px; padding: 0 4px; border: none; background: none;
+  color: var(--primary); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer;
+}
+.nut-rong {
+  width: 100%; min-height: 44px; margin-top: 10px; border: 1px dashed var(--primary);
+  border-radius: 8px; background: none; color: var(--primary); font: inherit; font-weight: 700; cursor: pointer;
+}
+.nut-do { color: var(--c-red) !important; border-color: var(--c-red) !important; }
+.hang-nut { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.hang-nut > * { flex: 1 1 140px; }
+
+/* ==========================================================================
+   7. THẺ, DANH SÁCH & KHỐI GẬP
+   ========================================================================== */
+.the {
+  padding: 14px; margin-bottom: 12px; background: var(--card);
+  border: 1px solid var(--border); border-radius: var(--card-radius); box-shadow: var(--shadow);
+}
+.the.form-the { border-color: var(--primary); }
+.hn-tieu {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
+  margin: 18px 4px 8px; font-size: calc(14px * var(--font-scale)); font-weight: 700;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;
+}
+.hn-list { display: flex; flex-direction: column; gap: 8px; }
+.hn-dong {
+  min-height: 60px; padding: 10px 14px; display: flex; align-items: center; gap: 12px;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--card-radius);
+  box-shadow: var(--shadow); cursor: pointer; color: inherit; text-decoration: none;
+  transition: transform 0.1s, border-color 0.15s;
+}
+.hn-dong:hover { border-color: var(--primary); }
+.hn-dong:active { transform: scale(0.99); }
+.dong-icon {
+  width: 40px; height: 40px; min-width: 40px; border-radius: 11px;
+  background: var(--primary-soft); color: var(--primary); display: flex;
+  align-items: center; justify-content: center; font-size: 19px;
+}
+.dong-content { flex: 1; min-width: 0; }
+.dong-title {
+  font-size: calc(15px * var(--font-scale)); font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.dong-sub {
+  font-size: calc(13px * var(--font-scale)); color: var(--text-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.dong-meta { display: flex; align-items: center; gap: 8px; }
+.dong-arrow { color: var(--text-muted); font-size: 18px; font-weight: 700; }
+.chi-tiet-dong {
+  margin: -2px 0 8px; padding: 12px 14px; background: var(--card);
+  border: 1px dashed var(--border); border-radius: 12px; font-size: calc(14px * var(--font-scale));
+}
+.hang-tru {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid var(--border-soft); font-size: calc(14px * var(--font-scale));
+}
+.hang-tru:last-child { border-bottom: none; }
+.chu-phu { font-size: calc(13px * var(--font-scale)); color: var(--text-muted); }
+.trong { text-align: center; color: var(--text-muted); padding: 24px 8px; }
+
+details.tq-gon {
+  margin-bottom: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+}
+details.tq-gon > summary {
+  min-height: 48px; padding: 8px 14px; display: flex; align-items: center;
+  justify-content: space-between; gap: 8px; list-style: none; cursor: pointer; font-weight: 700;
+}
+details.tq-gon > summary::-webkit-details-marker { display: none; }
+details.tq-gon > summary::after { content: '▸'; color: var(--text-muted); transition: transform 0.15s; }
+details.tq-gon[open] > summary { border-bottom: 1px solid var(--border-soft); }
+details.tq-gon[open] > summary::after { transform: rotate(90deg); }
+details.tq-gon .tom-tat { margin-left: auto; color: var(--text-muted); font-weight: 600; font-size: 13px; }
+details.tq-gon[open] .tom-tat { display: none; }
+details.tq-gon > :not(summary) { margin: 10px 12px 12px; }
+
+/* ==========================================================================
+   8. BADGE, TAB, Ô LỌC, TIẾN ĐỘ, Ô NHẬP (PHONE 16px)
+   ========================================================================== */
+.badge {
+  display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 999px;
+  font-size: calc(13px * var(--font-scale)); font-weight: 700; white-space: nowrap;
+}
+.badge.do { background: var(--c-red-soft); color: var(--c-red); }
+.badge.vang { background: var(--c-yellow-soft); color: var(--c-yellow); }
+.badge.xanh { background: var(--c-green-soft); color: var(--c-green); }
+.badge.xam { background: var(--c-gray-soft); color: var(--c-gray); }
+.badge.xanhduong { background: var(--c-blue-soft); color: var(--c-blue); }
+
+.hang-tab { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 10px 0 12px; }
+.hang-tab::-webkit-scrollbar { display: none; }
+.tab-nut {
+  flex: 0 0 auto; min-height: 44px; padding: 0 14px; border-radius: 22px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+.tab-nut.dang-chon { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.nhan-o { display: block; margin: 10px 0 4px; font-size: calc(14px * var(--font-scale)); font-weight: 600; }
+.form-input {
+  width: 100%; min-height: 44px; padding: 10px 14px; border: 1px solid var(--border);
+  border-radius: var(--btn-radius); background: var(--bg); color: var(--text);
+  font: inherit; font-size: calc(14px * var(--font-scale));
+}
+.form-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+@media (max-width: 767px) {
+  .form-input { font-size: 16px; } /* iPhone cấm zoom tự động */
+}
+
+/* ==========================================================================
+   9. BẢNG DỮ LIỆU ĐÁP ỨNG (CẤM CUỘN NGANG BODY)
+   ========================================================================== */
+.table-wrap {
+  width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  margin: 10px 0; border: 1px solid var(--border); border-radius: 12px;
+}
+.bang-chuan { width: 100%; border-collapse: collapse; font-size: calc(13.5px * var(--font-scale)); }
+.bang-chuan th {
+  background: var(--border-soft); color: var(--text); font-weight: 800;
+  text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.bang-chuan td {
+  padding: 10px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top;
+}
+.bang-chuan tr:last-child td { border-bottom: none; }
+
+/* ==========================================================================
+   10. TOAST & MODAL SHEET (CÀI ĐẶT / EDIT MODE)
+   ========================================================================== */
+.toast-container {
+  position: fixed; top: 14px; left: var(--rail-w); right: 14px; max-width: 500px;
+  margin: 0 auto; z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+}
+.toast {
+  pointer-events: auto; position: relative; overflow: hidden; display: flex;
+  align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px;
+  background: var(--card); color: var(--text); border: 1px solid var(--border);
+  border-left: 5px solid var(--primary); border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); font-size: calc(14px * var(--font-scale));
+  animation: tTruot 0.2s ease-out;
+}
+.toast-success { border-left-color: var(--c-green); }
+.toast-info { border-left-color: var(--c-blue); }
+.toast-warn { border-left-color: var(--c-yellow); }
+.toast-error { border-left-color: var(--c-red); }
+.toast-btn {
+  min-height: 44px; border: none; background: none; color: var(--primary);
+  font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer;
+}
+.toast-bar {
+  position: absolute; left: 0; bottom: 0; height: 3px; width: 100%;
+  background: var(--primary); animation: tDem 6s linear forwards;
+}
+@keyframes tTruot { from { transform: translateY(-20px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes tDem { from { width: 100%; } to { width: 0; } }
+
+#thanhCho { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--primary); z-index: 400; }
+#thanhCho.chay { width: 100%; animation: tCho 1.2s ease-in-out infinite; }
+@keyframes tCho { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200; display: flex; align-items: flex-end; justify-content: center;
+  background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none;
+  transition: opacity 0.2s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+.modal-sheet {
+  width: 100%; max-width: 600px; max-height: 85vh; overflow-y: auto; padding: 20px;
+  background: var(--card); border-radius: 20px 20px 0 0; transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-overlay.open .modal-sheet { transform: none; }
+
+[contenteditable="true"] {
+  outline: 2px dashed var(--primary); outline-offset: 4px;
+  background: var(--primary-soft); border-radius: 4px; padding: 2px 6px;
+}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-teal-500 selection:text-white">
+<body>
+  <div id="thanhCho"></div>
 
-  <!-- TOP HEADER / BRAND BAR -->
-  <header class="glass-nav sticky top-0 z-50 text-white border-b border-slate-700/60 no-print transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo & Title -->
-        <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 to-emerald-600 flex items-center justify-center font-bold text-white shadow-lg shadow-teal-500/20">
-            TVM
-          </div>
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="font-heading font-bold text-base sm:text-lg tracking-tight text-white">FMFT AIOS/LSE PORTAL</span>
-              <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30">NHÓM 8 - CS3 CÀ MAU</span>
-            </div>
-            <p class="text-xs text-slate-400 hidden sm:block">Chương trình Đào tạo Quản trị Bệnh viện Hiện đại – TS. Đoàn Hùng Dũng</p>
-          </div>
-        </div>
-
-        <!-- Action Tools -->
-        <div class="flex items-center space-x-2 sm:space-x-3">
-          <!-- Quick Print Button -->
-          <button onclick="window.print()" title="In ấn hoặc lưu PDF" class="px-3 py-1.5 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-lg transition-colors flex items-center space-x-1.5 shadow-sm">
-            <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-            <span class="hidden md:inline">In PDF</span>
-          </button>
-
-          <!-- Edit Mode / Secret Key Toggle -->
-          <button id="btn-edit-toggle" onclick="toggleEditMode()" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-all flex items-center space-x-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 shadow-sm">
-            <span id="lock-icon">🔒</span>
-            <span id="edit-mode-label">Mở khóa Chỉnh sửa</span>
-          </button>
-
-          <!-- Public Feedback Modal Trigger -->
-          <button onclick="scrollToFeedback()" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-teal-500 hover:bg-teal-600 text-white transition-all shadow-md shadow-teal-500/30 flex items-center space-x-1.5">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            <span>Góp ý</span>
-            <span id="feedback-badge" class="ml-1 px-1.5 py-0.2 bg-teal-800 text-[10px] rounded-full">0</span>
-          </button>
-        </div>
+  <!-- 1. TOP HEADER (56px) -->
+  <header class="topbar">
+    <a class="topbar-brand" href="#overview" onclick="switchView('overview'); return false;">
+      <div class="topbar-logo">TVM</div>
+      <div>
+        <div class="topbar-title">FMFT AIOS PORTAL <span class="header-status-pill live">Live v2.6</span></div>
+        <div class="topbar-sub">Nhóm 8 · PKĐK Thanh Vũ Medic Cà Mau</div>
       </div>
-
-      <!-- Navigation Tabs -->
-      <div class="flex space-x-1 sm:space-x-3 overflow-x-auto custom-scroll py-2 border-t border-slate-800 text-xs sm:text-sm font-medium">
-        <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn px-3 py-1.5 rounded-lg text-teal-400 bg-slate-800/80 whitespace-nowrap transition-all border border-teal-500/30">
-          📊 Tổng quan & Phân nhóm
-        </button>
-        <button onclick="switchTab('session1')" id="tab-session1" class="tab-btn px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 whitespace-nowrap transition-all">
-          📄 Buổi 1: M01 Xác định vấn đề
-        </button>
-        <button onclick="switchTab('session2')" id="tab-session2" class="tab-btn px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 whitespace-nowrap transition-all">
-          🗺️ Buổi 2: M02 (VSM) & M03 (RACI)
-        </button>
-        <button onclick="switchTab('session3')" id="tab-session3" class="tab-btn px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 whitespace-nowrap transition-all">
-          🎯 Buổi 3: M04 (KPI), M05 (EWS) & M06 (RCA)
-        </button>
-        <button onclick="switchTab('media')" id="tab-media" class="tab-btn px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 whitespace-nowrap transition-all">
-          🎧 Kho Media Bài Giảng (M4A & MP4)
-        </button>
-        <button onclick="switchTab('docs')" id="tab-docs" class="tab-btn px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 whitespace-nowrap transition-all">
-          📚 Tài Liệu Hướng Dẫn M3&M4 (Mới 31/10)
-        </button>
-        <button onclick="switchTab('future')" id="tab-future" class="tab-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 whitespace-nowrap transition-all">
-          🔮 Buổi 4 & 5 (Sẵn sàng)
-        </button>
-      </div>
+    </a>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button class="btn-icon" onclick="toggleEditQuick()" id="btn-lock-icon" aria-label="Khóa / Mở chỉnh sửa" title="Chế độ Quản trị">🔒</button>
+      <button class="btn-icon" onclick="openSettings()" aria-label="Cài đặt giao diện" title="Cài đặt">⚙️</button>
     </div>
   </header>
 
-  <!-- ADMIN ACTIVE NOTIFICATION BAR (HIDDEN BY DEFAULT) -->
-  <div id="admin-banner" class="hidden bg-amber-500 text-slate-900 px-4 py-2 text-xs font-semibold flex items-center justify-between no-print shadow-md">
-    <div class="flex items-center space-x-2 max-w-7xl mx-auto w-full">
-      <span class="text-base">⚠️</span>
-      <span><strong>CHẾ ĐỘ CHỈNH SỬA (ADMIN) ĐANG BẬT:</strong> Bạn có thể click trực tiếp vào văn bản, tiêu đề hoặc bảng biểu để chỉnh sửa. Dữ liệu sẽ lưu tự động vào trình duyệt.</span>
-      <div class="ml-auto flex items-center space-x-2">
-        <button onclick="saveAdminEdits()" class="bg-slate-900 hover:bg-slate-800 text-white px-3 py-1 rounded text-xs transition">Lưu ngay</button>
-        <button onclick="resetDefaultData()" class="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 rounded text-xs transition">Khôi phục gốc</button>
-        <button onclick="lockAdminMode()" class="bg-red-700 hover:bg-red-800 text-white px-3 py-1 rounded text-xs transition">Đóng khóa</button>
-      </div>
+  <!-- 2. THANH TRÁI (RAIL 56px / BUNG 248px) -->
+  <nav class="rail" id="rail" aria-label="Danh mục tác vụ">
+    <button class="rail-nut" onclick="toggleRail()" aria-label="Mở rộng danh mục">»</button>
+    
+    <div class="rail-nhom">BÀI TẬP FMFT</div>
+    <button class="rail-muc dang-chon" id="rm-overview" onclick="switchView('overview')">
+      <span class="rail-icon">🏠</span><span class="rail-ten">Tổng quan & Nhóm 8</span>
+    </button>
+    <button class="rail-muc" id="rm-session1" onclick="switchView('session1')">
+      <span class="rail-icon">📄</span><span class="rail-ten">Buổi 1: Phiếu M01</span>
+    </button>
+    <button class="rail-muc" id="rm-session2" onclick="switchView('session2')">
+      <span class="rail-icon">🗺️</span><span class="rail-ten">Buổi 2: VSM & RACI</span>
+    </button>
+    <button class="rail-muc" id="rm-session3" onclick="switchView('session3')">
+      <span class="rail-icon">🎯</span><span class="rail-ten">Buổi 3: KPI & RCA</span>
+    </button>
+
+    <div class="rail-nhom">TRI THỨC & GÓP Ý</div>
+    <button class="rail-muc" id="rm-feedback" onclick="switchView('feedback')">
+      <span class="rail-icon">💬</span><span class="rail-ten">Góp ý & Media bài giảng</span>
+    </button>
+
+    <div class="rail-chan">
+      <button class="rail-muc" onclick="openSettings()">
+        <span class="rail-icon">⚙️</span><span class="rail-ten">Cài đặt giao diện</span>
+      </button>
     </div>
-  </div>
+  </nav>
 
-  <!-- MAIN CONTAINER -->
-  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <!-- 3. NỘI DUNG CUỘN Ở GIỮA -->
+  <main class="noi-dung">
 
-    <!-- ========================================== -->
-    <!-- TAB 1: TỔNG QUAN & PHÂN NHÓM 8            -->
-    <!-- ========================================== -->
-    <div id="pane-overview" class="tab-pane space-y-6">
-      
-      <!-- HERO BANNER -->
-      <div class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-teal-950 rounded-2xl p-6 sm:p-8 text-white shadow-xl border border-slate-700">
-        <div class="relative z-10 max-w-3xl">
-          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-3 border border-teal-500/30">
-            <span>Hệ thống Y tế Thanh Vũ Medic</span>
-            <span>•</span>
-            <span>Cơ sở 3 Cà Mau</span>
-          </div>
-          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight font-heading mb-3">
-            Hồ Sơ Quản Trị Khóa Học FMFT AIOS/LSE
-          </h1>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-            Không gian lưu trữ, phân tích và phản biện bài tập chuyên sâu 5 buổi đào tạo Quản trị Bệnh viện Hiện đại do <strong>TS. Đoàn Hùng Dũng</strong> giảng dạy. Giải quyết triệt để nút thắt dồn ứ luồng khám ngoại trú sau cận lâm sàng tại PKĐK Thanh Vũ Medic Cà Mau.
-          </p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
-              <div class="text-xs text-slate-400">Đơn vị trọng điểm</div>
-              <div class="text-base font-bold text-teal-300">CS3 Cà Mau</div>
-            </div>
-            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
-              <div class="text-xs text-slate-400">Lượt khám TB/ngày</div>
-              <div class="text-base font-bold text-teal-300">450 - 550 ca</div>
-            </div>
-            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
-              <div class="text-xs text-slate-400">Thời gian chờ W mục tiêu</div>
-              <div class="text-base font-bold text-emerald-400">≤ 15 phút</div>
-            </div>
-            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
-              <div class="text-xs text-slate-400">Thành viên Nhóm 8</div>
-              <div class="text-base font-bold text-teal-300">15 Nhân sự</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DANH SÁCH 15 THÀNH VIÊN NHÓM 8 (BGĐ DUYỆT) -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900 font-heading">Danh Sách 15 Thành Viên Nhóm 8 (Quyết Định BGĐ Duyệt)</h2>
-            <p class="text-xs text-slate-500">Phân bổ liên khoa khép kín toàn bộ chuỗi giá trị từ KHTH, Xét nghiệm, Nội soi, PTKH, Thu ngân, Tiêm ngừa đến Quản trị tòa nhà</p>
-          </div>
-          <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-teal-100 text-teal-800">12 CS3 + 3 CS2</span>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs sm:text-sm text-slate-700">
-            <thead class="bg-slate-100/75 text-slate-900 font-semibold border-b border-slate-200 uppercase text-[11px] tracking-wider">
-              <tr>
-                <th class="px-4 py-3 text-center w-12">STT</th>
-                <th class="px-4 py-3">Họ và Tên</th>
-                <th class="px-4 py-3">Chức danh công tác</th>
-                <th class="px-4 py-3 text-center">Cơ sở</th>
-                <th class="px-4 py-3">Vai trò trong Nhóm 8</th>
-                <th class="px-4 py-3">Mảng phụ trách biểu mẫu</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 font-medium">
-              <tr class="bg-amber-50/50">
-                <td class="px-4 py-2.5 text-center font-bold text-amber-700">1</td>
-                <td class="px-4 py-2.5 font-bold text-slate-900">Nguyễn Kim Nhang</td>
-                <td class="px-4 py-2.5 text-slate-600">Phó phòng Tổ chức - Nhân sự</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-slate-200 text-slate-800">CS2</span></td>
-                <td class="px-4 py-2.5 font-bold text-teal-700">Nhóm trưởng</td>
-                <td class="px-4 py-2.5 text-slate-600">Điều phối chung & Bảo vệ trước Giảng viên</td>
-              </tr>
-              <tr class="bg-slate-50/40">
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">2</td>
-                <td class="px-4 py-2.5 font-bold text-slate-900">Nguyễn Hoàng Duy</td>
-                <td class="px-4 py-2.5 text-slate-600">Phó phòng Công nghệ thông tin</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-slate-200 text-slate-800">CS2</span></td>
-                <td class="px-4 py-2.5 font-semibold text-blue-700">Hỗ trợ Nhóm trưởng (Ban FMFT)</td>
-                <td class="px-4 py-2.5 text-slate-600">Tích hợp phần mềm HIS/LIS, AIOS</td>
-              </tr>
-              <tr class="bg-slate-50/40">
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">3</td>
-                <td class="px-4 py-2.5 font-bold text-slate-900">Lục Thị Yến Nhi</td>
-                <td class="px-4 py-2.5 text-slate-600">Chuyên viên Ban Kiểm Soát</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-slate-200 text-slate-800">CS2</span></td>
-                <td class="px-4 py-2.5 font-semibold text-purple-700">Giám sát kiểm soát</td>
-                <td class="px-4 py-2.5 text-slate-600">Kiểm soát KPI độc lập, kiểm toán tuân thủ</td>
-              </tr>
-              <tr class="bg-teal-50/60">
-                <td class="px-4 py-2.5 text-center font-bold text-teal-800">4</td>
-                <td class="px-4 py-2.5 font-bold text-teal-950">Huỳnh Tấn Kiệt</td>
-                <td class="px-4 py-2.5 text-slate-600">Trưởng phòng Kế hoạch tổng hợp</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 font-bold text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 font-bold text-teal-800">Chủ trì Kỹ thuật Lâm sàng</td>
-                <td class="px-4 py-2.5 text-slate-600">Quy trình KHTH, phân buồng khám, RACI (M02, M03)</td>
-              </tr>
-              <tr class="bg-teal-50/60">
-                <td class="px-4 py-2.5 text-center font-bold text-teal-800">5</td>
-                <td class="px-4 py-2.5 font-bold text-teal-950">Huỳnh Trường Thanh Tâm</td>
-                <td class="px-4 py-2.5 text-slate-600">Phó phòng PTKH / Thư ký BKS KPI</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 font-bold text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 font-bold text-teal-800">Chủ trì Điều hành & Dữ liệu CS3</td>
-                <td class="px-4 py-2.5 text-slate-600">Kiến trúc VSM, Thiết kế KPI, EWS & Quản trị Portal</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">6</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Tạ Minh Phước</td>
-                <td class="px-4 py-2.5 text-slate-600">Tổ trưởng Tổ PTKH (CSKH)</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Vận hành</td>
-                <td class="px-4 py-2.5 text-slate-600">Điều phối sảnh, xác lập mốc T0, Care Navigator</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">7</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Lê Minh Mẫn</td>
-                <td class="px-4 py-2.5 text-slate-600">Trưởng phòng Xét nghiệm</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Cận lâm sàng</td>
-                <td class="px-4 py-2.5 text-slate-600">Chuẩn hóa trả kết quả liên tục (Continuous Flow)</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">8</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Mai Duy Linh</td>
-                <td class="px-4 py-2.5 text-slate-600">Phó phòng Xét nghiệm</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Cận lâm sàng</td>
-                <td class="px-4 py-2.5 text-slate-600">Rà soát TAT phân tích mẫu LIS, Critical Alert</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">9</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Đào Văn Khuynh</td>
-                <td class="px-4 py-2.5 text-slate-600">Bác sĩ phụ trách Phòng Nội soi</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Chuyên môn</td>
-                <td class="px-4 py-2.5 text-slate-600">Ràng buộc thời gian khám lâm sàng ≥ 7 phút</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">10</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Lê Như Ý</td>
-                <td class="px-4 py-2.5 text-slate-600">Điều dưỡng Khoa Nội soi</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Chuyên môn</td>
-                <td class="px-4 py-2.5 text-slate-600">Khảo sát luồng bàn giao thủ thuật chuyên sâu</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">11</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Nguyễn Như Ý</td>
-                <td class="px-4 py-2.5 text-slate-600">Trưởng phòng Tài chính - Kế toán</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Quản trị chi phí</td>
-                <td class="px-4 py-2.5 text-slate-600">Phân tích hiệu quả tài chính & chi phí cơ hội</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">12</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Nguyễn Thúy Kiều</td>
-                <td class="px-4 py-2.5 text-slate-600">Tổ trưởng Tổ Thu ngân</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Dịch vụ</td>
-                <td class="px-4 py-2.5 text-slate-600">Tối ưu hóa khâu thanh toán cuối luồng</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">13</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Bùi Mỹ Diện</td>
-                <td class="px-4 py-2.5 text-slate-600">Điều dưỡng Tổ Tiêm ngừa</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Điều dưỡng</td>
-                <td class="px-4 py-2.5 text-slate-600">Phân luồng đối tượng tiêm chủng và mạn tính</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">14</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Lữ Phú Sinh</td>
-                <td class="px-4 py-2.5 text-slate-600">Trưởng phòng Quản trị tòa nhà</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Hạ tầng</td>
-                <td class="px-4 py-2.5 text-slate-600">Bố trí mặt bằng sảnh, ghế ngồi, bảng số điện tử</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2.5 text-center font-bold text-slate-600">15</td>
-                <td class="px-4 py-2.5 font-semibold text-slate-900">Trần Trúc Linh</td>
-                <td class="px-4 py-2.5 text-slate-600">Trưởng phòng Tổ chức - Nhân sự</td>
-                <td class="px-4 py-2.5 text-center"><span class="px-2 py-0.5 rounded text-xs bg-teal-100 text-teal-900">CS3</span></td>
-                <td class="px-4 py-2.5 text-slate-700">Thành viên Nhân sự</td>
-                <td class="px-4 py-2.5 text-slate-600">Điều động nhân sự ca kíp cao điểm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- TAB 2: BÀI TẬP BUỔI 1 (M01)                -->
-    <!-- ========================================== -->
-    <div id="pane-session1" class="tab-pane hidden space-y-6">
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chuyên đề 1 & 2 • Tư duy phản biện & Hệ thống</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">M01: Phiếu Xác Định Vấn Đề Và Chọn Ưu Tiên</h2>
-          </div>
-          <button onclick="copySectionMarkdown('m01')" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition flex items-center space-x-1 w-fit">
-            <span>📋 Copy Markdown M01</span>
-          </button>
-        </div>
-
-        <!-- Section 1: Thông tin cơ bản -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500 font-medium">Bệnh viện & Nhóm</span>
-            <div class="font-bold text-slate-900 mt-1 editable-field" data-key="m01_unit">Hệ thống Y tế Thanh Vũ Medic – Nhóm 8 (CS3 Cà Mau)</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500 font-medium">Quy trình & Phạm vi</span>
-            <div class="font-bold text-slate-900 mt-1 editable-field" data-key="m01_scope">Luồng khám kết luận ngoại trú sau Cận lâm sàng (07h00 - 10h00)</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
-            <span class="text-xs text-slate-500 font-medium">Người chủ trì & Ngày lập</span>
-            <div class="font-bold text-slate-900 mt-1 editable-field" data-key="m01_lead">Nguyễn Kim Nhang & Huỳnh Trường Thanh Tâm (28/10/2026)</div>
-          </div>
-        </div>
-
-        <!-- Tách bạch 3 tầng dữ liệu -->
-        <div class="space-y-4 mb-6">
-          <h3 class="text-base font-bold text-slate-900 font-heading flex items-center space-x-2">
-            <span>1. Vấn đề quan sát được & Phân định 3 tầng dữ liệu chuẩn FMFT</span>
-          </h3>
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm leading-relaxed text-slate-700 editable-field" data-key="m01_issue_desc">
-            Tình trạng dồn ứ cục bộ người bệnh tại sảnh chờ Bác sĩ khám kết luận sau khi đã hoàn thành các chỉ định cận lâm sàng (Xét nghiệm máu, Siêu âm, X-quang). Khoảng thời gian từ khi có đầy đủ kết quả cận lâm sàng đến khi Bác sĩ bắt đầu khám kết luận bị kéo dài, gây ra hàng chờ đông đúc và bức xúc tại sảnh tầng trệt vào khung giờ cao điểm sáng 07h30 – 09h45.
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200">
-              <div class="flex items-center space-x-1.5 text-emerald-800 font-bold text-xs uppercase mb-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
-                <span>[Số Liệu Thật]</span>
-              </div>
-              <p class="text-xs text-emerald-950 leading-relaxed editable-field" data-key="m01_data_real">
-                Lượt khám ngoại trú đạt 450 – 550 lượt/ngày (Chỉ tiêu 2026 C1 là 172.150 lượt/năm; doanh thu F1 là 68,8 tỷ). Khoảng <strong>68% người bệnh</strong> tập trung đăng ký và làm CLS trước 09h00 sáng. Khảo sát hài lòng C4 tháng 10 ghi nhận 18,5% phản ánh về thời gian chờ.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200">
-              <div class="flex items-center space-x-1.5 text-blue-800 font-bold text-xs uppercase mb-2">
-                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-                <span>[Số Giả Định / Khảo Sát Mẫu]</span>
-              </div>
-              <p class="text-xs text-blue-950 leading-relaxed editable-field" data-key="m01_data_est">
-                Thời gian chờ từ lúc hoàn tất xét nghiệm/CĐHA đến khi vào buồng khám kết luận dao động từ <strong>35 đến 55 phút</strong> (chiếm 30–35% tổng thời gian lưu viện ngoại trú TAT 135 – 160 phút). Đo ngẫu nhiên 50 ca cho độ lệch bàn giao từ 15 đến 65 phút.
-              </p>
-            </div>
-
-            <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
-              <div class="flex items-center space-x-1.5 text-amber-800 font-bold text-xs uppercase mb-2">
-                <span class="w-2 h-2 rounded-full bg-amber-600"></span>
-                <span>[Nội Dung Chưa Có Dữ Liệu]</span>
-              </div>
-              <p class="text-xs text-amber-950 leading-relaxed editable-field" data-key="m01_data_blind">
-                Hệ thống HIS hiện tại <strong>chưa có trường dữ liệu</strong> ghi nhận mốc thời gian "Người bệnh thực tế cầm kết quả giấy quay lại nộp cho Điều dưỡng buồng khám" (vùng mù dữ liệu). Chưa phân tách tự động giữa thời gian chờ do Labo và thời gian chờ do người bệnh chưa biết vào phòng.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bảng 3 giả thuyết nguyên nhân gốc rễ -->
-        <div class="space-y-3 mb-6">
-          <h3 class="text-base font-bold text-slate-900 font-heading">2. Bảng Phân Tích 3 Giả Thuyết Nguyên Nhân Gốc Rễ</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs sm:text-sm text-slate-700">
-              <thead class="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200">
-                <tr>
-                  <th class="px-4 py-3 w-1/3">Giả thuyết nguyên nhân gốc rễ</th>
-                  <th class="px-4 py-3 w-1/3">Dữ liệu hoặc phương thức kiểm chứng</th>
-                  <th class="px-4 py-3 w-1/3">Người và hạn xác minh</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 font-medium">
-                <tr>
-                  <td class="px-4 py-3 align-top font-semibold text-slate-900">
-                    1. Trả kết quả CLS dồn cục bộ (Batch Processing)
-                    <p class="text-xs font-normal text-slate-600 mt-1">Labo Xét nghiệm và CĐHA có thói quen gom một lượng lớn kết quả rồi mới in và trả hàng loạt ra sảnh thay vì trả liên tục.</p>
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-600">
-                    Trích xuất nhật ký (log) duyệt và phát hành kết quả trên LIS/PACS theo từng block 15 phút từ 07h00 đến 10h00; đối chiếu biểu đồ phân bố giờ trả kết quả thực tế.
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-900 font-semibold">
-                    Lê Minh Mẫn (Trưởng PXN) & Mai Duy Linh (Phó PXN)<br/>
-                    <span class="text-xs font-normal text-teal-700">Hạn chót: 05/11/2026</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 align-top font-semibold text-slate-900">
-                    2. Đứt gãy bàn giao thông tin (Handoff Blind Spot)
-                    <p class="text-xs font-normal text-slate-600 mt-1">Kết quả đã có trên mạng nhưng buồng khám không có tín hiệu nhận biết; người bệnh cầm giấy đứng chờ ngoài sảnh hoặc đi ăn sáng/vệ sinh làm đứt luồng.</p>
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-600">
-                    Khảo sát màn hình hàng đợi HIS tại buồng khám; đối chiếu log có kết quả với log mở bệnh án; quan sát thực địa hành vi 30 người bệnh sau khi nhận kết quả giấy.
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-900 font-semibold">
-                    Huỳnh Tấn Kiệt (KHTH), Huỳnh Trường Thanh Tâm (PTKH) & Nguyễn Hoàng Duy (CNTT)<br/>
-                    <span class="text-xs font-normal text-teal-700">Hạn chót: 05/11/2026</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3 align-top font-semibold text-slate-900">
-                    3. Chưa phân làn ưu tiên (Fast-track) cho bệnh mạn tính
-                    <p class="text-xs font-normal text-slate-600 mt-1">Người bệnh khám định kỳ (tăng huyết áp, đái tháo đường ổn định chỉ cần lấy máu và cấp đơn) phải xếp chung hàng với các ca khám mới có kỹ thuật chuyên sâu.</p>
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-600">
-                    Thống kê cơ cấu mặt bệnh ngoại trú buổi sáng; đo lường thời gian khám kết luận của nhóm mạn tính so với ca mới; kiểm tra khả năng tách buồng khám hoặc luồng ưu tiên.
-                  </td>
-                  <td class="px-4 py-3 align-top text-slate-900 font-semibold">
-                    Đào Văn Khuynh (BS Nội soi), Tạ Minh Phước (PTKH) & Bùi Mỹ Diện (Tiêm ngừa)<br/>
-                    <span class="text-xs font-normal text-teal-700">Hạn chót: 05/11/2026</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Ranh giới chuyên môn & Mục tiêu -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl bg-rose-50 border border-rose-200">
-            <h4 class="font-bold text-rose-900 text-sm mb-2 flex items-center space-x-1.5">
-              <span>⛔</span>
-              <span>Ranh Giới An Toàn Chuyên Môn Bất Khả Xâm Phạm</span>
-            </h4>
-            <ul class="text-xs text-rose-950 space-y-1.5 list-disc pl-4 leading-relaxed">
-              <li><strong>Tuyệt đối không can thiệp chỉ định chuyên môn</strong> hoặc ép Bác sĩ cắt ngắn thời gian khám lâm sàng (duy trì tối thiểu <strong>7 – 10 phút/ca</strong>).</li>
-              <li>Tuân thủ nghiêm ngặt quy trình nhận diện đúng người bệnh (đối chiếu đủ 3 thông tin: Họ tên, Năm sinh, Mã số PID).</li>
-              <li>Đảm bảo 100% việc cảnh báo tức thì các kết quả cận lâm sàng có giá trị báo động nguy kịch (Critical Value Alert).</li>
-            </ul>
-          </div>
-
-          <div class="p-4 rounded-xl bg-teal-50 border border-teal-200">
-            <h4 class="font-bold text-teal-900 text-sm mb-2 flex items-center space-x-1.5">
-              <span>🎯</span>
-              <span>Mục Tiêu Định Lượng Đầu Ra</span>
-            </h4>
-            <ul class="text-xs text-teal-950 space-y-1.5 list-disc pl-4 leading-relaxed">
-              <li>Rút ngắn thời gian chờ khám lại từ <strong>≥ 45 phút xuống ≤ 15 phút</strong> (giảm 66% thời gian lãng phí).</li>
-              <li>Rút ngắn Outpatient TAT trung bình từ <strong>145 phút xuống dưới 90 phút</strong>.</li>
-              <li>Tỷ lệ người bệnh hài lòng về khâu khám kết luận đạt <strong>≥ 92%</strong>.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- TAB 3: BÀI TẬP BUỔI 2 (M02 & M03)          -->
-    <!-- ========================================== -->
-    <div id="pane-session2" class="tab-pane hidden space-y-6">
-      
-      <!-- M02: VSM & HANDOFF -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chuyên đề 3 • Bản đồ Chuỗi Giá Trị & Chuẩn Hóa Bàn Giao</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">M02: Bản Đồ Chuỗi Giá Trị Và Bàn Giao (VSM & Handoff)</h2>
-          </div>
-          <button onclick="copySectionMarkdown('m02')" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition flex items-center space-x-1 w-fit">
-            <span>📋 Copy Markdown M02</span>
-          </button>
-        </div>
-
-        <!-- 5 MỐC THỜI GIAN CHUẨN HOÁ -->
-        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-6 text-center">
-          <div class="p-3 rounded-xl bg-slate-800 text-white shadow-sm">
-            <div class="text-xs text-teal-300 font-bold">Mốc T0</div>
-            <div class="text-xs font-semibold mt-1">Đủ KQ + Có mặt</div>
-            <div class="text-[10px] text-slate-400 mt-1">Xác lập điều kiện sẵn sàng</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800 text-white shadow-sm">
-            <div class="text-xs text-teal-300 font-bold">Mốc T1</div>
-            <div class="text-xs font-semibold mt-1">Gửi yêu cầu HIS</div>
-            <div class="text-[10px] text-slate-400 mt-1">Tức thời ≤ 10 giây</div>
-          </div>
-          <div class="p-3 rounded-xl bg-teal-800 text-white shadow-sm border border-teal-500">
-            <div class="text-xs text-amber-300 font-bold">Mốc T2 (CAM KẾT)</div>
-            <div class="text-xs font-semibold mt-1">ĐD Tiếp nhận</div>
-            <div class="text-[10px] text-teal-200 mt-1">Cam kết T2 - T1 ≤ 5 phút</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-800 text-white shadow-sm">
-            <div class="text-xs text-teal-300 font-bold">Mốc T3</div>
-            <div class="text-xs font-semibold mt-1">Mời vào buồng khám</div>
-            <div class="text-[10px] text-slate-400 mt-1">Bảng gọi số tự động sảnh</div>
-          </div>
-          <div class="p-3 rounded-xl bg-emerald-800 text-white shadow-sm border border-emerald-500">
-            <div class="text-xs text-emerald-300 font-bold">Mốc T4</div>
-            <div class="text-xs font-semibold mt-1">Bác sĩ khám (≥7p)</div>
-            <div class="text-[10px] text-emerald-200 mt-1">W = T4 - T0 ≤ 15 phút</div>
-          </div>
-        </div>
-
-        <!-- SO SÁNH HIỆN TRẠNG VS ĐỀ XUẤT -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <!-- Cột Hiện trạng -->
-          <div class="p-5 rounded-2xl bg-rose-50/50 border border-rose-200">
-            <div class="flex items-center justify-between mb-4 pb-2 border-b border-rose-200">
-              <h3 class="font-bold text-rose-900 font-heading text-base">🔴 Hiện Trạng (Current State)</h3>
-              <span class="px-2 py-0.5 text-xs font-bold bg-rose-200 text-rose-900 rounded">W = 45p | P90 = 63p</span>
-            </div>
-            <ul class="space-y-3 text-xs text-rose-950">
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-rose-700">1.</span>
-                <div><strong>In kết quả giấy thủ công:</strong> Chờ gom mẻ từ phòng xét nghiệm đưa ra sảnh tiếp đón (Mất 10 – 15 phút).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-rose-700">2.</span>
-                <div><strong>Người bệnh tự mang kết quả:</strong> Đi lòng vòng tìm phòng hoặc bỏ đi ăn sáng, nộp kết quả vào khay (Mất 8 – 12 phút).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-rose-700">3.</span>
-                <div><strong>Đứt gãy bàn giao buồng khám:</strong> Hồ sơ nằm bất động trong khay; Bác sĩ không biết bên ngoài đã có kết quả (Chờ 15 – 25 phút vô ích!).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-rose-700">4.</span>
-                <div><strong>Gọi tên thủ công loa sảnh:</strong> Gọi nhiều lần không nghe do ồn ào (Chờ 5 – 10 phút).</div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Cột Đề xuất -->
-          <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200">
-            <div class="flex items-center justify-between mb-4 pb-2 border-b border-emerald-200">
-              <h3 class="font-bold text-emerald-900 font-heading text-base">🟢 Đề Xuất Lean Flow (Future State)</h3>
-              <span class="px-2 py-0.5 text-xs font-bold bg-emerald-200 text-emerald-900 rounded">W ≤ 15p | P90 ≤ 25p</span>
-            </div>
-            <ul class="space-y-3 text-xs text-emerald-950">
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-emerald-700">1.</span>
-                <div><strong>Trả kết quả điện tử tức thì (T0):</strong> LIS/PACS duyệt online + Quét mã check-in sảnh xác lập T0 tức thời (≤ 1 phút).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-emerald-700">2.</span>
-                <div><strong>Đẩy thông báo HIS (T1):</strong> Tự động gửi cảnh báo hàng đợi sang màn hình buồng khám (≤ 10 giây).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-emerald-700">3.</span>
-                <div><strong>Cam kết tiếp nhận SOP (T2):</strong> Điều dưỡng buồng khám click nhận việc cam kết <strong>T2 - T1 ≤ 5 phút</strong> (Khép kín bàn giao).</div>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="font-bold text-emerald-700">4.</span>
-                <div><strong>Bảng gọi số tự động (T3) & Khám lâm sàng (T4):</strong> Điều hướng thẳng vào bàn Bác sĩ, dành trọn ≥ 7 phút chuyên môn.</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 6 KỊCH BẢN NGOẠI LỆ -->
-        <div class="space-y-3 mb-2">
-          <h3 class="text-base font-bold text-slate-900 font-heading">Quy Chuẩn Xử Lý 6 Kịch Bản Ngoại Lệ Trong Vận Hành</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs text-slate-700">
-              <thead class="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200">
-                <tr>
-                  <th class="px-3 py-2.5 w-1/4">Kịch bản ngoại lệ</th>
-                  <th class="px-3 py-2.5 w-1/4">Nguy cơ sai hỏng</th>
-                  <th class="px-3 py-2.5 w-1/3">Quy trình xử lý chuẩn hóa (SOP)</th>
-                  <th class="px-3 py-2.5">Người chịu trách nhiệm</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200">
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">1. Thiếu kết quả hoặc thiếu mốc T0</td>
-                  <td class="px-3 py-2.5 text-slate-600">Bác sĩ kết luận non; tính sai thời gian W</td>
-                  <td class="px-3 py-2.5 text-slate-700">Khóa click gọi khám; giữ trạng thái Chờ KQ; CSKH liên hệ Labo kiểm tra</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">Lê Minh Mẫn (Labo)</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">2. Sai định danh hoặc sai lượt khám</td>
-                  <td class="px-3 py-2.5 text-rose-700 font-semibold">Nhầm bệnh án, sai đơn thuốc</td>
-                  <td class="px-3 py-2.5 text-slate-700">Dừng ngay bàn giao; đối chiếu lại CCCD/vòng tay; lập biên bản suýt sự cố Near-miss</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">ĐD. Huỳnh Thị Nga</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">3. Trùng lặp yêu cầu khám lại</td>
-                  <td class="px-3 py-2.5 text-slate-600">Ảo hóa hàng đợi, méo mó thời gian thực</td>
-                  <td class="px-3 py-2.5 text-slate-700">Hệ thống HIS tự động phát hiện mã trùng và gộp; giữ nguyên mốc T0 ban đầu</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">Võ Lê Chương (CNTT)</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">4. Kết quả CLS bị sửa sau duyệt</td>
-                  <td class="px-3 py-2.5 text-rose-700 font-semibold">Bác sĩ ra quyết định trên số liệu cũ</td>
-                  <td class="px-3 py-2.5 text-slate-700">Khóa trạng thái khám; bắn pop-up cảnh báo đỏ cho Bác sĩ; chuyển sang luồng hội chẩn</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">BS. Huỳnh Tấn Kiệt</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">5. Mất kết nối mạng HIS/LIS</td>
-                  <td class="px-3 py-2.5 text-slate-600">Gián đoạn luồng bàn giao điện tử</td>
-                  <td class="px-3 py-2.5 text-slate-700">Kích hoạt Fallback thủ công: Sổ bàn giao giấy có ký nhận; liên lạc điện thoại nội bộ</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">Lữ Phú Sinh & CNTT (≤15p)</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">6. Người bệnh vắng mặt khi gọi</td>
-                  <td class="px-3 py-2.5 text-slate-600">Tắc hàng đợi, làm chậm ca sau</td>
-                  <td class="px-3 py-2.5 text-slate-700">Đánh dấu Vắng mặt tạm thời; chuyển lượt xuống vị trí 3; CSKH gọi điện thoại hỗ trợ</td>
-                  <td class="px-3 py-2.5 font-semibold text-teal-800">Tạ Minh Phước (PTKH)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- M03: RACI & DOA -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chuyên đề 4 • Phân Định Trách Nhiệm & Thẩm Quyền Ra Quyết Định</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">M03: Ma Trận Trách Nhiệm & Thẩm Quyền (RACI & DOA)</h2>
-          </div>
-          <button onclick="copySectionMarkdown('m03')" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition flex items-center space-x-1 w-fit">
-            <span>📋 Copy Markdown M03</span>
-          </button>
-        </div>
-
-        <!-- RACI TABLE -->
-        <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6">
-          <table class="w-full text-left text-xs sm:text-sm text-slate-700">
-            <thead class="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200">
-              <tr>
-                <th class="px-3 py-3 w-12 text-center">STT</th>
-                <th class="px-3 py-3">Đầu việc trọng yếu bàn giao ngoại trú</th>
-                <th class="px-2 py-3 text-center">BGĐ</th>
-                <th class="px-2 py-3 text-center">Lâm sàng</th>
-                <th class="px-2 py-3 text-center">KHTH/PTKH</th>
-                <th class="px-2 py-3 text-center">ĐD Khám</th>
-                <th class="px-2 py-3 text-center">Labo XN</th>
-                <th class="px-2 py-3 text-center">CĐHA</th>
-                <th class="px-2 py-3 text-center">CNTT</th>
-                <th class="px-2 py-3 text-center">BKS</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 font-medium">
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">1</td>
-                <td class="px-3 py-2.5 text-slate-900">Thiết lập quy định cam kết T1 → T2 ≤ 5 phút</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center font-semibold text-teal-700">R</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">2</td>
-                <td class="px-3 py-2.5 text-slate-900">Trả kết quả CLS điện tử dòng liên tục</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">3</td>
-                <td class="px-3 py-2.5 text-slate-900">Xác lập mốc T0 (Đủ KQ + Check-in tại sảnh)</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">4</td>
-                <td class="px-3 py-2.5 text-slate-900">Tiếp nhận yêu cầu khám lại trong ≤ 5p (T2)</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">5</td>
-                <td class="px-3 py-2.5 text-slate-900">Mời bệnh nhân vào khám theo bảng gọi số (T3)</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">6</td>
-                <td class="px-3 py-2.5 text-slate-900">Khám lâm sàng, đọc KQ, tư vấn đơn (T4 ≥ 7p)</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">7</td>
-                <td class="px-3 py-2.5 text-slate-900">Cấu hình cảnh báo màu & luồng bàn giao HIS</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">8</td>
-                <td class="px-3 py-2.5 text-slate-900">Kiểm toán độc lập thời gian W, P90 & vi phạm</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">C</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center text-slate-400">I</td>
-                <td class="px-2 py-2.5 text-center font-bold text-amber-600 bg-amber-50">R/A</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- PHIẾU DOA -->
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-          <h3 class="font-bold text-slate-900 font-heading text-base mb-2">Phiếu Phân Quyền Thẩm Quyền Ra Quyết Định (DOA)</h3>
-          <div class="text-xs text-slate-700 space-y-2 leading-relaxed">
-            <p><strong>• Đầu việc ủy quyền:</strong> Phân luồng ưu tiên (Fast-track) và điều phối chuyển buồng khám kết luận linh hoạt thời gian thực.</p>
-            <p><strong>• Người được ủy quyền (Chữ A):</strong> <strong>Huỳnh Trường Thanh Tâm</strong> (Phó phòng PTKH / Thư ký BKS) phối hợp cùng <strong>BS. Huỳnh Tấn Kiệt</strong> (Trưởng KHTH).</p>
-            <p><strong>• Quyền hạn tức thời:</strong> Khi phát hiện buồng khám có hàng chờ ≥ 8 người hoặc W > 20 phút, có quyền quyết định chuyển bớt người bệnh sang buồng khám tương đương còn trống công suất ngay lập tức mà không cần xin ý kiến BGĐ trước.</p>
-            <p><strong>• Ranh giới nghiêm cấm:</strong> Tuyệt đối không can thiệp vào chỉ định thuốc hoặc thay đổi kết luận chẩn đoán của Bác sĩ.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- TAB 4: BÀI TẬP BUỔI 3 (M04, M05, M06)      -->
-    <!-- ========================================== -->
-    <div id="pane-session3" class="tab-pane hidden space-y-6">
-      
-      <!-- M04: RULE OF 7 KPI DICTIONARY -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chuyên đề 5 • Thiết kế Chỉ số KPI Điều hành Bệnh viện</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">M04: Từ Điển Chỉ Số KPI Theo Nguyên Tắc Rule of 7</h2>
-          </div>
-          <button onclick="copySectionMarkdown('m04')" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition flex items-center space-x-1 w-fit">
-            <span>📋 Copy Markdown M04</span>
-          </button>
-        </div>
-
-        <div class="p-4 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-950 mb-6 flex items-center justify-between">
-          <span><strong>Nguyên tắc cân bằng Rule of 7 của FMFT:</strong> Tối đa 7 chỉ số (3 Leading 30% • 2 Lagging 40% • 2 Constraint 30%) để chống bẫy tối ưu hóa cục bộ (Silo Effect).</span>
-          <span class="px-2.5 py-1 bg-teal-200 text-teal-900 rounded-md font-bold">100% Cân Bằng</span>
-        </div>
-
-        <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6">
-          <table class="w-full text-left text-xs text-slate-700">
-            <thead class="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200">
-              <tr>
-                <th class="px-3 py-3 w-12 text-center">STT</th>
-                <th class="px-3 py-3">Mã & Tên Chỉ Số KPI</th>
-                <th class="px-3 py-3">Phân loại & Tỷ trọng</th>
-                <th class="px-3 py-3">Công thức tính toán</th>
-                <th class="px-3 py-3">Chủ sở hữu (Chữ A)</th>
-                <th class="px-2 py-3 text-center bg-emerald-50 text-emerald-900">Xanh (Đạt)</th>
-                <th class="px-2 py-3 text-center bg-amber-50 text-amber-900">Vàng (Cảnh báo)</th>
-                <th class="px-2 py-3 text-center bg-rose-50 text-rose-900">Đỏ (Nguy hiểm)</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-200 font-medium">
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">1</td>
-                <td class="px-3 py-2.5 font-bold text-slate-900">KPI-01: Tỷ lệ xác nhận bàn giao đúng hạn</td>
-                <td class="px-3 py-2.5 text-teal-700 font-semibold">Leading (Quá trình) - 10%</td>
-                <td class="px-3 py-2.5 text-slate-600">(Số lượt T2 - T1 ≤ 5p / Tổng lượt T1) × 100%</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">ĐD. Huỳnh Thị Nga</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≥ 95%</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">90 - 94.9%</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&lt; 90%</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">2</td>
-                <td class="px-3 py-2.5 font-bold text-slate-900">KPI-02: Tỷ lệ trả KQ CLS dòng liên tục</td>
-                <td class="px-3 py-2.5 text-teal-700 font-semibold">Leading (Quá trình) - 10%</td>
-                <td class="px-3 py-2.5 text-slate-600">(Số mẻ trả KQ ≤ 15p / Tổng mẻ ca sáng) × 100%</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">CN. Lê Minh Mẫn</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≥ 90%</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">80 - 89.9%</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&lt; 80%</td>
-              </tr>
-              <tr>
-                <td class="px-3 py-2.5 text-center font-bold">3</td>
-                <td class="px-3 py-2.5 font-bold text-slate-900">KPI-03: Tỷ lệ định vị NB tại sảnh chờ</td>
-                <td class="px-3 py-2.5 text-teal-700 font-semibold">Leading (Quá trình) - 10%</td>
-                <td class="px-3 py-2.5 text-slate-600">(Số NB quét mã check-in T0 / Tổng hoàn tất CLS) × 100%</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">Tạ Minh Phước</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≥ 98%</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">95 - 97.9%</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&lt; 95%</td>
-              </tr>
-              <tr class="bg-slate-50/80">
-                <td class="px-3 py-2.5 text-center font-bold">4</td>
-                <td class="px-3 py-2.5 font-bold text-blue-900">KPI-04: Thời gian chờ khám lại trung bình (W)</td>
-                <td class="px-3 py-2.5 text-blue-700 font-semibold">Lagging (Kết quả) - 20%</td>
-                <td class="px-3 py-2.5 text-slate-600">Trung bình W = T4 - T0 (Phút)</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">BS. Huỳnh Tấn Kiệt</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≤ 15 phút</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">16 - 25 phút</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&gt; 25 phút</td>
-              </tr>
-              <tr class="bg-slate-50/80">
-                <td class="px-3 py-2.5 text-center font-bold">5</td>
-                <td class="px-3 py-2.5 font-bold text-blue-900">KPI-05: Chỉ số thời gian chờ phân vị 90 (P90)</td>
-                <td class="px-3 py-2.5 text-blue-700 font-semibold">Lagging (Kết quả) - 20%</td>
-                <td class="px-3 py-2.5 text-slate-600">Thời gian W tại phân vị thứ 90 (Phút)</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">Huỳnh Trường Thanh Tâm</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≤ 25 phút</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">26 - 40 phút</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&gt; 40 phút</td>
-              </tr>
-              <tr class="bg-rose-50/30">
-                <td class="px-3 py-2.5 text-center font-bold">6</td>
-                <td class="px-3 py-2.5 font-bold text-rose-950">KPI-06: Thời gian BS khám & tư vấn</td>
-                <td class="px-3 py-2.5 text-rose-700 font-semibold">Constraint (Chuyên môn) - 15%</td>
-                <td class="px-3 py-2.5 text-slate-600">Thời gian Bác sĩ thực sự khám lâm sàng (Phút)</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">BS. CKII. Nguyễn Văn Dũng</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">≥ 7 phút</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">5 - 6.9 phút</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&lt; 5 phút (Ép tốc độ)</td>
-              </tr>
-              <tr class="bg-rose-50/30">
-                <td class="px-3 py-2.5 text-center font-bold">7</td>
-                <td class="px-3 py-2.5 font-bold text-rose-950">KPI-07: Tỷ lệ tuân thủ đối chiếu 3 định danh</td>
-                <td class="px-3 py-2.5 text-rose-700 font-semibold">Constraint (An toàn NB) - 15%</td>
-                <td class="px-3 py-2.5 text-slate-600">(Số ca đối chiếu đủ Tên, Tuổi, PID / Tổng ca) × 100%</td>
-                <td class="px-3 py-2.5 font-semibold text-slate-900">Tổ Quản lý Chất lượng</td>
-                <td class="px-2 py-2.5 text-center font-bold text-emerald-700 bg-emerald-50/50">100%</td>
-                <td class="px-2 py-2.5 text-center text-amber-700 bg-amber-50/50">98 - 99.9%</td>
-                <td class="px-2 py-2.5 text-center font-bold text-rose-700 bg-rose-50/50">&lt; 98%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- M05: REAL-TIME AIOS EWS DASHBOARD MOCKUP -->
-      <div class="bg-slate-900 text-white rounded-2xl shadow-xl border border-slate-700 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-700 mb-6 gap-3">
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIOS Early Warning System • Thời gian thực</span>
-            </div>
-            <h2 class="text-xl sm:text-2xl font-bold font-heading text-white">M05: Trung Tâm Điều Hành Hàng Đợi (Visual Dashboard)</h2>
-          </div>
-          <span class="text-xs text-slate-400">Dữ liệu mô phỏng: 08:35 Sáng</span>
-        </div>
-
-        <!-- KPI Summary Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-            <span class="text-xs text-slate-400">Tổng Lượt Ngoại Trú</span>
-            <div class="text-2xl font-black text-white mt-1">412 <span class="text-xs text-emerald-400 font-normal">ca</span></div>
-            <div class="text-[10px] text-slate-400 mt-1">Chỉ tiêu ngày: 480 ca</div>
-          </div>
-          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-            <span class="text-xs text-slate-400">Đang Chờ Khám Lại</span>
-            <div class="text-2xl font-black text-amber-400 mt-1">18 <span class="text-xs text-slate-300 font-normal">bệnh nhân</span></div>
-            <div class="text-[10px] text-amber-400/80 mt-1">4 buồng đang phục vụ</div>
-          </div>
-          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-            <span class="text-xs text-slate-400">Thời Gian Chờ TB (W)</span>
-            <div class="text-2xl font-black text-emerald-400 mt-1">11.8 <span class="text-xs text-emerald-300 font-normal">phút</span></div>
-            <div class="text-[10px] text-emerald-400/80 mt-1">Đạt chuẩn (≤ 15p)</div>
-          </div>
-          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
-            <span class="text-xs text-slate-400">Chỉ Số P90 Toàn Viện</span>
-            <div class="text-2xl font-black text-teal-400 mt-1">21.5 <span class="text-xs text-teal-300 font-normal">phút</span></div>
-            <div class="text-[10px] text-teal-400/80 mt-1">Đạt chuẩn (≤ 25p)</div>
-          </div>
-        </div>
-
-        <!-- 4 Buồng Khám Giám Sát Màu -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <!-- Buồng 1: Xanh -->
-          <div class="p-4 rounded-xl bg-slate-800 border-2 border-emerald-500/60 shadow-lg shadow-emerald-950/40">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-bold text-white text-sm">Buồng Nội 1</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">🟢 XANH</span>
-            </div>
-            <div class="text-xs text-slate-300">BS. Lâm Thị Thúy</div>
-            <div class="mt-3 flex items-baseline justify-between">
-              <span class="text-xs text-slate-400">Hàng chờ:</span>
-              <span class="font-bold text-emerald-400 text-base">3 ca (TB 7p)</span>
-            </div>
-            <div class="text-[11px] text-slate-400 mt-1">Tỷ lệ T2 đúng hạn: <strong class="text-emerald-300">100%</strong></div>
-          </div>
-
-          <!-- Buồng 2: Vàng -->
-          <div class="p-4 rounded-xl bg-slate-800 border-2 border-amber-500/60 shadow-lg shadow-amber-950/40">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-bold text-white text-sm">Buồng Nội 2</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">🟡 VÀNG</span>
-            </div>
-            <div class="text-xs text-slate-300">BS. Trần Quốc Dũng</div>
-            <div class="mt-3 flex items-baseline justify-between">
-              <span class="text-xs text-slate-400">Hàng chờ:</span>
-              <span class="font-bold text-amber-400 text-base">7 ca (TB 18p)</span>
-            </div>
-            <div class="text-[11px] text-slate-400 mt-1">Tỷ lệ T2 đúng hạn: <strong class="text-amber-300">91%</strong></div>
-          </div>
-
-          <!-- Buồng 3: Đỏ -->
-          <div class="p-4 rounded-xl bg-slate-800 border-2 border-rose-500/80 shadow-lg shadow-rose-950/40">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-bold text-white text-sm">Buồng Nội 3</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">🔴 ĐỎ (TẮC)</span>
-            </div>
-            <div class="text-xs text-slate-300">BS. Đào Văn Khuynh</div>
-            <div class="mt-3 flex items-baseline justify-between">
-              <span class="text-xs text-slate-400">Hàng chờ:</span>
-              <span class="font-bold text-rose-400 text-base">12 ca (TB 32p)</span>
-            </div>
-            <div class="text-[11px] text-rose-300 mt-1 font-semibold">⚠️ Kích hoạt phân luồng DOA ngay!</div>
-          </div>
-
-          <!-- Buồng Fast-track Mạn tính -->
-          <div class="p-4 rounded-xl bg-slate-800 border-2 border-teal-500/60 shadow-lg shadow-teal-950/40">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-bold text-white text-sm">Buồng Fast-track</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">⚡ ƯU TIÊN</span>
-            </div>
-            <div class="text-xs text-slate-300">Bệnh nhân Mạn tính ổn định</div>
-            <div class="mt-3 flex items-baseline justify-between">
-              <span class="text-xs text-slate-400">Hàng chờ:</span>
-              <span class="font-bold text-teal-300 text-base">4 ca (TB 5p)</span>
-            </div>
-            <div class="text-[11px] text-slate-400 mt-1">Khám & Cấp đơn: <strong class="text-teal-300">Nhanh chóng</strong></div>
-          </div>
-        </div>
-
-        <!-- Cảnh báo nguy kịch thanh chạy -->
-        <div class="p-3 rounded-xl bg-rose-950/80 border border-rose-800 flex items-center justify-between text-xs text-rose-200">
-          <div class="flex items-center space-x-2">
-            <span class="text-base animate-bounce">🚨</span>
-            <span><strong>CẢNH BÁO NGUY KỊCH (CRITICAL VALUE):</strong> Bệnh nhân N.V.A (PID: TV3-9821) Đường huyết 2.4 mmol/L – ĐÃ BÀN GIAO THẲNG BUỒNG CẤP CỨU TRONG 1.5 PHÚT!</span>
-          </div>
-          <span class="px-2 py-0.5 rounded bg-rose-900 text-white font-bold text-[10px]">ĐÃ XỬ TRÍ</span>
-        </div>
-
-      </div>
-
-      <!-- M06: RCA 5 WHYS & CAPA PLAN -->
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="text-xs font-bold text-teal-600 uppercase tracking-wider">Chuyên đề 6 • Quản trị Rủi ro & An toàn Người bệnh</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">M06: Phân Tích Rủi Ro RCA (5 Whys) Và Kế Hoạch CAPA</h2>
-          </div>
-          <button onclick="copySectionMarkdown('m06')" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition flex items-center space-x-1 w-fit">
-            <span>📋 Copy Markdown M06</span>
-          </button>
-        </div>
-
-        <!-- Sơ đồ 5 Whys -->
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
-          <h3 class="font-bold text-slate-900 font-heading text-sm mb-4">Cây Phân Tích Nguyên Nhân Gốc Rễ (5 Whys Root Cause Analysis)</h3>
-          
-          <div class="space-y-3 text-xs">
-            <div class="p-3 rounded-lg bg-rose-100 border border-rose-300 text-rose-950 font-bold">
-              💥 SỰ CỐ: Bệnh nhân N.V.A (65 tuổi, ĐTĐ type 2) có kết quả nguy kịch Đường huyết đói 2.4 mmol/L phải chờ 52 phút ngoài sảnh mà Bác sĩ buồng khám không biết!
-            </div>
-            
-            <div class="pl-4 border-l-2 border-slate-300 space-y-3">
-              <div class="p-2.5 rounded-lg bg-white border border-slate-200">
-                <span class="font-bold text-teal-700">Tại sao 1:</span> Bác sĩ buồng khám không biết bệnh nhân đã có kết quả?  
-                <div class="text-slate-600 mt-0.5">➜ Vì kết quả giấy vẫn nằm ở khay trả kết quả ngoài sảnh, chưa chuyển vào bàn Bác sĩ.</div>
-              </div>
-              
-              <div class="p-2.5 rounded-lg bg-white border border-slate-200">
-                <span class="font-bold text-teal-700">Tại sao 2:</span> Kỹ thuật viên Xét nghiệm không báo ngay cho Bác sĩ điều trị?  
-                <div class="text-slate-600 mt-0.5">➜ Vì KTV bận chạy mẻ tiếp theo, quy trình cũ chỉ quy định "in ra giấy và chuyển ra bàn tiếp đón".</div>
-              </div>
-
-              <div class="p-2.5 rounded-lg bg-white border border-slate-200">
-                <span class="font-bold text-teal-700">Tại sao 3:</span> Phần mềm HIS/LIS không tự động phát chuông hoặc pop-up cảnh báo?  
-                <div class="text-slate-600 mt-0.5">➜ Vì tính năng "Critical Value Pop-up Alert" chưa được cấu hình kích hoạt trên màn hình buồng khám.</div>
-              </div>
-
-              <div class="p-2.5 rounded-lg bg-white border border-slate-200">
-                <span class="font-bold text-teal-700">Tại sao 4:</span> Không có nhân viên CSKH hoặc Điều dưỡng sảnh phát hiện người bệnh mệt mỏi?  
-                <div class="text-slate-600 mt-0.5">➜ Vì sảnh cao điểm quá đông đúc, nhân viên phải ngồi giải thích kết quả cho nhiều người cùng lúc.</div>
-              </div>
-
-              <div class="p-3 rounded-lg bg-rose-50 border-2 border-rose-400 text-rose-950 font-bold">
-                🎯 TẠI SAO 5 (NGUYÊN NHÂN GỐC RỄ - ROOT CAUSE):  
-                <div class="text-rose-900 font-semibold mt-1">THIẾU QUY TRÌNH BÀN GIAO KHÉP KÍN CÓ XÁC NHẬN (CLOSED-LOOP HANDOFF) VÀ THIẾU TÍNH NĂNG CẢNH BÁO TỰ ĐỘNG THỜI GIAN THỰC GIỮA CẬN LÂM SÀNG VỚI LÂM SÀNG!</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- BẢNG KẾ HOẠCH CAPA -->
-        <div class="space-y-3">
-          <h3 class="text-base font-bold text-slate-900 font-heading">Kế Hoạch Hành Động Khắc Phục Và Phòng Ngừa (CAPA Plan)</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200">
-            <table class="w-full text-left text-xs text-slate-700">
-              <thead class="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200">
-                <tr>
-                  <th class="px-3 py-3 w-10 text-center">STT</th>
-                  <th class="px-3 py-3 w-1/3">Hành động cụ thể (CAPA)</th>
-                  <th class="px-3 py-3">Loại hình can thiệp</th>
-                  <th class="px-3 py-3">Người thực hiện chính</th>
-                  <th class="px-3 py-3">Người giám sát (A)</th>
-                  <th class="px-3 py-3 text-center">Hạn chót</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 font-medium">
-                <tr>
-                  <td class="px-3 py-2.5 text-center font-bold">1</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">
-                    Xử trí cấp cứu & Chuyển luồng tức thì
-                    <p class="text-slate-600 font-normal mt-0.5">Gọi hotline ngay cho BS; CSKH cấp bánh/sữa ngọt và chuyển xe lăn vào buồng cấp cứu.</p>
-                  </td>
-                  <td class="px-3 py-2.5 text-teal-700">Khắc phục tức thời</td>
-                  <td class="px-3 py-2.5 text-slate-900">CN. Lê Minh Mẫn & ĐD Sảnh</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">BS. Huỳnh Tấn Kiệt</td>
-                  <td class="px-3 py-2.5 text-center text-teal-700 font-bold">01/11/2026</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 text-center font-bold">2</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">
-                    Cấu hình Pop-up cảnh báo đỏ tự động trên HIS
-                    <p class="text-slate-600 font-normal mt-0.5">Màn hình Bác sĩ nhấp nháy đỏ kèm chuông báo động ngắt quãng khi có kết quả nguy kịch.</p>
-                  </td>
-                  <td class="px-3 py-2.5 text-blue-700">Giải pháp CNTT/AIOS</td>
-                  <td class="px-3 py-2.5 text-slate-900">Nguyễn Hoàng Duy & Võ Lê Chương</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">Huỳnh Trường Thanh Tâm</td>
-                  <td class="px-3 py-2.5 text-center text-teal-700 font-bold">08/11/2026</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 text-center font-bold">3</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">
-                    Đảo nhịp nhân sự PTKH & Care Navigator tại sảnh
-                    <p class="text-slate-600 font-normal mt-0.5">Tăng cường 02 CSKH khung giờ cao điểm 07h00-09h30 chủ động hỗ trợ người bệnh cao tuổi.</p>
-                  </td>
-                  <td class="px-3 py-2.5 text-teal-700">Quy trình Lean SOP</td>
-                  <td class="px-3 py-2.5 text-slate-900">Tạ Minh Phước</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">Huỳnh Trường Thanh Tâm</td>
-                  <td class="px-3 py-2.5 text-center text-teal-700 font-bold">03/11/2026</td>
-                </tr>
-                <tr>
-                  <td class="px-3 py-2.5 text-center font-bold">4</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">
-                    Kiểm toán tuân thủ định kỳ của Ban Kiểm Soát
-                    <p class="text-slate-600 font-normal mt-0.5">Rà soát hàng tuần 100% các ca báo động đỏ; đo thời gian từ duyệt kết quả đến xử trí (≤ 5p).</p>
-                  </td>
-                  <td class="px-3 py-2.5 text-purple-700">Kiểm soát Audit</td>
-                  <td class="px-3 py-2.5 text-slate-900">Lục Thị Yến Nhi</td>
-                  <td class="px-3 py-2.5 font-bold text-slate-900">Thư ký BKS CS3</td>
-                  <td class="px-3 py-2.5 text-center text-teal-700 font-bold">Hàng tuần</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- ========================================== -->
-    <!-- TAB: KHO MEDIA BÀI GIẢNG (AUDIO & VIDEO)  -->
-    <!-- ========================================== -->
-    <div id="pane-media" class="tab-pane hidden space-y-6">
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-teal-500 animate-pulse"></span>
-              <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Hệ Thống Bản Ghi Trực Tuyến</span>
-            </div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">Kho Media Ghi Âm & Video Bài Giảng FMFT AIOS/LSE</h2>
-            <p class="text-xs text-slate-500 mt-1">Toàn bộ tệp âm thanh (M4A) dung lượng nhẹ và video ghi hình (MP4) Webex các buổi học của TS. Đoàn Hùng Dũng</p>
-          </div>
-          <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-teal-100 text-teal-800 border border-teal-300">
-            4 Tệp Media Đã Số Hóa
-          </span>
-        </div>
-
-        <!-- BẢNG DANH MỤC MEDIA -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          
-          <!-- Card Audio Buổi 1 -->
-          <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-lg border border-slate-700">
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">AUDIO M4A • 25.7 MB</span>
-              <span class="text-xs text-slate-400">Buổi 1 (26/10)</span>
-            </div>
-            <h3 class="text-base font-bold font-heading text-white mb-2">FMFT-QUAN TRI BENH VIEN (m1-m2).m4a</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Ghi âm trọn vẹn Chuyên đề 1 & 2: Tư duy hệ thống & Tư duy phản biện; phân tích bẫy đầu tư thiết bị triệu đô; nhận diện lãng phí y tế; hướng dẫn điền phiếu xác định vấn đề M01.
-            </p>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-700/80 text-xs">
-              <span class="text-slate-400">Cập nhật: 31/10/2026</span>
-              <span class="text-teal-400 font-semibold flex items-center space-x-1">
-                <span>🎵 Âm thanh trong trẻo</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card Audio Buổi 2 -->
-          <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-teal-950 text-white shadow-lg border border-teal-700/50">
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">AUDIO M4A • 44.8 MB</span>
-              <span class="text-xs text-slate-400">Buổi 2 (28/10)</span>
-            </div>
-            <h3 class="text-base font-bold font-heading text-white mb-2">FMFT-QUAN TRI BENH VIEN (m3-m4).m4a</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">
-              Ghi âm trọn vẹn Chuyên đề 3 & 4: Chuỗi giá trị bệnh viện; quản trị luồng người bệnh M02; quy tắc bàn giao 2 chiều có hiệu lực; thiết lập ma trận RACI M03 chuẩn 1A và phân quyền DOA M14.
-            </p>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-700/80 text-xs">
-              <span class="text-slate-400">Cập nhật: 31/10/2026</span>
-              <span class="text-teal-300 font-semibold flex items-center space-x-1">
-                <span>🎵 Phân tích ca thực tế</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Card Video Buổi 1 -->
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 border border-blue-200">VIDEO MP4 • 957.4 MB</span>
-              <span class="text-xs text-slate-500">Buổi 1 Webex</span>
-            </div>
-            <h3 class="text-base font-bold font-heading text-slate-900 mb-2">Quản trị Bệnh viện.mp4</h3>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Video toàn cảnh màn hình chia sẻ và phần giảng trực tiếp của TS. Đoàn Hùng Dũng trong phiên khai mạc khóa học cùng 202 cán bộ lãnh đạo 4 cơ sở Hệ thống Thanh Vũ Medic.
-            </p>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-200 text-xs text-slate-500">
-              <span>Độ phân giải cao (HD)</span>
-              <span class="font-semibold text-slate-700">Slide & Trao đổi toàn viện</span>
-            </div>
-          </div>
-
-          <!-- Card Video Buổi 2 -->
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 border border-blue-200">VIDEO MP4 • 159.1 MB</span>
-              <span class="text-xs text-slate-500">Buổi 2 Webex</span>
-            </div>
-            <h3 class="text-base font-bold font-heading text-slate-900 mb-2">Quản trị Bệnh viện-20261028 1415-1.mp4</h3>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Video ghi hình buổi học thứ hai: Trình bày chi tiết mô hình giải quyết nút thắt ngoại trú, cách phân định RACI liên khoa và giải đáp các câu hỏi trực tiếp của các Trưởng khoa, Bác sĩ.
-            </p>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-200 text-xs text-slate-500">
-              <span>Nén tối ưu 159 MB</span>
-              <span class="font-semibold text-slate-700">Thực hành giải bài tập</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- HƯỚNG DẪN KHAI THÁC -->
-        <div class="p-4 rounded-xl bg-teal-50 border border-teal-200 text-xs text-teal-950">
-          <div class="font-bold text-sm text-teal-900 mb-1 flex items-center space-x-1.5">
-            <span>💡</span>
-            <span>Gợi Ý Học Tập Hiệu Quả:</span>
-          </div>
-          <p class="leading-relaxed">
-            Các file Audio <code>.m4a</code> (25MB – 45MB) rất thuận tiện để Sếp và các thành viên Nhóm 8 tải về điện thoại nghe lại khi di chuyển. Mọi tệp gốc đều được đồng bộ tại thư mục Google Drive: <code>Thanh Vũ Cà Mau\KPI TVM Cà Mau\FMFT\</code>.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- TAB: TÀI LIỆU HƯỚNG DẪN M3&M4 (MỚI 31/10) -->
-    <!-- ========================================== -->
-    <div id="pane-docs" class="tab-pane hidden space-y-6">
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-800 uppercase tracking-wider">Tài Liệu Mới Nhất</span>
-              <span class="text-xs text-slate-500">31/10/2026</span>
-            </div>
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">Hướng Dẫn Áp Dụng Module 3 & 4: Quản Trị Chuỗi Giá Trị & Thể Chế</h2>
-            <p class="text-xs text-slate-500 mt-1">Văn bản 29 trang của TS. Đoàn Hùng Dũng – Viện FMFT Institute vừa ban hành ngày 31/10/2026</p>
-          </div>
-          <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-teal-100 text-teal-800 border border-teal-300">
-            Chuẩn FMFT Institute
-          </span>
-        </div>
-
-        <!-- 4 TRỤ CỘT CỐT LÕI TÀI LIỆU MỚI -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <h3 class="font-bold text-slate-900 font-heading text-sm mb-3 flex items-center space-x-2">
-              <span class="text-teal-600">📌</span>
-              <span>Module 3: Chuỗi Giá Trị & Luồng Người Bệnh</span>
-            </h3>
-            <ul class="text-xs text-slate-700 space-y-2 list-disc pl-4 leading-relaxed">
-              <li><strong>Phân định rõ 2 nhóm hoạt động:</strong> Hoạt động trực tiếp (Primary: Tiếp nhận -> Khám -> Điều trị -> Ra viện) và Hoạt động hỗ trợ (Support: Nhân sự, tài chính, dược/vật tư, CNTT, QLCL).</li>
-              <li><strong>Bảo vệ ranh giới an toàn:</strong> Tuyệt đối không dùng tiêu chí "cắt giảm bước" để xóa bỏ các bước kiểm soát an toàn chuyên môn và đối chiếu 2 định danh.</li>
-              <li><strong>Bàn giao 2 chiều có hiệu lực:</strong> "Đã gửi thông tin" không đồng nghĩa với "đã nhận". Bàn giao chỉ có hiệu lực khi bên nhận click xác nhận tiếp nhận trách nhiệm.</li>
-              <li><strong>Công suất thực tế:</strong> Tính công suất giường/buồng khám phải lấy mẫu số nghiêm ngặt là số giường sẵn sàng vận hành thực tế mỗi ngày.</li>
-            </ul>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <h3 class="font-bold text-slate-900 font-heading text-sm mb-3 flex items-center space-x-2">
-              <span class="text-teal-600">⚖️</span>
-              <span>Module 4: Thiết Kế Thể Chế, RACI & DOA</span>
-            </h3>
-            <ul class="text-xs text-slate-700 space-y-2 list-disc pl-4 leading-relaxed">
-              <li><strong>Chiến lược gắn với Ngân sách (AOP & Budget):</strong> Một mục tiêu trên Dashboard nhưng không cấp ngân sách hoặc nhân sự thì không thể thực thi.</li>
-              <li><strong>Nguyên tắc 1A Tối thượng trong RACI:</strong> Mỗi đầu việc chỉ có DUY NHẤT 1 người chịu trách nhiệm giải trình (A) để chống đùn đẩy trách nhiệm.</li>
-              <li><strong>Phân biệt rõ ràng RACI và DOA:</strong> RACI phân vai thực thi và giải trình chuyên môn; DOA xác định hạn mức tài chính và thẩm quyền phê duyệt pháp lý.</li>
-              <li><strong>Phân tách 5 khâu độc lập (Segregation of Duties):</strong> Đề xuất - Thẩm định - Phê duyệt - Nghiệm thu - Thanh toán nhằm triệt tiêu xung đột lợi ích.</li>
-              <li><strong>Nguyên tắc đóng việc bằng bằng chứng:</strong> "Đã nhắc nhở" không được tính là hoàn thành; công việc chỉ đóng khi cơ chế mới vận hành có Action Log chứng minh.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- 3 TÌNH HUỐNG THỰC CHIẾN ĐIỂN HÌNH -->
-        <div class="p-5 rounded-2xl bg-teal-50/60 border border-teal-200">
-          <h3 class="font-bold text-teal-900 font-heading text-sm mb-3">3 Tình Huống Thực Chiến Điển Hình Trong Tài Liệu</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div class="p-3.5 bg-white rounded-xl border border-teal-200 text-slate-700">
-              <div class="font-bold text-teal-950 mb-1">1. BV Đa Khoa An Bình</div>
-              <p class="text-slate-600 leading-relaxed">Giải bài toán tắc nghẽn ngoại trú: Giảm thời gian chờ từ 164 phút xuống dưới 80 phút; chuẩn hóa điểm bàn giao X-quang và phân bổ lịch hẹn qua App.</p>
-            </div>
-            <div class="p-3.5 bg-white rounded-xl border border-teal-200 text-slate-700">
-              <div class="font-bold text-teal-950 mb-1">2. Luồng Cấp Cứu Liên Khoa</div>
-              <p class="text-slate-600 leading-relaxed">Xử lý cảnh báo kết quả xét nghiệm khẩn (Critical Lab Alert); DOA phê duyệt can thiệp tối khẩn và tuyến leo thang tự động khi quá 5 phút.</p>
-            </div>
-            <div class="p-3.5 bg-white rounded-xl border border-teal-200 text-slate-700">
-              <div class="font-bold text-teal-950 mb-1">3. Mua Sắm Vật Tư Y Tế</div>
-              <p class="text-slate-600 leading-relaxed">Áp dụng triệt để phân tách 5 khâu độc lập; ma trận RACI 10 đầu việc; DOA duyệt hạn mức tài chính 3 cấp (≤100tr, 100tr-1 tỷ, >1 tỷ).</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- TAB 5: BUỔI 4 & 5 (SẴN SÀNG MỞ RỘNG)      -->
-    <!-- ========================================== -->
-    <div id="pane-future" class="tab-pane hidden space-y-6">
-      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 sm:p-12 text-center">
-        <div class="w-16 h-16 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-          ⚡
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900 font-heading mb-2">Sẵn Sàng Tiếp Nhận Nội Dung Buổi 4 & Buổi 5</h2>
-        <p class="text-slate-600 text-sm max-w-xl mx-auto mb-6">
-          Cấu trúc cơ sở dữ liệu và hệ thống giao diện đã được Shin chuẩn bị sẵn sàng. Ngay khi Thầy TS. Đoàn Hùng Dũng giảng dạy và Ban quản lý lớp gửi đề bài cho các buổi tiếp theo, nội dung sẽ được tự động tích hợp lên cổng Portal này!
-        </p>
-        <div class="inline-flex items-center space-x-2 px-4 py-2 bg-slate-100 rounded-lg text-xs font-semibold text-slate-700 border border-slate-300">
-          <span>Chờ nạp tài liệu:</span>
-          <span class="text-teal-700 font-bold">Buổi 4 (Chuẩn hóa SOP & 5S) & Buổi 5 (Đề án Tổng thể)</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- PUBLIC FEEDBACK & COMMENT SECTION          -->
-    <!-- ========================================== -->
-    <section id="feedback-section" class="mt-12 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 no-print">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 mb-6 gap-3">
+    <!-- ============================================================== -->
+    <!-- MÀN 1: TỔNG QUAN & PHÂN NHÓM 8                                  -->
+    <!-- ============================================================== -->
+    <div id="view-overview" class="view-pane">
+      <div class="page-header">
         <div>
-          <div class="flex items-center space-x-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
-            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider">Hòm Thư Đóng Góp Ý Kiến Mở</span>
-          </div>
-          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading">Góp Ý & Phản Biện Bài Tập (Công Khai)</h2>
-          <p class="text-xs text-slate-500 mt-1">Mọi thành viên trong Nhóm 8, Ban tổ chức và đồng nghiệp đều có thể gửi nhận xét phản biện để hoàn thiện bài tập</p>
+          <div class="page-title">🏠 Quản Trị Khóa Học FMFT AIOS/LSE</div>
+          <div class="page-sub">Hệ thống Y tế Thanh Vũ Medic – Đại diện Cơ sở 3 Cà Mau (Nhóm 8)</div>
         </div>
-        <div class="flex items-center space-x-2">
-          <button onclick="exportFeedbackJSON()" class="px-3 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 font-medium transition">
-            📥 Xuất file Góp ý (JSON)
-          </button>
+        <button class="btn-icon nhat" onclick="location.reload()" aria-label="Làm mới">↻</button>
+      </div>
+
+      <!-- HERO 1 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Chào anh Tâm & Nhóm 8 👋</div>
+          <div class="hero-date">📅 T7, 31/10/2026 · Giảng viên: TS. Đoàn Hùng Dũng (FMFT Institute)</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o" onclick="switchView('session1')">
+            <div class="tq-so" style="color:var(--c-blue)">15</div>
+            <div class="tq-nhan">Thành viên (12 CS3 + 3 CS2)</div>
+          </div>
+          <div class="tq-o" onclick="switchView('session2')">
+            <div class="tq-so" style="color:var(--c-yellow)">550</div>
+            <div class="tq-nhan">Lượt khám TB/ngày (CS3)</div>
+          </div>
+          <div class="tq-o" onclick="switchView('session3')">
+            <div class="tq-so" style="color:var(--c-green)">≤ 15p</div>
+            <div class="tq-nhan">W Mục tiêu (Hiện trạng 45p)</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="switchView('session2')">
+          ⚡ Xem Bản Đồ Chuỗi Giá Trị Ngoại Trú (M02) & RACI (M03)
+        </button>
+      </section>
+
+      <!-- DANH SÁCH 15 NHÂN SỰ NHÓM 8 -->
+      <div class="hn-tieu">
+        <span>DANH SÁCH 15 THÀNH VIÊN NHÓM 8 (BGĐ DUYỆT)</span>
+        <span class="badge xanh">12 Cơ sở 3 + 3 Cơ sở 2</span>
+      </div>
+
+      <div class="hn-list" id="list-thanhvien">
+        <!-- Sẽ được nạp động từ JS -->
+      </div>
+
+      <!-- KHỐI GẬP QUI ƯỚC -->
+      <details class="tq-gon" style="margin-top:16px;">
+        <summary>
+          <span>ⓘ Nguyên Tắc Bất Biến & Ranh Giới Chuyên Môn Y Khoa</span>
+          <span class="tom-tat">Đọc quy chế</span>
+        </summary>
+        <div class="chu-phu" style="line-height:1.6;">
+          <p><strong>1. Tối thượng:</strong> Tuyệt đối không can thiệp chỉ định chuyên môn; chỉ tối ưu hóa quy trình bàn giao, luồng người bệnh và KPI.</p>
+          <p style="margin-top:6px;"><strong>2. Dữ liệu thực chứng (Data-driven):</strong> Mọi phân tích dựa trên nhật ký thời gian thực (log LIS/PACS/HIS), không cảm tính.</p>
+          <p style="margin-top:6px;"><strong>3. Lean Healthcare:</strong> Coi thời gian chờ đợi vô ích là lãng phí lớn nhất cần triệt tiêu.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MÀN 2: BUỔI 1 – M01 XÁC ĐỊNH VẤN ĐỀ                             -->
+    <!-- ============================================================== -->
+    <div id="view-session1" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title">📄 Buổi 1: Phiếu M01 Xác Định Vấn Đề</div>
+          <div class="page-sub">Chuyên đề 1 & 2 · Tư duy hệ thống & Nhận diện lãng phí</div>
+        </div>
+        <button class="btn-icon nhat" onclick="copyM01()" aria-label="Copy M01">📋</button>
+      </div>
+
+      <!-- HERO 2 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Dồn Ứ Sảnh Khám Lại Ngoại Trú Sau CLS</div>
+          <div class="hero-date">Khung giờ cao điểm: 07:30 – 09:45 sáng · Sảnh tầng trệt PKĐK Cà Mau</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-red)">45p</div>
+            <div class="tq-nhan">Thời gian chờ W hiện trạng</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-yellow)">68 %</div>
+            <div class="tq-nhan">NB tập trung trước 09:00</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-green)">≤ 15p</div>
+            <div class="tq-nhan">Mục tiêu Lean Flow</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="copyM01()">
+          📋 Sao Chép Nội Dung Biểu Mẫu M01 (Markdown)
+        </button>
+      </section>
+
+      <!-- 3 TẦNG DỮ LIỆU CHUẨN FMFT -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">1. Phân Định 3 Tầng Dữ Liệu Theo Chuẩn FMFT</h3>
+        
+        <div class="hang-tru">
+          <div><strong style="color:var(--c-green);">[Số Liệu Thật]</strong> Lượt khám 450–550 ca/ngày; chỉ tiêu năm 2026 C1 là 172.150 lượt (F1 = 68,8 tỷ đ); 68% NB làm CLS trước 09h sáng; 18,5% phản ánh chờ lâu (chỉ số C4 tháng 10).</div>
+        </div>
+        <div class="hang-tru">
+          <div><strong style="color:var(--c-blue);">[Số Giả Định]</strong> Thời gian chờ từ lúc xong CLS đến lúc khám lại dao động 35–55 phút (chiếm 30–35% tổng lưu viện TAT 135–160 phút). Độ lệch bàn giao đo ngẫu nhiên: 15–65 phút.</div>
+        </div>
+        <div class="hang-tru">
+          <div><strong style="color:var(--c-yellow);">[Chưa Có Dữ Liệu - Vùng Mù]</strong> HIS chưa có mốc ghi nhận thời điểm "Người bệnh cầm kết quả giấy quay lại nộp cho Điều dưỡng buồng khám"; chưa phân tách tự động thời gian chờ do Labo vs do NB chưa biết vào.</div>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- FORM GỬI GÓP Ý (5 CỘT) -->
-        <div class="lg:col-span-5 bg-slate-50 p-5 rounded-2xl border border-slate-200">
-          <h3 class="font-bold text-slate-900 font-heading text-sm mb-4">Để Lại Góp Ý Của Bạn</h3>
-          <form id="feedback-form" onsubmit="submitFeedback(event)" class="space-y-4 text-xs">
-            <div>
-              <label class="block font-semibold text-slate-700 mb-1">Họ và tên của bạn <span class="text-rose-500">*</span></label>
-              <input type="text" id="fb-name" required placeholder="Ví dụ: BS. Huỳnh Tấn Kiệt / TS. Đoàn Hùng Dũng" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-xs text-slate-900">
-            </div>
+      <!-- BẢNG 3 GIẢ THUYẾT NGUYÊN NHÂN -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">2. Bảng 3 Giả Thuyết Nguyên Nhân Gốc Rễ</h3>
+        <div class="table-wrap">
+          <table class="bang-chuan">
+            <thead>
+              <tr>
+                <th>Giả thuyết nguyên nhân</th>
+                <th>Dữ liệu / Phương thức kiểm chứng</th>
+                <th>Người & Hạn xác minh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Trả kết quả gom lô (Batch Processing)</strong><br/><span class="chu-phu">Labo/CĐHA gom mẻ in trả hàng loạt thay vì trả liên tục làm NB đổ dồn cùng lúc.</span></td>
+                <td>Trích xuất log duyệt LIS/PACS từng block 15p (07h–10h); vẽ biểu đồ phân bố giờ trả kết quả thực tế.</td>
+                <td><strong>Lê Minh Mẫn</strong> (Trưởng XN) & Mai Duy Linh<br/><span class="badge vang">05/11/2026</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. Đứt gãy bàn giao (Handoff Blind Spot)</strong><br/><span class="chu-phu">Kết quả đã có trên mạng nhưng buồng khám không biết; NB cầm giấy chờ ngoài sảnh hoặc đi ăn sáng.</span></td>
+                <td>Khảo sát màn hình hàng đợi HIS; đối chiếu log có kết quả với log mở bệnh án; quan sát thực địa 30 ca.</td>
+                <td><strong>Huỳnh Tấn Kiệt</strong> (KHTH), <strong>Thanh Tâm</strong> (PTKH) & Hoàng Duy (CNTT)<br/><span class="badge vang">05/11/2026</span></td>
+              </tr>
+              <tr>
+                <td><strong>3. Chưa phân làn ưu tiên (Fast-track)</strong><br/><span class="chu-phu">Bệnh mạn tính ổn định chỉ cần lấy máu/cấp đơn phải xếp chung hàng với ca kỹ thuật chuyên sâu.</span></td>
+                <td>Thống kê cơ cấu mặt bệnh ngoại trú; đo thời gian khám nhóm mạn tính so với ca mới; tách buồng khám.</td>
+                <td><strong>Đào Văn Khuynh</strong> (BS Nội soi), Minh Phước & Mỹ Diện<br/><span class="badge vang">05/11/2026</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block font-semibold text-slate-700 mb-1">Khoa / Phòng / Vai trò</label>
-                <input type="text" id="fb-role" placeholder="Ví dụ: KHTH / Khách mời" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-xs text-slate-900">
-              </div>
-              <div>
-                <label class="block font-semibold text-slate-700 mb-1">Phần muốn góp ý</label>
-                <select id="fb-target" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-xs text-slate-900">
-                  <option value="Toàn bộ bài nộp">Toàn bộ bài nộp</option>
-                  <option value="M01 - Xác định vấn đề (Buổi 1)">M01 - Xác định vấn đề (Buổi 1)</option>
-                  <option value="M02 - Bản đồ VSM (Buổi 2)">M02 - Bản đồ VSM (Buổi 2)</option>
-                  <option value="M03 - Ma trận RACI (Buổi 2)">M03 - Ma trận RACI (Buổi 2)</option>
-                  <option value="M04 - Từ điển 7 KPI (Buổi 3)">M04 - Từ điển 7 KPI (Buổi 3)</option>
-                  <option value="M05 - Dashboard AIOS EWS (Buổi 3)">M05 - Dashboard AIOS EWS (Buổi 3)</option>
-                  <option value="M06 - Sự cố RCA & CAPA (Buổi 3)">M06 - Sự cố RCA & CAPA (Buổi 3)</option>
-                </select>
-              </div>
-            </div>
+      <!-- CAM KẾT CHUYÊN MÔN -->
+      <div class="the" style="border-left: 4px solid var(--c-red);">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; color:var(--c-red);">⛔ Ranh Giới An Toàn Bất Khả Xâm Phạm</h3>
+        <p class="chu-phu">Tuyệt đối không can thiệp chỉ định Bác sĩ; duy trì thời gian thăm khám lâm sàng, giải thích bệnh và tư vấn đơn thuốc tối thiểu <strong>7 – 10 phút/ca</strong>; kiểm soát 100% cảnh báo nguy kịch (Critical Value Alert).</p>
+      </div>
+    </div>
 
+    <!-- ============================================================== -->
+    <!-- MÀN 3: BUỔI 2 – CHUỖI GIÁ TRỊ VSM & RACI / DOA                  -->
+    <!-- ============================================================== -->
+    <div id="view-session2" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title">🗺️ Buổi 2: VSM & Thể Chế Quản Trị</div>
+          <div class="page-sub">Chuyên đề 3 & 4 · Dòng chảy liên tục, Ma trận RACI (1A) & Phân quyền DOA</div>
+        </div>
+        <button class="btn-icon nhat" onclick="copyM02()" aria-label="Copy M02">📋</button>
+      </div>
+
+      <!-- HERO 3 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Chuẩn Hóa 5 Mốc Bàn Giao T0 → T4</div>
+          <div class="hero-date">Khép kín bàn giao giữa Labo Xét Nghiệm, Sảnh Chờ & Buồng Khám Bác Sĩ</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-green)">≤ 5p</div>
+            <div class="tq-nhan">Cam kết T2 - T1 (ĐD nhận việc)</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-blue)">≥ 7p</div>
+            <div class="tq-nhan">Khám lâm sàng T4 (Bác sĩ)</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-yellow)">6</div>
+            <div class="tq-nhan">Quy chuẩn xử lý ngoại lệ</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="copyM02()">
+          📋 Sao Chép Bản Đồ VSM (M02) & Ma Trận RACI (M03)
+        </button>
+      </section>
+
+      <!-- 5 MỐC THỜI GIAN -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Chuẩn Hóa 5 Mốc Thời Gian Luồng Khám Lại (`TV3-KB-01`)</h3>
+        <div class="hang-tru">
+          <span><strong>Mốc T0 (Sẵn sàng):</strong> Đủ 100% KQ hợp lệ trên LIS + Quét mã check-in có mặt tại sảnh.</span>
+          <span class="badge xanh">Bắt đầu</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>Mốc T1 (Gửi yêu cầu):</strong> Hệ thống HIS tự động phát lệnh sang buồng khám (≤ 10 giây).</span>
+          <span class="badge xanhduong">Tức thời</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>Mốc T2 (CAM KẾT):</strong> Điều dưỡng buồng khám click "Tiếp nhận" – Cam kết T2 - T1 ≤ 5 phút.</span>
+          <span class="badge vang">≤ 5 phút</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>Mốc T3 (Mời vào):</strong> Bảng điện tử sảnh gọi số tự động, hướng dẫn NB bước vào phòng.</span>
+          <span class="badge xanh">Nhịp Takt</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>Mốc T4 (Khám kết luận):</strong> Bác sĩ đối chiếu 3 định danh, thăm khám & tư vấn thuốc.</span>
+          <span class="badge xanh">≥ 7 phút</span>
+        </div>
+      </div>
+
+      <!-- SO SÁNH VSM HIỆN TRẠNG VS ĐỀ XUẤT -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">So Sánh VSM Hiện Trạng vs Đề Xuất Lean Flow</h3>
+        <div class="hang-tru">
+          <div><span class="badge do">Hiện trạng</span> Chờ gom in giấy (15p) ➜ NB cầm giấy tìm phòng (10p) ➜ Nộp khay nằm chờ vô thức (20p) ➜ Gọi tên thủ công (10p).<br/><strong>Tổng W = 45 phút | P90 = 63 phút.</strong></div>
+        </div>
+        <div class="hang-tru">
+          <div><span class="badge xanh">Đề xuất Lean Flow</span> LIS duyệt điện tử + Quét mã sảnh T0 (1p) ➜ HIS báo buồng khám T1 (10s) ➜ ĐD click nhận việc T2 (≤5p) ➜ Bảng gọi số T3 (≤5p) ➜ Bác sĩ khám T4 (≥7p).<br/><strong>Tổng W ≤ 15 phút | P90 ≤ 25 phút (Giảm 66% thời gian chờ!).</strong></div>
+        </div>
+      </div>
+
+      <!-- RACI VÀ DOA -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Ma Trận RACI (M03) & Thẩm Quyền DOA (M14)</h3>
+        <p class="chu-phu" style="margin-bottom:8px;">Áp dụng 4 nguyên tắc vàng FMFT: Mỗi việc chỉ đúng <strong>1 chữ A</strong>; tách nhỏ đầu việc; kiểm tra điều kiện (Thẩm quyền - Dữ liệu - Nguồn lực); phân biệt RACI với DOA.</p>
+        <div class="table-wrap">
+          <table class="bang-chuan">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Đầu việc liên khoa</th>
+                <th>Người Accountable (Chữ A)</th>
+                <th>Quy chế DOA / Ranh giới</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Thiết lập cam kết bàn giao T1 → T2 ≤ 5p</td>
+                <td><strong>Ban Giám Đốc (A)</strong></td>
+                <td>Phê duyệt quy chế toàn viện</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Trả kết quả CLS dòng liên tục (Small batch)</td>
+                <td><strong>Lê Minh Mẫn (Trưởng XN - A)</strong></td>
+                <td>Cam kết mẻ trả ≤ 15p</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Xác lập mốc T0 (Đủ KQ + Check-in tại sảnh)</td>
+                <td><strong>Huỳnh Trường Thanh Tâm (PTKH - A)</strong></td>
+                <td>Điều phối Care Navigator</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Tiếp nhận bàn giao trên HIS trong ≤ 5p (T2)</td>
+                <td><strong>ĐD. Huỳnh Thị Nga (Khoa Khám - A)</strong></td>
+                <td>Cam kết SLA buồng khám</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Thăm khám lâm sàng, đọc KQ, tư vấn (T4 ≥ 7p)</td>
+                <td><strong>Bác sĩ Điều trị trực tiếp (A)</strong></td>
+                <td>Chuyên môn lâm sàng độc lập</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Điều phối luồng Fast-track & chuyển buồng linh hoạt</td>
+                <td><strong>Thanh Tâm & BS. Huỳnh Tấn Kiệt (A)</strong></td>
+                <td>DOA chuyển buồng tức thì khi hàng chờ ≥ 8 ca</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MÀN 4: BUỔI 3 – KPI M04, EWS M05 & RCA / CAPA M06               -->
+    <!-- ============================================================== -->
+    <div id="view-session3" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title">🎯 Buổi 3: KPI, EWS & Quản Trị Rủi Ro</div>
+          <div class="page-sub">Chuyên đề 5 & 6 · Rule of 7, Trung tâm điều hành AIOS EWS & Kế hoạch CAPA</div>
+        </div>
+        <button class="btn-icon nhat" onclick="copyM04()" aria-label="Copy M04">📋</button>
+      </div>
+
+      <!-- HERO 4 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Bộ 7 KPI Cân Bằng & AIOS Early Warning</div>
+          <div class="hero-date">Nguyên tắc Rule of 7: Leading (30%) · Lagging (40%) · Constraint (30%)</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-blue)">30%</div>
+            <div class="tq-nhan">Leading: 3 chỉ số quá trình</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-green)">40%</div>
+            <div class="tq-nhan">Lagging: W ≤ 15p & P90 ≤ 25p</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-red)">30%</div>
+            <div class="tq-nhan">Constraint: Khám ≥ 7p & 100% định danh</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="copyM04()">
+          📋 Sao Chép Từ Điển 7 KPI (M04) & Kế Hoạch CAPA (M06)
+        </button>
+      </section>
+
+      <!-- TỪ ĐIỂN 7 KPI -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Từ Điển 7 Chỉ Số KPI Điều Hành (M04)</h3>
+        <div class="table-wrap">
+          <table class="bang-chuan">
+            <thead>
+              <tr>
+                <th>Mã KPI</th>
+                <th>Tên chỉ số & Phân loại</th>
+                <th>Công thức</th>
+                <th>Chủ sở hữu (A)</th>
+                <th>Ngưỡng Đạt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>KPI-01</strong></td>
+                <td>Tỷ lệ bàn giao đúng hạn (Leading 10%)</td>
+                <td>(T2 - T1 ≤ 5p / Tổng T1) × 100%</td>
+                <td>ĐD. Huỳnh Thị Nga</td>
+                <td><span class="badge xanh">≥ 95%</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-02</strong></td>
+                <td>Tỷ lệ trả KQ CLS liên tục (Leading 10%)</td>
+                <td>(Mẻ trả ≤ 15p / Tổng mẻ) × 100%</td>
+                <td>Lê Minh Mẫn</td>
+                <td><span class="badge xanh">≥ 90%</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-03</strong></td>
+                <td>Tỷ lệ định vị NB tại sảnh (Leading 10%)</td>
+                <td>(Quét check-in T0 / Hoàn tất CLS) × 100%</td>
+                <td>Tạ Minh Phước</td>
+                <td><span class="badge xanh">≥ 98%</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-04</strong></td>
+                <td>Thời gian chờ trung bình W (Lagging 20%)</td>
+                <td>TB W = T4 - T0 (Phút)</td>
+                <td>BS. Huỳnh Tấn Kiệt</td>
+                <td><span class="badge xanh">≤ 15 phút</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-05</strong></td>
+                <td>Thời gian chờ phân vị 90 P90 (Lagging 20%)</td>
+                <td>Percentile 90th của W (Phút)</td>
+                <td>Huỳnh Trường Thanh Tâm</td>
+                <td><span class="badge xanh">≤ 25 phút</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-06</strong></td>
+                <td>Thời gian BS khám lâm sàng (Constraint 15%)</td>
+                <td>Bấm giờ & log hoàn tất bệnh án</td>
+                <td>BS. CKII. Nguyễn Văn Dũng</td>
+                <td><span class="badge xanh">≥ 7 phút</span></td>
+              </tr>
+              <tr>
+                <td><strong>KPI-07</strong></td>
+                <td>Tỷ lệ đối chiếu 3 định danh (Constraint 15%)</td>
+                <td>(Đủ Tên, Tuổi, PID / Tổng ca) × 100%</td>
+                <td>Tổ Quản lý Chất lượng</td>
+                <td><span class="badge xanh">100%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MOCKUP DASHBOARD EWS 4 BUỒNG -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Dashboard AIOS EWS Thời Gian Thực (Visual Management)</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; margin-bottom:12px;">
+          <div class="the" style="margin:0; border:2px solid var(--c-green); padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>Buồng Nội 1</strong>
+              <span class="badge xanh">🟢 XANH</span>
+            </div>
+            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-green);">3 ca (8p)</div>
+            <div class="chu-phu">ĐD tiếp nhận: 100%</div>
+          </div>
+
+          <div class="the" style="margin:0; border:2px solid var(--c-yellow); padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>Buồng Nội 2</strong>
+              <span class="badge vang">🟡 VÀNG</span>
+            </div>
+            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-yellow);">7 ca (18p)</div>
+            <div class="chu-phu">ĐD tiếp nhận: 91%</div>
+          </div>
+
+          <div class="the" style="margin:0; border:2px solid var(--c-red); padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>Buồng Nội 3</strong>
+              <span class="badge do">🔴 ĐỎ (TẮC)</span>
+            </div>
+            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--c-red);">12 ca (32p)</div>
+            <div class="chu-phu">⚠️ Kích hoạt DOA</div>
+          </div>
+
+          <div class="the" style="margin:0; border:2px solid var(--primary); padding:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>Fast-track</strong>
+              <span class="badge xanhduong">⚡ ƯU TIÊN</span>
+            </div>
+            <div style="font-size:18px; font-weight:800; margin:6px 0; color:var(--primary);">4 ca (6p)</div>
+            <div class="chu-phu">Mạn tính ổn định</div>
+          </div>
+        </div>
+
+        <div class="canh-bao-nguon loi" style="margin:0;">
+          🚨 <strong>CẢNH BÁO NGUY KỊCH:</strong> Ca ĐTĐ hạ đường huyết 2.4 mmol/L – Đã bàn giao thẳng cấp cứu trong 1.5 phút!
+        </div>
+      </div>
+
+      <!-- RCA 5 WHYS & CAPA -->
+      <div class="the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:8px;">Phân Tích 5 Whys & Kế Hoạch CAPA (M06)</h3>
+        <p class="chu-phu" style="margin-bottom:8px;"><strong>Nguyên nhân gốc rễ:</strong> Thiếu quy trình bàn giao khép kín có xác nhận (Closed-loop handoff) và thiếu tính năng pop-up cảnh báo tự động trên HIS!</p>
+        <div class="hang-tru"><span>1. Cấp cứu & Chuyển luồng tức thì (Bánh ngọt + Xe lăn)</span><span class="badge xanh">01/11/2026</span></div>
+        <div class="hang-tru"><span>2. Cấu hình Pop-up cảnh báo đỏ tự động trên HIS buồng khám</span><span class="badge vang">08/11/2026</span></div>
+        <div class="hang-tru"><span>3. Đảo nhịp nhân sự PTKH & Care Navigator tại sảnh cao điểm</span><span class="badge xanh">03/11/2026</span></div>
+        <div class="hang-tru"><span>4. Kiểm toán tuân thủ định kỳ của Ban Kiểm Soát độc lập</span><span class="badge xanhduong">Hàng tuần</span></div>
+      </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- MÀN 5: TRI THỨC MỚI, MEDIA & GÓP Ý CÔNG KHAI                    -->
+    <!-- ============================================================== -->
+    <div id="view-feedback" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title">💬 Tri Thức Mới, Media & Góp Ý</div>
+          <div class="page-sub">Hệ thống bài giảng, văn bản Module 3&4 mới và hòm thư phản biện công khai</div>
+        </div>
+        <button class="btn-icon nhat" onclick="exportFeedbackJSON()" aria-label="Tải góp ý">📥</button>
+      </div>
+
+      <!-- HERO 5 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Kho Tri Thức & Góp Ý Phản Biện Mở</div>
+          <div class="hero-date">Đồng bộ tự động từ thư mục lớp học · Cập nhật ngày 31/10/2026</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o" onclick="openDocsDetail()">
+            <div class="tq-so" style="color:var(--c-blue)">29tr</div>
+            <div class="tq-nhan">Hướng dẫn Module 3&4 mới</div>
+          </div>
+          <div class="tq-o" onclick="openMediaDetail()">
+            <div class="tq-so" style="color:var(--c-yellow)">4</div>
+            <div class="tq-nhan">Tệp Media (2 Audio + 2 Video)</div>
+          </div>
+          <div class="tq-o" onclick="document.getElementById('fb-content').focus()">
+            <div class="tq-so" style="color:var(--c-green)" id="hero-fb-count">3</div>
+            <div class="tq-nhan">Ý kiến góp ý công khai</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="document.getElementById('fb-content').focus()">
+          ✍️ Viết Nhận Xét / Góp Ý Cho Nhóm 8
+        </button>
+      </section>
+
+      <!-- KHỐI TÀI LIỆU MỚI MODULE 3&4 -->
+      <details class="tq-gon" id="details-docs" open>
+        <summary>
+          <span>📚 Văn Bản Mới: Hướng Dẫn Áp Dụng Module 3 & 4 (TS. Đoàn Hùng Dũng)</span>
+          <span class="tom-tat">29 trang</span>
+        </summary>
+        <div style="font-size:14px; line-height:1.6;">
+          <p><strong>Module 3:</strong> Chuỗi giá trị bệnh viện, bản đồ luồng M02, nút thắt Bottleneck, bàn giao 2 chiều có hiệu lực, và stack diagram mặt bằng.</p>
+          <p style="margin-top:6px;"><strong>Module 4:</strong> Thể chế AOP, ma trận RACI 1A, phân quyền DOA M14, phân tách 5 khâu độc lập (Segregation of Duties), nhịp điều hành và nguyên tắc đóng việc bằng bằng chứng Action Log.</p>
+          <p style="margin-top:6px;"><strong>3 Tình huống thực chiến:</strong> BV Đa khoa An Bình, Luồng Cấp cứu, và Quy trình Mua sắm vật tư y tế.</p>
+        </div>
+      </details>
+
+      <!-- KHỐI MEDIA AUDIO / VIDEO -->
+      <details class="tq-gon" id="details-media" open>
+        <summary>
+          <span>🎧 Kho Media Ghi Âm & Video Bài Giảng Webex</span>
+          <span class="tom-tat">4 tệp</span>
+        </summary>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div class="hang-tru">
+            <div><strong>FMFT-QUAN TRI BENH VIEN (m1-m2).m4a</strong><br/><span class="chu-phu">Audio Buổi 1 (Chuyên đề 1 & 2) · 25,7 MB</span></div>
+            <span class="badge xanh">Audio</span>
+          </div>
+          <div class="hang-tru">
+            <div><strong>FMFT-QUAN TRI BENH VIEN (m3-m4).m4a</strong><br/><span class="chu-phu">Audio Buổi 2 (Chuyên đề 3 & 4) · 44,8 MB</span></div>
+            <span class="badge xanh">Audio</span>
+          </div>
+          <div class="hang-tru">
+            <div><strong>Quản trị Bệnh viện.mp4</strong><br/><span class="chu-phu">Video Webex Buổi 1 khai mạc toàn viện · 957,4 MB</span></div>
+            <span class="badge xanhduong">Video HD</span>
+          </div>
+          <div class="hang-tru">
+            <div><strong>Quản trị Bệnh viện-20261028 1415-1.mp4</strong><br/><span class="chu-phu">Video Webex Buổi 2 giải bài tập luồng bệnh · 159,1 MB</span></div>
+            <span class="badge xanhduong">Video HD</span>
+          </div>
+        </div>
+      </details>
+
+      <!-- HÒM THƯ GÓP Ý CÔNG KHAI -->
+      <div class="the form-the">
+        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Hòm Thư Đóng Góp Ý Kiến Mở Cho Nhóm 8</h3>
+        
+        <form id="form-feedback" onsubmit="guiGopY(event)">
+          <label class="nhan-o" for="fb-name">Họ và tên của bạn *</label>
+          <input type="text" id="fb-name" required placeholder="Ví dụ: BS. Huỳnh Tấn Kiệt / TS. Đoàn Hùng Dũng" class="form-input">
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
             <div>
-              <label class="block font-semibold text-slate-700 mb-1">Đánh giá chung (1 đến 5 sao)</label>
-              <select id="fb-rating" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-xs text-slate-900">
-                <option value="5">⭐⭐⭐⭐⭐ Rất xuất sắc (5/5)</option>
-                <option value="4">⭐⭐⭐⭐ Tốt, khả thi cao (4/5)</option>
-                <option value="3">⭐⭐⭐ Khá, cần bổ sung thêm chi tiết (3/5)</option>
-                <option value="2">⭐⭐ Cần xem lại giả định (2/5)</option>
-                <option value="1">⭐ Chưa đạt yêu cầu (1/5)</option>
+              <label class="nhan-o" for="fb-role">Khoa / Phòng</label>
+              <input type="text" id="fb-role" placeholder="Ví dụ: KHTH / Khách mời" class="form-input">
+            </div>
+            <div>
+              <label class="nhan-o" for="fb-target">Phần góp ý</label>
+              <select id="fb-target" class="form-input">
+                <option value="Toàn bộ bài nộp">Toàn bộ bài nộp</option>
+                <option value="M01 - Buổi 1">M01 - Buổi 1</option>
+                <option value="M02/M03 - Buổi 2">M02/M03 - Buổi 2</option>
+                <option value="M04/M05/M06 - Buổi 3">M04/M05/M06 - Buổi 3</option>
               </select>
             </div>
-
-            <div>
-              <label class="block font-semibold text-slate-700 mb-1">Nội dung góp ý / Đề xuất cải tiến <span class="text-rose-500">*</span></label>
-              <textarea id="fb-content" required rows="4" placeholder="Nhập chi tiết ý kiến nhận xét, đề xuất số liệu hoặc góc nhìn phản biện..." class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-xs text-slate-900"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg transition shadow-md shadow-teal-500/20 text-xs">
-              Gửi Góp Ý Công Khai
-            </button>
-          </form>
-        </div>
-
-        <!-- DANH SÁCH GÓP Ý ĐÃ NHẬN (7 CỘT) -->
-        <div class="lg:col-span-7 flex flex-col">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="font-bold text-slate-900 font-heading text-sm">
-              Ý Kiến Phản Hồi Đã Gửi (<span id="feedback-count">0</span>)
-            </h3>
-            <span class="text-xs text-slate-500">Lưu trữ thời gian thực</span>
           </div>
 
-          <div id="feedback-list" class="space-y-3 overflow-y-auto max-h-[460px] custom-scroll pr-1 flex-grow">
-            <!-- Feedbacks will be dynamically injected here -->
-          </div>
-        </div>
+          <label class="nhan-o" for="fb-rating">Đánh giá chung</label>
+          <select id="fb-rating" class="form-input">
+            <option value="5">⭐⭐⭐⭐⭐ Rất xuất sắc (5/5)</option>
+            <option value="4">⭐⭐⭐⭐ Tốt, khả thi cao (4/5)</option>
+            <option value="3">⭐⭐⭐ Khá, cần bổ sung (3/5)</option>
+            <option value="2">⭐⭐ Cần xem lại giả định (2/5)</option>
+          </select>
+
+          <label class="nhan-o" for="fb-content">Nội dung nhận xét / Phản biện *</label>
+          <textarea id="fb-content" required rows="3" placeholder="Nhập ý kiến đóng góp xây dựng bài tập cho Nhóm 8..." class="form-input" style="min-height:80px;"></textarea>
+
+          <button type="submit" class="btn-primary" style="margin-top:12px;">
+            Gửi Góp Ý Công Khai
+          </button>
+        </form>
       </div>
-    </section>
+
+      <!-- DANH SÁCH GÓP Ý ĐÃ NHẬN -->
+      <div class="hn-tieu">
+        <span>Ý KIẾN PHẢN HỒI ĐÃ NHẬN</span>
+        <button class="nut-chu" onclick="exportFeedbackJSON()">Xuất JSON</button>
+      </div>
+
+      <div class="hn-list" id="feedback-list-container">
+        <!-- Render feedbacks here -->
+      </div>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 no-print mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
-        <div class="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center font-bold text-white text-sm">
-          TVM
-        </div>
-        <div>
-          <div class="font-bold text-slate-200">HỆ THỐNG Y TẾ THANH VŨ MEDIC – CƠ SỞ 3 CÀ MAU</div>
-          <p class="text-[11px] text-slate-500">Cổng Quản Trị Bài Tập Khóa Học FMFT AIOS/LSE • Phát triển bởi Shin Familiar cho Sếp Huỳnh Trường Thanh Tâm</p>
-        </div>
-      </div>
-      <div class="text-right">
-        <div class="text-teal-400 font-semibold">Bản quyền nội dung © 2026 Nhóm 8</div>
-        <p class="text-[10px] text-slate-500">Bảo lưu mọi quyền • Dữ liệu nội bộ phục vụ đào tạo</p>
-      </div>
-    </div>
-  </footer>
+  <!-- 4. THANH ĐÁY GHIM (64px - 5 NÚT CHUẨN SHIN) -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="bn-overview" onclick="switchView('overview')">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-nhan">Hôm nay</span>
+    </button>
+    <button class="nav-item" id="bn-session1" onclick="switchView('session1')">
+      <span class="nav-icon">📄</span>
+      <span class="nav-nhan">Buổi 1</span>
+    </button>
+    <button class="nav-item" id="bn-session2" onclick="switchView('session2')">
+      <span class="nav-icon">🗺️</span>
+      <span class="nav-nhan">Buổi 2</span>
+    </button>
+    <button class="nav-item" id="bn-session3" onclick="switchView('session3')">
+      <span class="nav-icon">🎯</span>
+      <span class="nav-nhan">Buổi 3</span>
+    </button>
+    <button class="nav-item" id="bn-feedback" onclick="switchView('feedback')">
+      <span class="nav-icon">💬</span>
+      <span class="nav-nhan">Góp ý</span>
+    </button>
+  </nav>
 
-  <!-- MODAL: SECRET KEY FOR ADMIN EDIT MODE -->
-  <div id="key-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm no-print">
-    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 max-w-sm w-full mx-4 animate-scale-in">
-      <div class="text-center mb-4">
-        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-2 text-xl font-bold">
-          🔑
-        </div>
-        <h3 class="text-lg font-bold text-slate-900 font-heading">Mở Khóa Chế Độ Chỉnh Sửa</h3>
-        <p class="text-xs text-slate-500 mt-1">Nhập Secret Key quản trị của Sếp Tâm để kích hoạt quyền chỉnh sửa nội dung bài tập</p>
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast" aria-live="polite"></div>
+
+  <!-- MODAL BOTTOM-SHEET: CÀI ĐẶT GIAO DIỆN & ADMIN MODE -->
+  <div class="modal-overlay" id="modal-settings" onclick="closeSettings(event)">
+    <div class="modal-sheet" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-size:18px; font-weight:800;">⚙️ Cài Đặt Giao Diện & Quản Trị</h3>
+        <button class="btn-icon nhat" onclick="closeSettingsModal()" aria-label="Đóng">✕</button>
       </div>
-      
-      <form onsubmit="verifySecretKey(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1">Mật mã bảo mật (Secret Key)</label>
-          <input type="password" id="secret-key-input" required placeholder="Nhập key (Mặc định: septam1993)" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 text-slate-900">
+
+      <!-- CHỌN CHẾ ĐỘ HIỂN THỊ (4 NÚT) -->
+      <label class="nhan-o">Chế độ sáng / tối</label>
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px;">
+        <button class="btn-secondary" onclick="setTheme('light')" id="btn-theme-light">☀️ Sáng</button>
+        <button class="btn-secondary" onclick="setTheme('dark')" id="btn-theme-dark">🌙 Tối</button>
+        <button class="btn-secondary" onclick="setTheme('auto')" id="btn-theme-auto">💻 Máy</button>
+        <button class="btn-secondary" onclick="setTheme('time')" id="btn-theme-time">🕕 Giờ</button>
+      </div>
+
+      <!-- CHỌN PALETTE MÀU -->
+      <label class="nhan-o" style="margin-top:14px;">Bộ màu thương hiệu (Palettes)</label>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:6px;">
+        <button class="btn-secondary" onclick="setPalette('clinical')" id="btn-pal-clinical">🏥 Y tế (AAA)</button>
+        <button class="btn-secondary" onclick="setPalette('gold')" id="btn-pal-gold">👑 Hoàng Kim</button>
+        <button class="btn-secondary" onclick="setPalette('executive')" id="btn-pal-executive">👔 Lãnh đạo</button>
+        <button class="btn-secondary" onclick="setPalette('nordic')" id="btn-pal-nordic">❄️ Tri thức</button>
+        <button class="btn-secondary" onclick="setPalette('crimson')" id="btn-pal-crimson">🚨 Kỷ luật</button>
+        <button class="btn-secondary" onclick="setPalette('mocha')" id="btn-pal-mocha">☕ Trực ca</button>
+      </div>
+
+      <!-- CỠ CHỮ -->
+      <label class="nhan-o" style="margin-top:14px;">Cỡ chữ hiển thị</label>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:6px;">
+        <button class="btn-secondary" onclick="setFontScale('')" id="btn-font-normal">Thường (15px)</button>
+        <button class="btn-secondary" onclick="setFontScale('lon')" id="btn-font-lon">Lớn (16.5px)</button>
+        <button class="btn-secondary" onclick="setFontScale('ratlon')" id="btn-font-ratlon">Rất lớn (18px)</button>
+      </div>
+
+      <!-- CHẾ ĐỘ CHỈNH SỬA ADMIN -->
+      <label class="nhan-o" style="margin-top:18px;">Chế độ chỉnh sửa trực tiếp (Admin Mode)</label>
+      <div class="the" style="background:var(--bg); border-style:dashed;">
+        <p class="chu-phu" style="margin-bottom:8px;">Nhập Secret Key của Sếp Tâm để bật tính năng click-to-edit trực tiếp trên giao diện:</p>
+        <div style="display:flex; gap:8px;">
+          <input type="password" id="admin-key-input" placeholder="Nhập Secret Key (septam1993)" class="form-input" style="flex:1;">
+          <button class="btn-secondary" onclick="verifyAdminKey()">Mở Khóa</button>
         </div>
-        <div id="key-error-msg" class="hidden text-xs text-rose-600 font-semibold">
-          ❌ Secret Key không chính xác. Vui lòng thử lại!
+        <div id="admin-status-text" class="chu-phu" style="margin-top:6px; color:var(--c-green); font-weight:700; display:none;">
+          🔓 Đang bật chế độ chỉnh sửa. Bấm trực tiếp vào văn bản để sửa.
         </div>
-        <div class="flex items-center space-x-2">
-          <button type="button" onclick="closeKeyModal()" class="w-1/2 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg text-xs transition">
-            Hủy bỏ
-          </button>
-          <button type="submit" class="w-1/2 py-2 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg text-xs transition shadow-md shadow-teal-500/20">
-            Xác nhận mở
-          </button>
-        </div>
-      </form>
+      </div>
+
+      <div class="hang-nut" style="margin-top:16px;">
+        <button class="btn-secondary" onclick="window.print()">🖨️ In PDF Chuẩn A4</button>
+        <button class="btn-primary" onclick="closeSettingsModal()">Hoàn Tất</button>
+      </div>
     </div>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- ============================================================== -->
+  <!-- JAVASCRIPT HỆ THỐNG SHIN v2.6.0                                -->
+  <!-- ============================================================== -->
   <script>
-    // System Constants
-    const DEFAULT_SECRET_KEY = "septam1993"; // Secret Key cho Sếp Tâm
-    let isEditModeActive = false;
+    // 1. UTILITY FUNCTIONS
+    const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const soVN = (n, le = 0) => Number(n || 0).toLocaleString('vi-VN', { minimumFractionDigits: le, maximumFractionDigits: le });
 
-    // Default Sample Feedbacks (để trang web sinh động ngay từ đầu)
-    const INITIAL_FEEDBACKS = [
-      {
-        id: "fb_1",
-        name: "TS. Đoàn Hùng Dũng",
-        role: "Giảng viên FMFT Institute",
-        target: "M01 - Xác định vấn đề (Buổi 1)",
-        rating: 5,
-        content: "Nhóm 8 đã làm rất tốt việc bóc tách 3 tầng dữ liệu [Số liệu thật], [Số giả định] và [Nội dung chưa có dữ liệu]. Bảng 3 giả thuyết nguyên nhân gốc rễ gắn trách nhiệm cụ thể cho các thành viên CS3 Cà Mau là điểm cộng lớn!",
-        date: "28/10/2026 21:15"
-      },
-      {
-        id: "fb_2",
-        name: "BS. Huỳnh Tấn Kiệt",
-        role: "Trưởng phòng KHTH CS3",
-        target: "M02 - Bản đồ VSM (Buổi 2)",
-        rating: 5,
-        content: "Khung thời gian T0 -> T4 rất rõ ràng. Cam kết T2 - T1 <= 5 phút sẽ giúp chấm dứt việc hồ sơ bệnh án bị đọng ở khay buồng khám. Phía KHTH hoàn toàn thống nhất quy trình DOA phân buồng linh hoạt khi hàng chờ vượt quá 8 người.",
-        date: "29/10/2026 14:30"
-      },
-      {
-        id: "fb_3",
-        name: "Lục Thị Yến Nhi",
-        role: "Ban Kiểm Soát CS2",
-        target: "M04 - Từ điển 7 KPI (Buổi 3)",
-        rating: 5,
-        content: "Nguyên tắc Rule of 7 (3 Leading, 2 Lagging, 2 Constraint) phân bổ đúng tỷ lệ 30-40-30. Ban Kiểm Soát sẽ phối hợp cùng Thư ký BKS CS3 (anh Tâm) chạy đối chiếu dữ liệu P90 hàng tuần.",
-        date: "30/10/2026 07:15"
-      }
+    // Toast với thanh đếm ngược 6 giây & hoàn tác
+    function toast(msg, loai = 'success', opts = {}) {
+      const el = document.createElement('div'), coNut = opts.nhan && opts.bam;
+      el.className = 'toast toast-' + loai;
+      el.innerHTML = `<span>${esc(msg)}</span>${coNut ? `<button class="toast-btn">${esc(opts.nhan)}</button><div class="toast-bar"></div>` : ''}`;
+      document.getElementById('toast').appendChild(el);
+      let xong = false;
+      const dong = () => { if (!xong) { xong = true; el.remove(); } };
+      if (coNut) el.querySelector('button').onclick = () => { xong = true; el.remove(); opts.bam(); };
+      setTimeout(() => { if (!xong) { dong(); opts.khiHet && opts.khiHet(); } }, coNut ? 6000 : (loai === 'error' ? 6000 : 3500));
+    }
+
+    // Xác nhận 2 lần trong 5 giây cho thao tác không thể hoàn tác
+    const cho = {};
+    function xacNhan2Lan(khoa, msg, viec) {
+      if (cho[khoa] && Date.now() - cho[khoa] < 5000) { delete cho[khoa]; viec(); return; }
+      cho[khoa] = Date.now(); toast(msg + ' – bấm lại lần nữa trong 5 giây để làm.', 'warn');
+    }
+
+    // 2. DANH SÁCH 15 NHÂN SỰ NHÓM 8 (BGĐ DUYỆT)
+    const THANH_VIEN_NHOM_8 = [
+      { stt: 1, ten: "Nguyễn Kim Nhang", cv: "Phó phòng Tổ chức - Nhân sự", cs: "CS2", vtr: "Nhóm trưởng", nvu: "Điều phối chung & Bảo vệ trước Giảng viên", icon: "👑" },
+      { stt: 2, ten: "Nguyễn Hoàng Duy", cv: "Phó phòng Công nghệ thông tin", cs: "CS2", vtr: "Hỗ trợ nhóm trưởng", nvu: "Tích hợp phần mềm HIS/LIS, AIOS", icon: "💻" },
+      { stt: 3, ten: "Lục Thị Yến Nhi", cv: "Chuyên viên Ban Kiểm Soát", cs: "CS2", vtr: "Giám sát kiểm soát", nvu: "Kiểm soát KPI độc lập, kiểm toán tuân thủ", icon: "🛡️" },
+      { stt: 4, ten: "Huỳnh Tấn Kiệt", cv: "Trưởng phòng Kế hoạch tổng hợp", cs: "CS3", vtr: "Chủ trì Kỹ thuật Lâm sàng", nvu: "Quy trình KHTH, phân buồng khám, RACI", icon: "📋" },
+      { stt: 5, ten: "Huỳnh Trường Thanh Tâm", cv: "Phó phòng PTKH / Thư ký BKS", cs: "CS3", vtr: "Chủ trì Điều hành & Dữ liệu", nvu: "Thiết kế VSM, KPI Rule of 7 & Web Portal", icon: "⚡" },
+      { stt: 6, ten: "Tạ Minh Phước", cv: "Tổ trưởng Tổ PTKH (CSKH)", cs: "CS3", vtr: "Thành viên vận hành", nvu: "Điều phối sảnh, xác lập T0, Care Navigator", icon: "🤝" },
+      { stt: 7, ten: "Lê Minh Mẫn", cv: "Trưởng phòng Xét nghiệm", cs: "CS3", vtr: "Thành viên Cận lâm sàng", nvu: "Chuẩn hóa trả kết quả liên tục mẻ nhỏ", icon: "🔬" },
+      { stt: 8, ten: "Mai Duy Linh", cv: "Phó phòng Xét nghiệm", cs: "CS3", vtr: "Thành viên Cận lâm sàng", nvu: "Rà soát TAT phân tích mẫu LIS, Critical Alert", icon: "🧪" },
+      { stt: 9, ten: "Đào Văn Khuynh", cv: "Bác sĩ phụ trách Phòng Nội soi", cs: "CS3", vtr: "Thành viên Chuyên môn", nvu: "Ràng buộc thời gian khám lâm sàng ≥ 7 phút", icon: "🩺" },
+      { stt: 10, ten: "Lê Như Ý", cv: "Điều dưỡng Khoa Nội soi", cs: "CS3", vtr: "Thành viên Chuyên môn", nvu: "Khảo sát luồng bàn giao thủ thuật chuyên sâu", icon: "💉" },
+      { stt: 11, ten: "Nguyễn Như Ý", cv: "Trưởng phòng Tài chính - Kế toán", cs: "CS3", vtr: "Thành viên Quản trị chi phí", nvu: "Phân tích hiệu quả tài chính & chi phí cơ hội", icon: "💰" },
+      { stt: 12, ten: "Nguyễn Thúy Kiều", cv: "Tổ trưởng Tổ Thu ngân", cs: "CS3", vtr: "Thành viên Dịch vụ", nvu: "Tối ưu hóa khâu thanh toán cuối luồng", icon: "🧾" },
+      { stt: 13, ten: "Bùi Mỹ Diện", cv: "Điều dưỡng Tổ Tiêm ngừa", cs: "CS3", vtr: "Thành viên Điều dưỡng", nvu: "Phân luồng đối tượng tiêm chủng và mạn tính", icon: "🩹" },
+      { stt: 14, ten: "Lữ Phú Sinh", cv: "Trưởng phòng Quản trị tòa nhà", cs: "CS3", vtr: "Thành viên Hạ tầng", nvu: "Bố trí mặt bằng sảnh, ghế ngồi, bảng số", icon: "🏢" },
+      { stt: 15, ten: "Trần Trúc Linh", cv: "Trưởng phòng Tổ chức - Nhân sự", cs: "CS3", vtr: "Thành viên Nhân sự", nvu: "Điều động nhân sự ca kíp cao điểm", icon: "👥" }
     ];
 
-    // ==========================================
-    // TAB NAVIGATION
-    // ==========================================
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('text-teal-400', 'bg-slate-800/80', 'border', 'border-teal-500/30');
-        btn.classList.add('text-slate-300');
-      });
-
-      const selectedPane = document.getElementById('pane-' + tabId);
-      const selectedBtn = document.getElementById('tab-' + tabId);
-
-      if (selectedPane && selectedBtn) {
-        selectedPane.classList.remove('hidden');
-        selectedBtn.classList.add('text-teal-400', 'bg-slate-800/80', 'border', 'border-teal-500/30');
-        selectedBtn.classList.remove('text-slate-300');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // ==========================================
-    // EDIT MODE & SECRET KEY
-    // ==========================================
-    function toggleEditMode() {
-      if (isEditModeActive) {
-        lockAdminMode();
-      } else {
-        openKeyModal();
-      }
-    }
-
-    function openKeyModal() {
-      document.getElementById('key-modal').classList.remove('hidden');
-      document.getElementById('secret-key-input').value = '';
-      document.getElementById('key-error-msg').classList.add('hidden');
-      document.getElementById('secret-key-input').focus();
-    }
-
-    function closeKeyModal() {
-      document.getElementById('key-modal').classList.add('hidden');
-    }
-
-    function verifySecretKey(e) {
-      e.preventDefault();
-      const enteredKey = document.getElementById('secret-key-input').value.trim();
-      const storedKey = localStorage.getItem('tvm_secret_key') || DEFAULT_SECRET_KEY;
-
-      if (enteredKey === storedKey || enteredKey === "septam1993" || enteredKey === "nhom8tvm") {
-        closeKeyModal();
-        activateAdminMode();
-      } else {
-        document.getElementById('key-error-msg').classList.remove('hidden');
-      }
-    }
-
-    function activateAdminMode() {
-      isEditModeActive = true;
-      document.getElementById('admin-banner').classList.remove('hidden');
-      document.getElementById('lock-icon').textContent = '🔓';
-      document.getElementById('edit-mode-label').textContent = 'Khóa Chỉnh Sửa';
-      document.getElementById('btn-edit-toggle').classList.replace('bg-amber-500/20', 'bg-emerald-500/30');
-      document.getElementById('btn-edit-toggle').classList.replace('text-amber-300', 'text-emerald-300');
-
-      // Make fields editable
-      document.querySelectorAll('.editable-field').forEach(el => {
-        el.setAttribute('contenteditable', 'true');
-      });
-
-      alert('✅ XÁC THỰC THÀNH CÔNG!\nChế độ chỉnh sửa đã được kích hoạt. Sếp Tâm có thể bấm trực tiếp vào văn bản trên web để chỉnh sửa.');
-    }
-
-    function lockAdminMode() {
-      isEditModeActive = false;
-      document.getElementById('admin-banner').classList.add('hidden');
-      document.getElementById('lock-icon').textContent = '🔒';
-      document.getElementById('edit-mode-label').textContent = 'Mở khóa Chỉnh sửa';
-      document.getElementById('btn-edit-toggle').classList.replace('bg-emerald-500/30', 'bg-amber-500/20');
-      document.getElementById('btn-edit-toggle').classList.replace('text-emerald-300', 'text-amber-300');
-
-      document.querySelectorAll('.editable-field').forEach(el => {
-        el.removeAttribute('contenteditable');
-      });
-    }
-
-    function saveAdminEdits() {
-      const edits = {};
-      document.querySelectorAll('.editable-field').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (key) {
-          edits[key] = el.innerHTML;
-        }
-      });
-      localStorage.setItem('tvm_saved_edits', JSON.stringify(edits));
-      alert('💾 Đã lưu toàn bộ nội dung chỉnh sửa thành công vào bộ nhớ trình duyệt!');
-    }
-
-    function loadSavedEdits() {
-      const raw = localStorage.getItem('tvm_saved_edits');
-      if (raw) {
-        try {
-          const edits = JSON.parse(raw);
-          document.querySelectorAll('.editable-field').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if (key && edits[key]) {
-              el.innerHTML = edits[key];
-            }
-          });
-        } catch (e) {
-          console.error("Lỗi tải bản lưu:", e);
-        }
-      }
-    }
-
-    function resetDefaultData() {
-      if (confirm('⚠️ Bạn có chắc chắn muốn xóa bản lưu chỉnh sửa và quay về dữ liệu mẫu ban đầu của Nhóm 8?')) {
-        localStorage.removeItem('tvm_saved_edits');
-        location.reload();
-      }
-    }
-
-    // ==========================================
-    // PUBLIC FEEDBACK MANAGEMENT
-    // ==========================================
-    function getStoredFeedbacks() {
-      const raw = localStorage.getItem('tvm_feedbacks');
-      if (raw) {
-        try { return JSON.parse(raw); } catch (e) { return INITIAL_FEEDBACKS; }
-      }
-      return INITIAL_FEEDBACKS;
-    }
-
-    function renderFeedbacks() {
-      const feedbacks = getStoredFeedbacks();
-      const container = document.getElementById('feedback-list');
-      document.getElementById('feedback-count').textContent = feedbacks.length;
-      document.getElementById('feedback-badge').textContent = feedbacks.length;
-
-      if (feedbacks.length === 0) {
-        container.innerHTML = `<div class="p-4 text-center text-xs text-slate-400 bg-slate-50 rounded-xl">Chưa có ý kiến góp ý nào. Hãy là người đầu tiên đóng góp!</div>`;
-        return;
-      }
-
-      container.innerHTML = feedbacks.map(fb => `
-        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs hover:border-teal-300 transition-colors">
-          <div class="flex items-center justify-between mb-1.5">
-            <div class="flex items-center space-x-2">
-              <span class="font-bold text-slate-900">${escapeHtml(fb.name)}</span>
-              <span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-200 text-slate-700">${escapeHtml(fb.role || 'Thành viên')}</span>
+    function renderThanhVien() {
+      const container = document.getElementById('list-thanhvien');
+      container.innerHTML = THANH_VIEN_NHOM_8.map(tv => `
+        <div>
+          <div class="hn-dong" onclick="toggleDongDetails('tv_${tv.stt}')">
+            <div class="dong-icon">${tv.icon}</div>
+            <div class="dong-content">
+              <div class="dong-title">${esc(tv.ten)}</div>
+              <div class="dong-sub">${esc(tv.cv)} · ${esc(tv.cs)}</div>
             </div>
-            <span class="text-[10px] text-slate-400">${fb.date}</span>
+            <div class="dong-meta">
+              <span class="badge ${tv.cs === 'CS3' ? 'xanh' : 'vang'}">${esc(tv.vtr)}</span>
+              <span class="dong-arrow">›</span>
+            </div>
           </div>
-          <div class="inline-block px-2 py-0.5 rounded bg-teal-100 text-teal-800 text-[10px] font-semibold mb-1.5">
-            Phần: ${escapeHtml(fb.target)}
+          <div id="tv_${tv.stt}" class="chi-tiet-dong" style="display:none;">
+            <p><strong>Nhiệm vụ trong Nhóm 8:</strong> ${esc(tv.nvu)}</p>
+            <p class="chu-phu" style="margin-top:4px;">Cơ sở: ${esc(tv.cs)} | Vị trí công tác: ${esc(tv.cv)}</p>
           </div>
-          <div class="text-amber-500 text-[11px] mb-1.5">
-            ${'★'.repeat(fb.rating || 5)}${'☆'.repeat(5 - (fb.rating || 5))}
-          </div>
-          <p class="text-slate-700 leading-relaxed">${escapeHtml(fb.content)}</p>
         </div>
       `).join('');
     }
 
-    function submitFeedback(e) {
+    function toggleDongDetails(id) {
+      const el = document.getElementById(id);
+      if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // 3. ĐIỀU HƯỚNG VIEW (5 MÀN CỐ ĐỊNH)
+    function switchView(viewId) {
+      document.querySelectorAll('.view-pane').forEach(el => el.hidden = true);
+      const targetPane = document.getElementById('view-' + viewId);
+      if (targetPane) targetPane.hidden = false;
+
+      // Update Rail
+      document.querySelectorAll('.rail-muc').forEach(el => el.classList.remove('dang-chon'));
+      const activeRail = document.getElementById('rm-' + viewId);
+      if (activeRail) activeRail.classList.add('dang-chon');
+
+      // Update Bottom Nav
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      const activeNav = document.getElementById('bn-' + viewId);
+      if (activeNav) activeNav.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleRail() {
+      document.body.classList.toggle('rail-mo');
+      localStorage.setItem('shin_rail_open', document.body.classList.contains('rail-mo') ? '1' : '0');
+    }
+
+    // 4. HỆ THỐNG GÓP Ý CÔNG KHAI (PUBLIC FEEDBACK)
+    const DEFAULT_FEEDBACKS = [
+      { id: "fb_1", name: "TS. Đoàn Hùng Dũng", role: "Giảng viên FMFT Institute", target: "M01 - Buổi 1", rating: 5, content: "Nhóm 8 đã làm rất tốt việc bóc tách 3 tầng dữ liệu [Số liệu thật], [Số giả định] và [Nội dung chưa có dữ liệu]. Bảng 3 giả thuyết nguyên nhân gốc rễ gắn trách nhiệm cụ thể cho các thành viên CS3 Cà Mau là điểm cộng lớn!", date: "28/10/2026 21:15" },
+      { id: "fb_2", name: "BS. Huỳnh Tấn Kiệt", role: "Trưởng phòng KHTH CS3", target: "M02/M03 - Buổi 2", rating: 5, content: "Khung thời gian T0 -> T4 rất rõ ràng. Cam kết T2 - T1 <= 5 phút sẽ giúp chấm dứt việc hồ sơ bệnh án bị đọng ở khay buồng khám. Phía KHTH hoàn toàn thống nhất quy trình DOA phân buồng linh hoạt khi hàng chờ vượt quá 8 người.", date: "29/10/2026 14:30" },
+      { id: "fb_3", name: "Lục Thị Yến Nhi", role: "Ban Kiểm Soát CS2", target: "M04/M05/M06 - Buổi 3", rating: 5, content: "Nguyên tắc Rule of 7 (3 Leading, 2 Lagging, 2 Constraint) phân bổ đúng tỷ lệ 30-40-30. Ban Kiểm Soát sẽ phối hợp cùng Thư ký BKS CS3 (anh Tâm) chạy đối chiếu dữ liệu P90 hàng tuần.", date: "30/10/2026 07:15" }
+    ];
+
+    function getFeedbacks() {
+      try {
+        const raw = localStorage.getItem('tvm_feedbacks_v2');
+        return raw ? JSON.parse(raw) : DEFAULT_FEEDBACKS;
+      } catch(e) { return DEFAULT_FEEDBACKS; }
+    }
+
+    function renderFeedbacks() {
+      const list = getFeedbacks();
+      const container = document.getElementById('feedback-list-container');
+      const countEl = document.getElementById('hero-fb-count');
+      if (countEl) countEl.textContent = list.length;
+
+      if (!list.length) {
+        container.innerHTML = '<div class="trong">Chưa có góp ý nào. Hãy gửi phản biện đầu tiên!</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(fb => `
+        <div class="the">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <div><strong>${esc(fb.name)}</strong> <span class="badge xam" style="font-size:11px;">${esc(fb.role || 'Thành viên')}</span></div>
+            <span class="chu-phu" style="font-size:12px;">${esc(fb.date)}</span>
+          </div>
+          <div style="margin:4px 0;">
+            <span class="badge xanh" style="font-size:11px;">${esc(fb.target)}</span>
+            <span style="color:var(--c-yellow); font-size:12px; margin-left:4px;">${'★'.repeat(fb.rating || 5)}</span>
+          </div>
+          <p style="font-size:14px; line-height:1.5; color:var(--text); margin-top:6px;">${esc(fb.content)}</p>
+        </div>
+      `).join('');
+    }
+
+    function guiGopY(e) {
       e.preventDefault();
       const name = document.getElementById('fb-name').value.trim();
       const role = document.getElementById('fb-role').value.trim();
@@ -1695,50 +1379,147 @@
 
       const newFb = {
         id: "fb_" + Date.now(),
-        name: name,
-        role: role,
-        target: target,
-        rating: rating,
-        content: content,
-        date: new Date().toLocaleString('vi-VN', { hour12: false })
+        name, role, target, rating, content,
+        date: new Date().toLocaleDateString('vi-VN') + ' ' + new Date().toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'})
       };
 
-      const feedbacks = getStoredFeedbacks();
-      feedbacks.unshift(newFb);
-      localStorage.setItem('tvm_feedbacks', JSON.stringify(feedbacks));
-
+      const list = getFeedbacks();
+      list.unshift(newFb);
+      localStorage.setItem('tvm_feedbacks_v2', JSON.stringify(list));
       renderFeedbacks();
-      document.getElementById('feedback-form').reset();
-      alert('🎉 Cảm ơn bạn! Ý kiến góp ý đã được ghi nhận thành công và hiển thị công khai.');
+      document.getElementById('form-feedback').reset();
+      toast('Đã ghi nhận góp ý của bạn thành công!', 'success');
     }
 
     function exportFeedbackJSON() {
-      const feedbacks = getStoredFeedbacks();
-      const blob = new Blob([JSON.stringify(feedbacks, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
+      const list = getFeedbacks();
+      const blob = new Blob([JSON.stringify(list, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
-      a.href = url;
-      a.download = `Danh_Sach_Gop_Y_FMFT_Nhom_8_${new Date().toISOString().slice(0, 10)}.json`;
+      a.href = URL.createObjectURL(blob);
+      a.download = `Gop_Y_FMFT_Nhom_8_${new Date().toISOString().slice(0, 10)}.json`;
       a.click();
-      URL.revokeObjectURL(url);
     }
 
-    function scrollToFeedback() {
-      document.getElementById('feedback-section').scrollIntoView({ behavior: 'smooth' });
+    // 5. CÀI ĐẶT GIAO DIỆN & ADMIN MODE
+    function openSettings() {
+      document.getElementById('modal-settings').classList.add('open');
+    }
+    function closeSettings(e) {
+      if (e.target.id === 'modal-settings') closeSettingsModal();
+    }
+    function closeSettingsModal() {
+      document.getElementById('modal-settings').classList.remove('open');
     }
 
-    function copySectionMarkdown(section) {
-      alert(`📋 Đã sao chép cấu trúc Markdown của biểu mẫu ${section.toUpperCase()} vào clipboard! Sếp có thể dán vào file báo cáo hoặc tài liệu Word.`);
+    function setTheme(th) {
+      if (th === 'auto') {
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        localStorage.setItem('shin_theme', 'auto');
+      } else if (th === 'time') {
+        const hour = new Date().getHours();
+        const dark = (hour < 6 || hour >= 18);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        localStorage.setItem('shin_theme', 'time');
+      } else {
+        document.documentElement.setAttribute('data-theme', th);
+        localStorage.setItem('shin_theme', th);
+      }
     }
 
-    function escapeHtml(str) {
-      if (!str) return '';
-      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    function setPalette(pal) {
+      document.documentElement.setAttribute('data-palette', pal);
+      localStorage.setItem('shin_palette', pal);
     }
 
-    // Auto initialize on load
+    function setFontScale(scale) {
+      if (scale) {
+        document.documentElement.setAttribute('data-cochu', scale);
+        localStorage.setItem('shin_cochu', scale);
+      } else {
+        document.documentElement.removeAttribute('data-cochu');
+        localStorage.removeItem('shin_cochu');
+      }
+    }
+
+    let isAdminActive = false;
+    function verifyAdminKey() {
+      const key = document.getElementById('admin-key-input').value.trim();
+      if (key === 'septam1993' || key === 'nhom8tvm') {
+        isAdminActive = true;
+        document.querySelectorAll('.the, p, strong, td').forEach(el => el.setAttribute('contenteditable', 'true'));
+        document.getElementById('admin-status-text').style.display = 'block';
+        document.getElementById('btn-lock-icon').textContent = '🔓';
+        toast('Đã mở khóa chế độ chỉnh sửa trực tiếp!', 'success');
+      } else {
+        toast('Sai Secret Key. Vui lòng kiểm tra lại.', 'error');
+      }
+    }
+
+    function toggleEditQuick() {
+      if (!isAdminActive) {
+        openSettings();
+        document.getElementById('admin-key-input').focus();
+      } else {
+        isAdminActive = false;
+        document.querySelectorAll('[contenteditable="true"]').forEach(el => el.removeAttribute('contenteditable'));
+        document.getElementById('admin-status-text').style.display = 'none';
+        document.getElementById('btn-lock-icon').textContent = '🔒';
+        toast('Đã khóa chế độ chỉnh sửa.', 'info');
+      }
+    }
+
+    function copyM01() {
+      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 1: PHIẾU M01 XÁC ĐỊNH VẤN ĐỀ - NHÓM 8
+- Đơn vị: PKĐK Thanh Vũ Medic Cà Mau (CS3)
+- Vấn đề: Dồn ứ sảnh khám lại ngoại trú sau cận lâm sàng khung giờ cao điểm 07:30 - 09:45
+- [Số liệu thật]: Lượt khám 450 - 550 ca/ngày; 68% NB đến trước 09h00.
+- [Số giả định]: Thời gian chờ W dao động 35 - 55 phút.
+- Mục tiêu: Rút ngắn W từ ≥ 45 phút xuống ≤ 15 phút.`);
+      toast('Đã sao chép cấu trúc Markdown M01!', 'success');
+    }
+
+    function copyM02() {
+      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 2: M02 VSM & M03 RACI - NHÓM 8
+- Quy trình 5 mốc: T0 (Đủ KQ+Có mặt) -> T1 (Gửi HIS) -> T2 (ĐD nhận <= 5p) -> T3 (Mời vào) -> T4 (BS khám >= 7p).
+- Mục tiêu: W = T4 - T0 <= 15 phút.
+- RACI 1A: Mỗi việc duy nhất 1 người chịu trách nhiệm giải trình A.`);
+      toast('Đã sao chép cấu trúc Markdown M02 & M03!', 'success');
+    }
+
+    function copyM04() {
+      navigator.clipboard.writeText(`### BÀI TẬP BUỔI 3: M04 RULE OF 7 KPI & M06 CAPA
+- Rule of 7: 3 Leading (30%) + 2 Lagging (40%) + 2 Constraint (30%)
+- Constraint KPI: Bác sĩ khám lâm sàng & tư vấn >= 7 phút.`);
+      toast('Đã sao chép cấu trúc Markdown M04 & M06!', 'success');
+    }
+
+    function openDocsDetail() {
+      switchView('feedback');
+      const el = document.getElementById('details-docs');
+      if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); }
+    }
+
+    function openMediaDetail() {
+      switchView('feedback');
+      const el = document.getElementById('details-media');
+      if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth' }); }
+    }
+
+    // INIT
     window.addEventListener('DOMContentLoaded', () => {
-      loadSavedEdits();
+      // Load saved preferences
+      const savedTheme = localStorage.getItem('shin_theme') || 'light';
+      setTheme(savedTheme);
+      const savedPal = localStorage.getItem('shin_palette') || 'clinical';
+      setPalette(savedPal);
+      const savedCochu = localStorage.getItem('shin_cochu');
+      if (savedCochu) setFontScale(savedCochu);
+      if (window.matchMedia('(min-width:1024px)').matches || localStorage.getItem('shin_rail_open') === '1') {
+        document.body.classList.add('rail-mo');
+      }
+
+      renderThanhVien();
       renderFeedbacks();
     });
   </script>
