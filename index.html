@@ -824,6 +824,9 @@ html, body {
     <button class="rail-muc" id="rm-session4" onclick="switchView('session4')">
       <span class="rail-icon">🚀</span><span class="rail-ten">Buổi 4: KSEQ & LSE</span>
     </button>
+    <button class="rail-muc" id="rm-session5" onclick="switchView('session5')">
+      <span class="rail-icon">🏆</span><span class="rail-ten">Buổi 5: 90 Ngày & Nhân Rộng</span>
+    </button>
     <button class="rail-muc" id="rm-library" onclick="switchView('library')">
       <span class="rail-icon">📚</span><span class="rail-ten">Kho Tài Liệu Gốc</span>
     </button>
@@ -853,6 +856,27 @@ html, body {
           <div class="page-sub">Hệ thống Y tế Thanh Vũ Medic – Đại diện Cơ sở 3 Cà Mau (Nhóm 8)</div>
         </div>
         <button class="btn-icon nhat" onclick="location.reload()" aria-label="Làm mới">↻</button>
+      </div>
+
+      <!-- THÔNG BÁO ĐỊNH HƯỚNG MỚI TỪ BAN GIÁM ĐỐC -->
+      <div class="the" style="border-left: 5px solid var(--accent); background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 90%); margin-bottom: 16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <div style="font-weight:800; font-size:14.5px; color:var(--text); display:flex; align-items:center; gap:6px;">
+            📢 THÔNG BÁO TỪ BAN GIÁM ĐỐC & BAN QUẢN LÝ LỚP
+          </div>
+          <span class="badge vang">Trọng tâm mới</span>
+        </div>
+        <p class="chu-phu" style="line-height:1.5; margin-bottom:10px;">
+          Theo chỉ đạo của BGĐ (01/11/2026), khóa học FMFT tập trung lựa chọn <strong>4–5 vấn đề cải tiến tiêu biểu tại 4 cơ sở</strong> (không làm dàn trải), có khả năng đo lường và nhân rộng toàn hệ thống. CS2 đã chọn ngoại trú & xuất viện (Nhóm 3 & 13). <strong>Cơ sở 3 Cà Mau (Nhóm 8) chính thức đề xuất đề tài cải tiến luồng ngoại trú làm đề tài trọng điểm số 1 của cơ sở!</strong>
+        </p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-primary" style="min-height:38px; font-size:12.5px; flex:1;" onclick="switchView('session5')">
+            🏆 Xem Kế Hoạch 90 Ngày & Nhân Rộng Toàn Hệ Thống (M10, M19)
+          </button>
+          <button class="btn-secondary" style="min-height:38px; font-size:12.5px;" onclick="switchView('library')">
+            📑 Xem Đề Xuất Trình BGĐ
+          </button>
+        </div>
       </div>
 
       <!-- HERO 1 -->
@@ -1490,12 +1514,216 @@ html, body {
     <!-- ============================================================== -->
     <!-- MÀN 6: KHO TÀI LIỆU GỐC & TẢI TRỰC TIẾP TỪ GITHUB REPO          -->
     <!-- ============================================================== -->
+    
+    <!-- ============================================================== -->
+    <!-- MÀN 6: BUỔI 5 – M09 ACTION TRACKER, M10 90 NGÀY & M19 NHÂN RỘNG -->
+    <!-- ============================================================== -->
+    <div id="view-session5" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title">🏆 Buổi 5: Điều Hành Dashboard, Thí Điểm 90 Ngày & Nhân Rộng</div>
+          <div class="page-sub">Chuyên đề 9 & 10 · Đóng gói toàn diện mô hình cải tiến theo Định hướng BGĐ</div>
+        </div>
+        <button class="btn-icon nhat" onclick="copyM09()" aria-label="Copy M09">📋</button>
+      </div>
+
+      <!-- HERO BUỔI 5 -->
+      <section class="hn-hero">
+        <div>
+          <div class="hero-greet">Từ Dashboard Đến Hành Động & Kế Hoạch 90 Ngày</div>
+          <div class="hero-date">📅 04/11/2026 (19h00 - 21h00) · TS. Đoàn Hùng Dũng · Nhóm 8 Thanh Vũ Medic</div>
+        </div>
+        <div class="tq-3so">
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--primary)">90 Ngày</div>
+            <div class="tq-nhan">Lộ trình thí điểm WBS (M10)</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-green)">5 Tiêu chí</div>
+            <div class="tq-nhan">Nghiệm thu cứng DoD (M11)</div>
+          </div>
+          <div class="tq-o">
+            <div class="tq-so" style="color:var(--c-blue)">4 Cơ sở</div>
+            <div class="tq-nhan">Nhân rộng CS1, CS2, CS4 (M19)</div>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="copyM09()">
+          📋 Sao Chép Hồ Sơ Buổi 5 (M09, M10, M11, M19)
+        </button>
+      </section>
+
+      <!-- M09: ACTION TRACKER -->
+      <div class="the">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span>1. M09: BIÊN BẢN ĐIỀU HÀNH & THEO DÕI HÀNH ĐỘNG (ACTION TRACKER)</span>
+          <span class="badge xanh">Closed-loop</span>
+        </div>
+        <p class="chu-phu" style="margin-bottom:10px;">
+          Mô phỏng cuộc họp điều hành giao ban đầu tuần từ số liệu Dashboard EWS. Mỗi sai lệch đều có nguyên nhân, người chịu trách nhiệm, thời hạn và tiêu chuẩn xác nhận đóng việc (DoD).
+        </p>
+
+        <div class="table-hint">👈 Vuốt ngang để xem đủ cột 👉</div>
+        <div class="table-wrap">
+          <table class="bang-chuan">
+            <thead>
+              <tr>
+                <th>Mã Action</th>
+                <th>Sai lệch Dashboard</th>
+                <th>Hành động khắc phục</th>
+                <th>Người chịu trách nhiệm (A)</th>
+                <th>Hạn chót</th>
+                <th>Tiêu chuẩn xác nhận đóng việc (DoD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ACT-01</code></td>
+                <td>Buồng 2 bị trôi W lên 38p lúc 08h30 do gom 42 mẫu LIS</td>
+                <td>Cấu hình LIS tự động chia nhỏ mẻ trả kết quả liên tục $\le 15$p/đợt</td>
+                <td><strong>CN. Lê Minh Mẫn</strong> (Trưởng Labo)</td>
+                <td><span class="badge vang">06/11/2026</span></td>
+                <td>Log LIS không có mẻ nào $> 15$ mẫu trả cùng phút; W $\le 15$p.</td>
+              </tr>
+              <tr>
+                <td><code>ACT-02</code></td>
+                <td>Tỷ lệ xác nhận T2-T1 tại Buồng 3 chỉ đạt 86%</td>
+                <td>Bố trí chuông âm thanh nhẹ và số đếm ngược 5p trên HIS buồng khám</td>
+                <td><strong>Nguyễn Hoàng Duy</strong> & ĐD. Nga</td>
+                <td><span class="badge vang">08/11/2026</span></td>
+                <td>Tỷ lệ xác nhận T2 - T1 đạt $\ge 95\%$ trong 3 ngày liên tiếp.</td>
+              </tr>
+              <tr>
+                <td><code>ACT-03</code></td>
+                <td>Bệnh nhân siêu âm xong đi ăn sáng làm trôi mốc T3 mất 40p</td>
+                <td>In phiếu hướng dẫn có QR; Care Navigator quét mã T0 ngay cửa siêu âm</td>
+                <td><strong>Tạ Minh Phước</strong> (Phòng PTKH)</td>
+                <td><span class="badge xanh">05/11/2026</span></td>
+                <td>Tỷ lệ định vị NB tại sảnh đạt $\ge 98\%$; không còn ca trôi luồng.</td>
+              </tr>
+              <tr>
+                <td><code>ACT-04</code></td>
+                <td>Hàng chờ sảnh $> 10$ ca lúc 08h45 (Đèn Đỏ)</td>
+                <td>Kích hoạt DOA khẩn cấp: Mở ngay Buồng khám dự phòng số 4</td>
+                <td><strong>BS. Huỳnh Tấn Kiệt</strong> (Trưởng KHTH)</td>
+                <td><span class="badge xanh">$\le 10$ phút</span></td>
+                <td>Giải tỏa hàng chờ buồng 4 về Đèn Xanh ($\le 5$ ca) trong 20 phút.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- M10: KẾ HOẠCH QUẢN TRỊ THAY ĐỔI 90 NGÀY -->
+      <div class="the">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span>2. M10: KẾ HOẠCH QUẢN TRỊ THAY ĐỔI & THÍ ĐIỂM 90 NGÀY (WBS)</span>
+          <span class="badge xanh">Lộ trình 3 Giai đoạn</span>
+        </div>
+        
+        <div class="timeline-vertical">
+          <div class="timeline-card">
+            <div class="timeline-badge">G1</div>
+            <div class="timeline-info">
+              <div class="timeline-title">Giai đoạn 1: Chuẩn bị & Thiết lập Kỹ thuật (Ngày 01 – Ngày 30)</div>
+              <div class="timeline-desc">Nâng cấp HIS/LIS mốc T0->T4; ban hành quy chế DOA; giải tỏa lo ngại bác sĩ (cam kết khám $\ge 7$p), điều dưỡng (nút 1-chạm, 30 ngày đầu chỉ tính điểm thưởng cải tiến), KTV (bỏ in giấy thủ công).</div>
+            </div>
+          </div>
+          <div class="timeline-card" style="border-left:4px solid var(--accent);">
+            <div class="timeline-badge" style="background:var(--accent);">G2</div>
+            <div class="timeline-info">
+              <div class="timeline-title">Giai đoạn 2: Thí điểm tại 2 Buồng khám Nội (Ngày 31 – Ngày 60)</div>
+              <div class="timeline-desc">Chạy thử nghiệm luồng khép kín tại Buồng khám 1 & 2; bật Dashboard EWS theo dõi hàng ngày; đo lường W, P90 và họp Action Log M09 hàng tuần.</div>
+            </div>
+          </div>
+          <div class="timeline-card" style="border-left:4px solid var(--c-green);">
+            <div class="timeline-badge" style="background:var(--c-green);">G3</div>
+            <div class="timeline-info">
+              <div class="timeline-title">Giai đoạn 3: Đánh giá nghiệm thu & Mở rộng toàn viện (Ngày 61 – Ngày 90)</div>
+              <div class="timeline-desc">Nghiệm thu theo tiêu chí DoD Gate (M11); chuẩn hóa SOP chính thức toàn CS3; chuyển giao gói tài liệu nhân rộng sang CS2, CS1, CS4.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M11: TIÊU CHÍ NGHIỆM THU THÍ ĐIỂM (DoD GATE) -->
+      <div class="the">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span>3. M11: PHIẾU TIÊU CHÍ NGHIỆM THU THÍ ĐIỂM (DoD GATE)</span>
+          <span class="badge xanh">Hội đồng Nghiệm thu BGĐ</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>1. Thời gian chờ khám lại trung bình (W):</strong> Giảm từ 45p xuống $\le 15$ phút (giảm 66%)</span>
+          <span class="badge xanh">Đạt</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>2. Thời gian chờ trễ đuôi (P90):</strong> Giảm từ 48p xuống $\le 25$ phút</span>
+          <span class="badge xanh">Đạt</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>3. Tỷ lệ xác nhận bàn giao T2 - T1 $\le$ 5p:</strong> Đạt $\ge 95\%$</span>
+          <span class="badge xanh">Đạt</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>4. Ràng buộc an toàn:</strong> Bác sĩ khám $\ge 7$p/ca đạt 100%; đối chiếu 3 định danh 100%</span>
+          <span class="badge xanh">Tuyệt đối</span>
+        </div>
+        <div class="hang-tru">
+          <span><strong>5. Tỷ lệ hài lòng của người bệnh về thời gian chờ:</strong> Đạt $\ge 92\%$</span>
+          <span class="badge xanh">Đạt</span>
+        </div>
+      </div>
+
+      <!-- M19: MA TRẬN LEO THANG & NHÂN RỘNG TOÀN HỆ THỐNG -->
+      <div class="the">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span>4. M19: MA TRẬN LEO THANG & PHƯƠNG ÁN NHÂN RỘNG TOÀN HỆ THỐNG</span>
+          <span class="badge vang">Theo Định hướng BGĐ</span>
+        </div>
+        
+        <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Ma trận 4 cấp độ leo thang:</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:14px;">
+          <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-yellow);">
+            <strong style="color:var(--c-yellow);">CẤP 1 (VÀNG):</strong> Hàng chờ 6-10 ca, chờ 16-25p $ightarrow$ ĐD Trưởng Khoa Khám xử lý trong 5 phút.
+          </div>
+          <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-red);">
+            <strong style="color:var(--c-red);">CẤP 2 (ĐỎ):</strong> Hàng chờ $>10$ ca, chờ $>25$p $ightarrow$ Trưởng KHTH ký lệnh DOA mở Buồng 4 trong 10 phút.
+          </div>
+          <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--primary);">
+            <strong style="color:var(--primary);">CẤP 3 (KHẨN Y KHOA):</strong> Trị số nguy kịch (Glycemia $<3.0$) $ightarrow$ Hotline Labo báo BS $\le 2$ phút, cấp cứu sảnh.
+          </div>
+          <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-blue);">
+            <strong style="color:var(--c-blue);">CẤP 4 (HỆ THỐNG):</strong> Mất kết nối mạng HIS $>15$p $ightarrow$ Chuyển sang quy trình phiếu giấy dự phòng.
+          </div>
+        </div>
+
+        <div style="font-size:13px; font-weight:700; margin-bottom:6px;">Lộ trình chia sẻ & nhân rộng sang CS2, CS1, CS4:</div>
+        <p class="chu-phu" style="line-height:1.5;">
+          • <strong>Chia sẻ đối chiếu chéo với Cơ sở 2 (Bạc Liêu):</strong> CS2 đang làm đề tài ngoại trú (Nhóm 3 & 13), CS3 chuyển giao cấu hình mốc T0->T4, VSM và Dashboard để đồng bộ giải pháp công nghệ.<br/>
+          • <strong>Nhân rộng sang Cơ sở 1 và Cơ sở 4:</strong> Đóng gói thành Bộ SOP Chuẩn Vận Hành Ngoại Trú Thanh Vũ Medic, tổ chức đào tạo nhân bản trực tuyến khung KSEQ toàn hệ thống.
+        </p>
+      </div>
+    </div>
+
     <div id="view-library" class="view-pane" hidden>
       <div class="page-header">
         <div>
           <div class="page-title">📚 Kho Tài Liệu & Giáo Trình Quản Trị</div>
           <div class="page-sub">Tải trực tiếp 1-chạm toàn bộ tài liệu chính thức từ Ban Quản lý Khóa học</div>
         </div>
+      </div>
+
+      <!-- TÀI LIỆU ĐỀ XUẤT TIÊU BIỂU CS3 TRÌNH BAN GIÁM ĐỐC -->
+      <div class="the" style="border-left: 5px solid var(--accent); background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 90%);">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span>HỒ SƠ ĐỀ XUẤT CẢI TIẾN TIÊU BIỂU CS3 (TRÌNH BGĐ NGÀY 02/11/2026)</span>
+          <span class="badge vang">Chiến lược</span>
+        </div>
+        <p class="chu-phu" style="margin-bottom:12px;">
+          Bản đề xuất ưu tiên số 1 của Phòng khám Đa khoa Thanh Vũ Medic Cà Mau căn cứ theo định hướng 4–5 vấn đề trọng điểm toàn hệ thống của Ban Giám Đốc. Trình bày 3 luận điểm thuyết phục, phương án phối hợp liên phòng ban và cam kết giảm 66% thời gian chờ đợi.
+        </p>
+        <button class="btn-primary" onclick="switchView('session5')">
+          👉 Mở Xem Toàn Bộ Kế Hoạch 90 Ngày & Đề Án Nhân Rộng (Buổi 5)
+        </button>
       </div>
 
       <!-- TÀI LIỆU MODULE 3 & 4 MỚI -->
@@ -2066,6 +2294,16 @@ html, body {
       toast('Đã sao chép cấu trúc Markdown M02 & M03!', 'success');
     }
 
+
+
+    function copyM09() {
+      const text = `HỒ SƠ BÀI TẬP BUỔI 5: ACTION TRACKER M09, THÍ ĐIỂM 90 NGÀY M10 & NHÂN RỘNG M19\nNhóm 8 - PKĐK Thanh Vũ Medic Cà Mau\n\n1. M09: Biên bản Action Tracker 4 hành động (ACT-01 -> ACT-04)\n2. M10: Kế hoạch quản trị thay đổi WBS 3 giai đoạn 90 ngày\n3. M11: Tiêu chí nghiệm thu cứng DoD Gate (W <= 15p, P90 <= 25p, An toàn 100%)\n4. M19: Ma trận leo thang 4 cấp & Kế hoạch nhân rộng sang CS2, CS1, CS4`;
+      navigator.clipboard.writeText(text).then(() => {
+        toast('Đã sao chép tóm tắt bài tập Buổi 5 vào bộ nhớ tạm!', 'success');
+      }).catch(() => {
+        toast('Không thể truy cập clipboard', 'warn');
+      });
+    }
 
     function copyM07() {
       const text = `HỒ SƠ BÀI TẬP BUỔI 4: KSEQ M07 & CHU TRÌNH LSE 8 BƯỚC M08\nNhóm 8 - PKĐK Thanh Vũ Medic Cà Mau\n\n1. M07: Khung Năng Lực KSEQ 4 Vị Trí (ĐD Trưởng, KTV Trưởng, BS Buồng Khám, Thống Kê)\n2. M08: Chu Trình Phản Ứng Nhanh LSE 8 Bước\n3. M17: Tiêu Chí Kiểm Toán SOP Luồng Ngoại Trú`;
