@@ -14,7 +14,9 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi tập th�
 ├── CHANGELOG.md                                               # Nhật ký cập nhật & lịch sử phiên bản
 ├── UPDATE.md                                                  # Kế hoạch nâng cấp và định hướng các pha tiếp theo
 ├── index.html                                                 # CỔNG PORTAL WEB TƯƠNG TÁC BÀI TẬP (Online: https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)
-├── TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md                   # BẢN TỔNG HỢP TOÀN BỘ BÀI TẬP BUỔI 1, 2, 3 HOÀN CHỈNH & CHUẨN BỊ BUỔI 4
+├── TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md                   # BẢN TỔNG HỢP TOÀN BỘ 5 BUỔI HỌC (M01-M19) VÀ ĐỊNH HƯỚNG MỚI TỪ BAN GIÁM ĐỐC
+├── DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md               # HỒ SƠ ĐỀ XUẤT TRỌNG ĐIỂM CẢI TIẾN CS3 TRÌNH BGĐ VÀ BAN QUẢN LÝ LỚP
+├── BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md                    # HỒ SƠ BÀI TẬP CHỦ ĐỀ 2: SỐ HÓA QUẢN TRỊ HIỆU SUẤT & FMFT AIOS (M01-M19)
 ├── MUC_LUC_MEDIA_GHI_AM_VIDEO_KHOA_HOC_FMFT.md                # Danh mục 4 tệp Media bài giảng (2 Audio M4A + 2 Video Webex MP4)
 │
 ├── [BỘ BÀI TẬP THEO BUỔI CỦA NHÓM 8 - CS3 CÀ MAU]
@@ -22,6 +24,7 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi tập th�
 │   ├── BAI_TAP_BUOI_2_M02_M03_HOAN_CHINH.md                   # Bài tập Buổi 2 hoàn chỉnh: M02 VSM Handoff (T0->T4) & M03 RACI liên khoa + DOA
 │   ├── BAI_TAP_BUOI_3_M04_M05_M06_HOAN_CHINH.md               # Bài tập Buổi 3 hoàn chỉnh: M04 Từ điển 7 KPI, M05 EWS & M06 RCA/CAPA
 │   ├── CHUAN_BI_BUOI_4_KSEQ_AIOS_LSE_M07_M08_M17.md           # Chuẩn bị trước Buổi 4: M07 Khung KSEQ, M08 Chu trình LSE 8 bước & M17 Audit
+│   ├── BAI_TAP_BUOI_5_M09_M10_M11_M19_HOAN_CHINH.md           # Bài tập Buổi 5 hoàn chỉnh: M09 Action Tracker, M10 Kế hoạch 90 ngày, M11 DoD, M19 Lộ trình
 │   └── Bai_tap_Buoi_1_M01_Nhom_8_CS3_ThanhVuMedic.docx        # File Word M01 nộp bài chính thức chuẩn form mẫu Thầy Dũng
 │
 ├── [TÀI LIỆU GỐC & ĐÀO TẠO HỆ THỐNG]

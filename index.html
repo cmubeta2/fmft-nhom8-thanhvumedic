@@ -825,6 +825,12 @@ html, body {
       <span class="rail-icon">🚀</span><span class="rail-ten">Buổi 4: KSEQ & LSE</span>
     </button>
     <button class="rail-muc" id="rm-session5" onclick="switchView('session5')">
+      <span class="rail-icon">📋</span><span class="rail-ten">Buổi 5: 90 Ngày & Nhân Rộng</span>
+    </button>
+    <div class="rail-nhom" style="margin-top:14px; color:var(--accent); font-weight:800; font-size:11px; letter-spacing:0.5px;">CHỦ ĐỀ 2 (ĐỀ TÀI SỐ HÓA AIOS)</div>
+    <button class="rail-muc" id="rm-theme2" onclick="switchView('theme2')" style="background:var(--primary-soft); border-left:3px solid var(--primary);">
+      <span class="rail-icon" style="color:var(--primary);">⚡</span><span class="rail-ten" style="font-weight:700; color:var(--primary);">Chủ đề 2: Số Hóa AIOS</span>
+    </button>
       <span class="rail-icon">🏆</span><span class="rail-ten">Buổi 5: 90 Ngày & Nhân Rộng</span>
     </button>
     <button class="rail-muc" id="rm-library" onclick="switchView('library')">
@@ -876,6 +882,58 @@ html, body {
           <button class="btn-secondary" style="min-height:38px; font-size:12.5px;" onclick="switchView('library')">
             📑 Xem Đề Xuất Trình BGĐ
           </button>
+        </div>
+      </div>
+
+      <!-- CẶP SONG MÃ ĐỀ TÀI CẢI TIẾN CƠ SỞ 3 (NHÓM 8) -->
+      <div class="the" style="border: 2px solid var(--primary-soft); background: var(--card); margin-bottom: 16px; padding: 14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div style="font-weight:800; font-size:15px; color:var(--text); display:flex; align-items:center; gap:6px;">
+            💎 CẶP SONG MÃ ĐỀ TÀI CẢI TIẾN CỦA CƠ SỞ 3 CÀ MAU (NHÓM 8)
+          </div>
+          <span class="badge xanh">2 Đề án đột phá</span>
+        </div>
+        <p class="chu-phu" style="font-size:12.5px; line-height:1.5; margin-bottom:12px;">
+          Để phục vụ buổi làm việc cùng Ban Giám Đốc và Ban Quản lý lớp, Nhóm 8 chuẩn bị 2 đề án chiến lược giải quyết trọn vẹn từ <strong>tiền tuyến đón tiếp lâm sàng</strong> đến <strong>hậu phương số hóa điều hành</strong>:
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; margin-bottom:10px;">
+          <!-- THẺ CHỦ ĐỀ 1 -->
+          <div style="border:1px solid var(--border); border-radius:10px; padding:12px; background:var(--bg); display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                <span class="badge xanh" style="font-weight:700;">CHỦ ĐỀ 1: LÂM SÀNG</span>
+                <span style="font-size:11px; color:var(--text-sub); font-weight:600;">Mã: TV3-KB-01</span>
+              </div>
+              <div style="font-weight:700; font-size:13.5px; color:var(--text); margin-bottom:4px;">
+                Tối ưu chuỗi bàn giao CLS & giảm thời gian chờ khám lại ngoại trú
+              </div>
+              <div style="font-size:12px; color:var(--text-sub); line-height:1.4; margin-bottom:8px;">
+                Giảm thời gian chờ từ 110p xuống ≤38p, cam kết T2-T1 ≤5p, an toàn khám ≥7p. Đồng pha đối chiếu chéo cùng CS2.
+              </div>
+            </div>
+            <button class="btn-primary" style="min-height:36px; font-size:12px; width:100%;" onclick="switchView('session1')">
+              👉 Xem Chi Tiết 5 Buổi (M01 - M19)
+            </button>
+          </div>
+
+          <!-- THẺ CHỦ ĐỀ 2 -->
+          <div style="border:1.5px solid var(--accent); border-radius:10px; padding:12px; background:linear-gradient(135deg, var(--card) 0%, var(--primary-soft) 100%); display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                <span class="badge vang" style="font-weight:700;">CHỦ ĐỀ 2: SỐ HÓA AIOS</span>
+                <span style="font-size:11px; color:var(--primary); font-weight:700;">Mã: TV3-AIOS-02</span>
+              </div>
+              <div style="font-weight:800; font-size:13.5px; color:var(--text); margin-bottom:4px;">
+                Số hóa quản trị vận hành, liên thông KPI 3 cấp & Trung tâm FMFT AIOS
+              </div>
+              <div style="font-size:12px; color:var(--text-sub); line-height:1.4; margin-bottom:8px;">
+                Giải quyết phân mảnh 26 file Excel, cắt giảm 80% thời gian báo cáo, bản quyền 0đ, kích hoạt Dashboard EWS thời gian thực.
+              </div>
+            </div>
+            <button class="btn-primary" style="min-height:36px; font-size:12px; width:100%; background:var(--accent); border-color:var(--accent); color:#fff;" onclick="switchView('theme2')">
+              ⚡ Xem Toàn Văn Đề Án Số Hóa AIOS
+            </button>
+          </div>
         </div>
       </div>
 
@@ -931,7 +989,320 @@ html, body {
     <!-- ============================================================== -->
     <!-- MÀN 2: BUỔI 1 – M01 XÁC ĐỊNH VẤN ĐỀ                             -->
     <!-- ============================================================== -->
-    <div id="view-session1" class="view-pane" hidden>
+    
+    <!-- ==================== MÀN HÌNH: CHỦ ĐỀ 2 (SỐ HÓA QUẢN TRỊ FMFT AIOS) ==================== -->
+    <div id="view-theme2" class="view-pane" hidden>
+      <div class="page-header">
+        <div>
+          <div class="page-title" style="display:flex; align-items:center; gap:8px;">
+            <span>⚡</span> Chủ Đề 2: Số Hóa Vận Hành & FMFT AIOS
+          </div>
+          <div class="page-sub">Đề án số hóa quản trị hiệu suất, liên thông KPI 3 cấp & Dashboard điều hành thời gian thực (TV3-AIOS-02)</div>
+        </div>
+        <div style="display:flex; gap:6px;">
+          <button class="btn-secondary" style="min-height:36px; font-size:12px;" onclick="switchView('overview')">⬅ Quay lại</button>
+          <button class="btn-primary" style="min-height:36px; font-size:12px;" onclick="copyTheme2Summary()">📋 Sao chép tóm tắt</button>
+        </div>
+      </div>
+
+      <!-- 4 CHỈ SỐ VÀNG CỦA ĐỀ ÁN SỐ HÓA -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:14px;">
+        <div class="the" style="text-align:center; padding:10px 6px; margin:0; border-top:3px solid var(--c-green);">
+          <div style="font-size:22px; font-weight:800; color:var(--c-green);">80%</div>
+          <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Giảm thời gian báo cáo</div>
+        </div>
+        <div class="the" style="text-align:center; padding:10px 6px; margin:0; border-top:3px solid var(--c-blue);">
+          <div style="font-size:22px; font-weight:800; color:var(--c-blue);">195</div>
+          <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Nhân sự dùng Mobile</div>
+        </div>
+        <div class="the" style="text-align:center; padding:10px 6px; margin:0; border-top:3px solid var(--c-yellow);">
+          <div style="font-size:22px; font-weight:800; color:var(--c-yellow);">&lt; 15p</div>
+          <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Cảnh báo EWS Real-time</div>
+        </div>
+        <div class="the" style="text-align:center; padding:10px 6px; margin:0; border-top:3px solid var(--accent);">
+          <div style="font-size:22px; font-weight:800; color:var(--accent);">0 đ</div>
+          <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Chi phí bản quyền PM</div>
+        </div>
+      </div>
+
+      <!-- NGUYÊN TẮC CẶP SONG MÃ -->
+      <div class="the" style="background:var(--primary-soft); border:1px solid var(--border); margin-bottom:14px; padding:12px;">
+        <div style="font-weight:700; font-size:13px; color:var(--text); margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+          <span>💡</span> Mối Quan Hệ Giữa Chủ Đề 1 và Chủ Đề 2:
+        </div>
+        <div style="font-size:12px; color:var(--text-sub); line-height:1.5;">
+          • <strong>Chủ đề 1 (TV3-KB-01):</strong> Tối ưu luồng bệnh nhân ngoại trú tại hiện trường đón tiếp và buồng khám.<br/>
+          • <strong>Chủ đề 2 (TV3-AIOS-02):</strong> Xây dựng hạ tầng dữ liệu và trung tâm điều hành số hóa tập trung (AIOS), giúp Ban Giám Đốc giám sát tự động mọi chỉ số của Chủ đề 1 và 26 khoa phòng mà không cần chờ báo cáo giấy cuối tháng.
+        </div>
+      </div>
+
+      <!-- THANH CHUYỂN TAB 5 BUỔI CHỦ ĐỀ 2 -->
+      <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:8px; margin-bottom:12px; -webkit-overflow-scrolling:touch;">
+        <button class="filter-chip dang-chon" id="t2tab-btn-b1" onclick="switchTheme2SubTab('b1')">Buổi 1: M01 Vấn đề</button>
+        <button class="filter-chip" id="t2tab-btn-b2" onclick="switchTheme2SubTab('b2')">Buổi 2: VSM & RACI</button>
+        <button class="filter-chip" id="t2tab-btn-b3" onclick="switchTheme2SubTab('b3')">Buổi 3: KPI & RCA</button>
+        <button class="filter-chip" id="t2tab-btn-b4" onclick="switchTheme2SubTab('b4')">Buổi 4: KSEQ & LSE</button>
+        <button class="filter-chip" id="t2tab-btn-b5" onclick="switchTheme2SubTab('b5')">Buổi 5: 90 Ngày & DoD</button>
+      </div>
+
+      <!-- NỘI DUNG TAB B1 -->
+      <div id="t2tab-pane-b1" class="t2tab-pane">
+        <div class="the">
+          <div class="the-header">
+            <div>
+              <div class="the-tieu-de">Biểu Mẫu M01: Phiếu Xác Định Vấn Đề Quản Trị Vận Hành Thủ Công</div>
+              <div class="chu-phu">Mã quy trình: TV3-AIOS-02 | PKĐK Thanh Vũ Medic Cà Mau</div>
+            </div>
+            <span class="badge vang">Đã hoàn chỉnh</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr; gap:10px; font-size:13px;">
+            <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+              <div style="font-weight:700; color:var(--text); margin-bottom:4px;">1. Tên Vấn Đề & Hiện Trạng Nhức Nhối:</div>
+              <p class="chu-phu" style="margin:0; line-height:1.5;">
+                Tình trạng cát cứ thông tin, phân mảnh dữ liệu trên <strong>26 file Excel rời rạc</strong> và lãng phí thời gian báo cáo thủ công gây trễ nhịp điều hành.<br/>
+                • <strong>Lịch trực:</strong> Ma trận Excel >365 cột, nhân viên không xem được trên điện thoại.<br/>
+                • <strong>Báo cáo ngày:</strong> Google Form >70 trường dữ liệu, tốn 45–60 phút/ngày để tổng hợp.<br/>
+                • <strong>KPI & HTNV:</strong> Tốn 3–5 ngày công cuối tháng để cộng điểm thủ công; số liệu trễ 5–7 ngày so với thực tế.
+              </p>
+            </div>
+            <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+              <div style="font-weight:700; color:var(--text); margin-bottom:4px;">2. 4 Lãng Phí Lean Xác Định (Muda):</div>
+              <p class="chu-phu" style="margin:0; line-height:1.5;">
+                1. <em>Chờ đợi (Waiting):</em> BGĐ phải đợi đến ngày 05–07 tháng sau mới có số liệu tháng trước.<br/>
+                2. <em>Thao tác thừa (Over-processing):</em> Nhân viên chép tay sổ $
+ightarrow$ nhập Form $
+ightarrow$ chép sang Excel.<br/>
+                3. <em>Sai sót (Defects):</em> Sai lệch công thức Excel, mất tính minh chứng trong đánh giá thi đua.<br/>
+                4. <em>Lãng phí năng lực:</em> Cán bộ quản lý mất 20–30% thời gian cho việc hành chính sổ sách.
+              </p>
+            </div>
+            <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+              <div style="font-weight:700; color:var(--text); margin-bottom:4px;">3. Mục Tiêu Cải Tiến Cốt Lõi:</div>
+              <p class="chu-phu" style="margin:0; line-height:1.5;">
+                • Cắt giảm <strong>80% thời gian</strong> tổng hợp báo cáo và tính điểm KPI (từ 5 ngày xuống dưới 4 giờ).<br/>
+                • Tự động hóa 100% tra cứu lịch trực và gửi báo cáo trên điện thoại cho 195 nhân sự.<br/>
+                • Xây dựng Central Dashboard cung cấp dữ liệu thời gian thực (độ trễ &le; 15 phút).<br/>
+                • <strong>Chi phí bản quyền 0 đồng</strong>, tiết kiệm ~180 triệu đ/năm tiền bản quyền email Google Workspace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NỘI DUNG TAB B2 -->
+      <div id="t2tab-pane-b2" class="t2tab-pane" hidden>
+        <div class="the">
+          <div class="the-header">
+            <div>
+              <div class="the-tieu-de">Biểu Mẫu M02 (VSM) & M03 (RACI) & M14 (DOA)</div>
+              <div class="chu-phu">Chuỗi giá trị luồng dữ liệu quản trị và phân quyền số hóa</div>
+            </div>
+            <span class="badge xanh">Chuẩn Lean</span>
+          </div>
+          
+          <div style="margin-bottom:12px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:6px; color:var(--text);">Bảng So Sánh Chỉ Số VSM Trước và Sau Khi Số Hóa AIOS:</div>
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; font-size:12px;">
+                <thead>
+                  <tr style="background:var(--primary-soft); text-align:left;">
+                    <th style="padding:6px; border:1px solid var(--border);">Công tác quản trị</th>
+                    <th style="padding:6px; border:1px solid var(--border);">Hiện trạng thủ công</th>
+                    <th style="padding:6px; border:1px solid var(--border);">Tương lai FMFT AIOS</th>
+                    <th style="padding:6px; border:1px solid var(--border); color:var(--c-green);">Mức giảm lãng phí</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:600;">1. Xếp & Tra cứu lịch trực</td>
+                    <td style="padding:6px; border:1px solid var(--border);">120 phút/khoa/tháng</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-blue);">10 phút/khoa/tháng</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-green);">Giảm 91,7%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:600;">2. Báo cáo tác nghiệp ngày</td>
+                    <td style="padding:6px; border:1px solid var(--border);">20 phút/nhân sự/ngày</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-blue);">3 phút/nhân sự/ngày</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-green);">Giảm 85,0%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:600;">3. Tổng hợp KPI toàn viện</td>
+                    <td style="padding:6px; border:1px solid var(--border);">24 - 40 giờ (3-5 ngày)</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-blue);">5 phút (Tự động)</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-green);">Giảm 99,8%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:600;">4. Cảnh báo sự cố vận hành</td>
+                    <td style="padding:6px; border:1px solid var(--border);">Trễ 24 - 48 giờ</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-blue);">&le; 15 phút (Real-time)</td>
+                    <td style="padding:6px; border:1px solid var(--border); font-weight:700; color:var(--c-green);">Giảm 99,0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:var(--text); margin-bottom:4px;">Phân Quyền Số Hóa (DOA) 4 Cấp Độ:</div>
+            <div style="font-size:12px; color:var(--text-sub); line-height:1.5;">
+              • <strong>Cấp 1 (Ban Giám Đốc):</strong> Toàn quyền xem Dashboard 26 khoa phòng; phê duyệt kết quả KPI chung cuộc.<br/>
+              • <strong>Cấp 2 (Quản trị viên / Sếp Tâm):</strong> Quản lý danh mục, cấu trúc database, tài khoản. <em>Tuyệt đối không can thiệp số liệu nghiệp vụ.</em><br/>
+              • <strong>Cấp 3 (Trưởng Khoa/Phòng):</strong> Xếp lịch trực, phê duyệt báo cáo ngày, chấm điểm HTNV trong khoa mình.<br/>
+              • <strong>Cấp 4 (Nhân viên tác nghiệp):</strong> Xem lịch cá nhân, gửi báo cáo ngày, báo cáo sự cố Near-miss.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NỘI DUNG TAB B3 -->
+      <div id="t2tab-pane-b3" class="t2tab-pane" hidden>
+        <div class="the">
+          <div class="the-header">
+            <div>
+              <div class="the-tieu-de">Biểu Mẫu M04 (Rule of 7 KPI), M05 (Dashboard EWS) & M06 (RCA)</div>
+              <div class="chu-phu">Hệ thống đo lường hiệu suất và cảnh báo sớm thông minh</div>
+            </div>
+            <span class="badge vang">Rule of 7</span>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:6px; color:var(--text);">Bộ 7 KPI Quản Trị Vận Hành (Rule of 7):</div>
+            <div style="display:grid; grid-template-columns:1fr; gap:6px; font-size:12px;">
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-green); border-radius:4px;">
+                <strong>[Lagging] KPI-01:</strong> Tỷ lệ Hoàn thành Mục tiêu Vận hành toàn viện &ge; 95% (Hàng tháng)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-green); border-radius:4px;">
+                <strong>[Lagging] KPI-02:</strong> Độ hài lòng của Nhân sự nội bộ (eNPS) &ge; 90% (Khảo sát ẩn danh hàng quý)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-blue); border-radius:4px;">
+                <strong>[Leading] KPI-03:</strong> Tỷ lệ Nộp Báo cáo Ngày đúng hạn trước 18h00 &ge; 98% (Hàng ngày)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-blue); border-radius:4px;">
+                <strong>[Leading] KPI-04:</strong> Tỷ lệ Tuân thủ Tiêu chuẩn Dịch vụ (TCDV 10 Caritas) &ge; 96% (Hàng tuần)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-blue); border-radius:4px;">
+                <strong>[Leading] KPI-05:</strong> Số lượng Báo cáo Sự cố Near-miss ghi nhận &ge; 15 phiếu/tháng (Thúc đẩy an toàn)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-red); border-radius:4px;">
+                <strong>[Constraint] KPI-06:</strong> Thời gian Tổng hợp KPI toàn viện &le; 4 giờ làm việc (Sau khi chốt tháng)
+              </div>
+              <div style="padding:6px 10px; background:var(--bg); border-left:3px solid var(--c-red); border-radius:4px;">
+                <strong>[Constraint] KPI-07:</strong> Số vụ Trùng lặp / Xung đột Ca trực = 0 vụ việc (Kiểm tra bằng thuật toán)
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:var(--text); margin-bottom:4px;">Dashboard AIOS Early Warning System (3 Màu):</div>
+            <div style="font-size:12px; color:var(--text-sub); line-height:1.5;">
+              • <strong style="color:var(--c-green);">XANH (Bình thường):</strong> Chỉ số đạt mục tiêu; hệ thống vận hành trơn tru.<br/>
+              • <strong style="color:var(--c-yellow);">VÀNG (Cảnh báo sớm):</strong> Có hiện tượng trễ báo cáo hoặc dồn ứ cục bộ (&gt;15p); gửi cảnh báo đến Trưởng khoa.<br/>
+              • <strong style="color:var(--c-red);">ĐỎ (Nguy cấp):</strong> Chỉ số trượt mục tiêu quá 20% hoặc có sự cố nghiêm trọng; kích hoạt ngay Chu trình phản ứng nhanh LSE can thiệp trong vòng 15 phút.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NỘI DUNG TAB B4 -->
+      <div id="t2tab-pane-b4" class="t2tab-pane" hidden>
+        <div class="the">
+          <div class="the-header">
+            <div>
+              <div class="the-tieu-de">Biểu Mẫu M07 (KSEQ) & M08 (Chu Trình LSE 8 Bước)</div>
+              <div class="chu-phu">Chuẩn hóa năng lực đội ngũ số và quy trình phản ứng nhanh</div>
+            </div>
+            <span class="badge tim">Chuẩn KSEQ</span>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <div style="font-weight:700; font-size:13px; margin-bottom:6px; color:var(--text);">Khung Năng Lực KSEQ 4 Vị Trí Vận Hành Số:</div>
+            <div style="display:grid; grid-template-columns:1fr; gap:6px; font-size:12px;">
+              <div style="padding:8px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
+                <strong>1. Quản trị viên Kỹ thuật (Admin / Sếp Tâm):</strong> Nắm vững kiến trúc Cloud; kỹ năng bảo mật SHA-256; <em>Chữ Q tối thượng:</em> Bảo mật 100% dữ liệu, không can thiệp số liệu nghiệp vụ.
+              </div>
+              <div style="padding:8px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
+                <strong>2. Trưởng Khoa / Trưởng Bộ phận:</strong> Nắm vững khung KPI Rule of 7; kỹ năng xếp lịch và giải tỏa ách tắc; <em>Chữ Q:</em> Đánh giá công tâm dựa trên dữ liệu thực tế, không thiên vị.
+              </div>
+              <div style="padding:8px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
+                <strong>3. Nhân viên Tác nghiệp:</strong> Thao tác thành thạo Mobile App; gửi báo cáo trước 18h; <em>Chữ Q:</em> Báo cáo trung thực, không giấu lỗi Near-miss.
+              </div>
+              <div style="padding:8px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
+                <strong>4. Ban Giám Đốc:</strong> Nắm vững tư duy hệ thống FMFT; điều hành dựa trên Dashboard thời gian thực; <em>Chữ Q:</em> Quyết liệt bảo vệ chuẩn mực chất lượng và an toàn.
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:700; color:var(--text); margin-bottom:4px;">Chu Trình LSE 8 Bước Trong Quản Trị Vận Hành:</div>
+            <div style="font-size:12px; color:var(--text-sub); line-height:1.5;">
+              1. <em>Phát hiện:</em> Dashboard AIOS kích hoạt cảnh báo Vàng/Đỏ.<br/>
+              2. <em>Xác thực:</em> Trưởng bộ phận tiếp nhận trong 5 phút.<br/>
+              3. <em>Phân cấp:</em> Đánh giá mức độ nghiêm trọng (Cấp 1, 2, 3).<br/>
+              4. <em>Kích hoạt kịch bản:</em> Triển khai kịch bản can thiệp chuẩn.<br/>
+              5. <em>Hiện trường:</em> Điều phối nguồn lực giải tỏa điểm nghẽn.<br/>
+              6. <em>Cập nhật:</em> Trạng thái Dashboard chuyển từ Đỏ sang Xanh.<br/>
+              7. <em>Nghiệm thu:</em> Báo cáo Ban Giám Đốc trong 60 phút.<br/>
+              8. <em>Lưu vết:</em> Ghi nhật ký Logbook và cập nhật CAPA cải tiến.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NỘI DUNG TAB B5 -->
+      <div id="t2tab-pane-b5" class="t2tab-pane" hidden>
+        <div class="the">
+          <div class="the-header">
+            <div>
+              <div class="the-tieu-de">Biểu Mẫu M09 (Action Tracker), M10 (WBS 90 Ngày), M11 (DoD) & M19 (Nhân Rộng)</div>
+              <div class="chu-phu">Kế hoạch hành động, nghiệm thu và nhân rộng toàn hệ thống BVTV2</div>
+            </div>
+            <span class="badge xanh">DoD Gate</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr; gap:8px; font-size:12.5px; margin-bottom:12px;">
+            <div style="background:var(--bg); padding:8px 10px; border-radius:6px; border:1px solid var(--border);">
+              <strong>M09 - 4 Trụ Cột Hành Động Cải Tiến:</strong><br/>
+              • <em>A1. Xác thực độc lập:</em> Cấp phát tài khoản cho 195 nhân sự (Hoàn tất 10/11/2026).<br/>
+              • <em>A2. Lịch trực thông minh:</em> Xếp lịch ma trận 26 khoa phòng (Hoàn tất 20/11/2026).<br/>
+              • <em>A3. Báo cáo & HTNV tự động:</em> Form di động theo ca trực (Hoàn tất 30/11/2026).<br/>
+              • <em>A4. Central AIOS Dashboard:</em> Màn hình tổng chỉ huy cho BGĐ (Hoàn tất 15/12/2026).
+            </div>
+            <div style="background:var(--bg); padding:8px 10px; border-radius:6px; border:1px solid var(--border);">
+              <strong>M10 - WBS 3 Giai Đoạn (90 Ngày):</strong><br/>
+              • <em>Pha 1 (Nền tảng - 30 ngày):</em> Khảo sát, thiết kế DB và thử nghiệm tại Phòng PTKH.<br/>
+              • <em>Pha 2 (Mở rộng - 30 ngày):</em> Triển khai cho 26 khoa/phòng toàn bộ lịch trực và báo cáo.<br/>
+              • <em>Pha 3 (Vận hành & Chuẩn hóa - 30 ngày):</em> Vận hành Dashboard EWS và bàn giao AOP 2027.
+            </div>
+            <div style="background:var(--bg); padding:8px 10px; border-radius:6px; border:1px solid var(--border);">
+              <strong>M11 - 5 Tiêu Chí Nghiệm Thu Cứng (Definition of Done):</strong><br/>
+              1. Tỷ lệ phủ sóng: &ge; 95% nhân sự sử dụng thành thạo.<br/>
+              2. Tốc độ báo cáo: Tổng hợp KPI toàn viện &le; 4 giờ làm việc.<br/>
+              3. An toàn dữ liệu: 0 lỗi rò rỉ hoặc sai lệch công thức.<br/>
+              4. Hài lòng nội bộ: &ge; 90% nhân sự đánh giá tích cực.<br/>
+              5. Tự chủ KSEQ: 100% Trưởng khoa đạt chuẩn vận hành.
+            </div>
+            <div style="background:var(--bg); padding:8px 10px; border-radius:6px; border:1px solid var(--border);">
+              <strong>M19 - Lộ Trình Nhân Rộng Hệ Thống:</strong><br/>
+              Hoàn thiện tại Cơ sở 3 Cà Mau (Q4/2026) $
+ightarrow$ Nhân rộng sang Cơ sở 2 BVTV2 Bạc Liêu (Q1/2027) $
+ightarrow$ Đồng bộ toàn hệ thống CS1 & CS4 (Q2/2027) $
+ightarrow$ Tích hợp tiêu chuẩn ACHSI & Looker Studio (Q3-Q4/2027).
+            </div>
+          </div>
+
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn-primary" style="flex:1; min-height:40px; font-size:12.5px;" onclick="copyTheme2FullDoc()">
+              📋 Sao Chép Toàn Bộ Hồ Sơ M01 - M19 (Chủ đề 2)
+            </button>
+            <button class="btn-secondary" style="min-height:40px; font-size:12.5px;" onclick="switchView('library')">
+              📚 Mở Thư Viện Tài Liệu Đề Án
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div id="view-session1" class="view-pane" hidden>
       <div class="page-header">
         <div>
           <div class="page-title">📄 Buổi 1: Phiếu M01 Xác Định Vấn Đề</div>
@@ -1683,16 +2054,20 @@ html, body {
         <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Ma trận 4 cấp độ leo thang:</div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:14px;">
           <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-yellow);">
-            <strong style="color:var(--c-yellow);">CẤP 1 (VÀNG):</strong> Hàng chờ 6-10 ca, chờ 16-25p $ightarrow$ ĐD Trưởng Khoa Khám xử lý trong 5 phút.
+            <strong style="color:var(--c-yellow);">CẤP 1 (VÀNG):</strong> Hàng chờ 6-10 ca, chờ 16-25p $
+ightarrow$ ĐD Trưởng Khoa Khám xử lý trong 5 phút.
           </div>
           <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-red);">
-            <strong style="color:var(--c-red);">CẤP 2 (ĐỎ):</strong> Hàng chờ $>10$ ca, chờ $>25$p $ightarrow$ Trưởng KHTH ký lệnh DOA mở Buồng 4 trong 10 phút.
+            <strong style="color:var(--c-red);">CẤP 2 (ĐỎ):</strong> Hàng chờ $>10$ ca, chờ $>25$p $
+ightarrow$ Trưởng KHTH ký lệnh DOA mở Buồng 4 trong 10 phút.
           </div>
           <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--primary);">
-            <strong style="color:var(--primary);">CẤP 3 (KHẨN Y KHOA):</strong> Trị số nguy kịch (Glycemia $<3.0$) $ightarrow$ Hotline Labo báo BS $\le 2$ phút, cấp cứu sảnh.
+            <strong style="color:var(--primary);">CẤP 3 (KHẨN Y KHOA):</strong> Trị số nguy kịch (Glycemia $<3.0$) $
+ightarrow$ Hotline Labo báo BS $\le 2$ phút, cấp cứu sảnh.
           </div>
           <div style="background:var(--bg-sub); padding:10px; border-radius:8px; border-left:4px solid var(--c-blue);">
-            <strong style="color:var(--c-blue);">CẤP 4 (HỆ THỐNG):</strong> Mất kết nối mạng HIS $>15$p $ightarrow$ Chuyển sang quy trình phiếu giấy dự phòng.
+            <strong style="color:var(--c-blue);">CẤP 4 (HỆ THỐNG):</strong> Mất kết nối mạng HIS $>15$p $
+ightarrow$ Chuyển sang quy trình phiếu giấy dự phòng.
           </div>
         </div>
 
@@ -1713,6 +2088,25 @@ html, body {
       </div>
 
       <!-- TÀI LIỆU ĐỀ XUẤT TIÊU BIỂU CS3 TRÌNH BAN GIÁM ĐỐC -->
+      <!-- TÀI LIỆU CHỦ ĐỀ 2: SỐ HÓA QUẢN TRỊ FMFT AIOS -->
+      <div class="the" style="border-left: 5px solid var(--primary); background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 90%);">
+        <div class="hn-tieu" style="margin-top:0;">
+          <span style="color:var(--primary); font-weight:800;">⚡ HỒ SƠ ĐỀ ÁN CHỦ ĐỀ 2: SỐ HÓA VẬN HÀNH & FMFT AIOS (M01 - M19)</span>
+          <span class="badge vang">Đề tài đột phá</span>
+        </div>
+        <p class="chu-phu" style="margin-bottom:12px;">
+          Số hóa quy trình quản trị hiệu suất, liên thông KPI 3 cấp và xây dựng Trung tâm điều hành thông minh (FMFT AIOS) tại PKĐK Thanh Vũ Medic Cà Mau (Mã: TV3-AIOS-02). Cắt giảm 80% thời gian báo cáo, 195 nhân sự dùng mobile, chi phí bản quyền 0 đồng, kích hoạt EWS thời gian thực.
+        </p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-primary" style="flex:1; min-height:38px; font-size:12.5px;" onclick="switchView('theme2')">
+            ⚡ Mở Xem Đầy Đủ 5 Buổi (M01 - M19) Trên Web
+          </button>
+          <a href="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" download="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" class="btn-secondary" style="min-height:38px; font-size:12.5px; display:inline-flex; align-items:center; text-decoration:none; padding:0 12px;">
+            📥 Tải File Markdown
+          </a>
+        </div>
+      </div>
+
       <div class="the" style="border-left: 5px solid var(--accent); background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 90%);">
         <div class="hn-tieu" style="margin-top:0;">
           <span>HỒ SƠ ĐỀ XUẤT CẢI TIẾN TIÊU BIỂU CS3 (TRÌNH BGĐ NGÀY 02/11/2026)</span>
@@ -2073,6 +2467,37 @@ html, body {
     }
 
     // 3. ĐIỀU HƯỚNG VIEW (5 MÀN CỐ ĐỊNH)
+    
+    // ================= CHỦ ĐỀ 2 (SỐ HÓA AIOS) JS =================
+    function switchTheme2SubTab(tabId) {
+      document.querySelectorAll('.t2tab-pane').forEach(el => el.hidden = true);
+      document.querySelectorAll('.filter-chip').forEach(el => {
+        if (el.id.startsWith('t2tab-btn-')) el.classList.remove('dang-chon');
+      });
+      const targetPane = document.getElementById('t2tab-pane-' + tabId);
+      const targetBtn = document.getElementById('t2tab-btn-' + tabId);
+      if (targetPane) targetPane.hidden = false;
+      if (targetBtn) targetBtn.classList.add('dang-chon');
+    }
+
+    function copyTheme2Summary() {
+      const summary = `ĐỀ ÁN CHỦ ĐỀ 2: SỐ HÓA QUẢN TRỊ HIỆU SUẤT, LIÊN THÔNG KPI 3 CẤP & FMFT AIOS (TV3-AIOS-02)\nPKĐK Thanh Vũ Medic Cà Mau (Nhóm 8)\n\n1. M01 Vấn đề: Cắt giảm 80% thời gian tổng hợp KPI, thay thế 26 file Excel, chi phí bản quyền 0đ.\n2. M02 VSM & M03 RACI: Rút ngắn 91.7% thời gian xếp lịch, 85% thời gian báo cáo, phân quyền 4 cấp DOA.\n3. M04-M06: Bộ 7 KPI Rule of 7, Dashboard AIOS EWS 3 màu (Xanh-Vàng-Đỏ), CAPA loại bỏ Excel trôi nổi.\n4. M07-M08: Chuẩn năng lực KSEQ (chốt chặn chữ Q), Chu trình LSE 8 bước phản ứng nhanh.\n5. M09-M19: WBS 90 ngày, 5 tiêu chí nghiệm thu DoD Gate, lộ trình nhân rộng sang CS2, CS1, CS4.`;
+      navigator.clipboard.writeText(summary).then(() => {
+        toast('Đã sao chép tóm tắt Đề án Chủ đề 2 vào bộ nhớ tạm!', 'success');
+      }).catch(() => {
+        prompt('Sao chép tóm tắt Chủ đề 2:', summary);
+      });
+    }
+
+    function copyTheme2FullDoc() {
+      const text = `HỒ SƠ BÀI TẬP CHỦ ĐỀ 2: SỐ HÓA QUẢN TRỊ VẬN HÀNH & TRUNG TÂM ĐIỀU HÀNH FMFT AIOS\nMã quy trình: TV3-AIOS-02 | Nhóm 8 - PKĐK Thanh Vũ Medic Cà Mau\n\nXem toàn văn tài liệu tại file BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md trong thư mục dự án hoặc cổng Web Portal: https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/`;
+      navigator.clipboard.writeText(text).then(() => {
+        toast('Đã sao chép thông tin hồ sơ Chủ đề 2!', 'success');
+      }).catch(() => {
+        prompt('Sao chép hồ sơ Chủ đề 2:', text);
+      });
+    }
+
     function switchView(viewId) {
       document.querySelectorAll('.view-pane').forEach(el => el.hidden = true);
       const targetPane = document.getElementById('view-' + viewId);

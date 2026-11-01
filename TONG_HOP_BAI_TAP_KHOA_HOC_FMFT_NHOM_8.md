@@ -22,6 +22,7 @@
 - [PHẦN VI: BÀI TẬP BUỔI 5 – ACTION TRACKER (M09), THÍ ĐIỂM 90 NGÀY (M10), NGHIỆM THU (M11) VÀ NHÂN RỘNG (M19)](#phần-vi-bài-tập-buổi-5--action-tracker-m09-thí-điểm-90-ngày-m10-nghiệm-thu-m11-và-nhân-rộng-m19)
 - [PHẦN VII: ĐỊNH HƯỚNG TRIỂN KHAI CỦA BAN GIÁM ĐỐC & ĐỀ XUẤT TIÊU BIỂU CỦA CS3](#phần-vii-định-hướng-triển-khai-của-ban-giám-đốc--đề-xuất-tiêu-biểu-của-cs3)
 - [PHẦN VIII: HỆ THỐNG CỔNG WEB PORTAL TƯƠNG TÁC](#phần-viii-hệ-thống-cổng-web-portal-tương-tác)
+- [PHẦN IX: CHỦ ĐỀ 2 (ĐỀ TÀI SỐ HÓA AIOS) – SỐ HÓA QUẢN TRỊ VẬN HÀNH, LIÊN THÔNG KPI 3 CẤP & TRUNG TÂM ĐIỀU HÀNH FMFT AIOS (M01–M19)](#phần-ix-chủ-đề-2-đề-tài-số-hóa-aios--số-hóa-quản-trị-vận-hành-liên-thông-kpi-3-cấp--trung-tâm-điều-hành-fmft-aios-m01m19)
 
 ---
 
@@ -148,13 +149,18 @@
 
 ### 2. M10: Kế Hoạch Quản Trị Thay Đổi & Thí Điểm 90 Ngày
 - **Quản trị lực cản:** Giải tỏa lo ngại của Bác sĩ (cam kết khám $\ge 7$p), Điều dưỡng (giao diện 1-chạm, 30 ngày đầu chỉ tính điểm thưởng cải tiến), KTV (bỏ in giấy, chuyển sang duyệt số hóa).
-- **Lộ trình WBS 3 giai đoạn:** Giai đoạn 1 (Chuẩn bị kỹ thuật 30 ngày) $ightarrow$ Giai đoạn 2 (Thí điểm 2 buồng khám 30 ngày) $ightarrow$ Giai đoạn 3 (Đánh giá nghiệm thu & Mở rộng toàn viện 30 ngày).
+- **Lộ trình WBS 3 giai đoạn:** Giai đoạn 1 (Chuẩn bị kỹ thuật 30 ngày) $
+ightarrow$ Giai đoạn 2 (Thí điểm 2 buồng khám 30 ngày) $
+ightarrow$ Giai đoạn 3 (Đánh giá nghiệm thu & Mở rộng toàn viện 30 ngày).
 
 ### 3. M11: Phiếu Tiêu Chí Nghiệm Thu Thí Điểm (DoD Gate)
 - Đạt 5 tiêu chí cứng: $W \le 15$p; $P90 \le 25$p; Tỷ lệ $T2 - T1 \le 5$p đạt $\ge 95\%$; Khám lâm sàng $\ge 7$p đạt 100%; Tỷ lệ hài lòng người bệnh $\ge 92\%$.
 
 ### 4. M19: Ma Trận Leo Thang (Escalation Matrix) & Kế Hoạch Nhân Rộng
-- **Ma trận 4 cấp độ cảnh báo:** Cấp 1 (Vàng - ĐD Trưởng xử lý $\le 5$p) $ightarrow$ Cấp 2 (Đỏ - Trưởng KHTH kích hoạt DOA $\le 10$p) $ightarrow$ Cấp 3 (Khẩn cấp y khoa - Hotline $\le 2$p) $ightarrow$ Cấp 4 (Sự cố mạng HIS - Chuyển luồng dự phòng giấy $\le 15$p).
+- **Ma trận 4 cấp độ cảnh báo:** Cấp 1 (Vàng - ĐD Trưởng xử lý $\le 5$p) $
+ightarrow$ Cấp 2 (Đỏ - Trưởng KHTH kích hoạt DOA $\le 10$p) $
+ightarrow$ Cấp 3 (Khẩn cấp y khoa - Hotline $\le 2$p) $
+ightarrow$ Cấp 4 (Sự cố mạng HIS - Chuyển luồng dự phòng giấy $\le 15$p).
 - **Kế hoạch nhân rộng:** Chia sẻ đối chiếu chéo với CS2 (Bạc Liêu) trong Tuần 8; đóng gói Bộ SOP chuẩn hóa chuyển giao cho CS1 và CS4.
 
 ---
@@ -163,7 +169,8 @@
 
 Căn cứ định hướng chỉ đạo của BGĐ (ngày 01/11/2026), Cơ sở 3 Cà Mau chính thức đề xuất đề tài cải tiến luồng ngoại trú làm **1 trong 4–5 đề tài trọng điểm của toàn hệ thống**:
 1. **Tính đại diện cao:** Trực tiếp phục vụ 450–550 ca/ngày, tháo gỡ điểm nghẽn 68% người bệnh tập trung buổi sáng.
-2. **Data-driven:** Dữ liệu log thời gian thực chứng minh rõ ràng qua 5 mốc T0 $ightarrow$ T4.
+2. **Data-driven:** Dữ liệu log thời gian thực chứng minh rõ ràng qua 5 mốc T0 $
+ightarrow$ T4.
 3. **Đồng pha hệ thống:** Kết nối chia sẻ trực tiếp với CS2 để tạo sức mạnh nhân rộng toàn diện cho CS1 và CS4.
 
 ---
@@ -172,3 +179,30 @@ Căn cứ định hướng chỉ đạo của BGĐ (ngày 01/11/2026), Cơ sở 
 - Toàn bộ hồ sơ biểu mẫu M01 đến M19 được tích hợp tại Web Portal:
   👉 **https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/**
 - Hỗ trợ xem mượt mà trên điện thoại đứng, tải tài liệu trực tiếp 1-chạm, chế độ chỉnh sửa bảo mật với Secret Key `TVM`.
+
+
+---
+
+# PHẦN IX: CHỦ ĐỀ 2 (ĐỀ TÀI SỐ HÓA AIOS) – SỐ HÓA QUẢN TRỊ VẬN HÀNH, LIÊN THÔNG KPI 3 CẤP & TRUNG TÂM ĐIỀU HÀNH FMFT AIOS (M01–M19)
+*(Đề án độc lập và bổ trợ song hành cùng Chủ đề 1 luồng ngoại trú TV3-KB-01, mã quy trình: TV3-AIOS-02)*
+
+### 1. Tổng quan Đề tài & Cặp Song Mã Quản trị:
+- **Chủ đề 1 (Tiền tuyến - Frontline):** TV3-KB-01 – Tối ưu chuỗi bàn giao lâm sàng ngoại trú, giảm 65,5% thời gian chờ đón tiếp và khám lại.
+- **Chủ đề 2 (Hậu phương - Back-office):** TV3-AIOS-02 – Số hóa toàn diện quy trình điều hành nội bộ, lịch làm việc, báo cáo ngày, liên thông KPI 3 cấp và Dashboard điều hành thông minh chi phí 0 đồng.
+- **Tài liệu toàn văn Chủ đề 2:** Xem tại BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md.
+
+### 2. Tóm tắt Biểu mẫu M01 đến M19 của Chủ đề 2:
+1. **Buổi 1 (M01 - Phiếu xác định vấn đề):** Giải quyết tình trạng phân mảnh trên 26 file Excel, ma trận trực >365 cột, Google Form >70 trường; mục tiêu cắt giảm 80% thời gian tổng hợp KPI (từ 5 ngày xuống dưới 4 giờ).
+2. **Buổi 2 (M02 VSM, M03 RACI & M14 DOA):**
+   - VSM rút ngắn thời gian xếp lịch từ 120p xuống 10p, báo cáo ngày từ 20p xuống 3p, tổng hợp KPI toàn viện giảm 99,8%.
+   - RACI liên phòng ban và DOA phân quyền 4 cấp bảo mật server-side.
+3. **Buổi 3 (M04 Rule of 7, M05 Dashboard EWS & M06 RCA/CAPA):**
+   - 7 KPI vận hành: 2 Lagging (Hoàn thành mục tiêu ≥95%, eNPS ≥90%), 3 Leading (Báo cáo trước 18h ≥98%, TCDV ≥96%, Near-miss ≥15 phiếu), 2 Constraint (Trễ hạn tổng hợp ≤4h, Lỗi trùng lịch = 0).
+   - Dashboard EWS bản đồ nhiệt 26 khoa/phòng và CAPA loại bỏ hoàn toàn các file Excel trôi nổi.
+4. **Buổi 4 (M07 KSEQ, M08 Chu trình LSE & M17 SOP Audit):**
+   - Khung KSEQ cho 4 vị trí: Admin kỹ thuật, Trưởng bộ phận, Nhân viên tác nghiệp và Ban Giám Đốc (chốt chặn chữ Q - Đạo đức dữ liệu).
+   - Chu trình LSE 8 bước phản ứng nhanh khi Dashboard kích hoạt cảnh báo Vàng/Đỏ.
+5. **Buổi 5 (M09 Action Tracker, M10 WBS 90 ngày, M11 DoD Gate & M19 Lộ trình):**
+   - 4 hành động M09: Xác thực nội bộ, Lịch trực mobile, Báo cáo thông minh, Central AIOS Dashboard.
+   - WBS 3 pha 90 ngày (Nền tảng 30 ngày -> Mở rộng 30 ngày -> Vận hành & Chuẩn hóa 30 ngày).
+   - 5 tiêu chí nghiệm thu DoD Gate và Lộ trình nhân rộng toàn hệ thống BVTV2, CS1, CS4.
