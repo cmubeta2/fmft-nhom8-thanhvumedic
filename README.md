@@ -28,6 +28,7 @@ Hệ thống được thiết kế, tổng hợp và cấu trúc bởi tập th�
 │   └── Bai_tap_Buoi_1_M01_Nhom_8_CS3_ThanhVuMedic.docx        # File Word M01 nộp bài chính thức chuẩn form mẫu Thầy Dũng
 │
 ├── [TÀI LIỆU GỐC & ĐÀO TẠO HỆ THỐNG]
+│   ├── LNTK_chuyen_de_6.md                                    # Tài liệu mới (02/11/2026): Chuyên đề 6 RCA & FMEA qua tình huống té ngã Khoa Nội Thần Kinh (TS. Đoàn Hùng Dũng)
 │   ├── HUONG_DAN_AP_DUNG_MODULE_3_4_QUAN_TRI_BENH_VIEN.md     # Tài liệu mới (31/10/2026): Hướng dẫn Module 3 & 4 (29 trang của TS. Đoàn Hùng Dũng)
 │   ├── DANH_SACH_PHAN_NHOM_FMFT_BGD_DUYET.md                  # Danh sách 15 nhóm học tập & BKS (202 người, duyệt bởi BGĐ; Nhóm 8 & Nhóm 2 CS3)
 │   ├── DE_CUONG_DAO_TAO_FMFT_AIOS_LSE_TS_DOAN_HUNG_DUNG.md    # Đề cương đào tạo Ban Lãnh đạo (9 trang - TS. Đoàn Hùng Dũng)
