@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>FMFT AIOS · PKĐK Thanh Vũ Medic Cà Mau (Nhóm 8)</title>
-  <meta name="description" content="Hệ thống Quản trị Bệnh viện & Cổng Điều hành Thông minh FMFT AIOS/LSE - PKĐK Thanh Vũ Medic Cà Mau (Nhóm 8)">
+  <meta name="description" content="Cổng Điều hành & Tri thức Quản trị Bệnh viện FMFT AIOS/LSE - PKĐK Thanh Vũ Medic Cà Mau (Nhóm 8)">
   <meta name="theme-color" content="#0e7490">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,7 @@
     }
 
     /* ==========================================================================
-       2. RESET & GLOBAL STYLES (MOBILE-FIRST, NO HORIZONTAL SCROLL)
+       2. RESET & GLOBAL STYLES (NO HORIZONTAL SCROLL)
        ========================================================================== */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -105,7 +105,7 @@
     }
 
     /* ==========================================================================
-       3. TOPBAR (HEADER THƯƠNG HIỆU THANH VŨ MEDIC)
+       3. TOPBAR
        ========================================================================== */
     .topbar {
       position: sticky;
@@ -139,7 +139,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 15px;
       box-shadow: 0 2px 6px rgba(14, 116, 144, 0.35);
     }
 
@@ -186,7 +186,7 @@
     }
 
     /* ==========================================================================
-       4. THANH NAV.BAR CHÍNH 5 NÚT (SHIN AIOS NAVIGATION BAR)
+       4. THANH NAV.BAR CHÍNH ĐÚNG 4 NÚT (BỎ THƯ VIỆN)
        ========================================================================== */
     /* Desktop Navbar (Hiển thị ngay dưới Topbar trên desktop) */
     .desktop-navbar {
@@ -210,7 +210,7 @@
       margin: 0 auto;
       display: flex;
       padding: 0 16px;
-      gap: 6px;
+      gap: 8px;
     }
 
     .nav-btn {
@@ -220,7 +220,7 @@
       border: none;
       border-bottom: 3px solid transparent;
       color: var(--text-sub);
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
@@ -244,7 +244,7 @@
       background: var(--primary-soft);
     }
 
-    /* Mobile Bottom Navigation (Thanh 5 nút cố định dưới đáy) */
+    /* Mobile Bottom Navigation (Đúng 4 nút cố định dưới đáy) */
     .bottom-nav {
       display: flex;
       position: fixed;
@@ -256,7 +256,7 @@
       border-top: 1px solid var(--border);
       z-index: 100;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
-      padding: 0 4px;
+      padding: 0 6px;
     }
 
     @media (min-width: 1024px) {
@@ -284,13 +284,13 @@
     }
 
     .bottom-nav-item .bn-icon {
-      font-size: 18px;
+      font-size: 19px;
       line-height: 1;
       transition: transform 0.15s ease;
     }
 
     .bottom-nav-item .bn-label {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       line-height: 1.1;
       text-align: center;
@@ -298,7 +298,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       width: 100%;
-      padding: 0 2px;
     }
 
     .bottom-nav-item.active {
@@ -310,7 +309,7 @@
     }
 
     /* ==========================================================================
-       5. NỘI DUNG CHÍNH (CONTENT AREA - CĂN GIỮA, KHÔNG LỆCH KHUNG)
+       5. CONTENT CONTAINER (CĂN GIỮA, KHÔNG LỆCH)
        ========================================================================== */
     .main-container {
       width: 100%;
@@ -335,7 +334,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Thẻ Container chuẩn SHIN */
+    /* Thẻ UI */
     .the {
       background: var(--card);
       border: 1px solid var(--border);
@@ -354,19 +353,19 @@
     }
 
     .the-tieu-de {
-      font-size: 15.5px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--text);
       line-height: 1.3;
     }
 
     .chu-phu {
-      font-size: 12.5px;
+      font-size: 13px;
       color: var(--text-sub);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* Badges & Pills */
+    /* Badges */
     .badge {
       display: inline-flex;
       align-items: center;
@@ -385,7 +384,7 @@
     .badge.do { background: var(--c-red-soft); color: var(--c-red); }
     .badge.tim { background: rgba(147, 51, 234, 0.1); color: #9333ea; }
 
-    /* Nút bấm (Buttons) */
+    /* Nút bấm */
     .btn-primary {
       background: var(--primary);
       color: #ffffff;
@@ -424,7 +423,7 @@
     }
     .btn-secondary:hover { background: var(--border); }
 
-    /* Segmented Chip Filters */
+    /* Chip Filter */
     .chip-group {
       display: flex;
       gap: 6px;
@@ -447,9 +446,6 @@
       white-space: nowrap;
       cursor: pointer;
       transition: all 0.15s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
     .chip:hover { border-color: var(--primary); color: var(--primary); }
     .chip.active {
@@ -458,7 +454,7 @@
       color: #ffffff;
     }
 
-    /* Accordion chi tiết bài học */
+    /* Accordion bài giảng */
     details.bai-hoc {
       background: var(--card);
       border: 1px solid var(--border);
@@ -467,9 +463,7 @@
       overflow: hidden;
       transition: border-color 0.2s ease;
     }
-    details.bai-hoc[open] {
-      border-color: var(--primary);
-    }
+    details.bai-hoc[open] { border-color: var(--primary); }
     details.bai-hoc summary {
       padding: 14px 16px;
       font-weight: 800;
@@ -497,11 +491,11 @@
       padding: 0 16px 16px 16px;
       border-top: 1px dashed var(--border);
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--text);
     }
 
-    /* Bảng dữ liệu y tế */
+    /* Bảng dữ liệu */
     .table-wrap {
       width: 100%;
       overflow-x: auto;
@@ -522,6 +516,7 @@
       font-weight: 700;
       padding: 8px 10px;
       border-bottom: 1px solid var(--border);
+      white-space: nowrap;
     }
     table.data-tbl td {
       padding: 8px 10px;
@@ -530,7 +525,17 @@
     }
     table.data-tbl tr:last-child td { border-bottom: none; }
 
-    /* Toast Notification */
+    /* Box Highlight */
+    .box-info {
+      background: var(--primary-soft);
+      border-left: 4px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 4px;
+      margin: 8px 0;
+      font-size: 13px;
+    }
+
+    /* Toast */
     #toast-box {
       position: fixed;
       bottom: calc(var(--nav-height) + 16px);
@@ -552,11 +557,8 @@
       font-size: 13px;
       font-weight: 600;
       box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      animation: toastIn 0.2s ease forwards;
       pointer-events: auto;
+      animation: toastIn 0.2s ease forwards;
     }
     @keyframes toastIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -566,7 +568,7 @@
 </head>
 <body>
 
-  <!-- ==================== 1. TOPBAR (HEADER THƯƠNG HIỆU) ==================== -->
+  <!-- ==================== 1. TOPBAR ==================== -->
   <header class="topbar">
     <a href="javascript:void(0)" onclick="switchTab('home')" class="brand-wrap">
       <div class="brand-logo">TVM</div>
@@ -585,7 +587,7 @@
     </div>
   </header>
 
-  <!-- ==================== 2. DESKTOP NAVBAR (THANH NAV 5 NÚT TRÊN MÁY TÍNH) ==================== -->
+  <!-- ==================== 2. DESKTOP NAVBAR (ĐÚNG 4 NÚT) ==================== -->
   <nav class="desktop-navbar" aria-label="Điều hướng chính">
     <div class="nav-container">
       <button class="nav-btn active" id="dn-home" onclick="switchTab('home')">
@@ -600,13 +602,10 @@
       <button class="nav-btn" id="dn-outpatient" onclick="switchTab('outpatient')">
         <span>🏥</span> Luồng bệnh ngoại trú (Chủ đề 2)
       </button>
-      <button class="nav-btn" id="dn-library" onclick="switchTab('library')">
-        <span>📚</span> Thư viện
-      </button>
     </div>
   </nav>
 
-  <!-- ==================== 3. MAIN CONTENT CONTAINER ==================== -->
+  <!-- ==================== 3. MAIN CONTAINER ==================== -->
   <main class="main-container">
 
     <!-- ====================================================================
@@ -618,13 +617,13 @@
       <div class="the" style="background: linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 100%); border-left: 5px solid var(--primary);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
           <span class="badge xanh">Chương trình FMFT AIOS/LSE</span>
-          <span style="font-size:12px; color:var(--text-sub); font-weight:600;" id="live-date">Thứ Hai, 02/11/2026</span>
+          <span style="font-size:12px; color:var(--text-sub); font-weight:600;" id="live-date">Thứ Tư, 04/11/2026</span>
         </div>
         <div style="font-size:18px; font-weight:800; color:var(--text); margin-bottom:6px;">
           Quản Trị Bệnh Viện Hiện Đại — Hệ Thống Y Tế Thanh Vũ Medic
         </div>
         <div class="chu-phu" style="line-height:1.6; margin-bottom:12px;">
-          Giảng viên: <strong>TS. Đoàn Hùng Dũng</strong> (FMFT Institute). Đơn vị thực hiện: <strong>Nhóm 8</strong> (Đại diện PKĐK Thanh Vũ Medic Cà Mau - Cơ sở 3 phối hợp cùng BVTV2 Bạc Liêu).
+          Giảng viên: <strong>TS. Đoàn Hùng Dũng</strong> (FMFT Institute). Đơn vị thực hiện: <strong>Nhóm 8</strong> (Đại diện Cơ sở 3 - PKĐK Thanh Vũ Medic Cà Mau phối hợp cùng Bệnh viện Đa khoa TV2 Bạc Liêu).
         </div>
       </div>
 
@@ -632,139 +631,243 @@
       <div class="the" style="border:1.5px solid var(--accent); background:var(--accent-soft);">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
           <div style="font-weight:800; font-size:13.5px; color:var(--text); display:flex; align-items:center; gap:6px;">
-            <span>📢</span> ĐỊNH HƯỚNG MỚI TỪ BAN GIÁM ĐỐC & BAN QUẢN LÝ LỚP
+            <span>📢</span> ĐỊNH HƯỚNG CHIẾN LƯỢC TỪ BAN GIÁM ĐỐC & BAN QUẢN LÝ LỚP
           </div>
-          <span class="badge vang">Trọng tâm toàn hệ thống</span>
+          <span class="badge vang">Trọng tâm toàn viện</span>
         </div>
-        <p class="chu-phu" style="margin-bottom:10px; color:var(--text); font-size:13px; line-height:1.5;">
-          Theo chỉ đạo của BGĐ (01/11/2026), chương trình FMFT sẽ <strong>tập trung lựa chọn 4–5 vấn đề cải tiến tiêu biểu tại 4 cơ sở</strong> (không dàn trải), có khả năng đo lường và nhân rộng. CS2 đã chọn ngoại trú & xuất viện nội trú (Nhóm 3 & 13). <strong>Cơ sở 3 Cà Mau (Nhóm 8) khẳng định chuẩn bị 2 đề án đột phá đại diện cho đơn vị!</strong>
+        <p class="chu-phu" style="margin-bottom:8px; color:var(--text); font-size:13px; line-height:1.5;">
+          Khóa học FMFT <strong>tập trung lựa chọn 4–5 vấn đề cải tiến tiêu biểu toàn hệ thống</strong> tại 4 cơ sở (không dàn trải), có khả năng đo lường và nhân rộng. CS2 đã chọn ngoại trú & xuất viện nội trú (Nhóm 3 & 13 phối hợp). <strong>Cơ sở 3 Cà Mau (Nhóm 8) chuẩn bị 2 đề tài tiêu biểu tạo thành cặp song mã:</strong>
         </p>
       </div>
 
-      <!-- TỔNG QUAN 2 ĐỀ ÁN CẢI TIẾN TIÊU BIỂU CS3 -->
-      <div style="margin-bottom:16px;">
-        <div style="font-size:16px; font-weight:800; color:var(--text); margin-bottom:10px; display:flex; align-items:center; gap:6px;">
-          <span>💎</span> CẶP ĐỀ ÁN CẢI TIẾN CHIẾN LƯỢC CỦA CƠ SỞ 3 CÀ MAU (NHÓM 8)
+      <!-- BẢNG SO SÁNH MA TRẬN 2 ĐỀ ÁN CỦA CƠ SỞ 3 -->
+      <div class="the">
+        <div class="the-header">
+          <div class="the-tieu-de">💎 MA TRẬN CẶP SONG MÃ ĐỀ TÀI CỦA CƠ SỞ 3 (NHÓM 8)</div>
+          <span class="badge xanh">Đối chiếu chi tiết</span>
         </div>
-
-        <!-- 1. ĐỀ ÁN 1: SỐ HÓA AIOS (ƯU TIÊN 1) -->
-        <div class="the" style="border: 2px solid var(--primary); background: linear-gradient(135deg, var(--card) 0%, var(--primary-soft) 100%); margin-bottom:14px;">
-          <div class="the-header">
-            <div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-                <span class="badge xanhduong" style="font-weight:800;">ĐỀ ÁN 1 · ƯU TIÊN SỐ 1</span>
-                <span style="font-size:11px; font-family:var(--font-mono); font-weight:700; color:var(--primary);">Mã: TV3-AIOS-02</span>
-              </div>
-              <div class="the-tieu-de" style="font-size:16.5px; color:var(--text);">
-                ⚡ Số Hóa Quản Trị Vận Hành, Liên Thông KPI 3 Cấp & Trung Tâm Điều Hành FMFT AIOS
-              </div>
-            </div>
-            <span class="badge vang">Hậu phương Vận hành</span>
-          </div>
-
-          <p class="chu-phu" style="margin-bottom:12px; font-size:13px;">
-            <strong>Mục tiêu cốt lõi:</strong> Xóa bỏ hoàn toàn tình trạng cát cứ thông tin trên 26 file Excel, ma trận trực >365 cột và Google Form >70 trường. Tự động hóa 80% công tác tổng hợp báo cáo và tính điểm KPI từ 5 ngày xuống dưới 4 giờ. Chi phí bản quyền 0 đồng (tiết kiệm ~180 triệu đ/năm). Dashboard AIOS EWS thời gian thực 3 màu và Chu trình phản ứng nhanh LSE 8 bước.
-          </p>
-
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:14px;">
-            <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--c-green);">Giảm 80%</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Thời gian tổng hợp KPI</div>
-            </div>
-            <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--c-blue);">195 NS</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Dùng App Mobile</div>
-            </div>
-            <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--accent);">&lt; 15 phút</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Cảnh báo EWS Real-time</div>
-            </div>
-            <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--primary);">0 Đồng</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Bản quyền phần mềm</div>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <button class="btn-primary" style="flex:1;" onclick="switchTab('aios')">
-              ⚡ Xem Trọn Bộ Bài Tập Đề Án AIOS (M01 - M19)
-            </button>
-            <a href="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" download="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" class="btn-secondary">
-              📥 Tải File Đề Án Markdown
-            </a>
-          </div>
-        </div>
-
-        <!-- 2. ĐỀ ÁN 2: LUỒNG BỆNH NGOẠI TRÚ (ƯU TIÊN 2) -->
-        <div class="the" style="border: 1.5px solid var(--border); background: var(--card);">
-          <div class="the-header">
-            <div>
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
-                <span class="badge xanh" style="font-weight:800;">ĐỀ ÁN 2 · LÂM SÀNG</span>
-                <span style="font-size:11px; font-family:var(--font-mono); font-weight:700; color:var(--primary);">Mã: TV3-KB-01</span>
-              </div>
-              <div class="the-tieu-de" style="font-size:16.5px; color:var(--text);">
-                🏥 Tối Ưu Hóa Chuỗi Bàn Giao Cận Lâm Sàng & Giảm Thời Gian Chờ Khám Lại Ngoại Trú
-              </div>
-            </div>
-            <span class="badge xanh">Tiền tuyến Ngoại trú</span>
-          </div>
-
-          <p class="chu-phu" style="margin-bottom:12px; font-size:13px;">
-            <strong>Mục tiêu cốt lõi:</strong> Tháo gỡ điểm nghẽn dồn ứ cục bộ sảnh chờ sau khi có kết quả CLS (450–550 ca/ngày, 68% dồn ứ khung giờ vàng). Rút ngắn thời gian chờ từ 110 phút xuống còn &le; 38 phút (giảm 65,5%). Cam kết vàng T2 - T1 &le; 5 phút, bảo toàn thời gian khám lâm sàng &ge; 7 phút/ca. Đồng pha chia sẻ đối chứng song song với Cơ sở 2.
-          </p>
-
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:14px;">
-            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--c-green);">&le; 38 phút</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Tổng thời gian chờ CLS</div>
-            </div>
-            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--c-blue);">&le; 5 phút</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Cam kết nhận hồ sơ T2-T1</div>
-            </div>
-            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--accent);">&ge; 7 phút</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Khám lâm sàng an toàn</div>
-            </div>
-            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
-              <div style="font-size:18px; font-weight:800; color:var(--primary);">&ge; 92%</div>
-              <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Hài lòng người bệnh</div>
-            </div>
-          </div>
-
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <button class="btn-primary" style="flex:1;" onclick="switchTab('outpatient')">
-              🏥 Xem Trọn Bộ Bài Tập Đề Án Ngoại Trú (M01 - M19)
-            </button>
-            <a href="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" download="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" class="btn-secondary">
-              📥 Tải Tờ Trình BGĐ
-            </a>
-          </div>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead>
+              <tr>
+                <th>Tiêu chí so sánh</th>
+                <th style="color:var(--primary); font-weight:800;">ĐỀ ÁN 1 (ƯU TIÊN SỐ 1): AIOS</th>
+                <th style="color:var(--c-blue); font-weight:800;">ĐỀ ÁN 2 (ƯU TIÊN SỐ 2): NGOẠI TRÚ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mã quy trình</strong></td>
+                <td><strong style="color:var(--primary);">TV3-AIOS-02</strong></td>
+                <td><strong style="color:var(--c-blue);">TV3-KB-01</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Tên đề án</strong></td>
+                <td><strong>Số hóa Quản trị Hiệu suất, Liên thông KPI 3 cấp & FMFT AIOS</strong></td>
+                <td><strong>Tối ưu hóa Chuỗi Bàn giao CLS & Giảm Chờ Khám lại Ngoại trú</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Phạm vi tác động</strong></td>
+                <td>Hậu phương Vận hành: Gần 200 nhân sự thuộc 26 khoa/phòng nội bộ</td>
+                <td>Tiền tuyến Lâm sàng: 450–550 lượt người bệnh ngoại trú/ngày</td>
+              </tr>
+              <tr>
+                <td><strong>Vấn đề cốt lõi</strong></td>
+                <td>Phân mảnh 26 file Excel, ma trận trực >365 cột, Google Form >70 trường</td>
+                <td>Dồn ứ sảnh chờ sau khi có kết quả CLS (68% dồn ứ khung giờ 07h-09h30)</td>
+              </tr>
+              <tr>
+                <td><strong>Mục tiêu SMART</strong></td>
+                <td>Cắt giảm <strong>80% thời gian tổng hợp KPI</strong> (từ 5 ngày &le; 4 giờ)</td>
+                <td>Rút ngắn thời gian chờ từ 110 phút xuống <strong>&le; 38 phút</strong> (giảm 65,5%)</td>
+              </tr>
+              <tr>
+                <td><strong>Cam kết bất di bất dịch</strong></td>
+                <td>Chi phí phần mềm <strong>0 đồng</strong> (tiết kiệm ~180 triệu đ/năm mail bản quyền)</td>
+                <td>Cam kết bàn giao <strong>T2 - T1 &le; 5 phút</strong>; Khám lâm sàng an toàn <strong>&ge; 7 phút/ca</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Cơ chế cảnh báo</strong></td>
+                <td>Dashboard AIOS EWS thời gian thực 3 màu (độ trễ &le; 15 phút)</td>
+                <td>Chu trình LSE phản ứng nhanh Mã Đỏ y khoa (&le;3p) & Mã Vàng vận hành (&le;10p)</td>
+              </tr>
+              <tr>
+                <td><strong>Giá trị nhân rộng</strong></td>
+                <td>Chuyển giao nền tảng số sang BVTV2 (Q1/2027) và CS1, CS4 (Q2/2027)</td>
+                <td>Đối chứng chéo cùng mô hình Ngoại trú Bệnh viện của CS2 (Nhóm 3 & 13)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <!-- THÔNG TIN NHÂN SỰ NHÓM 8 -->
+      <!-- 1. THẺ ĐỀ ÁN 1: AIOS (ƯU TIÊN 1) -->
+      <div class="the" style="border: 2px solid var(--primary); background: linear-gradient(135deg, var(--card) 0%, var(--primary-soft) 100%); margin-bottom:14px;">
+        <div class="the-header">
+          <div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+              <span class="badge xanhduong" style="font-weight:800;">ĐỀ ÁN 1 · ƯU TIÊN SỐ 1</span>
+              <span style="font-size:11px; font-family:var(--font-mono); font-weight:700; color:var(--primary);">Mã: TV3-AIOS-02</span>
+            </div>
+            <div class="the-tieu-de" style="font-size:16.5px; color:var(--text);">
+              ⚡ Số Hóa Quản Trị Vận Hành, Liên Thông KPI 3 Cấp & Trung Tâm Điều Hành FMFT AIOS
+            </div>
+          </div>
+          <span class="badge vang">Hậu phương Vận hành</span>
+        </div>
+
+        <p class="chu-phu" style="margin-bottom:12px; font-size:13px;">
+          Xây dựng nền tảng điều hành tập trung (TVM Work Management App / FMFT AIOS), giải phóng 80% thời gian làm báo cáo thủ công của 26 khoa phòng, liên thông số liệu KPI cá nhân $ightarrow$ khoa phòng $ightarrow$ toàn viện theo thời gian thực và kích hoạt hệ thống cảnh báo sớm (Early Warning System) hỗ trợ Ban Giám Đốc ra quyết định điều phối tức thì.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:14px;">
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--c-green);">Giảm 80%</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Thời gian tổng hợp KPI</div>
+          </div>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--c-blue);">195 NS</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Dùng App Mobile</div>
+          </div>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--accent);">&lt; 15 phút</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Cảnh báo EWS Real-time</div>
+          </div>
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--primary);">0 Đồng</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Bản quyền phần mềm</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-primary" style="flex:1;" onclick="switchTab('aios')">
+            ⚡ Xem Chi Tiết Toàn Bộ Bài Tập Đề Án AIOS (M01 - M19)
+          </button>
+          <a href="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" download="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" class="btn-secondary">
+            📥 Tải File Đề Án Markdown
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. THẺ ĐỀ ÁN 2: NGOẠI TRÚ (ƯU TIÊN 2) -->
+      <div class="the" style="border: 1.5px solid var(--border); background: var(--card); margin-bottom:14px;">
+        <div class="the-header">
+          <div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+              <span class="badge xanh" style="font-weight:800;">ĐỀ ÁN 2 · LÂM SÀNG</span>
+              <span style="font-size:11px; font-family:var(--font-mono); font-weight:700; color:var(--primary);">Mã: TV3-KB-01</span>
+            </div>
+            <div class="the-tieu-de" style="font-size:16.5px; color:var(--text);">
+              🏥 Tối Ưu Hóa Chuỗi Bàn Giao Cận Lâm Sàng & Giảm Thời Gian Chờ Khám Lại Ngoại Trú
+            </div>
+          </div>
+          <span class="badge xanh">Tiền tuyến Ngoại trú</span>
+        </div>
+
+        <p class="chu-phu" style="margin-bottom:12px; font-size:13px;">
+          Tối ưu hóa chuỗi bàn giao lâm sàng ngoại trú giữa sảnh chờ, phòng xét nghiệm, CĐHA và buồng khám bác sĩ. Phân rã 5 mốc T0 $ightarrow$ T4 có log dữ liệu thời gian thực trên HIS. Giảm 65,5% thời gian chờ, thiết lập cam kết tiếp nhận T2 - T1 &le; 5 phút và bảo đảm an toàn thời gian khám lâm sàng &ge; 7 phút/ca.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:14px;">
+          <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--c-green);">&le; 38 phút</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Tổng thời gian chờ CLS</div>
+          </div>
+          <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--c-blue);">&le; 5 phút</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Cam kết nhận hồ sơ T2-T1</div>
+          </div>
+          <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--accent);">&ge; 7 phút</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Khám lâm sàng an toàn</div>
+          </div>
+          <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px; text-align:center;">
+            <div style="font-size:18px; font-weight:800; color:var(--primary);">&ge; 92%</div>
+            <div style="font-size:11px; color:var(--text-sub); font-weight:600;">Hài lòng người bệnh</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-primary" style="flex:1;" onclick="switchTab('outpatient')">
+            🏥 Xem Chi Tiết Toàn Bộ Bài Tập Ngoại Trú (M01 - M19)
+          </button>
+          <a href="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" download="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" class="btn-secondary">
+            📥 Tải Tờ Trình BGĐ
+          </a>
+        </div>
+      </div>
+
+      <!-- KHỐI TÀI LIỆU, GOOGLE DRIVE & HÒM THƯ GÓP Ý (GOM GỌN TẠI ĐÂY) -->
+      <div class="the" style="border-left: 5px solid var(--accent); background: linear-gradient(135deg, var(--accent-soft) 0%, var(--card) 90%);">
+        <div class="the-header">
+          <div class="the-tieu-de">📂 KHO TÀI LIỆU, GOOGLE DRIVE & Ý KIẾN ĐÓNG GÓP</div>
+          <span class="badge vang">Truy cập nhanh</span>
+        </div>
+        <p class="chu-phu" style="margin-bottom:12px;">
+          Tất cả tài liệu gốc của Thầy, slide bài giảng, file Word biểu mẫu M01–M20 và liên kết Google Drive được tích hợp sẵn sàng để Sếp và các đồng nghiệp tra cứu:
+        </p>
+        
+        <!-- 2 Nút mở Google Drive -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-bottom:12px;">
+          <a href="https://drive.google.com/drive/folders/1w5mZcE5vX-X0hA_yX-X0hA_yX" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:var(--accent); border-color:var(--accent); min-height:40px; text-decoration:none;">
+            📂 Mở Google Drive Đề Án Cải Tiến
+          </a>
+          <a href="https://drive.google.com/drive/folders/1763gM27iE7LzW_H9_T3J1eA68eH1e" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="min-height:40px; text-decoration:none;">
+            🎬 Mở Media Video/Audio Bài Giảng
+          </a>
+        </div>
+
+        <!-- Danh mục tài liệu tải trực tiếp 1-chạm -->
+        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:14px; font-size:12.5px;">
+          <div style="padding:8px 10px; background:var(--card); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+            <div><strong>1. Chuyên Đề 6: RCA & FMEA Ca Té Ngã (34 slides Thầy Dũng):</strong> Tài liệu Markdown phân tích 5 Whys & bảng tính RPN</div>
+            <a href="LNTK_chuyen_de_6.md" download="LNTK_chuyen_de_6.md" style="color:var(--primary); font-weight:700; text-decoration:none;">[Tải MD]</a>
+          </div>
+          <div style="padding:8px 10px; background:var(--card); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+            <div><strong>2. Hướng Dẫn Module 3 & 4 (PDF 29 trang - TS. Đoàn Hùng Dũng):</strong> Chuẩn hóa VSM, 4 quy tắc RACI 1A, phân tách 5 khâu và DOA</div>
+            <a href="tai_lieu/Huong_Dan_Module_3_4_QLBV.pdf" download="Huong_Dan_Module_3_4_QLBV.pdf" style="color:var(--primary); font-weight:700; text-decoration:none;">[Tải PDF]</a>
+          </div>
+          <div style="padding:8px 10px; background:var(--card); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+            <div><strong>3. Giáo Trình Quản Trị BV Version 2.0 (Toàn văn 60 trang):</strong> 10 chuyên đề đào tạo và bộ 20 biểu mẫu M01 - M20</div>
+            <a href="GIAO_TRINH_QUAN_TRI_BENH_VIEN_FMFT_AIOS_LSE_V2.md" download="GIAO_TRINH_QUAN_TRI_BENH_VIEN_FMFT_AIOS_LSE_V2.md" style="color:var(--primary); font-weight:700; text-decoration:none;">[Tải MD]</a>
+          </div>
+        </div>
+
+        <!-- Hòm thư góp ý công khai -->
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px;">
+          <div style="font-weight:700; font-size:13.5px; margin-bottom:8px; color:var(--text);">✉️ Gửi Đóng Góp Ý Kiến & Phản Biện Cho Nhóm 8:</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <input type="text" id="fb-author" placeholder="Họ và tên / Chức vụ / Đơn vị..." style="width:100%; min-height:38px; padding:6px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg); font-size:16px;">
+            <textarea id="fb-content" rows="2" placeholder="Nhập ý kiến góp ý, đóng góp chuyên môn..." style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg); font-size:16px;"></textarea>
+            <button class="btn-primary" onclick="submitFeedback()" style="align-self:flex-start; min-height:36px; font-size:12.5px;">
+              Gửi Ý Kiến Góp Ý
+            </button>
+          </div>
+          <div id="fb-list" style="display:flex; flex-direction:column; gap:6px; margin-top:10px;"></div>
+        </div>
+      </div>
+
+      <!-- NHÂN SỰ NHÓM 8 -->
       <div class="the">
         <div class="the-header">
           <div class="the-tieu-de">👥 Đội Ngũ Nhân Sự Thực Hiện (Nhóm 8)</div>
           <span class="badge xanh">15 Cán bộ chuyên trách</span>
         </div>
         <p class="chu-phu" style="margin-bottom:10px;">
-          Được Ban Giám Đốc phê duyệt phân nhóm ngày 28/10/2026. Phối hợp giữa Cơ sở 3 (PKĐK Cà Mau) và BVTV2:
+          Căn cứ Danh sách phân nhóm lớp học do Ban Giám Đốc phê duyệt ngày 28/10/2026:
         </p>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:8px; font-size:12.5px;">
           <div style="padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
-            <strong>ThS. Nguyễn Kim Nhang:</strong> Nhóm trưởng · Điều phối chung & Đại diện bảo vệ
+            <strong>ThS. Nguyễn Kim Nhang:</strong> Nhóm trưởng · Điều phối chung & Đại diện bảo vệ trước Thầy
           </div>
           <div style="padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
             <strong>BS. Huỳnh Tấn Kiệt:</strong> Trưởng phòng KHTH · Đại diện Chuyên môn lâm sàng CS3
           </div>
           <div style="padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
-            <strong>Nguyễn Hoàng Duy:</strong> Phó phòng CNTT BVTV2 · Hỗ trợ kỹ thuật & Tích hợp HIS/LIS
+            <strong>Nguyễn Hoàng Duy:</strong> Phó phòng CNTT BVTV2 · Tích hợp kỹ thuật & HIS/LIS
           </div>
           <div style="padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
-            <strong>Lục Thị Yến Nhi:</strong> Chuyên viên BKS BVTV2 · Giám sát tính độc lập & Kiểm soát KPI
+            <strong>Lục Thị Yến Nhi:</strong> Chuyên viên BKS BVTV2 · Giám sát tính độc lập & Thẩm tra KPI
           </div>
           <div style="padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);">
             <strong>Huỳnh Trường Thanh Tâm:</strong> Phó phòng PTKH CS3 · Phối hợp phòng ban & Dữ liệu
@@ -778,19 +881,19 @@
 
 
     <!-- ====================================================================
-         MÀN 2: BÀI GIẢNG (KIẾN THỨC BÀI HỌC THEO THỨ TỰ BUỔI 1 -> 5)
+         MÀN 2: BÀI GIẢNG (TRIỂN KHAI CỰC KỲ CHI TIẾT 10 CHUYÊN ĐỀ BUỔI 1-5)
          ==================================================================== -->
     <div id="view-lectures" class="view-pane" hidden>
       <div class="the" style="background:var(--primary-soft); border:1px solid var(--primary-border); margin-bottom:14px;">
         <div class="the-tieu-de" style="font-size:17px; color:var(--text); margin-bottom:4px;">
-          📖 HỆ THỐNG BÀI GIẢNG QUẢN TRỊ BỆNH VIỆN FMFT AIOS/LSE
+          📖 HỆ THỐNG BÀI GIẢNG QUẢN TRỊ BỆNH VIỆN HIỆN ĐẠI FMFT AIOS/LSE
         </div>
-        <div class="chu-phu" style="line-height:1.5;">
-          Toàn bộ kiến thức 10 chuyên đề đào tạo của <strong>TS. Đoàn Hùng Dũng</strong> (FMFT Institute). Được cấu trúc chi tiết, khoa học theo thứ tự 5 buổi học để các khoa/phòng tra cứu và ôn tập.
+        <div class="chu-phu" style="line-height:1.6;">
+          Toàn bộ 10 chuyên đề đào tạo chuyên sâu của <strong>TS. Đoàn Hùng Dũng</strong> (FMFT Institute). Được triển khai chi tiết, đầy đủ lý thuyết, công thức, bảng biểu và case study thực tế phục vụ học tập, thi sát hạch và ứng dụng thực tiễn.
         </div>
       </div>
 
-      <!-- BỘ LỌC BUỔI HỌC BÀI GIẢNG -->
+      <!-- CHIP LỌC BUỔI BÀI GIẢNG -->
       <div class="chip-group">
         <button class="chip active" id="chip-lec-all" onclick="filterLectures('all')">Tất cả (10 Chuyên đề)</button>
         <button class="chip" id="chip-lec-b1" onclick="filterLectures('b1')">Buổi 1: CĐ 1 & 2</button>
@@ -808,14 +911,41 @@
             <span class="badge xanh">Nền tảng</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>1. Bản chất của Tư duy Hệ thống (System Thinking) trong Y tế:</strong></p>
-            <p>Bệnh viện không phải là tập hợp các khoa/phòng độc lập, mà là một hệ thống sống phụ thuộc lẫn nhau. Sự tắc nghẽn ở một khâu (ví dụ: Chờ kết quả xét nghiệm) sẽ gây đổ vỡ toàn bộ nhịp khám của Bác sĩ và sự hài lòng của người bệnh.</p>
-            <p style="margin-top:6px;"><strong>2. Phân biệt 3 tầng dữ liệu FMFT (Tránh ngộ nhận trong quản trị):</strong></p>
-            <ul style="padding-left:20px; margin-top:4px;">
-              <li><strong>Số liệu thật (Hard Fact):</strong> Dữ liệu có vết lưu trên hệ thống phần mềm (HIS/LIS/PACS/CRM), có dấu vết thời gian thực (timestamps) không thể chối cãi.</li>
-              <li><strong>Số liệu giả định / Khảo sát mẫu (Assumption/Sample):</strong> Dữ liệu ước tính qua khảo sát giấy hoặc phỏng vấn ngẫu nhiên, chỉ có giá trị tham khảo định hướng.</li>
-              <li><strong>Vùng mù (Blind Spot):</strong> Khoảng trống quy trình chưa có hệ thống nào ghi nhận log (ví dụ: Người bệnh cầm giấy kết quả đi ăn sáng trước khi nộp lại cho Điều dưỡng).</li>
-            </ul>
+            <p><strong>1. Tư duy Hệ thống (System Thinking) trong Quản trị Y tế:</strong></p>
+            <p>Bệnh viện là một hệ thống mở phức hợp, bao gồm các mắt xích tương tác chặt chẽ. Tư duy tuyến tính truyền thống thường chỉ nhìn vào điểm phát sinh triệu chứng (ví dụ: Sảnh chờ đông đúc thì vội vã kê thêm ghế chờ). Tư duy hệ thống đòi hỏi phải truy ngược dòng chảy thông tin và dòng chảy người bệnh để tìm các <strong>điểm đòn bẩy hệ thống (Leverage Points)</strong> — nơi chỉ cần một tác động nhỏ nhưng tạo ra chuyển biến lớn toàn viện.</p>
+            
+            <div class="box-info">
+              <strong>Vòng lặp Phản hồi (Feedback Loops):</strong><br/>
+              • <em>Vòng lặp Tăng cường (Reinforcing Loop):</em> Người bệnh hài lòng $ightarrow$ Tăng tái khám & giới thiệu người thân $ightarrow$ Doanh thu F1 tăng $ightarrow$ Bệnh viện có ngân sách tái đầu tư công nghệ & cơ sở vật chất.<br/>
+              • <em>Vòng lặp Cân bằng (Balancing Loop):</em> Lượng khám dồn ứ khung giờ vàng $ightarrow$ Bác sĩ quá tải $ightarrow$ Thời gian chờ tăng $ightarrow$ Người bệnh bỏ về hoặc phản ánh tiêu cực $ightarrow$ Hệ thống tự cân bằng lượng tải nhưng gây tổn thất doanh thu và thương hiệu.
+            </div>
+
+            <p style="margin-top:8px;"><strong>2. Phân loại 3 Tầng Dữ liệu FMFT (Chống Ngộ Nhận & Ảo Tưởng Quản Trị):</strong></p>
+            <div class="table-wrap">
+              <table class="data-tbl">
+                <thead><tr><th>Tầng dữ liệu</th><th>Định nghĩa & Bản chất</th><th>Minh chứng thực tế tại CS3</th><th>Nguyên tắc xử lý</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Số liệu thật (Fact)</strong></td>
+                    <td>Dữ liệu được ghi nhận tự động bằng timestamps trên phần mềm, không thể chối cãi.</td>
+                    <td>Log thời gian chỉ định CLS, giờ máy xét nghiệm chạy xong, giờ thanh toán viện phí trên HIS.</td>
+                    <td>Dùng làm thước đo chính thức để đánh giá KPI và nghiệm thu cải tiến.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Số liệu giả định (Assumption)</strong></td>
+                    <td>Ước lượng qua khảo sát giấy, phỏng vấn mẫu hoặc cảm nhận của nhân viên.</td>
+                    <td>Ước tính người bệnh chờ từ lúc xong CLS đến lúc vào khám là 35–55 phút.</td>
+                    <td>Chỉ dùng làm cơ sở định hướng ban đầu, phải nhanh chóng số hóa thành số liệu thật.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Vùng mù (Blind Spot)</strong></td>
+                    <td>Khoảng trống quy trình hoàn toàn không có bất kỳ hệ thống nào theo dõi.</td>
+                    <td>Khoảng thời gian người bệnh cầm giấy kết quả đi ăn sáng trước khi nộp lại buồng khám.</td>
+                    <td>Thiết kế điểm chốt quét mã QR Check-in (T0) để xóa bỏ hoàn toàn vùng mù.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </details>
 
@@ -825,19 +955,28 @@
             <span class="badge vang">Lean Healthcare</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>Nhận diện 8 loại lãng phí (Muda) trong vận hành bệnh viện:</strong></p>
+            <p><strong>1. Thách thức cạnh tranh ngành Y tế hiện đại:</strong></p>
+            <p>Người bệnh ngày nay không chỉ đánh giá bệnh viện qua chất lượng khám chữa bệnh chuyên môn đơn thuần, mà đánh giá toàn bộ <strong>Hành trình Trải nghiệm Người bệnh (Patient Experience - PX)</strong> từ lúc bước chân vào cổng, gửi xe, đăng ký, xét nghiệm, thái độ giao tiếp đến khi nhận thuốc về nhà.</p>
+
+            <p style="margin-top:8px;"><strong>2. Nhận diện chi tiết 8 loại lãng phí (Muda) trong bệnh viện:</strong></p>
             <div class="table-wrap">
               <table class="data-tbl">
-                <thead><tr><th>Loại lãng phí</th><th>Biểu hiện thực tế tại Phòng khám</th><th>Giải pháp khắc phục</th></tr></thead>
+                <thead><tr><th>Mã lãng phí</th><th>Loại lãng phí</th><th>Biểu hiện tại Phòng khám</th><th>Hành động triệt tiêu Lean</th></tr></thead>
                 <tbody>
-                  <tr><td>1. Chờ đợi (Waiting)</td><td>Người bệnh chờ xét nghiệm, chờ Bác sĩ gọi tên</td><td>Phân luồng thông minh, liên thông kết quả số hóa</td></tr>
-                  <tr><td>2. Thao tác thừa (Motion)</td><td>Nhân viên chạy đi tìm hồ sơ giấy, chạy nộp mẫu</td><td>Bố trí mặt bằng 5S, chuyển dữ liệu qua mạng nội bộ</td></tr>
-                  <tr><td>3. Sai sót (Defects)</td><td>Nhầm lẫn định danh, lỗi công thức tính KPI</td><td>Quét mã vạch 3 thông tin PID, khóa logic hệ thống</td></tr>
-                  <tr><td>4. Gia công thừa (Over-proc.)</td><td>Bác sĩ chép lại kết quả CLS đã có trên máy</td><td>Tự động link dữ liệu LIS/PACS vào bệnh án điện tử</td></tr>
-                  <tr><td>5. Lãng phí nhân tài</td><td>Quản lý mất 30% thời gian làm việc hành chính</td><td>Số hóa AIOS giải phóng sức lao động</td></tr>
+                  <tr><td><strong>Muda 1</strong></td><td>Chờ đợi (Waiting)</td><td>Chờ lấy máu, chờ kết quả xét nghiệm, chờ Bác sĩ gọi số</td><td>Chia nhỏ mẻ trả kết quả liên tục; Kiosk gọi số thông minh</td></tr>
+                  <tr><td><strong>Muda 2</strong></td><td>Thao tác thừa (Motion)</td><td>Nhân viên chạy đi tìm hồ sơ giấy, chạy nộp ống máu</td><td>Bố trí mặt bằng 5S khoa học; liên thông mạng LIS/PACS</td></tr>
+                  <tr><td><strong>Muda 3</strong></td><td>Sai sót (Defects)</td><td>Nhầm lẫn mã định danh, lỗi công thức Excel chấm KPI</td><td>Quét mã vạch 3 thông tin PID; Khóa công thức server-side</td></tr>
+                  <tr><td><strong>Muda 4</strong></td><td>Gia công thừa (Over-proc.)</td><td>Bác sĩ chép lại kết quả CLS bằng tay vào sổ khám bệnh</td><td>Tích hợp dữ liệu tự động đổ thẳng vào bệnh án điện tử</td></tr>
+                  <tr><td><strong>Muda 5</strong></td><td>Vận chuyển (Transport)</td><td>Người bệnh phải đi vòng qua 3 tầng để làm xét nghiệm & chụp phim</td><td>Sơ đồ chỉ dẫn một chiều; Gom cụm khu cận lâm sàng liên hoàn</td></tr>
+                  <tr><td><strong>Muda 6</strong></td><td>Tồn trữ (Inventory)</td><td>Tồn ứ mẫu máu chưa chạy; Ứ đọng hồ sơ bệnh án cuối ngày</td><td>Quản trị dòng chảy kéo (Pull system); Chạy mẫu liên tục</td></tr>
+                  <tr><td><strong>Muda 7</strong></td><td>Sản xuất thừa (Over-prod.)</td><td>In kết quả giấy hàng loạt cho ca không có nhu cầu lấy giấy</td><td>Trả kết quả số hóa qua App/Zalo; Chỉ in khi người bệnh yêu cầu</td></tr>
+                  <tr><td><strong>Muda 8</strong></td><td>Lãng phí nhân tài (Talent)</td><td>Quản lý, Bác sĩ mất 30% thời gian làm việc sổ sách hành chính</td><td>Triển khai AIOS số hóa giải phóng 80% thời gian báo cáo</td></tr>
                 </tbody>
               </table>
             </div>
+
+            <p style="margin-top:8px;"><strong>3. Triết lý Kaizen & Văn hóa Gemba Walk:</strong></p>
+            <p>Kaizen là quá trình cải tiến không ngừng từ những việc nhỏ nhất mỗi ngày. Lãnh đạo không ngồi phòng lạnh chỉ đạo mà phải thực hiện <em>Gemba Walk</em> — trực tiếp đi dọc theo luồng hành trình người bệnh để tận mắt nhìn thấy các điểm nghẽn và lắng nghe tiếng nói của nhân viên tuyến đầu.</p>
           </div>
         </details>
       </div>
@@ -846,34 +985,75 @@
       <div class="lec-block" data-buoi="b2">
         <details class="bai-hoc" open>
           <summary>
-            <span>[Buổi 2] Chuyên đề 3: Chuỗi Giá Trị & Bản Đồ Luồng Người Bệnh (VSM)</span>
+            <span>[Buổi 2] Chuyên đề 3: Quản Trị Chuỗi Giá Trị & Bản Đồ Luồng (VSM)</span>
             <span class="badge xanh">Value Stream</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>1. Khái niệm Value Stream Mapping (VSM):</strong> Phân rã hành trình người bệnh thành các mốc thời gian cụ thể để bóc tách thời gian có giá trị (VA - Khám bệnh, điều trị) và thời gian phi giá trị (NVA - Chờ đợi, đi lòng vòng).</p>
-            <p style="margin-top:6px;"><strong>2. Nguyên tắc Bàn giao 2 chiều có hiệu lực (Effective 2-Way Handoff):</strong> Điểm mù lớn nhất trong bệnh viện xảy ra tại các điểm chuyển tiếp (handoff) giữa các khoa phòng. Bàn giao chỉ hoàn tất khi bên nhận bấm xác nhận tiếp nhận hồ sơ trong thời gian cam kết (ví dụ: T2 - T1 &le; 5 phút).</p>
+            <p><strong>1. Khái niệm Value Stream Mapping (VSM) trong Y tế:</strong></p>
+            <p>VSM là phương pháp trực quan hóa toàn bộ chuỗi các hoạt động cần thiết để đưa một người bệnh từ lúc bước vào phòng khám đến khi kết thúc điều trị. VSM phân tách rạch ròi hai thành phần:</p>
+            <ul style="padding-left:20px;">
+              <li><strong>Thời gian gia tăng giá trị (Value-Added Time - VA):</strong> Là khoảng thời gian người bệnh thực sự nhận được sự chăm sóc y khoa có ý nghĩa (ví dụ: Bác sĩ trực tiếp thăm khám lâm sàng, Điều dưỡng lấy máu nhẹ nhàng, KTV giải thích kỹ lưỡng khi chụp CT).</li>
+              <li><strong>Thời gian phi giá trị (Non-Value-Added Time - NVA):</strong> Là thời gian lãng phí thuần túy (xếp hàng chờ đợi, đi lạc đường, chờ nhân viên tìm giấy tờ).</li>
+            </ul>
+
+            <div class="box-info" style="margin-top:8px;">
+              <strong>Nguyên tắc Bàn Giao 2 Chiều Có Hiệu Lực (Effective 2-Way Handoff):</strong><br/>
+              Điểm đứt gãy lớn nhất trong y tế luôn xảy ra tại các chốt chuyển tiếp (Handoff). Bàn giao không thể chỉ là hành động một chiều ("tôi đã gửi", "tôi đã in"). Bàn giao chỉ thực sự có hiệu lực pháp lý và chuyên môn khi <strong>bên nhận bấm nút xác nhận đã tiếp nhận hồ sơ</strong> trong thời gian cam kết chuẩn ($T_2 - T_1 \le 5$ phút).
+            </div>
           </div>
         </details>
 
         <details class="bai-hoc" open>
           <summary>
-            <span>[Buổi 2] Chuyên đề 4: 4 Quy Tắc Vàng RACI & Phân Tách 5 Khâu Độc Lập</span>
-            <span class="badge tim">Thể chế & DOA</span>
+            <span>[Buổi 2] Chuyên đề 4: 4 Quy Tắc Vàng RACI, 5 Khâu Độc Lập & Phân Quyền DOA</span>
+            <span class="badge tim">Thể chế & Kiểm soát</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>1. 4 Quy tắc vàng trong Ma trận RACI:</strong></p>
-            <ul style="padding-left:20px;">
-              <li><strong>Chỉ duy nhất 1 Accountable (1A):</strong> Mỗi công việc chỉ có duy nhất một người chịu trách nhiệm tối hậu. Nhiều hơn 1A sẽ dẫn đến đùn đẩy trách nhiệm.</li>
-              <li><strong>R (Responsible) phải có thẩm quyền và năng lực thực thi.</strong></li>
-              <li><strong>C (Consulted) chỉ tham vấn những người có chuyên môn sâu, tránh họp tràn lan.</strong></li>
-              <li><strong>I (Informed) tự động nhận tin qua hệ thống, không làm gián đoạn người khác.</strong></li>
-            </ul>
-            <p style="margin-top:8px;"><strong>2. Phân tách 5 khâu độc lập (Segregation of Duties):</strong></p>
-            <p>Khâu Yêu cầu $
-ightarrow$ Phê duyệt $
-ightarrow$ Thực hiện $
-ightarrow$ Kiểm soát $
-ightarrow$ Kế toán/Nghiệm thu phải do các cá nhân hoặc bộ phận độc lập thực hiện để triệt tiêu gian lận và xung đột lợi ích.</p>
+            <p><strong>1. 4 Quy Tắc Vàng Trong Ma Trận RACI:</strong></p>
+            <div class="table-wrap">
+              <table class="data-tbl">
+                <thead><tr><th>Ký hiệu</th><th>Vai trò</th><th>Quy tắc bắt buộc</th><th>Hậu quả nếu vi phạm</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong>A</strong></td>
+                    <td>Accountable (Chịu trách nhiệm tối hậu)</td>
+                    <td><strong>Chỉ duy nhất 1 cá nhân (1A)</strong> cho mỗi quy trình hoặc đầu việc.</td>
+                    <td>Nếu có từ 2 chữ A trở lên sẽ dẫn đến đùn đẩy trách nhiệm khi xảy ra sự cố.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>R</strong></td>
+                    <td>Responsible (Người thực thi)</td>
+                    <td>Phải có đủ năng lực chuyên môn và được trao quyền hành động thực tế.</td>
+                    <td>Giao việc cho người không đủ năng lực sẽ làm đình trệ tiến độ.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>C</strong></td>
+                    <td>Consulted (Người được tham vấn)</td>
+                    <td>Chỉ tham vấn đúng chuyên gia đầu ngành có đóng góp thực chất 2 chiều.</td>
+                    <td>Tham vấn tràn lan dẫn đến hội họp triền miên làm chậm quyết định.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>I</strong></td>
+                    <td>Informed (Người nhận thông tin)</td>
+                    <td>Nhận thông báo tự động 1 chiều qua hệ thống, không cần trả lời.</td>
+                    <td>Gửi thông tin thủ công làm phiền người khác và lãng phí thời gian.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p style="margin-top:10px;"><strong>2. Phân Tách 5 Khâu Độc Lập (Segregation of Duties):</strong></p>
+            <p>Để ngăn chặn tiêu cực, sai sót và gian lận trong quản trị bệnh viện, 5 khâu sau đây bắt buộc phải phân định cho các nhân sự độc lập:</p>
+            <div class="box-info">
+              <strong>Khâu 1: Yêu cầu</strong> (Khoa phòng đề xuất nhu cầu mua sắm/điều chuyển)<br/>
+              $ightarrow$ <strong>Khâu 2: Phê duyệt</strong> (Ban Giám Đốc hoặc cấp thẩm quyền theo DOA phê duyệt chủ trương)<br/>
+              $ightarrow$ <strong>Khâu 3: Thực hiện</strong> (Bộ phận chuyên trách mua hàng, xếp lịch, viết code app)<br/>
+              $ightarrow$ <strong>Khâu 4: Kiểm soát</strong> (Ban Kiểm Soát / QLCL giám sát độc lập tính tuân thủ)<br/>
+              $ightarrow$ <strong>Khâu 5: Nghiệm thu & Kế toán</strong> (Thanh quyết toán, ghi nhận tài sản dựa trên minh chứng thật).
+            </div>
+
+            <p style="margin-top:8px;"><strong>3. Ma Trận Phân Quyền DOA (Delegation of Authority):</strong></p>
+            <p>Cắt bỏ cơ chế xin - cho rườm rà. Phân quyền rõ ràng theo từng cấp bậc quản lý (Trưởng ca trực $ightarrow$ Trưởng khoa $ightarrow$ Ban Giám Đốc) kèm hạn mức xử lý và kịch bản can thiệp khẩn cấp (ví dụ: Trưởng phòng KHTH có toàn quyền kích hoạt mở buồng khám tăng cường trong vòng 10 phút khi số ca chờ vượt ngưỡng 15 người).</p>
           </div>
         </details>
       </div>
@@ -886,26 +1066,63 @@ ightarrow$ Kế toán/Nghiệm thu phải do các cá nhân hoặc bộ phận �
             <span class="badge vang">Rule of 7</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>Nguyên tắc Rule of 7 trong đo lường hiệu suất bệnh viện:</strong> Không bao giờ giao quá 7 KPI cho một cá nhân hay một khoa phòng. 7 chỉ số được phân thành 3 nhóm:</p>
-            <ul style="padding-left:20px;">
-              <li><strong>Lagging (2 chỉ số):</strong> Đo lường kết quả cuối cùng (Doanh thu, Tỷ lệ hoàn thành kế hoạch).</li>
-              <li><strong>Leading (3 chỉ số):</strong> Đo lường các hoạt động dẫn dắt, dự báo tương lai (Tỷ lệ nộp báo cáo đúng hạn, Tỷ lệ tuân thủ SOP 5 sao, Báo cáo sự cố Near-miss).</li>
-              <li><strong>Constraint (2 chỉ số):</strong> Rào cản an toàn và ràng buộc pháp lý/chất lượng không được vi phạm (Thời gian trễ hạn, Sai sót nhầm lẫn = 0).</li>
+            <p><strong>1. Nguyên lý Rule of 7 trong Thiết kế KPI Bệnh viện:</strong></p>
+            <p>Quản trị bằng KPI thường thất bại vì các đơn vị đặt ra quá nhiều chỉ số (hàng chục chỉ số) khiến nhân viên bị quá tải, đối phó và mất phương hướng. Nguyên tắc Rule of 7 yêu cầu: <strong>Tối đa 7 chỉ số trọng yếu cho một vị trí/khoa phòng</strong>, chia thành 3 nhóm có cấu trúc kiềng 3 chân:</p>
+            <ul style="padding-left:20px; line-height:1.7;">
+              <li><strong>Nhóm Lagging (2 chỉ số - Đo lường kết quả quá khứ):</strong> Doanh thu, Lượt khám, Tỷ lệ hoàn thành kế hoạch năm. Số liệu này chỉ biết được khi tháng/quý đã kết thúc (không thể cứu vãn nếu trượt mục tiêu).</li>
+              <li><strong>Nhóm Leading (3 chỉ số - Dự báo và dẫn dắt tương lai):</strong> Tỷ lệ nộp báo cáo đúng hạn trước 18h, Tỷ lệ tuân thủ Tiêu chuẩn Dịch vụ 10 Caritas, Số lượng sự cố Near-miss được ghi nhận chủ động. Kiểm soát tốt các chỉ số này thì kết quả Lagging tự động đạt.</li>
+              <li><strong>Nhóm Constraint (2 chỉ số - Rào cản an toàn & Ràng buộc không được vi phạm):</strong> Thời gian trễ hạn tổng hợp KPI &le; 4 giờ; Sai sót nhầm lẫn định danh người bệnh = 0. Nếu vi phạm chỉ số này thì dù Lagging có cao đến mấy vẫn bị xem là trượt nhiệm vụ.</li>
             </ul>
-            <p style="margin-top:8px;"><strong>Dashboard Early Warning System (EWS) 3 màu:</strong> Xanh (Bình thường) $
-ightarrow$ Vàng (Tiềm ẩn nguy cơ, cần cảnh báo) $
-ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
+
+            <p style="margin-top:10px;"><strong>2. Đặc tả Kỹ thuật Dashboard Early Warning System (EWS 3 Màu):</strong></p>
+            <div class="table-wrap">
+              <table class="data-tbl">
+                <thead><tr><th>Vùng màu EWS</th><th>Ý nghĩa trạng thái</th><th>Ngưỡng kích hoạt</th><th>Hành động điều hành tương ứng</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong style="color:var(--c-green);">XANH (Bình thường)</strong></td>
+                    <td>Vận hành ổn định, mọi chỉ số trong tầm kiểm soát.</td>
+                    <td>Chỉ số đạt &ge; 95% mục tiêu cam kết.</td>
+                    <td>Duy trì nhịp điều hành thường quy, không cần can thiệp.</td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color:var(--accent);">VÀNG (Cảnh báo sớm)</strong></td>
+                    <td>Xuất hiện nguy cơ ùn ứ hoặc trễ nhịp bàn giao.</td>
+                    <td>Chỉ số lệch từ 10% - 20% so với mục tiêu; hàng đợi &gt; 10 người.</td>
+                    <td>Gửi tin nhắn cảnh báo Trưởng khoa; kích hoạt kịch bản điều phối ca trực tại chỗ.</td>
+                  </tr>
+                  <tr>
+                    <td><strong style="color:var(--c-red);">ĐỎ (Nguy kịch)</strong></td>
+                    <td>Ách tắc nghiêm trọng hoặc có rủi ro sự cố đe dọa người bệnh.</td>
+                    <td>Chỉ số lệch &gt; 20%; hàng đợi &gt; 15 người chờ &gt; 25 phút; giá trị báo động y khoa.</td>
+                    <td>Báo động đỏ toàn viện; Trưởng phòng KHTH & Ban Giám Đốc kích hoạt chu trình LSE can thiệp trong 15 phút.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </details>
 
         <details class="bai-hoc" open>
           <summary>
-            <span>[Buổi 3] Chuyên đề 6: Quản Trị Chất Lượng, Báo Cáo Near-Miss & RCA 5 Whys</span>
+            <span>[Buổi 3] Chuyên đề 6: Quản Trị Chất Lượng, RCA & FMEA Qua Case Té Ngã</span>
             <span class="badge do">An toàn người bệnh</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>1. Văn hóa An toàn không trừng phạt (Just Culture):</strong> Khuyến khích nhân viên chủ động báo cáo các sự cố suýt xảy ra (Near-miss). Một sự cố nghiêm trọng luôn được báo trước bởi hàng chục sự cố suýt ngã bị giấu kín.</p>
-            <p style="margin-top:6px;"><strong>2. Kỹ thuật 5 Whys tìm nguyên nhân cốt lõi:</strong> Liên tục đặt câu hỏi "Tại sao" ít nhất 5 lần để đào sâu từ hiện tượng bề mặt đến lỗi hổng cấu trúc hệ thống, từ đó lập kế hoạch CAPA (Khắc phục & Phòng ngừa) triệt để.</p>
+            <p><strong>1. Văn hóa Công bằng (Just Culture) trong Bệnh viện:</strong></p>
+            <p>Khi sự cố y khoa xảy ra, phản xạ sai lầm phổ biến là tìm người để kỷ luật hoặc phạt tiền. Điều này làm cho nhân viên giấu giếm lỗi. Mô hình Just Culture phân định rạch ròi 3 loại hành vi:</p>
+            <div class="box-info">
+              • <strong>Lỗi do con người (Human Error):</strong> Nhân viên sơ ý, đãng trí do mệt mỏi hoặc thiết kế hệ thống gây nhầm lẫn $ightarrow$ <em>Giải pháp:</em> An ủi, hỗ trợ và thiết kế lại quy trình (chống nhầm lẫn Poka-yoke).<br/>
+              • <strong>Hành vi chấp nhận rủi ro (At-risk Behavior):</strong> Nhân viên đi đường tắt vì nghĩ không sao (ví dụ: Không đối chiếu đủ 3 thông tin PID để làm cho nhanh) $ightarrow$ <em>Giải pháp:</em> Huấn luyện lại nhận thức, loại bỏ các lý do phải đi đường tắt.<br/>
+              • <strong>Hành vi liều lĩnh cố ý (Reckless Behavior):</strong> Cố tình làm sai quy định an toàn dù biết rõ rủi ro đe dọa sinh mệnh $ightarrow$ <em>Giải pháp:</em> Xử lý kỷ luật nghiêm khắc.
+            </div>
+
+            <p style="margin-top:10px;"><strong>2. Phân tích Case Study Thực tế: Ca Té Ngã tại Khoa Nội Thần Kinh:</strong></p>
+            <ul style="padding-left:20px; line-height:1.7;">
+              <li><strong>Diễn biến sự kiện (Timeline):</strong> Bệnh nhân nam 72 tuổi, sau đột quỵ nhồi máu não, yếu nửa người trái. Lúc 02:10 sáng tự rời giường đi vệ sinh vì chuông gọi y tá treo ngoài tầm với. Lúc 02:12 trượt ngã cạnh giường, gãy cổ xương đùi trái, phải chuyển mổ kết hợp xương.</li>
+              <li><strong>RCA 5 Whys:</strong> Tại sao ngã? $ightarrow$ Đi vệ sinh một mình $ightarrow$ Không có người hỗ trợ $ightarrow$ Điều dưỡng ca đêm không biết bệnh nhân cần hỗ trợ $ightarrow$ Sổ bàn giao ca trực chiều - đêm chỉ ghi chẩn đoán, thiếu mục đánh giá hỗ trợ di chuyển $ightarrow$ <strong>Nguyên nhân gốc rễ:</strong> Thiếu checklist bàn giao ca chuẩn hóa tại giường và chuông gọi y tá không được kiểm tra vị trí an toàn.</li>
+              <li><strong>Đánh giá FMEA cho quy trình cải tiến:</strong> Chấm điểm 3 yếu tố $S 	imes O 	imes D = 	ext{RPN}$. Xác định 2 khâu ưu tiên cao nhất $(	ext{RPN} = 64)$: Khâu thiếu phân công hỗ trợ đi vệ sinh ca đêm và Khâu mất thông tin bàn giao giữa 2 ca trực $ightarrow$ Thiết lập chốt chặn bàn giao ISBAR tại giường có 2 bên cùng ký.</li>
+            </ul>
           </div>
         </details>
       </div>
@@ -918,33 +1135,77 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
             <span class="badge xanhduong">Năng lực KSEQ</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>Khung chuẩn hóa năng lực nhân sự y tế (KSEQ):</strong></p>
-            <ul style="padding-left:20px;">
-              <li><strong>K (Knowledge):</strong> Kiến thức chuyên môn, quy trình SOP, tiêu chuẩn y tế.</li>
-              <li><strong>S (Skills):</strong> Kỹ năng thao tác thực tế, giao tiếp, xử lý tình huống lâm sàng.</li>
-              <li><strong>E (Experience):</strong> Kinh nghiệm thực chiến, số ca bệnh hoặc thời gian cọ xát.</li>
-              <li><strong>Q (Quality / Ethics) - CHỐT CHẶN TỐI THƯỢNG:</strong> Đạo đức nghề nghiệp, tính trung thực trong dữ liệu, lương tâm bảo vệ tính mạng người bệnh. Không vì chạy theo tốc độ mà cắt giảm thời gian khám bệnh.</li>
-            </ul>
+            <p><strong>1. Khung Chuẩn Hóa Năng Lực Y Tế KSEQ:</strong></p>
+            <div class="table-wrap">
+              <table class="data-tbl">
+                <thead><tr><th>Trụ cột</th><th>Tên thành phần</th><th>Nội dung yêu cầu</th><th>Chỉ số đánh giá</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><strong>K</strong></td>
+                    <td>Knowledge (Kiến thức)</td>
+                    <td>Hiểu rõ SOP chuyên môn, quy trình VSM, thể chế RACI và quy tắc an toàn.</td>
+                    <td>Điểm thi sát hạch lý thuyết đạt &ge; 85/100.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>S</strong></td>
+                    <td>Skills (Kỹ năng)</td>
+                    <td>Thao tác lâm sàng thuần thục, sử dụng phần mềm 1-chạm, giao tiếp ứng xử 5 sao.</td>
+                    <td>Quan sát thực hành bảng kiểm (OSCE) đạt chuẩn.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>E</strong></td>
+                    <td>Experience (Kinh nghiệm)</td>
+                    <td>Thời gian cọ xát thực tế, số ca bệnh trực tiếp xử trí không phát sinh lỗi.</td>
+                    <td>Thâm niên tối thiểu hoặc tích lũy đủ số ca quy định.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Q</strong></td>
+                    <td>Quality & Ethics (Chốt chặn tối thượng)</td>
+                    <td>Đạo đức nghề nghiệp, tính trung thực trong dữ liệu, lương tâm bảo vệ sinh mệnh.</td>
+                    <td>100% không bao che lỗi, không chạy theo số lượng mà cắt giảm thời gian khám.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="box-info" style="margin-top:8px;">
+              <strong>Ý Nghĩa Cốt Tử Của Chữ Q:</strong><br/>
+              Trong y tế, một nhân viên có K giỏi, S khéo, E dày dạn nhưng nếu <strong>chữ Q kém (thiếu trung thực, giấu lỗi, vô cảm với nỗi đau của người bệnh)</strong> thì sẽ trở thành hiểm họa khôn lường cho toàn bệnh viện. Chữ Q là chốt chặn đạo đức bắt buộc phải thẩm định định kỳ.
+            </div>
           </div>
         </details>
 
         <details class="bai-hoc" open>
           <summary>
             <span>[Buổi 4] Chuyên đề 8: Kiến Trúc FMFT AIOS & Chu Trình LSE 8 Bước</span>
-            <span class="badge tim">LSE Engine</span>
+            <span class="badge tim">Kiến trúc AIOS & LSE</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>Chu trình phản ứng nhanh Life-Saving Engine (LSE 8 bước):</strong></p>
-            <ol style="padding-left:20px;">
-              <li><em>Phát hiện:</em> Cảm biến/Dashboard phát hiện sự cố dưới 10 giây.</li>
-              <li><em>Xác thực:</em> Kiểm tra độ tin cậy của thông tin trong vòng 1 phút.</li>
-              <li><em>Phân cấp:</em> Gán nhãn Mã Đỏ (Y khoa) hoặc Mã Vàng (Vận hành).</li>
-              <li><em>Định tuyến:</em> Tự động gửi cảnh báo tới đúng người chịu trách nhiệm theo RACI.</li>
-              <li><em>Thông báo:</em> Báo động qua loa/chuông/điện thoại có xác nhận phản hồi.</li>
-              <li><em>Can thiệp:</em> Tiếp cận hiện trường và xử trí trong 3–5 phút.</li>
-              <li><em>Xác nhận:</em> Bấm hoàn tất đóng cảnh báo trên hệ thống.</li>
-              <li><em>Lưu vết:</em> Ghi nhận Logbook và phân tích bài học CAPA hàng tuần.</li>
-            </ol>
+            <p><strong>1. 5 Lớp Kiến Trúc của Hệ Thống FMFT AIOS:</strong></p>
+            <ul style="padding-left:20px; line-height:1.7;">
+              <li><strong>Lớp 1 - Data Layer (Tầng Dữ liệu):</strong> Thu thập timestamps thời gian thực từ các hệ thống HIS/LIS/PACS/CRM và Google Sheets phân mảnh.</li>
+              <li><strong>Lớp 2 - Logic Layer (Tầng Nghiệp vụ):</strong> Xử lý công thức, tính điểm HTNV, liên thông KPI 3 cấp, khóa logic trên server chống sửa chéo.</li>
+              <li><strong>Lớp 3 - Alert Layer (Tầng Cảnh báo):</strong> Cơ chế Early Warning System phân định 3 màu Xanh - Vàng - Đỏ gửi thông báo tức thì dưới 15 giây.</li>
+              <li><strong>Lớp 4 - Action Layer (Tầng Hành động):</strong> Kích hoạt chu trình phản ứng nhanh LSE và kịch bản can thiệp chuẩn tại hiện trường.</li>
+              <li><strong>Lớp 5 - Audit Layer (Tầng Kiểm toán):</strong> Lưu vết Logbook toàn vẹn (Ai làm, Lúc nào, Dữ liệu gì) phục vụ hậu kiểm độc lập.</li>
+            </ul>
+
+            <p style="margin-top:10px;"><strong>2. Chi Tiết Chu Trình Phản Ứng Nhanh LSE 8 Bước (Life-Saving Engine):</strong></p>
+            <div class="table-wrap">
+              <table class="data-tbl">
+                <thead><tr><th>Bước</th><th>Tên bước</th><th>Thời gian chuẩn</th><th>Nội dung hành động cụ thể</th></tr></thead>
+                <tbody>
+                  <tr><td>Bước 1</td><td>Phát hiện tín hiệu</td><td>&le; 10 giây</td><td>Hệ thống HIS/Dashboard phát hiện chỉ số rơi vào vùng Vàng hoặc Đỏ.</td></tr>
+                  <tr><td>Bước 2</td><td>Xác thực dữ liệu</td><td>&le; 1 phút</td><td>Nhân viên chốt chặn kiểm tra lại tính chính xác của dữ liệu báo động.</td></tr>
+                  <tr><td>Bước 3</td><td>Phân cấp ưu tiên</td><td>&le; 30 giây</td><td>Gán nhãn Mã Đỏ (cấp cứu y khoa đe dọa tính mạng) hoặc Mã Vàng (ùn tắc vận hành).</td></tr>
+                  <tr><td>Bước 4</td><td>Định tuyến trách nhiệm</td><td>&le; 15 giây</td><td>Hệ thống tự động tra cứu ma trận RACI để bắn thông báo đến đúng người phụ trách.</td></tr>
+                  <tr><td>Bước 5</td><td>Thông báo khẩn cấp</td><td>&le; 1 phút</td><td>Kích hoạt chuông báo buồng khám, pop-up đỏ trên HIS và còi hú nếu cần.</td></tr>
+                  <tr><td>Bước 6</td><td>Can thiệp hiện trường</td><td>3 - 5 phút</td><td>Đội phản ứng nhanh tiếp cận người bệnh, xử trí cấp cứu hoặc mở buồng khám tăng cường.</td></tr>
+                  <tr><td>Bước 7</td><td>Xác nhận đóng cảnh báo</td><td>&le; 1 phút</td><td>Bác sĩ/Trưởng ca bấm xác nhận đã giải tỏa điểm nghẽn, Dashboard chuyển từ Đỏ sang Xanh.</td></tr>
+                  <tr><td>Bước 8</td><td>Lưu vết & Cập nhật CAPA</td><td>Hàng tuần</td><td>Ghi nhận sự cố vào sổ nhật ký chất lượng và họp rút kinh nghiệm cải tiến SOP.</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </details>
       </div>
@@ -957,8 +1218,13 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
             <span class="badge xanh">Thực thi M09</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>Nguyên tắc Đóng việc bằng Bằng chứng (Proof of Completion):</strong></p>
-            <p>Mọi cảnh báo trên Dashboard phải được chuyển hóa thành các mã hành động cụ thể trong Action Tracker (Biểu mẫu M09). Một hành động chỉ được xem là hoàn thành khi có minh chứng thực tế (ảnh chụp, log thời gian, chữ ký nghiệm thu) và được người có thẩm quyền ký xác nhận.</p>
+            <p><strong>1. Nguyên tắc Đóng Việc Bằng Bằng Chứng (Proof of Completion):</strong></p>
+            <p>Dashboard dù đẹp đến mấy cũng trở nên vô nghĩa nếu không dẫn đến hành động cụ thể. Nguyên tắc quản trị FMFT đòi hỏi mọi cảnh báo Vàng hoặc Đỏ trên Dashboard phải được chuyển hóa thành các mã công việc trong <strong>Biên bản Điều hành Action Tracker (Biểu mẫu M09)</strong>. Một công việc chỉ được ký đóng khi có đủ 3 yếu tố:</p>
+            <ul style="padding-left:20px;">
+              <li>Có minh chứng cụ thể (hình ảnh thực tế hiện trường, dữ liệu log trên phần mềm, biên bản bàn giao).</li>
+              <li>Chỉ số đo lường sau can thiệp đã quay trở lại vùng màu Xanh bền vững ít nhất 7 ngày liên tục.</li>
+              <li>Có chữ ký nghiệm thu độc lập của Ban Kiểm Soát hoặc Trưởng phòng QLCL.</li>
+            </ul>
           </div>
         </details>
 
@@ -968,9 +1234,16 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
             <span class="badge vang">Nghiệm thu M11</span>
           </summary>
           <div class="bai-hoc-content">
-            <p><strong>1. Quản trị lực cản thay đổi (Change Management):</strong> Thấu hiểu nỗi lo của nhân viên (sợ bị phạt, sợ tăng việc, sợ công nghệ). 30 ngày đầu chỉ tính điểm thưởng cải tiến, tạo thói quen và sự hứng khởi.</p>
-            <p style="margin-top:6px;"><strong>2. Tiêu chí nghiệm thu cứng (Definition of Done - DoD Gate):</strong> 5 cánh cổng kiểm định bắt buộc trước khi bàn giao đề án sang vận hành thường quy AOP.</p>
-            <p style="margin-top:6px;"><strong>3. Lộ trình nhân rộng đa cơ sở (Rollout Roadmap):</strong> Đóng gói bộ SOP và chia sẻ tài nguyên giữa CS3 $\leftrightarrow$ CS2 $\leftrightarrow$ CS1 $\leftrightarrow$ CS4.</p>
+            <p><strong>1. Quản Trị Lực Cản Thay Đổi (Change Management):</strong></p>
+            <p>Mọi dự án cải tiến đều vấp phải lực cản tâm lý từ nhân viên ("cách cũ đang làm quen rồi", "sợ dùng phần mềm bị phạt", "sợ thêm việc"). Phương pháp FMFT đưa ra chiến lược 3 bước:</p>
+            <div class="box-info">
+              • <em>Pha 1 - Đồng thuận nhận thức:</em> Tổ chức đối thoại, cam kết rõ ràng không dùng dữ liệu thử nghiệm để phạt nhân viên, 30 ngày đầu chỉ tính điểm thưởng cải tiến.<br/>
+              • <em>Pha 2 - Thí điểm phạm vi hẹp (Pilot):</em> Triển khai tại 1–2 buồng khám hoặc 1 phòng ban tiêu biểu để chứng minh tính hiệu quả và tạo niềm tin.<br/>
+              • <em>Pha 3 - Thể chế hóa & Khen thưởng:</em> Đưa quy trình cải tiến thành Quy chế vận hành chính thức (SOP) và gắn trực tiếp với chính sách đãi ngộ, thi đua.
+            </div>
+
+            <p style="margin-top:10px;"><strong>2. Tiêu Chí Nghiệm Thu Cứng (Definition of Done - DoD Gate):</strong></p>
+            <p>Dự án cải tiến không thể nghiệm thu dựa trên cảm tính hoặc lời hứa miệng. Phải vượt qua 5 cánh cổng kiểm soát cứng (DoD Gates): Tỷ lệ phủ sóng &ge; 95%; Tốc độ xử lý đạt chuẩn; An toàn dữ liệu tuyệt đối 0 lỗi; Độ hài lòng &ge; 90%; 100% nhân sự đạt chuẩn năng lực KSEQ.</p>
           </div>
         </details>
       </div>
@@ -978,7 +1251,7 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
 
 
     <!-- ====================================================================
-         MÀN 3: AIOS — CHỦ ĐỀ 1 (TOÀN BỘ BÀI TẬP ĐỀ ÁN SỐ HÓA VẬN HÀNH)
+         MÀN 3: AIOS — CHỦ ĐỀ 1 (BÀI TẬP SỐ HÓA VẬN HÀNH M01 - M19)
          ==================================================================== -->
     <div id="view-aios" class="view-pane" hidden>
       <div class="the" style="background:linear-gradient(135deg, var(--card) 0%, var(--primary-soft) 100%); border: 2px solid var(--primary); margin-bottom:14px;">
@@ -1019,10 +1292,10 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
             </div>
             <span class="badge vang">Buổi 1</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
-            <p><strong>1. Bối cảnh & Điểm nghẽn:</strong> Cơ sở 3 Cà Mau có quy mô ~200 nhân sự trực thuộc 26 khoa/phòng. Lịch trực quản lý bằng ma trận Excel >365 cột (không xem được trên di động); Báo cáo ngày dùng Google Form >70 trường; Đánh giá KPI phân mảnh trên 26 file Excel, cuối tháng mất 3–5 ngày tổng hợp thủ công, số liệu chậm trễ 5–7 ngày.</p>
-            <p style="margin-top:6px;"><strong>2. 4 Lãng phí Lean xác định:</strong> Chờ đợi số liệu báo cáo, Thao tác chép tay lặp lại 3 lần, Sai lệch công thức Excel, Lãng phí 30% quỹ thời gian của cán bộ quản lý.</p>
-            <p style="margin-top:6px;"><strong>3. Mục tiêu cam kết (SMART):</strong> Cắt giảm 80% thời gian tổng hợp KPI (&le; 4 giờ); Tự động hóa 100% trên điện thoại; Dashboard thời gian thực &le; 15 phút; Chi phí phần mềm 0 đồng (tiết kiệm ~180 triệu đ/năm).</p>
+          <div style="font-size:13px; line-height:1.65;">
+            <p><strong>1. Bối cảnh & Hiện trạng nhức nhối:</strong> Cơ sở 3 Cà Mau có quy mô gần 200 nhân sự trực thuộc 26 khoa/phòng. Lịch trực quản lý bằng ma trận Excel thủ công >365 cột (không thể tra cứu thuận tiện trên điện thoại cá nhân); Báo cáo công việc ngày sử dụng Google Form >70 trường dữ liệu rời rạc, nhầm lẫn liên tục; Đánh giá KPI và hoàn thành nhiệm vụ (HTNV) phân mảnh trên 26 file Excel độc lập, cuối tháng bộ phận TCNS và KHTH mất từ 3–5 ngày công chỉ để cộng gộp điểm số thủ công, số liệu có độ trễ lớn (chậm 5–7 ngày) và dễ dẫn đến tranh cãi cảm tính.</p>
+            <p style="margin-top:6px;"><strong>2. 4 Lãng phí Lean xác định (Muda):</strong> Chờ đợi số liệu báo cáo, Thao tác chép tay lặp lại 3 lần, Sai lệch công thức tính điểm trên Excel, Lãng phí 30% thời gian của cán bộ quản lý vào việc hành chính sổ sách thay vì nâng cao chất lượng dịch vụ.</p>
+            <p style="margin-top:6px;"><strong>3. Mục tiêu cam kết (SMART):</strong> Cắt giảm <strong>80% thời gian</strong> tổng hợp báo cáo và tính điểm KPI (từ 5 ngày xuống dưới 4 giờ); Tự động hóa 100% luồng tra cứu lịch trực và nộp báo cáo trên thiết bị di động cho 195 nhân sự; Xây dựng Central Dashboard thời gian thực với độ trễ &le; 15 phút; Chi phí bản quyền phần mềm <strong>0 đồng</strong> (tiết kiệm ~180.000.000 đ/năm tiền bản quyền email Google Workspace bằng cơ chế xác thực nội bộ độc lập).</p>
           </div>
         </div>
       </div>
@@ -1037,8 +1310,8 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
             </div>
             <span class="badge xanh">Buổi 2</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
-            <p><strong>1. Bản đồ VSM Luồng dữ liệu:</strong></p>
+          <div style="font-size:13px; line-height:1.65;">
+            <p><strong>1. Bản đồ VSM Luồng dữ liệu trước và sau cải tiến:</strong></p>
             <div class="table-wrap">
               <table class="data-tbl">
                 <thead><tr><th>Quy trình tác nghiệp</th><th>Hiện trạng thủ công</th><th>Tương lai FMFT AIOS</th><th>Mức giảm lãng phí</th></tr></thead>
@@ -1050,10 +1323,13 @@ ightarrow$ Đỏ (Nguy cấp, kích hoạt can thiệp tức thì).</p>
                 </tbody>
               </table>
             </div>
-            <p style="margin-top:8px;"><strong>2. Phân quyền DOA 4 cấp độ:</strong> Cấp 1 (Ban Giám Đốc - Xem toàn cảnh, duyệt KPI chung cuộc) $
-ightarrow$ Cấp 2 (Quản trị viên / Sếp Tâm - Quản trị kỹ thuật, tuyệt đối không can thiệp số liệu nghiệp vụ) $
-ightarrow$ Cấp 3 (Trưởng khoa - Xếp lịch và duyệt báo cáo khoa mình) $
-ightarrow$ Cấp 4 (Nhân viên - Xem lịch cá nhân, nộp báo cáo).</p>
+            <p style="margin-top:8px;"><strong>2. Phân quyền DOA 4 cấp độ bảo mật Server-side:</strong></p>
+            <div class="box-info">
+              • <em>Cấp 1 (Ban Giám Đốc):</em> Xem toàn bộ Dashboard 26 khoa/phòng; phê duyệt kết quả KPI chung cuộc.<br/>
+              • <em>Cấp 2 (Quản trị viên Kỹ thuật / Sếp Tâm):</em> Quản lý tài khoản, mã hóa bảo mật SHA-256, tối ưu database. <strong>Tuyệt đối không can thiệp số liệu nghiệp vụ của các khoa/phòng.</strong><br/>
+              • <em>Cấp 3 (Trưởng Khoa/Phòng):</em> Xếp lịch trực, duyệt báo cáo ngày, chấm điểm HTNV trong phạm vi khoa mình.<br/>
+              • <em>Cấp 4 (Nhân viên tác nghiệp):</em> Xem lịch cá nhân, gửi báo cáo ngày, báo cáo sự cố Near-miss.
+            </div>
           </div>
         </div>
       </div>
@@ -1068,19 +1344,18 @@ ightarrow$ Cấp 4 (Nhân viên - Xem lịch cá nhân, nộp báo cáo).</p>
             </div>
             <span class="badge vang">Buổi 3</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. Từ điển 7 KPI Vận hành (Rule of 7):</strong></p>
-            <ul style="padding-left:20px;">
+            <ul style="padding-left:20px; line-height:1.7;">
               <li><em>[Lagging] KPI-01:</em> Tỷ lệ hoàn thành mục tiêu vận hành toàn viện &ge; 95% (Hàng tháng).</li>
-              <li><em>[Lagging] KPI-02:</em> Độ hài lòng nhân sự nội bộ (eNPS) &ge; 90% (Hàng quý).</li>
+              <li><em>[Lagging] KPI-02:</em> Độ hài lòng nhân sự nội bộ (eNPS) &ge; 90% (Khảo sát ẩn danh hàng quý).</li>
               <li><em>[Leading] KPI-03:</em> Tỷ lệ nộp báo cáo ngày đúng hạn trước 18h &ge; 98% (Hàng ngày).</li>
               <li><em>[Leading] KPI-04:</em> Tỷ lệ tuân thủ Tiêu chuẩn Dịch vụ (TCDV 10 Caritas) &ge; 96% (Hàng tuần).</li>
               <li><em>[Leading] KPI-05:</em> Số lượng báo cáo sự cố Near-miss ghi nhận &ge; 15 phiếu/tháng.</li>
               <li><em>[Constraint] KPI-06:</em> Thời gian tổng hợp KPI toàn viện &le; 4 giờ làm việc.</li>
               <li><em>[Constraint] KPI-07:</em> Lỗi xung đột ca trực trên hệ thống = 0 vụ việc.</li>
             </ul>
-            <p style="margin-top:8px;"><strong>2. RCA 5 Whys:</strong> Tìm ra nguyên nhân chậm trễ báo cáo là do không có nền tảng tập trung khóa bảo vệ công thức $
-ightarrow$ Kế hoạch CAPA đóng băng thu hồi 100% file Excel cũ, chuyển sang WebApp.</p>
+            <p style="margin-top:8px;"><strong>2. RCA 5 Whys & Kế hoạch CAPA:</strong> Phân tích sự cố chậm trễ phát hành bảng điểm KPI tháng 08/2026. Tìm ra nguyên nhân gốc rễ là do dùng 26 file Excel tự do sửa công thức $ightarrow$ Kế hoạch CAPA thu hồi và đóng băng 100% file Excel cũ, chuyển sang WebApp có validation tự động.</p>
           </div>
         </div>
       </div>
@@ -1095,15 +1370,10 @@ ightarrow$ Kế hoạch CAPA đóng băng thu hồi 100% file Excel cũ, chuyể
             </div>
             <span class="badge tim">Buổi 4</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
-            <p><strong>1. Khung KSEQ cho 4 vị trí:</strong> Quản trị viên (Chữ Q: Bảo mật 100%, không sửa điểm); Trưởng khoa (Chữ Q: Đánh giá công tâm dựa trên số liệu thực chứng); Nhân viên (Chữ Q: Báo cáo trung thực, không giấu lỗi); Ban Giám Đốc (Chữ Q: Kiên định bảo vệ chuẩn mực chất lượng).</p>
-            <p style="margin-top:8px;"><strong>2. Chu trình LSE 8 bước trong quản trị:</strong> Dashboard phát hiện Vàng/Đỏ $
-ightarrow$ Trưởng khoa tiếp nhận $\le 5$p $
-ightarrow$ Kích hoạt kịch bản chuẩn $
-ightarrow$ Điều phối giải tỏa điểm nghẽn $
-ightarrow$ Dashboard chuyển Xanh $
-ightarrow$ Báo cáo BGĐ trong 60p $
-ightarrow$ Lưu vết Logbook.</p>
+          <div style="font-size:13px; line-height:1.65;">
+            <p><strong>1. Khung KSEQ cho 4 vị trí vận hành số:</strong> Quản trị viên (Chữ Q: Bảo mật 100%, không sửa điểm); Trưởng khoa (Chữ Q: Đánh giá công tâm dựa trên số liệu thực chứng); Nhân viên (Chữ Q: Báo cáo trung thực, không giấu lỗi); Ban Giám Đốc (Chữ Q: Kiên định bảo vệ chuẩn mực chất lượng).</p>
+            <p style="margin-top:8px;"><strong>2. Chu trình LSE 8 bước trong quản trị:</strong> Dashboard phát hiện Vàng/Đỏ $ightarrow$ Trưởng khoa tiếp nhận &le; 5p $ightarrow$ Kích hoạt kịch bản chuẩn $ightarrow$ Điều phối giải tỏa điểm nghẽn $ightarrow$ Dashboard chuyển Xanh $ightarrow$ Báo cáo BGĐ trong 60p $ightarrow$ Lưu vết Logbook.</p>
+            <p style="margin-top:8px;"><strong>3. Bảng kiểm toán định kỳ M17:</strong> Quét ngẫu nhiên database mật khẩu mã hóa SHA-256; Kiểm tra phân quyền RBAC; Tự động sao lưu dự phòng (Auto-backup) lúc 23h59 mỗi ngày.</p>
           </div>
         </div>
       </div>
@@ -1118,18 +1388,11 @@ ightarrow$ Lưu vết Logbook.</p>
             </div>
             <span class="badge xanh">Buổi 5</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
-            <p><strong>1. Action Tracker M09:</strong> 4 Trụ cột hành động (A1 Xác thực nội bộ $
-ightarrow$ A2 Lịch trực di động $
-ightarrow$ A3 Báo cáo tự động $
-ightarrow$ A4 Central AIOS Dashboard).</p>
-            <p style="margin-top:6px;"><strong>2. Kế hoạch WBS 90 ngày (3 Pha):</strong> Pha 1 Nền tảng (30 ngày) $
-ightarrow$ Pha 2 Mở rộng 26 khoa phòng (30 ngày) $
-ightarrow$ Pha 3 Vận hành & Chuẩn hóa (30 ngày).</p>
+          <div style="font-size:13px; line-height:1.65;">
+            <p><strong>1. Action Tracker M09:</strong> 4 Trụ cột hành động (A1 Xác thực nội bộ $ightarrow$ A2 Lịch trực di động $ightarrow$ A3 Báo cáo tự động $ightarrow$ A4 Central AIOS Dashboard).</p>
+            <p style="margin-top:6px;"><strong>2. Kế hoạch WBS 90 ngày (3 Pha):</strong> Pha 1 Nền tảng (30 ngày tại Phòng PTKH) $ightarrow$ Pha 2 Mở rộng 26 khoa phòng (30 ngày) $ightarrow$ Pha 3 Vận hành & Chuẩn hóa toàn viện (30 ngày).</p>
             <p style="margin-top:6px;"><strong>3. 5 Tiêu chí nghiệm thu cứng (DoD Gate):</strong> Tỷ lệ phủ sóng &ge; 95%; Tốc độ tổng hợp KPI &le; 4 giờ; An toàn dữ liệu 0 lỗi; Hài lòng nội bộ &ge; 90%; 100% Trưởng khoa đạt chuẩn KSEQ.</p>
-            <p style="margin-top:6px;"><strong>4. Lộ trình nhân rộng M19:</strong> Hoàn thiện tại Cơ sở 3 (Q4/2026) $
-ightarrow$ Chuyển giao sang BVTV2 Bạc Liêu (Q1/2027) $
-ightarrow$ Nhân rộng toàn diện sang CS1 & CS4 (Q2/2027).</p>
+            <p style="margin-top:6px;"><strong>4. Lộ trình nhân rộng M19:</strong> Hoàn thiện tại Cơ sở 3 (Q4/2026) $ightarrow$ Chuyển giao sang BVTV2 Bạc Liêu (Q1/2027) $ightarrow$ Nhân rộng toàn diện sang CS1 & CS4 (Q2/2027).</p>
           </div>
         </div>
       </div>
@@ -1178,7 +1441,7 @@ ightarrow$ Nhân rộng toàn diện sang CS1 & CS4 (Q2/2027).</p>
             </div>
             <span class="badge vang">Buổi 1</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. Vấn đề quan sát được:</strong> Người bệnh dồn ứ cục bộ tại sảnh chờ buồng khám sau khi đã hoàn tất cận lâm sàng (khung giờ 07h30 – 09h45).</p>
             <p style="margin-top:6px;"><strong>2. 3 Tầng dữ liệu:</strong> Số liệu thật (450–550 lượt/ngày, 68% đến trước 09h00 sáng, F1 = 68,8 tỷ đ); Số liệu khảo sát mẫu (Thời gian chờ từ lúc xong CLS đến lúc vào khám là 35–55 phút); Vùng mù (Chưa có log ghi nhận lúc người bệnh cầm giấy kết quả quay lại nộp cho Điều dưỡng).</p>
             <p style="margin-top:6px;"><strong>3. Cam kết an toàn bất khả xâm phạm:</strong> Tuyệt đối không can thiệp chỉ định chuyên môn; duy trì thời gian khám lâm sàng &ge; 7 phút/ca; đối chiếu đủ 3 thông tin PID.</p>
@@ -1196,9 +1459,9 @@ ightarrow$ Nhân rộng toàn diện sang CS1 & CS4 (Q2/2027).</p>
             </div>
             <span class="badge xanh">Buổi 2</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. Chuẩn hóa 5 Mốc thời gian luồng khám lại:</strong></p>
-            <ul style="padding-left:20px;">
+            <ul style="padding-left:20px; line-height:1.7;">
               <li><strong>T0:</strong> Đủ 100% kết quả CLS hợp lệ + Quét mã check-in xác nhận có mặt tại sảnh.</li>
               <li><strong>T1:</strong> HIS phát lệnh tự động sang buồng khám bác sĩ (&le; 10 giây sau T0).</li>
               <li><strong>T2 (CAM KẾT CỐT LÕI):</strong> Điều dưỡng buồng khám bấm tiếp nhận hồ sơ. <strong>Cam kết: T2 - T1 &le; 5 phút</strong>.</li>
@@ -1220,10 +1483,9 @@ ightarrow$ Nhân rộng toàn diện sang CS1 & CS4 (Q2/2027).</p>
             </div>
             <span class="badge do">Buổi 3</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. Bộ 7 KPI Ngoại trú (Rule of 7):</strong> Lagging (Thời gian chờ trung bình W &le; 15p, Phân vị P90 &le; 25p); Leading (Tỷ lệ tiếp nhận T2-T1 &le; 5p đạt &ge; 95%, Tỷ lệ check-in T0 đạt &ge; 98%, Tỷ lệ trả kết quả CLS dòng chảy đạt &ge; 95%); Constraint (Thời gian khám lâm sàng &ge; 7p đạt 100%, Sai sót định danh người bệnh = 0).</p>
-            <p style="margin-top:8px;"><strong>2. RCA 5 Whys ca hạ đường huyết (2.4 mmol/L):</strong> Người bệnh đái tháo đường nhịn đói từ sáng bị choáng tại buồng đợi do xét nghiệm gom mẻ in giấy $
-ightarrow$ CAPA triển khai Fast-track cho bệnh nhân mạn tính và cảnh báo Pop-up đỏ tức thì trên HIS.</p>
+            <p style="margin-top:8px;"><strong>2. RCA 5 Whys ca hạ đường huyết (2.4 mmol/L):</strong> Người bệnh đái tháo đường nhịn đói từ sáng bị choáng tại buồng đợi do xét nghiệm gom mẻ in giấy $ightarrow$ CAPA triển khai Fast-track cho bệnh nhân mạn tính và cảnh báo Pop-up đỏ tức thì trên HIS.</p>
           </div>
         </div>
       </div>
@@ -1238,7 +1500,7 @@ ightarrow$ CAPA triển khai Fast-track cho bệnh nhân mạn tính và cảnh 
             </div>
             <span class="badge tim">Buổi 4</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. KSEQ 4 Vị trí:</strong> Bác sĩ khám (Chữ Q: Không ép tiến độ khám); Điều dưỡng buồng (Chữ Q: Nhận diện đúng PID 100%); KTV xét nghiệm (Chữ Q: Trả mẻ nhỏ liên tục, báo động nguy kịch); Nhân viên PTKH (Chữ Q: Tận tâm hướng dẫn sảnh chờ).</p>
             <p style="margin-top:8px;"><strong>2. Chu trình LSE:</strong> Phân luồng Mã Đỏ y khoa (tiếp cận cấp cứu &le; 3 phút) và Mã Vàng vận hành (kích hoạt DOA mở buồng khám dự phòng trong 10 phút khi có trên 15 người chờ).</p>
           </div>
@@ -1255,178 +1517,18 @@ ightarrow$ CAPA triển khai Fast-track cho bệnh nhân mạn tính và cảnh 
             </div>
             <span class="badge xanh">Buổi 5</span>
           </div>
-          <div style="font-size:13px; line-height:1.6;">
+          <div style="font-size:13px; line-height:1.65;">
             <p><strong>1. 4 Mã hành động M09:</strong> ACT-01 (Labo chia nhỏ mẻ trả kết quả &le; 15p); ACT-02 (Chuông đếm ngược 5p trên HIS); ACT-03 (Phiếu QR và Care Navigator chặn ca đi ăn sáng); ACT-04 (Diễn tập DOA mở buồng khám tăng cường).</p>
-            <p style="margin-top:6px;"><strong>2. Thí điểm 90 ngày (WBS):</strong> Tháng 1 chuẩn bị $
-ightarrow$ Tháng 2 thí điểm tại Buồng khám 1 & 2 $
-ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
+            <p style="margin-top:6px;"><strong>2. Thí điểm 90 ngày (WBS):</strong> Tháng 1 chuẩn bị $ightarrow$ Tháng 2 thí điểm tại Buồng khám 1 & 2 $ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
             <p style="margin-top:6px;"><strong>3. Tiêu chí nghiệm thu DoD Gate:</strong> $W \le 15$ phút, $P90 \le 25$ phút, $T2 - T1 \le 5$ phút đạt &ge; 95%, Hài lòng người bệnh &ge; 92%.</p>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- ====================================================================
-         MÀN 5: THƯ VIỆN (LINK MỞ GOOGLE DRIVE & TÀI LIỆU/MEDIA GỐC CỦA THẦY)
-         ==================================================================== -->
-    <div id="view-library" class="view-pane" hidden>
-      <div class="the" style="background:linear-gradient(135deg, var(--card) 0%, var(--primary-soft) 100%); border-left: 5px solid var(--primary); margin-bottom:14px;">
-        <div class="the-tieu-de" style="font-size:17px; margin-bottom:4px;">
-          📚 THƯ VIỆN TÀI LIỆU, MEDIA & BÀI GIẢNG GỐC CỦA THẦY
-        </div>
-        <div class="chu-phu" style="line-height:1.5;">
-          Nơi lưu trữ và truy cập toàn bộ tài liệu chính thức, giáo trình, bài giảng ghi âm/video của <strong>TS. Đoàn Hùng Dũng</strong> cùng liên kết mở trực tiếp trên Google Drive.
-        </div>
-      </div>
-
-      <!-- KHỐI NÚT TRUY CẬP TRỰC TIẾP GOOGLE DRIVE -->
-      <div class="the" style="border: 2px solid var(--accent); background: var(--accent-soft); margin-bottom:14px;">
-        <div style="font-weight:800; font-size:14px; color:var(--text); margin-bottom:8px; display:flex; align-items:center; gap:6px;">
-          <span>☁️</span> TRUY CẬP GOOGLE DRIVE LỚP HỌC & ĐỀ ÁN CẢI TIẾN
-        </div>
-        <p class="chu-phu" style="font-size:12.5px; margin-bottom:12px; color:var(--text);">
-          Bấm các nút dưới đây để mở trực tiếp thư mục lưu trữ tài liệu, slide bài giảng và dữ liệu đề án trên Google Drive của Sếp và lớp học:
-        </p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:8px;">
-          <a href="https://drive.google.com/drive/folders/1w5mZcE5vX-X0hA_yX-X0hA_yX" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:var(--accent); border-color:var(--accent); min-height:44px; text-decoration:none;">
-            📂 Mở Google Drive Đề Án Cải Tiến (Thiện Phúc Cloud)
-          </a>
-          <a href="https://drive.google.com/drive/folders/1763gM27iE7LzW_H9_T3J1eA68eH1e" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="min-height:44px; text-decoration:none;">
-            🎬 Mở Kho Media Video/Audio Bài Giảng Trên Drive
-          </a>
-        </div>
-      </div>
-
-      <!-- DANH MỤC CÁC TÀI LIỆU CHÍNH THỨC -->
-      <div class="the">
-        <div class="the-header">
-          <div class="the-tieu-de">📑 Tài Liệu Chính Thức Khóa Học FMFT AIOS/LSE</div>
-          <span class="badge xanh">Tải 1-chạm</span>
-        </div>
-
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <!-- 0. Chuyên đề 6 RCA & FMEA Nội Thần Kinh -->
-          <div style="padding:12px; background:linear-gradient(135deg, var(--primary-soft) 0%, var(--card) 100%); border-radius:8px; border:1.5px solid var(--primary); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <div style="display:flex; align-items:center; gap:6px; margin-bottom:2px;">
-                <span class="badge vang" style="font-weight:700;">MỚI NẠP (02/11/2026)</span>
-                <span style="font-weight:700; font-size:13.5px; color:var(--text);">Chuyên Đề 6: Quản Trị Chất Lượng, RCA & FMEA (Ca Té Ngã Khoa Nội Thần Kinh)</span>
-              </div>
-              <div class="chu-phu">Toàn văn 34 slides đào tạo của TS. Đoàn Hùng Dũng. Bóc tách chi tiết RCA 5 Whys, bảng tính FMEA (S x O x D = RPN), hàng rào bảo vệ Swiss Cheese và kế hoạch CAPA.</div>
-            </div>
-            <a href="LNTK_chuyen_de_6.md" download="LNTK_chuyen_de_6.md" class="btn-primary" style="font-size:12px; min-height:36px;">
-              📥 Tải File Markdown (50 KB)
-            </a>
-          </div>
-
-          <!-- 1. Hướng dẫn Module 3 & 4 mới -->
-          <div style="padding:10px; background:var(--bg); border-radius:8px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <div style="font-weight:700; font-size:13.5px; color:var(--text);">Hướng Dẫn Áp Dụng Module 3 & 4 (TS. Đoàn Hùng Dũng - 31/10/2026)</div>
-              <div class="chu-phu">Tài liệu chuẩn hóa VSM, 4 quy tắc RACI 1A, phân tách 5 khâu độc lập và DOA (PDF 29 trang)</div>
-            </div>
-            <a href="tai_lieu/Huong_Dan_Module_3_4_QLBV.pdf" download="Huong_Dan_Module_3_4_QLBV.pdf" class="btn-primary" style="font-size:12px; min-height:36px;">
-              📥 Tải PDF (660 KB)
-            </a>
-          </div>
-
-          <!-- 2. Giáo trình Quản trị BV chi tiết -->
-          <div style="padding:10px; background:var(--bg); border-radius:8px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <div style="font-weight:700; font-size:13.5px; color:var(--text);">Giáo Trình Quản Trị Bệnh Viện FMFT AIOS/LSE Version 2.0</div>
-              <div class="chu-phu">Tài liệu gốc đào tạo 10 chuyên đề và trọn bộ 20 biểu mẫu M01 - M20 của TS. Đoàn Hùng Dũng</div>
-            </div>
-            <a href="GIAO_TRINH_QUAN_TRI_BENH_VIEN_FMFT_AIOS_LSE_V2.md" download="GIAO_TRINH_QUAN_TRI_BENH_VIEN_FMFT_AIOS_LSE_V2.md" class="btn-secondary" style="font-size:12px; min-height:36px;">
-              📥 Tải Markdown
-            </a>
-          </div>
-
-          <!-- 3. Tờ trình Đề xuất Tiêu biểu CS3 -->
-          <div style="padding:10px; background:var(--bg); border-radius:8px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <div style="font-weight:700; font-size:13.5px; color:var(--text);">Hồ Sơ Đề Xuất Cải Tiến Tiêu Biểu CS3 Trình BGĐ (02/11/2026)</div>
-              <div class="chu-phu">Bản đề xuất ưu tiên trọng điểm của Nhóm 8 phục vụ buổi làm việc trực tiếp với BGĐ</div>
-            </div>
-            <a href="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" download="DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md" class="btn-secondary" style="font-size:12px; min-height:36px;">
-              📥 Tải Tờ Trình
-            </a>
-          </div>
-
-          <!-- 4. Đề án Số hóa AIOS M01-M19 -->
-          <div style="padding:10px; background:var(--bg); border-radius:8px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div>
-              <div style="font-weight:700; font-size:13.5px; color:var(--text);">Đề Án Số Hóa Vận Hành & Trung Tâm FMFT AIOS (Chủ Đề 1)</div>
-              <div class="chu-phu">Trọn bộ bài tập thực hành M01 đến M19 và phương án liên thông KPI 3 cấp chi phí 0đ</div>
-            </div>
-            <a href="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" download="BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md" class="btn-primary" style="font-size:12px; min-height:36px;">
-              📥 Tải Đề Án AIOS
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- KHO MEDIA BÀI GIẢNG (AUDIO & VIDEO WEBEX) -->
-      <div class="the">
-        <div class="the-header">
-          <div class="the-tieu-de">🎬 Kho Media Ghi Âm & Video Bài Giảng Webex</div>
-          <span class="badge vang">4 Tệp Media</span>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr; gap:8px; font-size:13px;">
-          <div style="padding:8px 12px; background:var(--bg); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong>FMFT-QUAN TRI BENH VIEN (m1-m2).m4a</strong><br/>
-              <span class="chu-phu">Ghi âm Audio Buổi 1 (Chuyên đề 1 & 2) · Dung lượng 25,7 MB</span>
-            </div>
-            <span class="badge xanh">Audio M4A</span>
-          </div>
-          <div style="padding:8px 12px; background:var(--bg); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong>FMFT-QUAN TRI BENH VIEN (m3-m4).m4a</strong><br/>
-              <span class="chu-phu">Ghi âm Audio Buổi 2 (Chuyên đề 3 & 4) · Dung lượng 44,8 MB</span>
-            </div>
-            <span class="badge xanh">Audio M4A</span>
-          </div>
-          <div style="padding:8px 12px; background:var(--bg); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong>Quản trị Bệnh viện.mp4</strong><br/>
-              <span class="chu-phu">Video Webex Buổi 1 Khai mạc toàn viện · Dung lượng 957,4 MB</span>
-            </div>
-            <span class="badge xanhduong">Video HD</span>
-          </div>
-          <div style="padding:8px 12px; background:var(--bg); border-radius:6px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <strong>Quản trị Bệnh viện-20261028 1415-1.mp4</strong><br/>
-              <span class="chu-phu">Video Webex Buổi 2 Giải bài tập luồng bệnh · Dung lượng 159,1 MB</span>
-            </div>
-            <span class="badge xanhduong">Video HD</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- HÒM THƯ GÓP Ý & PHẢN BIỆN MỞ -->
-      <div class="the">
-        <div class="the-header">
-          <div class="the-tieu-de">💬 Hòm Thư Đóng Góp Ý Kiến & Phản Biện Mở</div>
-          <span class="badge xanh">Công khai</span>
-        </div>
-        <p class="chu-phu" style="margin-bottom:10px;">
-          Kính mời các Thầy, Ban Giám Đốc và đồng nghiệp đóng góp ý kiến để hoàn thiện 2 đề tài của Nhóm 8:
-        </p>
-        <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px;">
-          <input type="text" id="fb-author" placeholder="Họ và tên / Chức danh / Đơn vị..." style="width:100%; min-height:40px; padding:8px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--card); color:var(--text); font-size:16px;">
-          <textarea id="fb-content" rows="3" placeholder="Nhập nhận xét, góp ý hoặc phản biện chuyên môn..." style="width:100%; padding:10px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--card); color:var(--text); font-size:16px;"></textarea>
-          <button class="btn-primary" onclick="submitFeedback()" style="align-self:flex-start;">
-            ✉️ Gửi Đóng Góp Ý Kiến
-          </button>
-        </div>
-        <div id="fb-list" style="display:flex; flex-direction:column; gap:8px;"></div>
-      </div>
-    </div>
-
   </main>
 
-  <!-- ==================== 4. MOBILE BOTTOM NAV (5 NÚT CỐ ĐỊNH CHUẨN SHIN AIOS) ==================== -->
+  <!-- ==================== 4. MOBILE BOTTOM NAV (ĐÚNG 4 NÚT) ==================== -->
   <nav class="bottom-nav" aria-label="Điều hướng di động">
     <button class="bottom-nav-item active" id="bn-home" onclick="switchTab('home')">
       <span class="bn-icon">🏠</span>
@@ -1444,22 +1546,17 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
       <span class="bn-icon">🏥</span>
       <span class="bn-label">Ngoại trú</span>
     </button>
-    <button class="bottom-nav-item" id="bn-library" onclick="switchTab('library')">
-      <span class="bn-icon">📚</span>
-      <span class="bn-label">Thư viện</span>
-    </button>
   </nav>
 
   <!-- TOAST NOTIFICATION BOX -->
   <div id="toast-box"></div>
 
   <!-- ====================================================================
-       5. JAVASCRIPT ĐIỀU HÀNH TOÀN DIỆN (NATIVE, SIÊU TỐC)
+       5. JAVASCRIPT ĐIỀU HÀNH
        ==================================================================== -->
   <script>
-    // 1. Chuyển đổi giữa 5 Tab chính
+    // 1. Chuyển đổi giữa 4 Tab chính
     function switchTab(tabId) {
-      // Ẩn tất cả view panes
       document.querySelectorAll('.view-pane').forEach(el => el.hidden = true);
       const targetPane = document.getElementById('view-' + tabId);
       if (targetPane) targetPane.hidden = false;
@@ -1474,7 +1571,6 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
       const activeBn = document.getElementById('bn-' + tabId);
       if (activeBn) activeBn.classList.add('active');
 
-      // Cuộn lên đầu trang
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1488,7 +1584,6 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
       toast(next === 'dark' ? 'Đã bật chế độ Tối' : 'Đã bật chế độ Sáng', 'info');
     }
 
-    // Khởi tạo theme từ bộ nhớ
     (function initTheme() {
       const saved = localStorage.getItem('tvm_theme') || 'light';
       document.documentElement.setAttribute('data-theme', saved);
@@ -1596,8 +1691,8 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
     let feedbacks = JSON.parse(localStorage.getItem('tvm_feedbacks') || '[]');
     if (feedbacks.length === 0) {
       feedbacks = [
-        { author: 'BS. Huỳnh Tấn Kiệt - KHTH', content: 'Đề tài luồng ngoại trú TV3-KB-01 đã chuẩn hóa 5 mốc T0->T4 rất rõ ràng, đảm bảo tuyệt đối thời gian khám lâm sàng >= 7 phút của Bác sĩ.', time: '31/10/2026' },
-        { author: 'CN. Nguyễn Kim Nhang - Trưởng nhóm', content: 'Nhóm 8 chuẩn bị 2 đề tài rất xuất sắc, đề án số hóa AIOS chi phí 0đ sẽ là điểm sáng để bảo vệ trước Thầy Dũng và BGĐ.', time: '01/11/2026' }
+        { author: 'BS. Huỳnh Tấn Kiệt - KHTH', content: 'Đề tài luồng ngoại trú TV3-KB-01 đã chuẩn hóa 5 mốc T0->T4 rất rõ ràng, bảo đảm thời gian khám lâm sàng >= 7 phút của Bác sĩ.', time: '02/11/2026' },
+        { author: 'CN. Nguyễn Kim Nhang - Trưởng nhóm', content: 'Nhóm 8 chuẩn bị 2 đề tài rất xuất sắc, đề án số hóa AIOS chi phí 0đ sẽ là điểm sáng để bảo vệ trước Thầy Dũng và BGĐ.', time: '03/11/2026' }
       ];
     }
 
@@ -1605,15 +1700,15 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
       const list = document.getElementById('fb-list');
       if (!list) return;
       list.innerHTML = '';
-      feedbacks.forEach((fb, idx) => {
+      feedbacks.forEach((fb) => {
         const item = document.createElement('div');
-        item.style.cssText = 'padding:10px 12px; background:var(--bg); border-radius:8px; border:1px solid var(--border);';
+        item.style.cssText = 'padding:8px 10px; background:var(--bg); border-radius:6px; border:1px solid var(--border);';
         item.innerHTML = `
-          <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-            <strong style="font-size:13px; color:var(--text);">${escapeHtml(fb.author)}</strong>
+          <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
+            <strong style="font-size:12.5px; color:var(--text);">${escapeHtml(fb.author)}</strong>
             <span style="font-size:11px; color:var(--text-muted);">${escapeHtml(fb.time)}</span>
           </div>
-          <div style="font-size:12.5px; color:var(--text-sub); line-height:1.5;">${escapeHtml(fb.content)}</div>
+          <div style="font-size:12px; color:var(--text-sub); line-height:1.5;">${escapeHtml(fb.content)}</div>
         `;
         list.appendChild(item);
       });
@@ -1643,7 +1738,6 @@ ightarrow$ Tháng 3 mở rộng 8 buồng khám toàn viện.</p>
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
-    // Khởi tạo hiển thị hòm thư
     renderFeedbacks();
   </script>
 </body>

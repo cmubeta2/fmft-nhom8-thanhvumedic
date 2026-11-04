@@ -3,6 +3,142 @@
 
 ---
 
+### [Phiên bản v2.3.0] - 04/11/2026 (Tái Cấu Trúc Toàn Diện Web Portal 4 Tab Cố Định: Bỏ Tab Thư Viện, Triển Khai Chi Tiết Từng Nội Dung 10 Chuyên Đề & 2 Đề Án M01-M19, Thiết Lập Lộ Trình 1 Giờ)
+- **Chuẩn hóa cấu trúc điều hướng Cổng Web Portal (`index.html`) theo đúng chỉ đạo của Sếp:**
+  - **Loại bỏ hoàn toàn tab Thư viện:** Đã gỡ bỏ toàn bộ `view-library`, loại bỏ các nút điều hướng tương ứng trên cả Desktop Navbar và Mobile Bottom Bar, chuyển toàn bộ đường link Google Drive Đề án và Kho Media Video/Audio Webex thành khối thẻ truy cập trực tiếp gọn gàng ở chân Trang chủ (`view-home`).
+  - **Cố định thanh nav.bar đúng 4 nút duy nhất:**
+    1. `🏠 Trang chủ` (`view-home`): Tổng quan chiến lược 2 đề án cải tiến của Cơ sở 3 Cà Mau (Nhóm 8), bảng so sánh ma trận song mã (Vận hành vs Lâm sàng), định hướng BGĐ toàn hệ thống, kết nối Drive dữ liệu & form góp ý trực tiếp.
+    2. `📖 Bài giảng` (`view-lectures`): Triển khai bóc tách chi tiết, sâu sắc toàn bộ 10 Chuyên đề đào tạo của TS. Đoàn Hùng Dũng từ Buổi 1 đến Buổi 5 (Tư duy hệ thống & 3 tầng dữ liệu, 8 lãng phí Lean Muda, VSM luồng khám & Handoff 2 chiều, 4 quy tắc RACI 1A & phân tách 5 khâu độc lập, Từ điển KPI Rule of 7 & Dashboard EWS 3 màu, Văn hóa công bằng Just Culture & RCA 5 Whys + FMEA ca té ngã Khoa Nội Thần Kinh, Khung năng lực KSEQ với chốt chặn chữ Q tối thượng, Kiến trúc FMFT AIOS & LSE 8 bước, Action Tracker M09, Quản trị thay đổi WBS 90 ngày & Tiêu chí nghiệm thu DoD Gate).
+    3. `⚡ AIOS` (`view-aios` - Chủ đề 1): Hồ sơ bài tập thực hành chi tiết trọn bộ M01 đến M19 của đề tài *"Số hóa Quy trình Quản trị Hiệu suất, Liên thông KPI 3 cấp và Xây dựng Trung tâm Điều hành Thông minh (FMFT AIOS)"* (xóa bỏ phân mảnh 26 file Excel, ma trận trực >365 cột, Google Form >70 trường).
+    4. `🏥 Luồng bệnh ngoại trú` (`view-outpatient` - Chủ đề 2): Hồ sơ bài tập thực hành chi tiết trọn bộ M01 đến M19 của đề tài *"Tối ưu hóa chuỗi bàn giao cận lâm sàng & giảm thời gian chờ khám lại ngoại trú (TV3-KB-01)"* (VSM 5 mốc T0->T4, cam kết $T_2 - T_1 \le 5$p, khám an toàn $\ge 7$p, RCA ca hạ đường huyết 2.4 mmol/L).
+  - **Tối ưu hóa hiển thị Mobile-First đứng (Portrait):**
+    - Chiều cao thanh Bottom Nav 64px, kích thước nút bấm tối thiểu 44x44px.
+    - Căn giữa toàn diện `max-width: 1040px`, cấm cuộn ngang (`overflow-x: hidden`).
+    - Font nhập liệu 16px chống nhảy zoom trên iOS/Android.
+- **Triển khai Lộ trình Thực thi & Giám sát theo chu kỳ 1 giờ (Hourly Execution Schedule):**
+  - Thiết lập cơ chế tự động đánh giá, rà soát tính khả thi và đo lường tiến độ định kỳ mỗi 1 giờ cho đến khi hoàn thiện toàn bộ công tác đào tạo và triển khai thực địa.
+- **Deploy cập nhật lên GitHub Pages:** [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)
+
+---
+
+### [Phiên bản v2.2.1] - 02/11/2026 (Số Hóa & Lưu Trữ Bộ Nhớ Chuyên Đề 6: RCA & FMEA Ca Té Ngã Khoa Nội Thần Kinh)
+- **Số hóa toàn văn bài giảng PowerPoint Chuyên đề 6 sang Markdown chuẩn mực:**
+  - File nguồn: `D:\Hyrta-One\cmubeta2\My Drive\Thiện Phúc Cloud\Thanh Vũ Cà Mau\KPI TVM Cà Mau\FMFT\LNTK chuyen de 6.pptx` (34 slides đào tạo của TS. Đoàn Hùng Dũng).
+  - Trích xuất 100% nội dung slide, bảng biểu cấu trúc chuẩn Markdown và toàn bộ phần **Ghi chú giảng viên (Slide Notes)**.
+  - Ban hành 2 bản lưu trữ song song:
+    1. `D:\Hyrta-One\cmubeta2\My Drive\Thiện Phúc Cloud\Thanh Vũ Cà Mau\KPI TVM Cà Mau\FMFT\LNTK_chuyen_de_6.md`
+    2. `d:\Hyrta-One\cmubeta2\My Drive\SHIN\He sinh thai Shin\31_FMFT_AIOS_LSE\LNTK_chuyen_de_6.md`
+- **Lưu trữ vĩnh viễn vào Bộ nhớ Obsidian Second Brain:**
+  - Wiki Document: `Wiki/Kien_Thuc/FMFT/LNTK_CHUYEN_DE_6_RCA_FMEA.md`.
+  - Memory Atom: `Memory/chuyen-dje-6-fmft-quan-tri-chat-luong-rca-va-fmea-ca-te-nga-.md`.
+- **Tóm tắt nội dung học tập chiến lược:**
+  - Phân biệt RCA (hồi cứu sau sự cố) vs FMEA (dự báo trước khi ban hành quy trình).
+  - Tình huống lâm sàng: NB 72 tuổi sau đột quỵ ngã gãy cổ xương đùi lúc 02:12 do đứt gãy bàn giao ca trực và chuông gọi y tá ngoài tầm với.
+  - Phân tích hàng rào bảo vệ (Swiss Cheese Model), 5 Whys, Văn hóa công bằng (Just Culture).
+  - Bảng tính FMEA 3 yếu tố $S \times O \times D = \text{RPN}$ và Kế hoạch CAPA đo lường sau 30 ngày.
+
+---
+
+### [Phiên bản v2.2.0] - 02/11/2026 (Tái Cấu Trúc Toàn Diện Web Portal Chuẩn SHIN AIOS: 5 Nút Nav.bar, Bỏ Left.bar, Đảo Thứ Tự 2 Đề Án & Tích Hợp Đầy Đủ Bài Giảng)
+- **Thiết kế lại toàn bộ Giao diện Cổng Web Portal (`index.html`) theo đúng chỉ đạo của Sếp:**
+  - **Bỏ hoàn toàn thanh left.bar:** Loại bỏ toàn bộ rail 56px, left drawer bung trượt và mấu kéo mép trái để giải phóng 100% không gian hiển thị, khung nội dung căn giữa hoàn hảo (`max-width: 1020px`).
+  - **Thanh điều hướng nav.bar chuẩn SHIN AIOS với đúng 5 nút cố định:**
+    1. `🏠 Trang chủ` (`view-home`): Tóm tắt 2 đề án cải tiến chiến lược của Cơ sở 3 Cà Mau (Nhóm 8) theo thứ tự ưu tiên mới:
+       - **Đề án 1 (Ưu tiên 1 - Cốt lõi):** *Số hóa quản trị vận hành, liên thông KPI 3 cấp & Trung tâm FMFT AIOS (`TV3-AIOS-02`)*.
+       - **Đề án 2 (Ưu tiên 2 - Lâm sàng):** *Tối ưu hóa chuỗi bàn giao CLS & giảm thời gian chờ khám lại ngoại trú (`TV3-KB-01`)*.
+       - Kèm banner thông báo chỉ đạo của BGĐ (4–5 vấn đề trọng điểm toàn hệ thống) và thông tin nhân sự Nhóm 8.
+    2. `📖 Bài giảng` (`view-lectures`): Chứa toàn bộ nội dung kiến thức bài học theo thứ tự từng bài (từ Buổi 1 đến Buổi 5) của TS. Đoàn Hùng Dũng với đầy đủ 10 Chuyên đề chi tiết (Tư duy hệ thống, 8 lãng phí Lean Muda, VSM, 4 quy tắc RACI 1A, Segregation of Duties 5 khâu, KPI Rule of 7, Dashboard EWS 3 màu, RCA 5 Whys & CAPA, Khung KSEQ với chốt chặn chữ Q đạo đức dữ liệu, Chu trình LSE 8 bước, Action Tracker M09, WBS 90 ngày và DoD Gate).
+    3. `⚡ AIOS` (`view-aios`): Là **Chủ đề 1**, chứa toàn bộ hồ sơ bài tập thực hành các buổi từ M01 đến M19 của đề tài Số hóa AIOS, có chip phân đoạn lọc theo buổi và nút sao chép tóm tắt 1-chạm.
+    4. `🏥 Luồng bệnh ngoại trú` (`view-outpatient`): Là **Chủ đề 2**, chứa toàn bộ hồ sơ bài tập các buổi từ M01 đến M19 của đề tài Luồng ngoại trú (VSM 5 mốc T0 $\rightarrow$ T4, cam kết $T_2 - T_1 \le 5$p, khám lâm sàng $\ge 7$p, RCA ca hạ đường huyết 2.4 mmol/L và đối chứng song song cùng CS2).
+    5. `📚 Thư viện` (`view-library`): Cung cấp các nút bấm lớn mở trực tiếp **Google Drive Đề án Cải tiến** và **Kho Media Video/Audio Webex**, cùng danh mục tải trực tiếp các tài liệu chính thức (PDF Module 3&4, Giáo trình v2.0, Tờ trình BGĐ, DOCX M01-M20) và hòm thư góp ý công khai.
+  - **Trải nghiệm Mobile-first tuyệt hảo:**
+    - Trên Desktop: Thanh Desktop Navbar cố định ngang sang trọng, hiển thị 5 tab lớn rõ nét.
+    - Trên Mobile (<1024px): Thanh Bottom Nav cố định 5 nút chuẩn 64px, kích thước bấm tối thiểu $\ge 44 \times 44$px, nhãn chữ tiếng Việt rõ ràng, chuyển tab tức thì không giật lag.
+    - Tuyệt đối cấm cuộn ngang (`overflow-x: hidden`), font chữ ô nhập liệu $\ge 16$px chống tự động zoom.
+    - Hỗ trợ đổi giao diện Sáng / Tối (`toggleTheme()`) và Chế độ chỉnh sửa bảo mật bằng Secret Key `TVM`.
+- **Deploy thành công lên GitHub Pages:** [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/)
+
+---
+
+### [Phiên bản v2.1.0] - 01/11/2026 (Phát Triển Chủ Đề 2: Số Hóa Quản Trị Vận Hành & FMFT AIOS Trọn Bộ M01–M19)
+- **Thiết lập Cặp Song Mã Cải tiến Đột phá của Cơ sở 3 (Nhóm 8):**
+  - Giữ vững 100% **Chủ đề 1 (`TV3-KB-01`)**: Tối ưu chuỗi bàn giao lâm sàng ngoại trú (Mặt trận Tiền tuyến).
+  - Phát triển thành công **Chủ đề 2 (`TV3-AIOS-02`)**: *"Số hóa Quy trình Quản trị Hiệu suất, Liên thông KPI 3 cấp và Xây dựng Trung tâm Điều hành Thông minh (FMFT AIOS) tại PKĐK Thanh Vũ Medic Cà Mau"* (Mặt trận Hậu phương Vận hành).
+  - Khai thác dữ liệu thực chứng từ: Đề án 26-01 (Cải tiến Dashboard KPI), Đề án 25-01 (Ứng dụng CNTT trong PTKH & CSKH), Đề án 26-02 (Cải tiến vận hành Báo cáo sự cố) và Hệ sinh thái TVM Work Management thực tế của Sếp.
+- **Biên soạn trọn bộ Hồ sơ Bài tập Chủ đề 2 (`BAI_TAP_CHU_DE_2_SO_HOA_AIOS_M01_M19.md`):**
+  - *M01 (Buổi 1):* Xóa bỏ lãng phí trên 26 file Excel rời rạc, ma trận trực >365 cột, Google Form >70 trường; mục tiêu cắt giảm 80% thời gian tổng hợp KPI, tiết kiệm 180 triệu đ/năm bản quyền email.
+  - *M02, M03, M14 (Buổi 2):* VSM luồng dữ liệu quản trị giảm 91,7% thời gian xếp lịch, 85% thời gian báo cáo, 99,8% thời gian tổng hợp; ma trận RACI 6 phòng ban; phân quyền DOA 4 cấp bảo mật server-side.
+  - *M04, M05, M06 (Buổi 3):* Bộ 7 KPI Rule of 7 (2 Lagging, 3 Leading, 2 Constraint); Dashboard AIOS EWS bản đồ nhiệt 26 khoa phòng 3 màu; RCA 5 Whys & CAPA triệt tiêu file Excel trôi nổi.
+  - *M07, M08, M17 (Buổi 4):* Khung năng lực KSEQ 4 vị trí với chốt chặn chữ Q (Phẩm chất & Đạo đức dữ liệu) là tối thượng; Chu trình LSE 8 bước phản ứng nhanh điều hành; Tiêu chí kiểm toán M17.
+  - *M09, M10, M11, M19 (Buổi 5):* Action Tracker 4 trụ cột; WBS 90 ngày 3 pha; 5 tiêu chí nghiệm thu cứng DoD Gate; Ma trận leo thang 4 cấp và Lộ trình nhân rộng toàn hệ thống sang BVTV2, CS1, CS4.
+- **Nâng cấp Cổng Web Portal lên v2.1.0 (`index.html`):**
+  - Bổ sung Màn hình riêng cho Chủ đề 2 (`#view-theme2`) hiển thị trực quan cả 5 buổi học kèm thanh tab con phân đoạn mượt mà.
+  - Thêm Khối thẻ **"Cặp Song Mã Đề Tài Cải Tiến Cơ Sở 3"** nổi bật trên Màn Hôm nay (`view-overview`).
+  - Thêm Menu chuyển nhanh Chủ đề 2 trên Left Drawer (`rm-theme2`).
+  - Tích hợp Thẻ tài liệu và nút Tải file Markdown Chủ đề 2 trong Thư viện (`view-library`).
+- **Lưu trữ Thư viện Tri thức Obsidian Second Brain:**
+  - Tạo trang tri thức: `Wiki/Kien_Thuc/FMFT/DE_AN_SO_HOA_FMFT_AIOS_CHU_DE_2_CS3.md`.
+- **Cập nhật Bản Tổng Hợp Toàn Khóa (`TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md`):**
+  - Tích hợp Phần IX tóm tắt toàn diện Chủ đề 2 và mối liên kết hữu cơ với Chủ đề 1.
+
+---
+
+### [Phiên bản v2.0.0] - 01/11/2026 (Hoàn Tất Trọn Bộ 5 Buổi M01–M19, Tiếp Nhận Định Hướng BGĐ & Hồ Sơ Đề Xuất Cải Tiến CS3 Trình BGĐ)
+- **Tiếp nhận & thể chế hóa Định hướng mới từ Ban Giám Đốc và Ban Quản lý lớp:**
+  - Định hướng chiến lược của BGĐ: Tập trung lựa chọn 4–5 vấn đề cải tiến tiêu biểu toàn hệ thống tại 4 cơ sở (CS2 đã chọn luồng ngoại trú và thủ tục xuất viện nội trú do Nhóm 3 & 13 phối hợp thực hiện).
+  - Khẳng định đề xuất trọng điểm của Cơ sở 3 (PKĐK Cà Mau - Nhóm 8): **"Tối ưu hóa chuỗi bàn giao cận lâm sàng & giảm thời gian chờ khám lại ngoại trú (Mã quy trình TV3-KB-01)"**. Đề tài đảm bảo 3 tiêu chí: (1) Tính đại diện cao nhất (450–550 lượt/ngày, 68% dồn ứ khung giờ vàng 07h00–09h30, ảnh hưởng trực tiếp chỉ tiêu F1 = 68,8 tỷ đ); (2) Khả năng đo lường thời gian thực (5 mốc T0–T4 đã có log trên HIS/LIS); (3) Khả năng đối chiếu chéo và nhân rộng song song với CS2.
+  - Ban hành Hồ sơ chiến lược: `DINH_HUONG_BGD_DE_XUAT_CAI_TIEN_CS3_CAMAU.md` phục vụ buổi làm việc trực tiếp với BGĐ và Ban Quản lý lớp vào ngày 02/11/2026.
+  - Lưu trữ tri thức dài hạn vào Thư viện Obsidian Second Brain: `Wiki/Kien_Thuc/FMFT/DINH_HUONG_BGD_FMFT_CS3_NHOM8.md`.
+
+- **Hoàn thiện trọn bộ Bài tập Buổi 5 (`BAI_TAP_BUOI_5_M09_M10_M11_M19_HOAN_CHINH.md`):**
+  - **M09 - Kế hoạch Hành động Cải tiến (Action Tracker):** Thiết lập 4 nhóm hành động cụ thể (Sàng lọc mẫu gộp XN, Kiosk điều phối hàng đợi thông minh, Alert cận lâm sàng đẩy tự động về HIS Bác sĩ, và SOP trả KQ chuẩn hóa) với chỉ số mục tiêu giảm từ 110 phút xuống $\le 38$ phút ($T_4 - T_0$).
+  - **M10 - Kế hoạch Quản trị Thay đổi & WBS 90 ngày:** Phân rã 3 giai đoạn (Pha 1 Thí điểm 30 ngày tại 2 buồng khám; Pha 2 Điều chỉnh & mở rộng 30 ngày cho toàn bộ 8 phòng khám; Pha 3 Đo lường & chuẩn hóa 30 ngày).
+  - **M11 - Tiêu chí Nghiệm thu Cải tiến (Definition of Done - DoD Gate):** 5 tiêu chí cứng nghiệm thu (Thời gian chờ bàn giao $\le 5$p; Độ trễ trả kết quả CLS $\le 30$p; Zero sự cố nhầm lẫn kết quả; Tỷ lệ hài lòng $\ge 92\%$; 100% nhân sự đạt chuẩn KSEQ).
+  - **M19 - Ma trận Leo thang & Lộ trình Nhân rộng:** 4 cấp độ leo thang xử lý ách tắc (Cấp 1 Trưởng ca $\rightarrow$ Cấp 2 Trưởng khoa $\rightarrow$ Cấp 3 PGĐ Vận hành $\rightarrow$ Cấp 4 Giám đốc Điều hành) và lộ trình 3 pha chuyển giao mô hình sang CS2, CS1, CS4.
+
+- **Đóng gói Bản Tổng hợp Toàn diện Khóa học v2.0.0 (`TONG_HOP_BAI_TAP_KHOA_HOC_FMFT_NHOM_8.md`):**
+  - Tích hợp 100% nội dung từ Buổi 1 đến Buổi 5 (trọn bộ biểu mẫu M01 đến M19).
+  - Cập nhật số liệu thực tế đo lường của CS3 Cà Mau, phân định trách nhiệm liên phòng ban và tích hợp tri thức định hướng BGĐ.
+
+- **Nâng cấp Cổng Web Portal lên v2.0.0 (`index.html`):**
+  - Bổ sung màn hình **Buổi 5 (#view-session5)** với đầy đủ 4 tab nội dung: M09 Action Tracker, M10 Kế hoạch 90 ngày, M11 DoD Gate, M19 Escalation & Rollout kèm nút sao chép M09 1-chạm (`copyM09()`).
+  - Tích hợp **Banner thông báo Định hướng mới từ BGĐ** ngay trên Màn Hôm nay (`view-today`) và Màn Thư viện (`view-docs`) với trạng thái nổi bật màu hổ phách/xanh lục, trích dẫn nguyên văn thông điệp và liên kết xem nhanh hồ sơ CS3.
+  - Cập nhật Phân hệ Kho Bài Tập Thực Hành: Bổ sung Chip lọc Buổi 5, thẻ tóm tắt Buổi 5 với 4 biểu mẫu cốt lõi.
+  - Đảm bảo 100% tuân thủ SHIN Design System v2.6.0: Drawer mép trái, tối ưu hiển thị Portrait Mobile-First, vùng bấm $\ge 44$px, font $\ge 16$px, Secret Key `TVM` bảo vệ chế độ chỉnh sửa, không cuộn ngang.
+  - Deploy thành công lên GitHub Pages: [https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/](https://cmubeta2.github.io/fmft-nhom8-thanhvumedic/).
+
+---
+
+### [Phiên bản v1.12.0] - 31/10/2026 (Thanh Mép Trái SHIN AIOS, Tách Riêng Kho Bài Tập, Hoàn Thiện Buổi 3 & Chuẩn Bị Buổi 4)
+- **Tái cấu trúc Leftbar về dạng Mép Trái (Left Drawer theo chuẩn SHIN AIOS):**
+  - Loại bỏ hoàn toàn thanh Rail cứng cố định chiếm chỗ làm lệch khung nội dung trên desktop.
+  - Chuyển sang mô hình **Left Drawer từ mép trái** (`.left-drawer`):
+    - Mặc định ẩn (`transform: translateX(-100%)`).
+    - Mở trượt êm ái khi bấm nút Hamburger `☰` trên Topbar hoặc bấm **Mấu kéo nổi mép trái (`.edge-handle`)**.
+    - Lớp phủ mờ nền `backdrop-filter: blur(4px)` đóng khi chạm ra ngoài hoặc bấm `Escape`.
+    - Khung nội dung chính giữa (`.noi-dung`) mở rộng toàn diện, căn giữa hoàn hảo (`max-width: 960px`).
+- **Tách riêng Phân hệ Bài Tập Thực Hành (`#view-exercises`):**
+  - Xây dựng Trung tâm bài tập riêng biệt với thanh lọc phân đoạn (Segmented Chip Filter): `Toàn bộ (M01-M17)`, `Buổi 1 (M01)`, `Buổi 2 (M02-M03)`, `Buổi 3 (M04-M06)`, `Buổi 4 (M07-M08)`.
+  - Giúp người đọc và các nhóm tra cứu từng bài tập độc lập, tập trung, không bị cuộn dài lẫn lộn với phần tổng quan.
+- **Hoàn thiện chính thức Bài tập Buổi 3 (`BAI_TAP_BUOI_3_M04_M05_M06_HOAN_CHINH.md`):**
+  - Chuẩn hóa M04 (Từ điển 7 KPI theo Rule of 7), M05 (Đặc tả Dashboard AIOS EWS visual 3 màu) và M06 (RCA 5 Whys ca hạ đường huyết 2.4 mmol/L & Kế hoạch CAPA 4 tuần theo 5 khâu độc lập).
+- **Soạn thảo tài liệu chuẩn bị trước 48h cho Buổi 4 (`CHUAN_BI_BUOI_4_KSEQ_AIOS_LSE_M07_M08_M17.md`):**
+  - Chuyên đề 7: Phương pháp luận KSEQ (Knowledge - Skills - Experience - Quality) với tiêu chuẩn đạo đức Q làm chốt chặn tối thượng. Dự thảo M07 cho 4 vị trí cốt lõi và M17 kiểm toán SOP.
+  - Chuyên đề 8: 5 Lớp kiến trúc FMFT AIOS và Chu trình phản ứng nhanh Life-Saving Engine (LSE 8 bước) có con người kiểm soát.
+- **Thấp điệu hóa vai trò cá nhân của Sếp Huỳnh Trường Thanh Tâm:**
+  - Điều chỉnh toàn bộ danh xưng và vai trò trong hồ sơ bài tập và Web Portal: Sếp Tâm lùi về vị trí khiêm tốn là *"Thành viên Nhóm 8 · Hỗ trợ dữ liệu & Thư ký ghi chép"*.
+  - Nhường trọn vẹn vị trí đại diện bảo vệ trước Thầy Dũng và Ban tổ chức cho **Nhóm trưởng Nguyễn Kim Nhang** và **Đại diện Chuyên môn Lâm sàng BS. Huỳnh Tấn Kiệt**.
+  - Đổi tên chế độ Secret Key trên Portal thành *"Chế độ Thư ký (Admin Edit Mode)"* trung tính, bảo mật và kín đáo.
+
+- **Tinh chỉnh giao diện & Hồ sơ ẩn mình theo chỉ đạo trực tiếp của Sếp:**
+  - Thay thế toàn bộ cụm từ *"Tổ CSKH"* bằng *"Phòng PTKH"* (Phòng Phát triển Khách hàng).
+  - Loại bỏ hoàn toàn danh xưng *"Thư ký nhóm / Thư ký ghi chép"* gán cho Sếp Tâm trong tất cả các file bài tập, văn bản, biên bản ký duyệt và danh sách thành viên. Sếp Tâm chỉ xuất hiện trung tính là *"Phó phòng PTKH · Thành viên Nhóm 8"*.
+  - Đổi Secret Key từ `septam1993` sang **3 ký tự chuẩn nhận diện thương hiệu `TVM`** (chấp nhận cả `tvm` và `TVM`).
+  - Đổi tên gọi chức năng bảo mật thành **"Chế độ chỉnh sửa"** (Edit Mode).
+  - Tích hợp kho tài liệu gốc trực tiếp từ Google Drive vào thư mục `tai_lieu/` (gồm 8 tệp PDF, DOCX, XLSX) và tạo hệ thống nút bấm **Tải trực tiếp 1-chạm** trên Cổng Web Portal (Màn 3 Thư viện & Màn 4 Media).
+
+---
+
 ### [Phiên bản v1.11.0] - 31/10/2026 (Tái Thiết Kế Toàn Diện UX/UI Theo Chuẩn SHIN Design System v2.6.0)
 - **Tái cấu trúc giao diện theo Bản Đặc Tả Thiết Kế SHIN v2.6.0 (`THIET_KE_GIAO_DIEN_SHIN.md`):**
   - **3 Khung cố định (3 Fixed Frame Containers):**
@@ -95,7 +231,7 @@
   - Trình bày chuẩn thể thức văn bản hành chính A4, font Times New Roman, nhận diện thương hiệu Thanh Vũ Medic, bảng biểu có border và màu nền chuyên nghiệp.
   - Lưu trữ đồng thời tại:
     + Thư mục lớp học: `D:\Hyrta-One\cmubeta2\My Drive\Thiện Phúc Cloud\Thanh Vũ Cà Mau\KPI TVM Cà Mau\FMFT\`
-    + Thư viện hệ sinh thái: `D:\Hyrta-One\cmubeta2\My Drive\Thiện Phúc Cloud\He sinh thai Shin\31_FMFT_AIOS_LSE\`
+    + Thư viện hệ sinh thái: `D:\Hyrta-One\cmubeta2\My Drive\SHIN\He sinh thai Shin\31_FMFT_AIOS_LSE\`
 
 ---
 
