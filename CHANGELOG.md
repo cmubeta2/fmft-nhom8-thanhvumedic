@@ -3,6 +3,21 @@
 
 ---
 
+### [Phiên bản v2.5.0] - 04/11/2026 (Nâng cấp Toàn diện Trang CS3 theo Chuẩn SHIN AIOS & Danh bạ 26 Nhân sự CS3)
+- **Chuẩn hóa Chức danh & Danh xưng theo đúng chỉ đạo:**
+  - Chuẩn hóa: **CN. Trần Thiện Phúc** — Giám đốc điều hành; **BS. CKII. Nguyễn Văn Dũng** — Giám đốc chuyên môn.
+  - Lược bỏ toàn bộ tiền tố học vị (BS, ThS, CN, ĐD, KTV, Sếp) của tất cả các cá nhân khác trong toàn bộ hồ sơ để đảm bảo tính chuẩn xác.
+  - Bổ sung Tab 5 và cập nhật toàn bộ **26 cán bộ nhân sự thuộc Cơ sở 3** + Ban Điều phối Nhóm 8 vào cơ cấu tổ chức thực thi.
+  - Chuyển giao toàn bộ các tác vụ điều hành/kỹ thuật chi tiết về đúng các phòng ban chuyên trách (Tổ CNTT-PTPM, Phòng KHTH, Khoa Khám bệnh, Phòng PTKH, TCNS, TCKT).
+- **Tái thiết kế Giao diện CS3 (cs3.html) theo Triết lý Thiết kế SHIN AIOS:**
+  - Hệ màu y tế chuyên sâu Clinical Cyan (#0e7490) & Slate OLED Dark Mode (#090d16) mượt mà với tính năng lưu cấu hình.
+  - Băng chuyền 6 thẻ KPI nổi bật Before - After (TAT Ngoại trú 148p -> 78p, Chờ kết luận 45p -> 12p, Khám lâm sàng 8.2p, Báo cáo ngày 20p -> 3p, Năng lực 5T >=85%, ROI 4.8x).
+  - Thanh Mục lục đề án nổi (TOC) tự động bóc tách tiêu đề và thanh tìm kiếm lọc mục lục tức thì.
+  - Chế độ Thuyết trình Presentation Mode toàn màn hình không phân tâm và tối ưu hóa in ấn/xuất PDF.
+  - Bộ tab 5 phân hệ trực quan với huy hiệu nhận diện.
+
+---
+
 ### [Phiên bản v2.4.0] - 04/11/2026 (Đưa Bài tập CS3 – 3 đề án lên Portal)
 - Thêm trang `cs3.html` hiển thị 3 đề án (Thời gian chờ ngoại trú, Shin AIOS Dashboard, Năng lực 5T) + kịch bản 20 slide, render Markdown/Mermaid/KaTeX, có nút tải file Word.
 - Thêm thư mục `cs3/` chứa tài liệu nguồn; thêm thẻ liên kết ở Trang chủ (giữ nguyên 4 tab điều hướng cố định).

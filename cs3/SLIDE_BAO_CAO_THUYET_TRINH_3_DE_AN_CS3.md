@@ -24,18 +24,20 @@ CẤU TRÚC BÁO CÁO 15 PHÚT CỦA NHÓM 8 TRƯỚC BAN ĐIỀU HÀNH FMFT:
 - **Tiêu đề lớn:** BÁO CÁO THỰC THI DỰ ÁN CẢI TIẾN QUẢN TRỊ BỆNH VIỆN THEO PHƯƠNG PHÁP FMFT AIOS/LSE
 - **Tiêu đề phụ:** 3 ĐỀ ÁN ĐỘT PHÁ TẠI PHÒNG KHÁM ĐA KHOA THANH VŨ MEDIC CÀ MAU (CƠ SỞ 3)
 - **Đơn vị trình bày:** Nhóm 8 (Liên chuyên khoa: KHTH, Khám bệnh, PTKH, Xét nghiệm, CĐHA, TCNS, TCKT, CNTT).
-- **Người chủ trì báo cáo:** ThS. Nguyễn Kim Nhang (Nhóm trưởng) & Huỳnh Trường Thanh Tâm (Phó phòng PTKH / Thư ký BKS KPI).
+- **Người chủ trì báo cáo:** Nguyễn Kim Nhang (Nhóm trưởng) & Huỳnh Trường Thanh Tâm (PTKH CS3).
 - **Chân trang:** *Hệ thống Y tế Thanh Vũ Medic | Trung thực – Trách nhiệm – Thấu cảm – Tận tâm – Tri ân.*
 
 ---
 
-### SLIDE 2: DANH SÁCH 15 THÀNH VIÊN NHÓM 8
-- **Mục tiêu slide:** Thể hiện sự đồng thuận, gắn kết và tham gia thực chất của đầy đủ các mắt xích vận hành.
-- **Bố cục:**
-  + *Ban Chủ nhiệm:* Nguyễn Kim Nhang (Nhóm trưởng - TCNS CS2), Nguyễn Hoàng Duy (Hỗ trợ nhóm trưởng - CNTT CS2), Lục Thị Yến Nhi (Thành viên BKS).
-  + *Khối Chuyên môn Lâm sàng & CLS:* BS. Huỳnh Tấn Kiệt (Trưởng KHTH CS3), BS. Đào Văn Khuynh (Nội soi), ĐD. Lê Như Ý (Nội soi), Lê Minh Mẫn (Trưởng Labo XN), Mai Duy Linh (Phó Labo XN).
-  + *Khối Khách hàng & Vận hành:* Huỳnh Trường Thanh Tâm (Phó PTKH CS3), Tạ Minh Phước (Tổ trưởng PTKH), Lữ Phú Sinh (Trưởng QT Tòa nhà), ĐD. Bùi Mỹ Diện (Tiêm ngừa).
-  + *Khối Tài chính & Nhân sự:* Nguyễn Như Ý (Trưởng TCKT), Nguyễn Thúy Kiều (Tổ trưởng Thu ngân), Trần Trúc Linh (Trưởng TCNS).
+### SLIDE 2: CƠ CẤU NHÂN SỰ CƠ SỞ 3 & BAN ĐIỀU PHỐI THỰC THI (26 CÁN BỘ CS3)
+- **Mục tiêu slide:** Thể hiện sự đồng thuận, gắn kết và tham gia thực chất của toàn bộ 26 cán bộ nhân sự thuộc Cơ sở 3 (PKĐK Thanh Vũ Medic Cà Mau) cùng Ban điều phối Nhóm 8.
+- **Bố cục phân tầng 6 khối chức năng:**
+  + *Ban Giám đốc CS3 (Chỉ đạo & Bảo trợ):* CN. Trần Thiện Phúc (Giám đốc điều hành), BS. CKII. Nguyễn Văn Dũng (Giám đốc chuyên môn), Phạm Kim Ngân (Phó Giám đốc).
+  + *Ban Điều phối Nhóm 8:* Nguyễn Kim Nhang (Nhóm trưởng - TCNS CS2), Nguyễn Hoàng Duy (Hỗ trợ nhóm trưởng - CNTT CS2), Lục Thị Yến Nhi (Ban Kiểm soát).
+  + *Khối KHTH & Công nghệ thông tin:* Huỳnh Tấn Kiệt (Trưởng phòng KHTH), Lê Thị Mỹ Phương (Phó phòng KHTH), Võ Lê Chương (Tổ trưởng CNTT - PTPM).
+  + *Khối Khám bệnh & Cấp cứu:* Huỳnh Thị Nga (Điều dưỡng trưởng Khoa Khám bệnh), Nguyễn Ngọc Lan (Điều dưỡng phó Khoa Khám bệnh), Trần Hải Triều (Điều dưỡng Khoa Khám), Nguyễn Phương Nam (Điều dưỡng Khoa Khám), Phạm Vũ Linh (Điều dưỡng Cấp cứu), Bùi Mỹ Diện (Điều dưỡng Tiêm ngừa).
+  + *Khối Chuyên môn Cận lâm sàng & Dược:* Đào Văn Khuynh (Phụ trách Phòng Nội soi), Lê Như Ý (Phụ trách Điều dưỡng Nội soi), Trương Chí Toại (Trưởng khoa CĐHA), Phạm Kiều Trang (Điều dưỡng trưởng CĐHA), Ngô Bảo Trọng (Kỹ thuật viên trưởng CĐHA), Lê Minh Mẫn (Trưởng phòng Xét nghiệm), Mai Duy Linh (Phó phòng Xét nghiệm), Trần Văn Thơi (Phó khoa Dược).
+  + *Khối Vận hành, Khách hàng, Tổ chức & Tài chính:* Huỳnh Trường Thanh Tâm (Phó phòng PTKH), Tạ Minh Phước (Tổ trưởng PTKH), Lữ Phú Sinh (Trưởng phòng QT Tòa nhà), Trần Trúc Linh (Trưởng phòng TCNS), Nguyễn Như Ý (Trưởng phòng TCKT), Nguyễn Thúy Kiều (Tổ trưởng Kế toán thu).
 
 ---
 
@@ -91,7 +93,7 @@ CẤU TRÚC BÁO CÁO 15 PHÚT CỦA NHÓM 8 TRƯỚC BAN ĐIỀU HÀNH FMFT:
 ### SLIDE 8: ĐỀ ÁN 1 — M02 & M03: QUY TẮC BÀN GIAO & MA TRẬN RACI
 - **Quy tắc bàn giao 6 điểm chạm:** Bàn giao chỉ hoàn tất khi bên nhận xác nhận trên phần mềm; cấm để người bệnh tự cầm giấy thay thế xác nhận hệ thống.
 - **Cảnh báo đỏ (Critical Value Alert):** KTV Xét nghiệm bắt buộc gọi điện thoại trực tiếp cho Bác sĩ buồng khám trong vòng $\le 5$ phút khi có kết quả báo động.
-- **RACI rõ ràng:** BS. Huỳnh Tấn Kiệt (Chịu trách nhiệm luồng khám KHTH), Lê Minh Mẫn (Trưởng Labo XN), Huỳnh Trường Thanh Tâm (Chủ trì đo lường PX & BKS KPI).
+- **RACI rõ ràng:** Huỳnh Tấn Kiệt (Chịu trách nhiệm luồng khám KHTH), Lê Minh Mẫn (Xét nghiệm), Huỳnh Trường Thanh Tâm (Chủ trì đo lường PX & BKS KPI).
 
 ---
 
@@ -186,7 +188,7 @@ CẤU TRÚC BÁO CÁO 15 PHÚT CỦA NHÓM 8 TRƯỚC BAN ĐIỀU HÀNH FMFT:
 
 ### SLIDE 20: LỜI KẾT & CAM KẾT HÀNH ĐỘNG
 - **Thông điệp kết luận:** *"Cải tiến quản trị không phải là một đích đến, mà là một hành trình liên tục chuyển mình dựa trên dữ liệu thật, sự thấu cảm với người bệnh và tinh thần trách nhiệm của đội ngũ y tế Thanh Vũ."*
-- **Lời tri ân:** Xin trân trọng cảm ơn Thầy TS. Đoàn Hùng Dũng, Ban Giám đốc Hệ thống và toàn thể đồng nghiệp đã lắng nghe và đồng hành!
+- **Lời tri ân:** Xin trân trọng cảm ơn Thầy Đoàn Hùng Dũng, Ban Giám đốc Hệ thống và toàn thể đồng nghiệp đã lắng nghe và đồng hành!
 
 ---
 *Kịch bản hoàn thiện ngày 04 tháng 11 năm 2026 bởi Nhóm 8 — PKĐK Thanh Vũ Medic Cà Mau.*
