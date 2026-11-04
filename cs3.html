@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập CS3 – 3 Đề án | Nhóm 8 Thanh Vũ Medic Cà Mau</title>
+  <meta name="theme-color" content="#0e7490">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#0e7490;--soft:rgba(14,116,144,.08);--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#0f172a;--sub:#475569;--warn:#d97706}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
+    header{position:sticky;top:0;z-index:10;background:var(--primary);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:12px;min-height:56px}
+    header a{color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.15);min-height:44px;display:inline-flex;align-items:center}
+    header h1{font-size:15px;margin:0;font-weight:800}
+    .wrap{max-width:1040px;margin:0 auto;padding:16px}
+    .notice{border:1.5px solid var(--warn);background:rgba(217,119,6,.08);border-radius:12px;padding:12px 14px;font-size:13px;margin-bottom:14px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .tabs button{font:inherit;font-size:13px;font-weight:700;border:1px solid var(--border);background:var(--card);color:var(--sub);padding:10px 14px;border-radius:999px;cursor:pointer;min-height:44px}
+    .tabs button.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .dl{margin-left:auto}
+    #doc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+    #doc h1{font-size:22px;color:var(--primary)} #doc h2{font-size:18px;border-bottom:2px solid var(--soft);padding-bottom:6px;margin-top:28px} #doc h3{font-size:15px}
+    #doc table{border-collapse:collapse;width:100%;font-size:13px;display:block;overflow-x:auto}
+    #doc th,#doc td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;min-width:110px}
+    #doc th{background:var(--soft)}
+    #doc pre{background:#0f172a;color:#e2e8f0;padding:12px;border-radius:10px;overflow-x:auto;font-size:12px}
+    #doc blockquote{margin:12px 0;padding:8px 14px;border-left:4px solid var(--primary);background:var(--soft);border-radius:0 8px 8px 0}
+    #doc .mermaid{background:#fff;overflow-x:auto;text-align:center}
+    @media print{header,.tabs,.notice{display:none}#doc{border:0;padding:0}}
+  </style>
+</head>
+<body>
+<header>
+  <a href="./">← Cổng chính</a>
+  <h1>Bài tập CS3 – Nhóm 8 · PKĐK Thanh Vũ Medic Cà Mau</h1>
+</header>
+<div class="wrap">
+  <div class="notice">⚠️ <strong>Lưu ý dữ liệu:</strong> Các số liệu nền (baseline), mục tiêu và kết quả Before–After trong 3 đề án là <strong>số liệu dự thảo / ước tính / giả định</strong>, cần xác minh bằng log HIS/LIS/PACS và khảo sát thực tế trước khi nộp hoặc công bố chính thức. Chỉ tối ưu quy trình, không can thiệp chuyên môn y khoa.</div>
+  <div class="tabs" id="tabs"></div>
+  <article id="doc">Đang tải…</article>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+const DOCS=[
+ {id:'da1',t:'Đề án 1 · Thời gian chờ ngoại trú',f:'cs3/DE_AN_1_TOI_UU_THOI_GIAN_CHO_NGOAI_TRU_M01_M04.md'},
+ {id:'da2',t:'Đề án 2 · Shin AIOS Dashboard',f:'cs3/DE_AN_2_SHIN_AIOS_DASHBOARD_DIEU_HANH_M01_M04.md'},
+ {id:'da3',t:'Đề án 3 · Năng lực 5T',f:'cs3/DE_AN_3_HE_THONG_DANH_GIA_NANG_LUC_5T_M01_M04.md'},
+ {id:'sl',t:'Kịch bản 20 slide',f:'cs3/SLIDE_BAO_CAO_THUYET_TRINH_3_DE_AN_CS3.md'}
+];
+mermaid.initialize({startOnLoad:false,securityLevel:'strict'});
+const tabs=document.getElementById('tabs'),doc=document.getElementById('doc');
+async function show(id){
+  const d=DOCS.find(x=>x.id===id)||DOCS[0];
+  [...tabs.querySelectorAll('button')].forEach(b=>b.classList.toggle('on',b.dataset.id===d.id));
+  location.hash=d.id; doc.textContent='Đang tải…';
+  try{
+    const r=await fetch(d.f); if(!r.ok) throw new Error(r.status);
+    let md=await r.text();
+    // bảo vệ công thức $...$ khỏi bị marked xử lý ký tự đặc biệt
+    doc.innerHTML=marked.parse(md);
+    doc.querySelectorAll('pre code.language-mermaid').forEach(c=>{const p=c.parentElement;const div=document.createElement('div');div.className='mermaid';div.textContent=c.textContent;p.replaceWith(div);});
+    try{await mermaid.run({nodes:doc.querySelectorAll('.mermaid')});}catch(e){}
+    renderMathInElement(doc,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+    window.scrollTo(0,0);
+  }catch(e){doc.textContent='Không tải được tài liệu ('+e.message+').';}
+}
+DOCS.forEach(d=>{const b=document.createElement('button');b.textContent=d.t;b.dataset.id=d.id;b.onclick=()=>show(d.id);tabs.appendChild(b);});
+const a=document.createElement('a');a.className='dl';a.href='cs3/HO_SO_BAI_TAP_FMFT_CS3_NHOM_8_FINAL.docx';a.download='';a.textContent='⬇ Tải file Word';
+a.style.cssText='font-size:13px;font-weight:700;color:var(--primary);align-self:center;min-height:44px;display:inline-flex;align-items:center';tabs.appendChild(a);
+show(location.hash.slice(1)||'da1');
+</script>
+</body>
+</html>

@@ -3,6 +3,13 @@
 
 ---
 
+### [Phiên bản v2.4.0] - 04/11/2026 (Đưa Bài tập CS3 – 3 đề án lên Portal)
+- Thêm trang `cs3.html` hiển thị 3 đề án (Thời gian chờ ngoại trú, Shin AIOS Dashboard, Năng lực 5T) + kịch bản 20 slide, render Markdown/Mermaid/KaTeX, có nút tải file Word.
+- Thêm thư mục `cs3/` chứa tài liệu nguồn; thêm thẻ liên kết ở Trang chủ (giữ nguyên 4 tab điều hướng cố định).
+- Có banner cảnh báo: số liệu baseline/mục tiêu là dự thảo, cần xác minh.
+
+---
+
 ### [Phiên bản v2.3.0] - 04/11/2026 (Tái Cấu Trúc Toàn Diện Web Portal 4 Tab Cố Định: Bỏ Tab Thư Viện, Triển Khai Chi Tiết Từng Nội Dung 10 Chuyên Đề & 2 Đề Án M01-M19, Thiết Lập Lộ Trình 1 Giờ)
 - **Chuẩn hóa cấu trúc điều hướng Cổng Web Portal (`index.html`) theo đúng chỉ đạo của Sếp:**
   - **Loại bỏ hoàn toàn tab Thư viện:** Đã gỡ bỏ toàn bộ `view-library`, loại bỏ các nút điều hướng tương ứng trên cả Desktop Navbar và Mobile Bottom Bar, chuyển toàn bộ đường link Google Drive Đề án và Kho Media Video/Audio Webex thành khối thẻ truy cập trực tiếp gọn gàng ở chân Trang chủ (`view-home`).

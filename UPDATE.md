@@ -21,6 +21,8 @@ Chuyển hóa toàn diện hệ thống quản trị vận hành và hiệu su�
 
 ---
 
+- [ ] **v2.5 (kế hoạch):** Thay số liệu giả định trong `cs3/` bằng số liệu thật từ log HIS/LIS (hạn xác minh 05/11/2026); cân nhắc tích hợp CS3 vào menu chính nếu BGĐ duyệt.
+
 ## 3. LỘ TRÌNH TRIỂN KHAI VÀ THỰC HÀNH SAU KHÓA HỌC
 
 ### [Giai đoạn 1] Khởi động & Nạp Tri thức (25/10 – 04/11/2026)
